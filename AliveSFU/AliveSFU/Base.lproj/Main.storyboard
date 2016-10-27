@@ -38,7 +38,7 @@
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -78,7 +78,7 @@
                             <constraint firstItem="BAt-3g-juq" firstAttribute="centerY" secondItem="MPo-5d-xX5" secondAttribute="centerY" id="rQt-qC-tuS"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Progress" image="first" id="Y1T-c3-H8a"/>
+                    <tabBarItem key="tabBarItem" title="My Progress" image="MyProgress" id="Y1T-c3-H8a"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dK6-l5-l24" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -119,7 +119,7 @@
                             <constraint firstItem="DXA-fY-dvL" firstAttribute="top" secondItem="g3T-uV-CBy" secondAttribute="bottom" id="oVf-UY-OwE"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Sleep Analysis" image="first" id="Lad-D0-DEy"/>
+                    <tabBarItem key="tabBarItem" title="Sleep Analysis" image="SleepAnalysis" id="Lad-D0-DEy"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EWB-Mp-iVC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -160,7 +160,7 @@
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="SFU Recreation" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="SFU Recreation" image="SFURec" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -200,7 +200,7 @@
                             <constraint firstItem="QSn-M0-FOP" firstAttribute="centerY" secondItem="d1C-1g-BxC" secondAttribute="centerY" id="sVh-bM-2w3"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Fitness Buddy" image="second" id="BfT-eT-oqx"/>
+                    <tabBarItem key="tabBarItem" title="Fitness Buddy" image="FitnessBuddy" id="BfT-eT-oqx"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4UW-t9-6Gn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -231,7 +231,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="FitnessBuddy" width="30" height="30"/>
+        <image name="Home" width="30" height="30"/>
+        <image name="MyProgress" width="30" height="30"/>
+        <image name="SFURec" width="30" height="30"/>
+        <image name="SleepAnalysis" width="30" height="30"/>
     </resources>
 </document>
