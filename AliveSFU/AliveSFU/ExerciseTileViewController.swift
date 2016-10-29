@@ -1,22 +1,19 @@
 //
-//  PopUpViewController.swift
+//  ExerciseTileViewController.swift
 //  AliveSFU
 //
-//  Created by Kavya Bohra on 2016-10-28.
+//  Created by Liam O'Shaughnessy on 2016-10-28.
 //  Copyright © 2016 SimonDevs. All rights reserved.
 //
 
 import UIKit
 
-class PopUpViewController: UIViewController {
+class ExerciseTileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
-        
         self.showAnimate()
-
         // Do any additional setup after loading the view.
     }
 
@@ -38,7 +35,7 @@ class PopUpViewController: UIViewController {
             self.view.alpha = 1.0
             self.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         });
-    } //Implemented with guidance from www.youtube.com -> Swift Pop Up View Tutorial
+    } 
     
     
     func removeAnimate()
@@ -52,7 +49,7 @@ class PopUpViewController: UIViewController {
                 self.view.removeFromSuperview()
             }
         });
-    }//Implemented with guidance from www.youtube.com -> Swift Pop Up View Tutorial
+    }
     
     /*
     // MARK: - Navigation

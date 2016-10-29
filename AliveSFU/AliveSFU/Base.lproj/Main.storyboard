@@ -202,10 +202,10 @@
             </objects>
             <point key="canvasLocation" x="-1041" y="880"/>
         </scene>
-        <!--Pop Up View Controller-->
+        <!--Exercise Tile View Controller-->
         <scene sceneID="1Nf-jf-dXC">
             <objects>
-                <viewController storyboardIdentifier="tilePopUpID" id="PzC-io-0un" customClass="PopUpViewController" customModule="AliveSFU" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tilePopUpID" id="PzC-io-0un" customClass="ExerciseTileViewController" customModule="AliveSFU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NLa-l6-bkf"/>
                         <viewControllerLayoutGuide type="bottom" id="VgS-So-AtR"/>
