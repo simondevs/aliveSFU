@@ -14,6 +14,8 @@ class ExerciseTileViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         self.showAnimate()
+        
+
         // Do any additional setup after loading the view.
     }
 
@@ -26,7 +28,19 @@ class ExerciseTileViewController: UIViewController {
         self.removeAnimate()
         //self.view.removeFromSuperview()
     }
-
+    @IBAction func background1(_ sender: Any) {
+        self.removeAnimate()
+    }
+    @IBAction func background2(_ sender: Any) {
+        self.removeAnimate()
+    }
+    @IBAction func background3(_ sender: Any) {
+        self.removeAnimate()
+    }
+    @IBAction func background4(_ sender: Any) {
+        self.removeAnimate()
+    }
+    //when user touches outside of popover (red rectangle)
     func showAnimate()
     {
         self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
