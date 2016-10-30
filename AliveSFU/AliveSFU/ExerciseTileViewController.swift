@@ -23,24 +23,11 @@ class ExerciseTileViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     @IBAction func closePopUp(_ sender: Any) {
         self.removeAnimate()
-        //self.view.removeFromSuperview()
     }
-    @IBAction func background1(_ sender: Any) {
-        self.removeAnimate()
-    }
-    @IBAction func background2(_ sender: Any) {
-        self.removeAnimate()
-    }
-    @IBAction func background3(_ sender: Any) {
-        self.removeAnimate()
-    }
-    @IBAction func background4(_ sender: Any) {
-        self.removeAnimate()
-    }
-    //when user touches outside of popover (red rectangle)
+
     func showAnimate()
     {
         self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
