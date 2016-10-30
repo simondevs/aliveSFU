@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		A985705F1DC2E1D100C3AA32 /* AddNewExerciseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A985705E1DC2E1D100C3AA32 /* AddNewExerciseController.swift */; };
 		A98570621DC2E7FF00C3AA32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A98570601DC2E7FF00C3AA32 /* Main.storyboard */; };
+<<<<<<< HEAD
+=======
 		A98570641DC315B100C3AA32 /* AddStrengthExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98570631DC315B100C3AA32 /* AddStrengthExercise.swift */; };
 		A98570661DC315C000C3AA32 /* AddCardioExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98570651DC315C000C3AA32 /* AddCardioExercise.swift */; };
+>>>>>>> gurkohli-dev
 		A9AE2C171DC17F9900FB5BC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE2C161DC17F9900FB5BC0 /* AppDelegate.swift */; };
 		A9AE2C191DC17F9900FB5BC0 /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE2C181DC17F9900FB5BC0 /* HomePageController.swift */; };
 		A9AE2C1B1DC17F9900FB5BC0 /* SFURecreationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE2C1A1DC17F9900FB5BC0 /* SFURecreationController.swift */; };
@@ -21,7 +24,6 @@
 		A9AE2C471DC1822D00FB5BC0 /* MyProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE2C461DC1822D00FB5BC0 /* MyProgressController.swift */; };
 		A9AE2C491DC1823C00FB5BC0 /* FitnessBuddyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE2C481DC1823C00FB5BC0 /* FitnessBuddyController.swift */; };
 		A9AE2C4B1DC1824C00FB5BC0 /* SleepAnalysisController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE2C4A1DC1824C00FB5BC0 /* SleepAnalysisController.swift */; };
-		FA7FB3171DC333BD00781EFB /* ExerciseTileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FB3161DC333BD00781EFB /* ExerciseTileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +46,11 @@
 /* Begin PBXFileReference section */
 		A985705E1DC2E1D100C3AA32 /* AddNewExerciseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewExerciseController.swift; sourceTree = "<group>"; };
 		A98570611DC2E7FF00C3AA32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+<<<<<<< HEAD
+=======
 		A98570631DC315B100C3AA32 /* AddStrengthExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStrengthExercise.swift; sourceTree = "<group>"; };
 		A98570651DC315C000C3AA32 /* AddCardioExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardioExercise.swift; sourceTree = "<group>"; };
+>>>>>>> gurkohli-dev
 		A9AE2C131DC17F9900FB5BC0 /* AliveSFU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AliveSFU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9AE2C161DC17F9900FB5BC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9AE2C181DC17F9900FB5BC0 /* HomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
@@ -62,7 +67,6 @@
 		A9AE2C461DC1822D00FB5BC0 /* MyProgressController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProgressController.swift; sourceTree = "<group>"; };
 		A9AE2C481DC1823C00FB5BC0 /* FitnessBuddyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitnessBuddyController.swift; sourceTree = "<group>"; };
 		A9AE2C4A1DC1824C00FB5BC0 /* SleepAnalysisController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepAnalysisController.swift; sourceTree = "<group>"; };
-		FA7FB3161DC333BD00781EFB /* ExerciseTileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,14 +117,16 @@
 		A9AE2C151DC17F9900FB5BC0 /* AliveSFU */ = {
 			isa = PBXGroup;
 			children = (
-				FA7FB3161DC333BD00781EFB /* ExerciseTileViewController.swift */,
 				A9AE2C161DC17F9900FB5BC0 /* AppDelegate.swift */,
 				A9AE2C181DC17F9900FB5BC0 /* HomePageController.swift */,
 				A9AE2C1A1DC17F9900FB5BC0 /* SFURecreationController.swift */,
 				A9AE2C461DC1822D00FB5BC0 /* MyProgressController.swift */,
 				A985705E1DC2E1D100C3AA32 /* AddNewExerciseController.swift */,
+<<<<<<< HEAD
+=======
 				A98570651DC315C000C3AA32 /* AddCardioExercise.swift */,
 				A98570631DC315B100C3AA32 /* AddStrengthExercise.swift */,
+>>>>>>> gurkohli-dev
 				A9AE2C481DC1823C00FB5BC0 /* FitnessBuddyController.swift */,
 				A9AE2C4A1DC1824C00FB5BC0 /* SleepAnalysisController.swift */,
 				A9AE2C1F1DC17F9900FB5BC0 /* Assets.xcassets */,
@@ -288,7 +294,6 @@
 				A9AE2C171DC17F9900FB5BC0 /* AppDelegate.swift in Sources */,
 				A9AE2C471DC1822D00FB5BC0 /* MyProgressController.swift in Sources */,
 				A98570641DC315B100C3AA32 /* AddStrengthExercise.swift in Sources */,
-				FA7FB3171DC333BD00781EFB /* ExerciseTileViewController.swift in Sources */,
 				A98570661DC315C000C3AA32 /* AddCardioExercise.swift in Sources */,
 				A9AE2C191DC17F9900FB5BC0 /* HomePageController.swift in Sources */,
 				A9AE2C491DC1823C00FB5BC0 /* FitnessBuddyController.swift in Sources */,
