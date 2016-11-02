@@ -19,7 +19,10 @@ class MyProgressController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+<<<<<<< HEAD
+=======
     
+>>>>>>> 570bbbc9d6c5c21114b98e842128fedbb012f81c
     @IBAction func showPopup(_ sender: Any) {
         
         let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tilePopUpID") as! ExerciseTileViewController
@@ -29,5 +32,10 @@ class MyProgressController: UIViewController {
         popOverVC.didMove(toParentViewController: self)
         
     }
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 570bbbc9d6c5c21114b98e842128fedbb012f81c
 }
 
