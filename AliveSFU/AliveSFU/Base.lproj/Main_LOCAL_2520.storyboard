@@ -68,15 +68,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oG3-JC-CNC" userLabel="Exercise Tile View">
-<<<<<<< HEAD
                                 <rect key="frame" x="16" y="165" width="343" height="445"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmY-MK-znd">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="445"/>
-=======
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmY-MK-znd">
->>>>>>> 570bbbc9d6c5c21114b98e842128fedbb012f81c
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="showPopup:" destination="dEw-ij-UTy" eventType="touchUpInside" id="oNa-xM-JrP"/>
@@ -219,45 +214,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-<<<<<<< HEAD
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Stz-aI-jT3" customClass="UIControl" colorLabel="IBBuiltInLabel-Red">
                                 <rect key="frame" x="67" y="154" width="240" height="344"/>
-=======
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVw-aT-phy" userLabel="background">
-                                <frame key="frameInset" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="closePopUp:" destination="PzC-io-0un" eventType="touchUpInside" id="Xga-YB-U2s"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Stz-aI-jT3" customClass="UIControl" colorLabel="IBBuiltInLabel-Red">
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hw-px-aZV">
-                                        <frame key="frameInset" minX="99" minY="190" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Close">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="closePopUp:" destination="PzC-io-0un" eventType="touchUpInside" id="6aP-U4-Zw2"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oh-uD-lFi">
-                                        <frame key="frameInset" minX="99" minY="130" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.95721826890191597" green="1" blue="0.96648468566406409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
->>>>>>> 570bbbc9d6c5c21114b98e842128fedbb012f81c
                                 <color key="backgroundColor" red="1" green="0.059072717478359515" blue="0.17287566322780135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="6v1-TR-vwK"/>
                                     <constraint firstAttribute="height" constant="344" id="faJ-wK-Fnz"/>
                                 </constraints>
                             </view>
-<<<<<<< HEAD
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hw-px-aZV">
                                 <rect key="frame" x="164" y="406" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -307,27 +271,17 @@
                                     <action selector="tappedBackground:" destination="PzC-io-0un" eventType="touchUpOutside" id="XTc-cM-hIL"/>
                                 </connections>
                             </button>
-=======
->>>>>>> 570bbbc9d6c5c21114b98e842128fedbb012f81c
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Stz-aI-jT3" firstAttribute="centerX" secondItem="J5M-1L-Qfk" secondAttribute="centerX" id="8w4-jL-5cW"/>
-<<<<<<< HEAD
                             <constraint firstItem="Stz-aI-jT3" firstAttribute="centerY" secondItem="J5M-1L-Qfk" secondAttribute="centerY" id="NP6-hT-lLc"/>
-=======
-                            <constraint firstItem="Stz-aI-jT3" firstAttribute="centerY" secondItem="J5M-1L-Qfk" secondAttribute="centerY" constant="-7.5" id="NP6-hT-lLc"/>
->>>>>>> 570bbbc9d6c5c21114b98e842128fedbb012f81c
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6v-j4-1Pq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
             <point key="canvasLocation" x="-1159.2" y="1664.617691154423"/>
-=======
-            <point key="canvasLocation" x="-1167.2" y="1648.4257871064469"/>
->>>>>>> 570bbbc9d6c5c21114b98e842128fedbb012f81c
         </scene>
         <!--Add New Exercise-->
         <scene sceneID="O0a-ix-Em8">
