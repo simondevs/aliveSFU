@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
 class MyProgressController: UIViewController {
+    @IBOutlet weak var stackView: UIStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        populateStackView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,5 +32,23 @@ class MyProgressController: UIViewController {
         popOverVC.didMove(toParentViewController: self)
         
     }
+    
+    func populateStackView() {
+        let stack = stackView;
+        let exerciseArrayCount = DataHandler.getExerciseArrayCount()
+        if (exerciseArrayCount == 0) {
+            //Display Placeholder Exercise Tile
+            print("Works")
+            
+        } else {
+            //Populate Exercise Tiles
+        }
+    }
+    
+    func createTile() {
+        
+    }
+    
+    
 }
 
