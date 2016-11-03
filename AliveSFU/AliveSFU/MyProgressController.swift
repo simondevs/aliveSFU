@@ -11,6 +11,7 @@ import CoreData
 
 class MyProgressController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +35,16 @@ class MyProgressController: UIViewController {
     }
     
     func populateStackView() {
-        let stack = stackView;
         let exerciseArrayCount = DataHandler.getExerciseArrayCount()
         if (exerciseArrayCount == 0) {
             //Display Placeholder Exercise Tile
             print("Works")
-            
+            let tileView = CardioTileView()
+            //print(tileView.frame.height)
+            stackView.addArrangedSubview(CardioTileView())
+            stackView.addArrangedSubview(CardioTileView())
+            stackView.addArrangedSubview(CardioTileView())
+            print("StackView: ", stackView.frame.height)
         } else {
             //Populate Exercise Tiles
         }
