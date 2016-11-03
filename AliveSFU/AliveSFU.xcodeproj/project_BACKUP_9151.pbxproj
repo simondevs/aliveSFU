@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		41B003981DC5B1FC00762D2E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B003971DC5B1FC00762D2E /* Exercise.swift */; };
+		41B003961DC46F7400762D2E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B003951DC46F7400762D2E /* Exercise.swift */; };
 		A985705F1DC2E1D100C3AA32 /* AddNewExerciseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A985705E1DC2E1D100C3AA32 /* AddNewExerciseController.swift */; };
 		A98570621DC2E7FF00C3AA32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A98570601DC2E7FF00C3AA32 /* Main.storyboard */; };
 		A98570641DC315B100C3AA32 /* AddStrengthExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98570631DC315B100C3AA32 /* AddStrengthExercise.swift */; };
@@ -43,7 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		41B003971DC5B1FC00762D2E /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		41B003951DC46F7400762D2E /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		A985705E1DC2E1D100C3AA32 /* AddNewExerciseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewExerciseController.swift; sourceTree = "<group>"; };
 		A98570611DC2E7FF00C3AA32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A98570631DC315B100C3AA32 /* AddStrengthExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStrengthExercise.swift; sourceTree = "<group>"; };
@@ -128,8 +128,8 @@
 				A9AE2C1F1DC17F9900FB5BC0 /* Assets.xcassets */,
 				A9AE2C211DC17F9900FB5BC0 /* LaunchScreen.storyboard */,
 				A98570601DC2E7FF00C3AA32 /* Main.storyboard */,
+				41B003951DC46F7400762D2E /* Exercise.swift */,
 				A9AE2C241DC17F9900FB5BC0 /* Info.plist */,
-				41B003971DC5B1FC00762D2E /* Exercise.swift */,
 			);
 			path = AliveSFU;
 			sourceTree = "<group>";
@@ -291,8 +291,11 @@
 				A9AE2C171DC17F9900FB5BC0 /* AppDelegate.swift in Sources */,
 				A9AE2C471DC1822D00FB5BC0 /* MyProgressController.swift in Sources */,
 				A98570641DC315B100C3AA32 /* AddStrengthExercise.swift in Sources */,
+<<<<<<< HEAD
+				41B003961DC46F7400762D2E /* Exercise.swift in Sources */,
+=======
 				FA7FB3171DC333BD00781EFB /* ExerciseTileViewController.swift in Sources */,
-				41B003981DC5B1FC00762D2E /* Exercise.swift in Sources */,
+>>>>>>> 570bbbc9d6c5c21114b98e842128fedbb012f81c
 				A98570661DC315C000C3AA32 /* AddCardioExercise.swift in Sources */,
 				A9AE2C191DC17F9900FB5BC0 /* HomePageController.swift in Sources */,
 				A9AE2C491DC1823C00FB5BC0 /* FitnessBuddyController.swift in Sources */,
