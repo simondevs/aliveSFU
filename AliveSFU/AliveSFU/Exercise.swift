@@ -15,9 +15,31 @@ class Exercise {
     var resistance: String = ""
     var speed: String = ""
     var time: String = ""
-    var categories: String = ""
+    var category: String = ""
     
-    //setters
+    let CATEGORY_CARDIO = "cardio"
+    let CATEGORY_STRENGTH = "strength"
+    
+    init() {
+        
+    }
+    
+    init(name: String, sets: String, reps: String) {
+        self.exerciseName = name
+        self.sets = sets
+        self.reps = reps
+        self.category = CATEGORY_STRENGTH
+    }
+    
+    init(name: String, time: String, resistance: String?, speed: String?) {
+        self.exerciseName = name
+        self.time = time
+        self.category = CATEGORY_CARDIO
+        if ((resistance) != nil) {self.resistance = resistance!}
+        if ((speed) != nil) {self.speed = speed!}
+    }
+    
+    //Setters
     public func setName(name: String)
     {
         exerciseName = name

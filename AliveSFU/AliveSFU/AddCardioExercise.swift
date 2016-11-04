@@ -3,19 +3,11 @@
 //  AliveSFU
 //
 //  Created by Gur Kohli on 2016-10-26.
+//  Developers: Gur Kohli, Gagan Kaur
 //  Copyright © 2016 SimonDevs. All rights reserved.
 //
 
-
-//questions: to which page should it go back to after save and cancel
-//just connect cancel back to main page. (why do i need to delete, will need that when we implement a data structure)
-//check class input types
-//clicking save if nothing is entered gives an error
 import UIKit
-
-//making a temporary array for testing
-var tempArray1: [Exercise] = []
-
 
 class AddCardioExercise: UIViewController {
     
@@ -44,51 +36,35 @@ class AddCardioExercise: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-      //Mark: Action
-    
+    //Mark: Action
+
     @IBAction func saveButton(_ sender: UIButton) {
-        
-        
-        
-        if ((exerciseNameInput.text != nil) && (timeInput.text != nil))
+        if ((exerciseNameInput.text != "") && (timeInput.text != ""))
         {
-            //let exerciseName1 = exerciseNameInput.text
-            //var resistance1: Int = resistanceInput.text
-            //var speed1: Int = speedInput.text
-            //var time1: Int = timeInput.text
-            
             let newExercise = Exercise()
             newExercise.exerciseName = exerciseNameInput.text!
             newExercise.resistance = resistanceInput.text!
-            
-            if (speedInput.text != nil){
-            newExercise.speed = speedInput.text!
+            newExercise.category = newExercise.CATEGORY_CARDIO
+            if (speedInput.text != nil) {
+                newExercise.speed = speedInput.text!
+            }
+            if (timeInput.text != nil) {
+                newExercise.time = timeInput.text!
+            }
+            let result = DataHandler.saveElementToExerciseArray(elem: newExercise)
+            if (result == -1) {
+                //Handle Error
             }
             
-            if (timeInput.text != nil){
-            newExercise.time = timeInput.text!
-            }
-            
-            newExercise.categories = "Cardio"
-            tempArray1.append(newExercise)
-            
-            
-            //Code for testing
-            for element in tempArray1
-            {
-                element.printName()
-                element.printResistance()
-                element.printSpeed()
-                element.printTime()
-                
-            }
-            
+            DataHandler.getExerciseArray()
+            self.navigationController?.popToRootViewController(animated: true)
+        } else {
+            //Do something
         }
     }
     
-    
     @IBAction func cancelButton(_ sender: UIButton) {
-        
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }
 

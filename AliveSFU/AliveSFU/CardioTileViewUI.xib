@@ -8,6 +8,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardioTileView" customModule="AliveSFU" customModuleProvider="target">
             <connections>
+                <outlet property="exerciseName" destination="R7J-Yq-Fuo" id="FzL-y0-rge"/>
+                <outlet property="resistance" destination="P1F-nk-FR2" id="Ka6-84-MUc"/>
+                <outlet property="speed" destination="Fpb-hB-s2r" id="b6u-BV-PfH"/>
+                <outlet property="time" destination="MPc-BX-oon" id="dlq-9I-j9n"/>
                 <outlet property="view" destination="iN0-l3-epB" id="wab-ZM-h4D"/>
             </connections>
         </placeholder>
@@ -51,10 +55,10 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="2nT-jP-8iE" firstAttribute="width" secondItem="sZA-QU-E6E" secondAttribute="width" id="2GJ-9A-HYc"/>
                         <constraint firstItem="R7J-Yq-Fuo" firstAttribute="centerX" secondItem="sZA-QU-E6E" secondAttribute="centerX" id="2Jn-m7-ONL"/>
                         <constraint firstItem="R7J-Yq-Fuo" firstAttribute="top" secondItem="sZA-QU-E6E" secondAttribute="top" constant="8" id="GDg-aU-vPs"/>
                         <constraint firstItem="sZA-QU-E6E" firstAttribute="height" secondItem="kfQ-bi-ZbF" secondAttribute="height" id="QIY-2Q-ndr"/>
-                        <constraint firstItem="2nT-jP-8iE" firstAttribute="width" secondItem="R7J-Yq-Fuo" secondAttribute="width" id="SOb-m8-Na6"/>
                         <constraint firstItem="sZA-QU-E6E" firstAttribute="bottom" secondItem="2nT-jP-8iE" secondAttribute="bottom" constant="8" id="cxR-if-dgQ"/>
                         <constraint firstItem="sZA-QU-E6E" firstAttribute="centerX" secondItem="kfQ-bi-ZbF" secondAttribute="centerX" id="hh8-i6-ehm"/>
                         <constraint firstItem="sZA-QU-E6E" firstAttribute="width" secondItem="kfQ-bi-ZbF" secondAttribute="width" id="iTl-cI-c0A"/>
@@ -65,12 +69,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="kfQ-bi-ZbF" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="L75-87-q1e"/>
                 <constraint firstAttribute="bottom" secondItem="kfQ-bi-ZbF" secondAttribute="bottom" id="Ub8-kq-9YF"/>
-                <constraint firstItem="kfQ-bi-ZbF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WtJ-IH-HQx"/>
-                <constraint firstAttribute="trailing" secondItem="kfQ-bi-ZbF" secondAttribute="trailing" id="iSn-mN-kDQ"/>
-                <constraint firstItem="kfQ-bi-ZbF" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="iWH-Kw-B9G"/>
-                <constraint firstItem="kfQ-bi-ZbF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pdU-gC-0LC"/>
+                <constraint firstItem="kfQ-bi-ZbF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="WtJ-IH-HQx"/>
+                <constraint firstAttribute="trailing" secondItem="kfQ-bi-ZbF" secondAttribute="trailing" constant="10" id="iSn-mN-kDQ"/>
+                <constraint firstItem="kfQ-bi-ZbF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="pdU-gC-0LC"/>
             </constraints>
             <point key="canvasLocation" x="34" y="96"/>
         </view>

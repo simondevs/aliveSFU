@@ -3,14 +3,11 @@
 //  AliveSFU
 //
 //  Created by Gur Kohli on 2016-10-26.
+//  Developers: Gur Kohli, Gagan Kaur
 //  Copyright © 2016 SimonDevs. All rights reserved.
 //
 
 import UIKit
-
-//making a temporary array for testing
-var tempArray: [Exercise] = []
-
 
 class AddStrengthExercise: UIViewController {
     
@@ -41,39 +38,29 @@ class AddStrengthExercise: UIViewController {
     //Mark: Action
     
     @IBAction func saveButton(_ sender: UIButton) {
-    
         
-        //***check for valid values like max number of characters 
-        // that can be entered etc.
-        
-        // create a new object
-        
-        if (exerciseNameInput.text != nil && setsInput.text != nil && repsInput.text != nil)
-        {
+        // Check for valid values like max number of characters that can be entered etc.
+        // Create a new object
+        if (exerciseNameInput.text != nil && setsInput.text != nil && repsInput.text != nil) {
             let newExercise = Exercise()
-            
+            newExercise.category = newExercise.CATEGORY_STRENGTH
             newExercise.exerciseName = exerciseNameInput.text!
             newExercise.sets = setsInput.text!
             newExercise.reps = repsInput.text!
             
-            newExercise.categories = "Strength"
-            
-            tempArray.append(newExercise)
-            
-            
-             //Code for testing
-             for element in tempArray
-             {
-                element.printName()
-                element.printReps()
-                element.printSets()
-                
-             }
+            let result = DataHandler.saveElementToExerciseArray(elem: newExercise)
+            if (result == -1) {
+                //Handle Error
+            }
+            DataHandler.getExerciseArray()
+            self.navigationController?.popToRootViewController(animated: true)
+        } else {
             
         }
     }
 
     @IBAction func cancelButton(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
     }
    
 
