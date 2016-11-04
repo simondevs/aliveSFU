@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -276,7 +277,10 @@
                                 </constraints>
                                 <state key="normal" image="strength"/>
                                 <connections>
-                                    <segue destination="fa0-Ee-UU8" kind="show" id="35X-Qo-25E"/>
+                                    <segue destination="fa0-Ee-UU8" kind="show" id="35X-Qo-25E">
+                                        <segue key="commit" inheritsFrom="parent" id="lyL-6p-l7z"/>
+                                        <segue key="preview" inheritsFrom="commit" id="GRb-sK-Rxj"/>
+                                    </segue>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2q-4C-r88" userLabel="Add Exercise">
@@ -835,5 +839,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cvh-qz-m9I"/>
+        <segue reference="35X-Qo-25E"/>
     </inferredMetricsTieBreakers>
 </document>

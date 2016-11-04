@@ -84,7 +84,20 @@ class Exercise {
     //Vivek's addition
     public func printDay()
     {
-        print(day)
+        if (day == 0)
+        {print("Sunday")}
+        else if (day == 1)
+        {print("Monday")}
+        else if (day == 2)
+        {print("Tuesday")}
+        else if (day == 3)
+        {print("Wednesday")}
+        else if (day == 4)
+        {print("Thursday")}
+        else if (day == 5)
+        {print("Friday")}
+        else
+        {print("Saturday")}
     }
     
     
