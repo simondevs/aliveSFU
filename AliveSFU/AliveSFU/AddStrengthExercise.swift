@@ -33,6 +33,7 @@ class AddStrengthExercise: UIViewController {
     //be stored in the variable "exerciseDay"
     //Vivek:
 
+
     @IBAction func theDayStrength(_ sender: UISegmentedControl) {
         exerciseDayStrength = sender.selectedSegmentIndex
     }
