@@ -35,7 +35,7 @@ class MyProgressController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        scrollView.contentSize.height = stackView.frame.height + 150
+        scrollView.contentSize.height = stackView.frame.height + 200
         scrollView.isScrollEnabled = true;
         scrollView.isUserInteractionEnabled = true;
     }
