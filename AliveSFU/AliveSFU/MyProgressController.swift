@@ -13,14 +13,16 @@ class MyProgressController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector        (MyProgressController.handleSwipes(sender:)))
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector       (MyProgressController.handleSwipes(sender:)))
         
-        leftSwipe.direction = .left
-        rightSwipe.direction = .right
+        let leftEdge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector (handleSwipes(_:)))
         
-        view.addGestureRecognizer(leftSwipe)
-        view.addGestureRecognizer(rightSwipe)
+        let rightEdge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector (handleSwipes(_:)))
+        
+        leftEdge.edges = .left
+        rightEdge.edges = .right
+        
+        view.addGestureRecognizer(leftEdge)
+        view.addGestureRecognizer(rightEdge)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -38,17 +40,16 @@ class MyProgressController: UIViewController {
         popOverVC.didMove(toParentViewController: self)
     }
     
-    @IBOutlet weak var swipeLabel: UILabel!
-    
-    func handleSwipes(sender:UISwipeGestureRecognizer){
-        if(sender.direction == .left) {
-            print("Swipe Left")//dummy code
-            swipeLabel.text = "Swiped left"
+    func handleSwipes(_ recognizer: UIScreenEdgePanGestureRecognizer){
+        if (recognizer.state == .recognized) {
+            
+            if(recognizer.edges == .left) {
+                print("Swipe Right from left edge ")//dummy code
+                }
+            if(recognizer.edges == .right) {
+                print("Swipe Left from right edge") //dummy code
+                }
         }
-        if(sender.direction == .right) {
-            print("Swipe Right") //dummy code
-            swipeLabel.text = "Swiped right"
-            }
         
         //NEED TO GET ARRAY DATA AND CHANGE TILES IN THE VIEW CONTROLLER
     }
