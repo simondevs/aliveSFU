@@ -33,18 +33,26 @@ class AddCardioExercise: UIViewController {
     @IBOutlet weak var timeInput: UITextField!
     @IBOutlet weak var resistanceLabel: UILabel!
     @IBOutlet weak var resistanceInput: UITextField!
+    //Vivek:
+    var exerciseDayCardio: Int = 0
+    //Vivek:
+    
+
+    @IBAction func theDayCardio(_ sender: UISegmentedControl) {
+        exerciseDayCardio = sender.selectedSegmentIndex
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-      //Mark: Action
+    
+    //Mark: Action
     
     @IBAction func saveButton(_ sender: UIButton) {
         
@@ -60,13 +68,15 @@ class AddCardioExercise: UIViewController {
             let newExercise = Exercise()
             newExercise.exerciseName = exerciseNameInput.text!
             newExercise.resistance = resistanceInput.text!
+            //Vivek:
+            newExercise.setDay(day1: exerciseDayCardio)
             
             if (speedInput.text != nil){
-            newExercise.speed = speedInput.text!
+                newExercise.speed = speedInput.text!
             }
             
             if (timeInput.text != nil){
-            newExercise.time = timeInput.text!
+                newExercise.time = timeInput.text!
             }
             
             newExercise.categories = "Cardio"
@@ -80,6 +90,9 @@ class AddCardioExercise: UIViewController {
                 element.printResistance()
                 element.printSpeed()
                 element.printTime()
+                //Vivek
+                element.printDay()
+                
                 
             }
             

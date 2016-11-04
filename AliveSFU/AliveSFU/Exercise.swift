@@ -3,6 +3,7 @@
 //  AliveSFU
 //
 //  Created by Gagan Kaur on 2016-10-29.
+//  Editted by Vivek Sharma on 2016-11-02
 //  Copyright © 2016 SimonDevs. All rights reserved.
 //
 
@@ -16,6 +17,8 @@ class Exercise {
     var speed: String = ""
     var time: String = ""
     var categories: String = ""
+    //Vivek's implementation of the days
+    var day: Int = 0    //A value of 0 corresponds to Sunday, 1 to Monday and so on to 6 being Saturday
     
     //setters
     public func setName(name: String)
@@ -41,6 +44,11 @@ class Exercise {
     public func setResistance(resistance1: String)
     {
         resistance = resistance1
+    }
+    //Vivek's addition
+    public func setDay(day1: Int)
+    {
+        day = day1 % 7    //Using the modulo operator in case the day value is greater than 6 - I really doubt the modulo is neccessary though
     }
     
     //getters
@@ -71,6 +79,12 @@ class Exercise {
     public func printResistance()
     {
         print(resistance)
+    }
+    
+    //Vivek's addition
+    public func printDay()
+    {
+        print(day)
     }
     
     
