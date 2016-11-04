@@ -76,17 +76,17 @@
                                     <constraint firstAttribute="trailing" secondItem="kmH-zc-yYp" secondAttribute="trailing" constant="3" id="Ug9-Rb-mgU"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byQ-mq-xbx">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byQ-mq-xbx">
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GzZ-L7-PAw"/>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="GzZ-L7-PAw" firstAttribute="leading" secondItem="byQ-mq-xbx" secondAttribute="leading" id="F1O-qJ-iUT"/>
-                                    <constraint firstItem="GzZ-L7-PAw" firstAttribute="height" secondItem="byQ-mq-xbx" secondAttribute="height" constant="-403" id="I0v-oO-C3e"/>
-                                    <constraint firstAttribute="bottom" secondItem="GzZ-L7-PAw" secondAttribute="bottom" constant="403" id="Jhd-Ft-IJz"/>
-                                    <constraint firstAttribute="trailing" secondItem="GzZ-L7-PAw" secondAttribute="trailing" id="OlY-jf-VDq"/>
-                                    <constraint firstItem="GzZ-L7-PAw" firstAttribute="width" secondItem="byQ-mq-xbx" secondAttribute="width" id="f3w-Lm-p1l"/>
-                                    <constraint firstItem="GzZ-L7-PAw" firstAttribute="top" secondItem="byQ-mq-xbx" secondAttribute="top" id="kUr-SS-NXW"/>
+                                    <constraint firstAttribute="trailing" secondItem="GzZ-L7-PAw" secondAttribute="trailing" id="3Nv-OU-oCQ"/>
+                                    <constraint firstItem="GzZ-L7-PAw" firstAttribute="centerX" secondItem="byQ-mq-xbx" secondAttribute="centerX" id="5EP-qn-MAT"/>
+                                    <constraint firstAttribute="bottom" secondItem="GzZ-L7-PAw" secondAttribute="bottom" id="LhD-9i-Xzz"/>
+                                    <constraint firstItem="GzZ-L7-PAw" firstAttribute="top" secondItem="byQ-mq-xbx" secondAttribute="top" id="RNi-rq-D11"/>
+                                    <constraint firstItem="GzZ-L7-PAw" firstAttribute="centerY" secondItem="byQ-mq-xbx" secondAttribute="centerY" id="bMM-2q-EM5"/>
+                                    <constraint firstItem="GzZ-L7-PAw" firstAttribute="leading" secondItem="byQ-mq-xbx" secondAttribute="leading" id="hNw-ov-gky"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -102,6 +102,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="ud5-vu-E9k" secondAttribute="trailing" id="cah-Ef-4bf"/>
                             <constraint firstItem="BqK-2W-GwH" firstAttribute="top" secondItem="ud5-vu-E9k" secondAttribute="bottom" constant="459" id="fFy-kb-aKd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nEn-kv-wAx" secondAttribute="trailing" id="g7m-w2-6Sy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="byQ-mq-xbx" secondAttribute="trailing" id="q5D-w5-K32"/>
                             <constraint firstItem="byQ-mq-xbx" firstAttribute="width" secondItem="ud5-vu-E9k" secondAttribute="width" id="v40-aB-fIT"/>
                             <constraint firstItem="BqK-2W-GwH" firstAttribute="top" secondItem="nEn-kv-wAx" secondAttribute="bottom" constant="512" id="zYv-KU-kZF"/>
                         </constraints>
@@ -109,8 +110,8 @@
                     <navigationItem key="navigationItem" id="ckg-TK-IUo"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="scrollView" destination="byQ-mq-xbx" id="c7R-3f-2Ua"/>
                         <outlet property="stackView" destination="GzZ-L7-PAw" id="o7R-yg-QR2"/>
-                        <outlet property="stackViewHeight" destination="I0v-oO-C3e" id="FNp-ax-85S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dK6-l5-l24" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -197,71 +198,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-975" y="1586"/>
-        </scene>
-        <!--Exercise Tile Controller-->
-        <scene sceneID="JMX-hZ-JoG">
-            <objects>
-                <viewController storyboardIdentifier="exerciseTile" id="B3J-A1-mtD" customClass="ExerciseTileController" customModule="AliveSFU" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ErI-dX-1lU"/>
-                        <viewControllerLayoutGuide type="bottom" id="Gck-ao-HkU"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hkt-s2-AXU" userLabel="view">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bf6-4W-VeF" userLabel="strengthTile">
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exerciseTileBG" translatesAutoresizingMaskIntoConstraints="NO" id="dc5-eb-evC"/>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPc-Y7-egn">
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <size key="shadowOffset" width="0.0" height="0.0"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBl-zw-uUB">
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyY-9A-Gvj" userLabel="Sets">
-                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="15"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dug-h3-bZh" userLabel="Reps">
-                                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="15"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="MyY-9A-Gvj" firstAttribute="width" secondItem="dug-h3-bZh" secondAttribute="width" id="pgT-pN-UXD"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="dc5-eb-evC" firstAttribute="top" secondItem="bf6-4W-VeF" secondAttribute="top" id="9Mn-H4-zmC"/>
-                                    <constraint firstItem="dc5-eb-evC" firstAttribute="width" secondItem="bf6-4W-VeF" secondAttribute="width" id="CC5-hO-FZ0"/>
-                                    <constraint firstItem="iBl-zw-uUB" firstAttribute="bottom" secondItem="dc5-eb-evC" secondAttribute="bottom" constant="-5" id="HA4-Uk-KtJ"/>
-                                    <constraint firstItem="dc5-eb-evC" firstAttribute="centerX" secondItem="bf6-4W-VeF" secondAttribute="centerX" id="LIA-rT-YxS"/>
-                                    <constraint firstItem="iBl-zw-uUB" firstAttribute="width" secondItem="FPc-Y7-egn" secondAttribute="width" id="Pfx-8b-k3v"/>
-                                    <constraint firstItem="iBl-zw-uUB" firstAttribute="height" secondItem="FPc-Y7-egn" secondAttribute="height" id="QoP-Ln-Qbc"/>
-                                    <constraint firstItem="FPc-Y7-egn" firstAttribute="top" secondItem="dc5-eb-evC" secondAttribute="top" constant="5" id="WtE-0o-hj3"/>
-                                    <constraint firstItem="dc5-eb-evC" firstAttribute="centerY" secondItem="bf6-4W-VeF" secondAttribute="centerY" id="elx-is-Htu"/>
-                                    <constraint firstItem="iBl-zw-uUB" firstAttribute="centerX" secondItem="dc5-eb-evC" secondAttribute="centerX" id="jvB-kC-P12"/>
-                                    <constraint firstItem="iBl-zw-uUB" firstAttribute="centerX" secondItem="FPc-Y7-egn" secondAttribute="centerX" id="pyr-89-xhh"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="bf6-4W-VeF" firstAttribute="centerY" secondItem="hkt-s2-AXU" secondAttribute="centerY" id="j79-Zg-GZz"/>
-                            <constraint firstItem="bf6-4W-VeF" firstAttribute="centerX" secondItem="hkt-s2-AXU" secondAttribute="centerX" id="mPf-vF-HZT"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="y7U-Wi-vSb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2665" y="2287"/>
         </scene>
         <!--Exercise Tile View Controller-->
         <scene sceneID="1Nf-jf-dXC">
@@ -449,7 +385,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uu6-sb-f1A" userLabel="Form">
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oTv-6E-8gF">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oTv-6E-8gF" userLabel="Exercise Name Input">
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -566,15 +502,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cancelButton" destination="f3K-Op-Gww" id="LDn-YP-YZz"/>
-                        <outlet property="exerciseNameInput" destination="oTv-6E-8gF" id="M5U-vP-CSS"/>
-                        <outlet property="exerciseNameLabel" destination="NuL-z7-q6V" id="mrn-li-SC2"/>
+                        <outlet property="exerciseNameInput" destination="oTv-6E-8gF" id="jrW-3D-irp"/>
                         <outlet property="repsInput" destination="n4b-FF-bzL" id="A8B-9L-Rob"/>
-                        <outlet property="repsLabel" destination="zxN-zp-hyu" id="uak-ih-AYL"/>
-                        <outlet property="saveButton" destination="8gU-Wi-h8t" id="uab-3Z-XjE"/>
                         <outlet property="setsInput" destination="Kym-YQ-BJI" id="Vj0-wf-TTk"/>
-                        <outlet property="setsLabel" destination="1r8-LX-PyP" id="6he-eB-MuN"/>
-                        <outlet property="strengthLabel" destination="5qF-ZQ-K6R" id="CYh-kF-Iyv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hep-GL-ALU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -827,17 +757,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cancelButton" destination="eiq-Gy-29i" id="hHh-c4-Ice"/>
-                        <outlet property="cardioLabel" destination="nFF-vT-usk" id="Zge-BN-IIU"/>
                         <outlet property="exerciseNameInput" destination="ylB-v7-Jmh" id="QU8-Zr-OIM"/>
-                        <outlet property="exerciseNameLabel" destination="waf-d3-gu2" id="PRO-d6-Vfi"/>
                         <outlet property="resistanceInput" destination="eHb-F3-q9e" id="V8f-kB-EP0"/>
-                        <outlet property="resistanceLabel" destination="feG-7x-u4J" id="l4k-ra-taJ"/>
-                        <outlet property="saveButton" destination="Afn-rC-Of3" id="i0z-sd-fhN"/>
                         <outlet property="speedInput" destination="5GZ-ay-ADx" id="rei-ca-lpF"/>
-                        <outlet property="speedLabel" destination="3Ms-Fm-VFH" id="G0Y-32-YYx"/>
                         <outlet property="timeInput" destination="01X-hu-oTv" id="svM-UB-WcC"/>
-                        <outlet property="timeLabel" destination="btV-RZ-XUx" id="yl0-QM-bRb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aj7-Oe-6Nx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -948,7 +871,6 @@
         <image name="SFURec" width="30" height="30"/>
         <image name="SleepAnalysis" width="30" height="30"/>
         <image name="cardio" width="30" height="30"/>
-        <image name="exerciseTileBG" width="600" height="167"/>
         <image name="strength" width="30" height="30"/>
     </resources>
 </document>

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		41B003981DC5B1FC00762D2E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B003971DC5B1FC00762D2E /* Exercise.swift */; };
+		A91D9D1A1DCC634F00603AC6 /* StrengthTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91D9D191DCC634F00603AC6 /* StrengthTileView.swift */; };
+		A91D9D1E1DCC6C6600603AC6 /* StrengthTileViewUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = A91D9D1D1DCC6C6600603AC6 /* StrengthTileViewUI.xib */; };
 		A953E2281DC97F620059F78E /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A953E2271DC97F620059F78E /* DataHandler.swift */; };
 		A953E22A1DC98F060059F78E /* CardioTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A953E2291DC98F060059F78E /* CardioTileView.swift */; };
 		A953E22C1DCA8EB00059F78E /* CardioTileViewUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = A953E22B1DCA8EB00059F78E /* CardioTileViewUI.xib */; };
@@ -49,6 +51,8 @@
 
 /* Begin PBXFileReference section */
 		41B003971DC5B1FC00762D2E /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		A91D9D191DCC634F00603AC6 /* StrengthTileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrengthTileView.swift; sourceTree = "<group>"; };
+		A91D9D1D1DCC6C6600603AC6 /* StrengthTileViewUI.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StrengthTileViewUI.xib; sourceTree = "<group>"; };
 		A953E2271DC97F620059F78E /* DataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 		A953E2291DC98F060059F78E /* CardioTileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardioTileView.swift; sourceTree = "<group>"; };
 		A953E22B1DCA8EB00059F78E /* CardioTileViewUI.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardioTileViewUI.xib; sourceTree = "<group>"; };
@@ -141,7 +145,9 @@
 				A9AE2C1F1DC17F9900FB5BC0 /* Assets.xcassets */,
 				A9AE2C211DC17F9900FB5BC0 /* LaunchScreen.storyboard */,
 				A98570601DC2E7FF00C3AA32 /* Main.storyboard */,
+				A91D9D191DCC634F00603AC6 /* StrengthTileView.swift */,
 				A953E22B1DCA8EB00059F78E /* CardioTileViewUI.xib */,
+				A91D9D1D1DCC6C6600603AC6 /* StrengthTileViewUI.xib */,
 				A953E2291DC98F060059F78E /* CardioTileView.swift */,
 				A9AE2C241DC17F9900FB5BC0 /* Info.plist */,
 				41B003971DC5B1FC00762D2E /* Exercise.swift */,
@@ -275,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A98570621DC2E7FF00C3AA32 /* Main.storyboard in Resources */,
+				A91D9D1E1DCC6C6600603AC6 /* StrengthTileViewUI.xib in Resources */,
 				A9AE2C231DC17F9900FB5BC0 /* LaunchScreen.storyboard in Resources */,
 				A953E22C1DCA8EB00059F78E /* CardioTileViewUI.xib in Resources */,
 				A9AE2C201DC17F9900FB5BC0 /* Assets.xcassets in Resources */,
@@ -311,6 +318,7 @@
 				A98570641DC315B100C3AA32 /* AddStrengthExercise.swift in Sources */,
 				FA7FB3171DC333BD00781EFB /* ExerciseTileViewController.swift in Sources */,
 				41B003981DC5B1FC00762D2E /* Exercise.swift in Sources */,
+				A91D9D1A1DCC634F00603AC6 /* StrengthTileView.swift in Sources */,
 				A98570661DC315C000C3AA32 /* AddCardioExercise.swift in Sources */,
 				A953E22A1DC98F060059F78E /* CardioTileView.swift in Sources */,
 				A9AE2C191DC17F9900FB5BC0 /* HomePageController.swift in Sources */,

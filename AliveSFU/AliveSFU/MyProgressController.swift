@@ -11,7 +11,7 @@ import CoreData
 
 class MyProgressController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: UIScrollView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,10 @@ class MyProgressController: UIViewController {
             stackView.removeArrangedSubview(view)
             view.removeFromSuperview()
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        scrollView.contentSize = stackView.frame.size
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -55,13 +59,12 @@ class MyProgressController: UIViewController {
             let exerciseArray = DataHandler.getExerciseArray()
 
             for elem in exerciseArray {
-                var tile: CardioTileView
                 if (elem.category == elem.CATEGORY_CARDIO) {
-                    tile = CardioTileView(name: elem.exerciseName, time: elem.time, speed: elem.speed, resistance: elem.resistance)
-                    //tile = CardioTileView()
+                    let tile = CardioTileView(name: elem.exerciseName, time: elem.time, speed: elem.speed, resistance: elem.resistance)
                     stackView.addArrangedSubview(tile)
                 } else {
-
+                    let tile = StrengthTileView(name: elem.exerciseName, sets: elem.sets, reps: elem.reps)
+                    stackView.addArrangedSubview(tile)
                 }
             }
         }

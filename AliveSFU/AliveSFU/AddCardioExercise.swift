@@ -12,18 +12,10 @@ import UIKit
 class AddCardioExercise: UIViewController {
     
     //Mark: Properties
-    
-    @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var cardioLabel: UILabel!
-    @IBOutlet weak var cancelButton: UIButton!
-    
-    @IBOutlet weak var exerciseNameLabel: UILabel!
+
     @IBOutlet weak var exerciseNameInput: UITextField!
-    @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var speedInput: UITextField!
-    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var timeInput: UITextField!
-    @IBOutlet weak var resistanceLabel: UILabel!
     @IBOutlet weak var resistanceInput: UITextField!
     
     override func viewDidLoad() {

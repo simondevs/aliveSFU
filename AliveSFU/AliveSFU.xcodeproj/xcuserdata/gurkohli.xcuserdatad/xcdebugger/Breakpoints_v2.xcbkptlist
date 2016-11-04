@@ -102,11 +102,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AliveSFU/MyProgressController.swift"
-            timestampString = "499913207.222804"
+            timestampString = "499945597.574232"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "populateStackView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -118,11 +118,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AliveSFU/AddCardioExercise.swift"
-            timestampString = "499906434.947944"
+            timestampString = "499935193.18884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "saveButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -166,11 +166,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AliveSFU/AddCardioExercise.swift"
-            timestampString = "499906656.238905"
+            timestampString = "499935193.18884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "saveButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -198,12 +198,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AliveSFU/MyProgressController.swift"
-            timestampString = "499913207.222804"
+            timestampString = "499945597.574232"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "populateStackView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AliveSFU/AddStrengthExercise.swift"
+            timestampString = "499935476.193138"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "saveButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

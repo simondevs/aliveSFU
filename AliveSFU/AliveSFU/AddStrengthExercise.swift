@@ -12,18 +12,10 @@ import UIKit
 class AddStrengthExercise: UIViewController {
     
     //Mark: Properties
-    
-    @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var strengthLabel: UILabel!
-    @IBOutlet weak var exerciseNameLabel: UILabel!
+
     @IBOutlet weak var exerciseNameInput: UITextField!
-    @IBOutlet weak var setsLabel: UILabel!
-   
     @IBOutlet weak var setsInput: UITextField!
-    @IBOutlet weak var repsLabel: UILabel!
     @IBOutlet weak var repsInput: UITextField!
-    @IBOutlet weak var cancelButton: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +33,7 @@ class AddStrengthExercise: UIViewController {
         
         // Check for valid values like max number of characters that can be entered etc.
         // Create a new object
-        if (exerciseNameInput.text != nil && setsInput.text != nil && repsInput.text != nil) {
+        if (exerciseNameInput.text != "" && setsInput.text != "" && repsInput.text != "") {
             let newExercise = Exercise()
             newExercise.category = newExercise.CATEGORY_STRENGTH
             newExercise.exerciseName = exerciseNameInput.text!
