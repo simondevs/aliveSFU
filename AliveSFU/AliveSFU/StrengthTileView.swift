@@ -15,7 +15,7 @@ class StrengthTileView: UIView {
     @IBOutlet weak var sets: UILabel!
     @IBOutlet weak var reps: UILabel!
     
-    let TILE_HEIGHT = CGFloat(75);
+    let TILE_HEIGHT = CGFloat(20);
     let PADDING = CGFloat(20);
     
     override init(frame: CGRect) {

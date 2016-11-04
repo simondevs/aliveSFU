@@ -11,6 +11,7 @@ import CoreData
 
 class MyProgressController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
+
     @IBOutlet weak var scrollView: UIScrollView!
 
     override func viewDidLoad() {
@@ -34,7 +35,9 @@ class MyProgressController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        scrollView.contentSize = stackView.frame.size
+        scrollView.contentSize.height = stackView.frame.height + 150
+        scrollView.isScrollEnabled = true;
+        scrollView.isUserInteractionEnabled = true;
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

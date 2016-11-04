@@ -110,7 +110,7 @@
                     <navigationItem key="navigationItem" id="ckg-TK-IUo"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="scrollView" destination="byQ-mq-xbx" id="c7R-3f-2Ua"/>
+                        <outlet property="scrollView" destination="byQ-mq-xbx" id="jg0-yF-JvU"/>
                         <outlet property="stackView" destination="GzZ-L7-PAw" id="o7R-yg-QR2"/>
                     </connections>
                 </viewController>
