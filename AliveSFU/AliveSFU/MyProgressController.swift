@@ -46,6 +46,7 @@ class MyProgressController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        print(stackView.frame.height)
         scrollView.contentSize.height = stackView.frame.height + 200
         scrollView.isScrollEnabled = true;
         scrollView.isUserInteractionEnabled = true;
@@ -56,11 +57,11 @@ class MyProgressController: UIViewController {
     }
     
     @IBAction func showPopup(_ sender: Any) {
-        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tilePopUpID") as! ExerciseTileViewController
-        self.addChildViewController(popOverVC)
-        popOverVC.view.frame = self.view.frame
-        self.view.addSubview(popOverVC.view)
-        popOverVC.didMove(toParentViewController: self)
+        let popoverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tilePopUpID") as! ExerciseTileViewController
+        self.addChildViewController(popoverVC)
+        popoverVC.view.frame = self.view.frame
+        self.view.addSubview(popoverVC.view)
+        popoverVC.didMove(toParentViewController: self)
     }
     
     func handleSwipes(_ recognizer: UIScreenEdgePanGestureRecognizer){
@@ -87,11 +88,20 @@ class MyProgressController: UIViewController {
             for elem in exerciseArray {
                 if (elem.category == elem.CATEGORY_CARDIO) {
                     let tile = CardioTileView(name: elem.exerciseName, time: elem.time, speed: elem.speed, resistance: elem.resistance)
+
+                    let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
+                    tile.addGestureRecognizer(tapGesture)
+
                     stackView.addArrangedSubview(tile)
                 } else {
                     let tile = StrengthTileView(name: elem.exerciseName, sets: elem.sets, reps: elem.reps)
+
+                    let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
+                    tile.addGestureRecognizer(tapGesture)
+
                     stackView.addArrangedSubview(tile)
                 }
+                print("Stack Height: ", stackView.frame.height)
             }
         }
     }

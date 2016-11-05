@@ -10,9 +10,12 @@ import UIKit
 
 class ExerciseTileViewController: UIViewController {
 
+    @IBOutlet weak var reps: UILabel!
+    @IBOutlet weak var sets: UILabel!
+    @IBOutlet weak var exerciseName: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        self.view.backgroundColor = UIColor.white.withAlphaComponent(0.8)
         self.showAnimate()
         
 

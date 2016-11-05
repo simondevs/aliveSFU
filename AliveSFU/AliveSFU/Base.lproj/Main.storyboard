@@ -73,6 +73,8 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="kmH-zc-yYp" firstAttribute="top" secondItem="ud5-vu-E9k" secondAttribute="top" id="abp-VB-2G7"/>
+                                    <constraint firstItem="kmH-zc-yYp" firstAttribute="leading" secondItem="ud5-vu-E9k" secondAttribute="leading" constant="299" id="mcp-2J-quM"/>
                                     <constraint firstAttribute="trailing" secondItem="kmH-zc-yYp" secondAttribute="trailing" constant="3" id="uHn-UZ-KP9"/>
                                     <constraint firstItem="kmH-zc-yYp" firstAttribute="centerY" secondItem="ud5-vu-E9k" secondAttribute="centerY" id="wk9-Hq-429"/>
                                 </constraints>
@@ -212,50 +214,114 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVw-aT-phy" userLabel="background">
-                                <frame key="frameInset" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVw-aT-phy" userLabel="background">
                                 <connections>
                                     <action selector="closePopUp:" destination="PzC-io-0un" eventType="touchUpInside" id="Xga-YB-U2s"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Stz-aI-jT3" customClass="UIControl" colorLabel="IBBuiltInLabel-Red">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9cp-1W-DQm">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hw-px-aZV">
-                                        <frame key="frameInset" minX="99" minY="190" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Close">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="closePopUp:" destination="PzC-io-0un" eventType="touchUpInside" id="6aP-U4-Zw2"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oh-uD-lFi">
-                                        <frame key="frameInset" minX="99" minY="130" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.95721826890191597" green="1" blue="0.96648468566406409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popover" translatesAutoresizingMaskIntoConstraints="NO" id="lrm-IR-RZz"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLS-o9-AR7" userLabel="exerciseName">
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strength" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GW7-Af-ZFp" userLabel="Strength">
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Jbv-QR-x0C" userLabel="rows">
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jyf-aT-3Ae" userLabel="col2">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sets:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A67-ft-i9q" userLabel="Sets">
+                                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exerciseSets" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vga-pv-B00">
+                                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Vga-pv-B00" firstAttribute="width" secondItem="A67-ft-i9q" secondAttribute="width" id="KKF-3e-MeX"/>
+                                                    <constraint firstItem="A67-ft-i9q" firstAttribute="height" secondItem="Jyf-aT-3Ae" secondAttribute="height" id="jHL-wH-Isp"/>
+                                                    <constraint firstItem="A67-ft-i9q" firstAttribute="height" secondItem="Vga-pv-B00" secondAttribute="height" id="rkh-V5-h57"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOe-GP-qI4" userLabel="col1">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reps:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLH-Hv-rte" userLabel="Reps">
+                                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exerciseReps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIg-s5-QL8">
+                                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="eLH-Hv-rte" firstAttribute="height" secondItem="rIg-s5-QL8" secondAttribute="height" id="KVP-6g-hdB"/>
+                                                    <constraint firstItem="rIg-s5-QL8" firstAttribute="width" secondItem="eLH-Hv-rte" secondAttribute="width" id="Thn-ba-gOa"/>
+                                                    <constraint firstItem="eLH-Hv-rte" firstAttribute="height" secondItem="wOe-GP-qI4" secondAttribute="height" id="zB6-pI-CWQ"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpo-gM-qnI" userLabel="changeExercise">
+                                        <state key="normal" title="Change Exercise" backgroundImage="button">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.059072717478359515" blue="0.17287566322780135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="6v1-TR-vwK"/>
-                                    <constraint firstAttribute="height" constant="344" id="faJ-wK-Fnz"/>
+                                    <constraint firstItem="uLS-o9-AR7" firstAttribute="width" secondItem="9cp-1W-DQm" secondAttribute="width" constant="-20" id="2Tc-1L-pTQ"/>
+                                    <constraint firstItem="Jbv-QR-x0C" firstAttribute="width" secondItem="uLS-o9-AR7" secondAttribute="width" id="7ML-ST-FQJ"/>
+                                    <constraint firstItem="lrm-IR-RZz" firstAttribute="height" secondItem="9cp-1W-DQm" secondAttribute="height" id="CfL-WN-qEc"/>
+                                    <constraint firstItem="uLS-o9-AR7" firstAttribute="centerX" secondItem="9cp-1W-DQm" secondAttribute="centerX" id="Cfg-aH-Re9"/>
+                                    <constraint firstAttribute="bottom" secondItem="Zpo-gM-qnI" secondAttribute="bottom" constant="50" id="Nx3-oF-GhG"/>
+                                    <constraint firstItem="GW7-Af-ZFp" firstAttribute="top" secondItem="uLS-o9-AR7" secondAttribute="bottom" constant="5" id="OMx-6T-vbp"/>
+                                    <constraint firstItem="uLS-o9-AR7" firstAttribute="top" secondItem="9cp-1W-DQm" secondAttribute="top" constant="50" id="WCe-bD-WNT"/>
+                                    <constraint firstItem="Zpo-gM-qnI" firstAttribute="centerX" secondItem="9cp-1W-DQm" secondAttribute="centerX" id="Yia-ed-mLI"/>
+                                    <constraint firstItem="Jbv-QR-x0C" firstAttribute="centerY" secondItem="9cp-1W-DQm" secondAttribute="centerY" id="aXK-gb-jJP"/>
+                                    <constraint firstItem="Jbv-QR-x0C" firstAttribute="centerX" secondItem="9cp-1W-DQm" secondAttribute="centerX" id="ft8-ND-2EO"/>
+                                    <constraint firstItem="Zpo-gM-qnI" firstAttribute="width" secondItem="9cp-1W-DQm" secondAttribute="width" constant="-75" id="kk6-ZG-DXm"/>
+                                    <constraint firstItem="lrm-IR-RZz" firstAttribute="width" secondItem="9cp-1W-DQm" secondAttribute="width" id="oaY-uv-JZ8"/>
+                                    <constraint firstItem="lrm-IR-RZz" firstAttribute="centerX" secondItem="9cp-1W-DQm" secondAttribute="centerX" id="rXm-af-8iS"/>
+                                    <constraint firstItem="GW7-Af-ZFp" firstAttribute="centerX" secondItem="uLS-o9-AR7" secondAttribute="centerX" id="vB1-tW-TgJ"/>
+                                    <constraint firstItem="GW7-Af-ZFp" firstAttribute="width" secondItem="uLS-o9-AR7" secondAttribute="width" constant="-20" id="w5m-kw-XHp"/>
+                                    <constraint firstItem="lrm-IR-RZz" firstAttribute="centerY" secondItem="9cp-1W-DQm" secondAttribute="centerY" id="zH5-AR-ru9"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Stz-aI-jT3" firstAttribute="centerX" secondItem="J5M-1L-Qfk" secondAttribute="centerX" id="8w4-jL-5cW"/>
-                            <constraint firstItem="Stz-aI-jT3" firstAttribute="centerY" secondItem="J5M-1L-Qfk" secondAttribute="centerY" constant="-7.5" id="NP6-hT-lLc"/>
+                            <constraint firstItem="9cp-1W-DQm" firstAttribute="centerY" secondItem="J5M-1L-Qfk" secondAttribute="centerY" id="6c5-0w-b6D"/>
+                            <constraint firstItem="lVw-aT-phy" firstAttribute="height" secondItem="J5M-1L-Qfk" secondAttribute="height" id="ALb-7Y-k01"/>
+                            <constraint firstItem="9cp-1W-DQm" firstAttribute="height" secondItem="J5M-1L-Qfk" secondAttribute="height" constant="-350" id="LAM-03-mm3"/>
+                            <constraint firstItem="9cp-1W-DQm" firstAttribute="centerX" secondItem="J5M-1L-Qfk" secondAttribute="centerX" id="LBb-ZZ-Wg5"/>
+                            <constraint firstItem="lVw-aT-phy" firstAttribute="width" secondItem="J5M-1L-Qfk" secondAttribute="width" id="Owe-el-wKB"/>
+                            <constraint firstItem="lVw-aT-phy" firstAttribute="centerX" secondItem="J5M-1L-Qfk" secondAttribute="centerX" id="hvD-iC-aH7"/>
+                            <constraint firstItem="lVw-aT-phy" firstAttribute="centerY" secondItem="J5M-1L-Qfk" secondAttribute="centerY" id="w7K-lQ-pui"/>
+                            <constraint firstItem="9cp-1W-DQm" firstAttribute="width" secondItem="J5M-1L-Qfk" secondAttribute="width" constant="-120" id="zqM-xR-iJo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="exerciseName" destination="uLS-o9-AR7" id="xux-b3-4DJ"/>
+                        <outlet property="reps" destination="rIg-s5-QL8" id="jex-LK-RMw"/>
+                        <outlet property="sets" destination="Vga-pv-B00" id="yFl-aV-l5J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6v-j4-1Pq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1858" y="2337"/>
+            <point key="canvasLocation" x="-1858.4000000000001" y="2336.5817091454273"/>
         </scene>
         <!--Add New Exercise-->
         <scene sceneID="O0a-ix-Em8">
@@ -909,7 +975,9 @@
         <image name="Plus" width="600" height="167"/>
         <image name="SFURec" width="30" height="30"/>
         <image name="SleepAnalysis" width="30" height="30"/>
+        <image name="button" width="103" height="40"/>
         <image name="cardio" width="30" height="30"/>
+        <image name="popover" width="147" height="224"/>
         <image name="strength" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
