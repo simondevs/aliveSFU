@@ -33,46 +33,16 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
 
     var chartLegend = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"] //x-axis information
     
-    var chartData = [5, 8, 6, 2, 9, 6, 4]//sample data to display bar graph, replace with actual exercise completion numbers
-    //let chartData = DataHandler.countCompletion() //Array that counts completed exercises
+    //var chartData = [5, 8, 6, 2, 9, 6, 4]//sample data to display bar graph, replace with actual exercise completion numbers
+    let chartData = DataHandler.countCompletion() //Array that counts completed exercises
     let SFURed = UIColor(red: 166, green: 25, blue: 46)
     let SFUGrey = UIColor(red: 84, green: 88, blue: 90)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupBarChart()
         
-        //bar chart setup
-        barChart.backgroundColor = UIColor.white
-        barChart.delegate = self
-        barChart.dataSource = self
-        barChart.minimumValue = 0
-        barChart.maximumValue = CGFloat(chartData.max()!) //Max value of a bar in the graph is the max value from the data array.
-                                                          //The height of each bar is relative to this value
-
-        //NOTE: footer and header created below reduce size/space of the actual bar graph.
-        
-        //Creating a footer with appropriate Day labels. Spacing is hard coded unfortunately
-        var footer = UILabel(frame: CGRect(x: 0, y: 0, width: barChart.frame.width, height: 16))
-        footer.textColor = UIColor.black
-        footer.text = "  \(chartLegend[0])     \(chartLegend[1])     \(chartLegend[2])    \(chartLegend[3])    \(chartLegend[4])    \(chartLegend[5])        \(chartLegend[6])"
-        footer.textAlignment = NSTextAlignment.left
-
-        //Creating a header.
-        var header = UILabel(frame: CGRect(x: 0, y: 0, width: barChart.frame.width, height: 16))
-        header.textColor = UIColor.black
-        header.text = "Workout Completion Chart"
-        header.textAlignment = NSTextAlignment.center
-        
-        
-        barChart.footerView = footer
-        barChart.headerView = header
-        
-        
-        
-        barChart.reloadData()
-        
-        barChart.setState(.collapsed, animated: false)
         let leftEdge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector (handleSwipes(_:)))
         
         let rightEdge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector (handleSwipes(_:)))
@@ -201,6 +171,40 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
     
     func createTile() {
         
+    }
+    
+    func setupBarChart()
+    {
+        barChart.backgroundColor = UIColor.white
+        barChart.delegate = self
+        barChart.dataSource = self
+        barChart.minimumValue = 0
+        barChart.maximumValue = CGFloat(chartData.max()!) //Max value of a bar in the graph is the max value from the data array.
+        //The height of each bar is relative to this value
+        
+        //NOTE: footer and header created below reduce size/space of the actual bar graph.
+        
+        //Creating a footer with appropriate Day labels. Spacing is hard coded unfortunately
+        var footer = UILabel(frame: CGRect(x: 0, y: 0, width: barChart.frame.width, height: 16))
+        footer.textColor = UIColor.black
+        footer.text = "  \(chartLegend[0])     \(chartLegend[1])     \(chartLegend[2])    \(chartLegend[3])    \(chartLegend[4])    \(chartLegend[5])        \(chartLegend[6])"
+        footer.textAlignment = NSTextAlignment.left
+        
+        //Creating a header.
+        var header = UILabel(frame: CGRect(x: 0, y: 0, width: barChart.frame.width, height: 16))
+        header.textColor = UIColor.black
+        header.text = "Workout Completion Chart"
+        header.textAlignment = NSTextAlignment.center
+        
+        
+        barChart.footerView = footer
+        barChart.headerView = header
+        
+        
+        
+        barChart.reloadData()
+        
+        barChart.setState(.collapsed, animated: false)
     }
 
 }
