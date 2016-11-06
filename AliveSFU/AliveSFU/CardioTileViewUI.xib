@@ -9,16 +9,16 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardioTileView" customModule="AliveSFU" customModuleProvider="target">
             <connections>
                 <outlet property="exerciseName" destination="R7J-Yq-Fuo" id="FzL-y0-rge"/>
-                <outlet property="resistance" destination="P1F-nk-FR2" id="Ka6-84-MUc"/>
+                <outlet property="resistance" destination="Op4-uc-NKt" id="h6h-6q-RKS"/>
                 <outlet property="speed" destination="Fpb-hB-s2r" id="b6u-BV-PfH"/>
-                <outlet property="time" destination="MPc-BX-oon" id="dlq-9I-j9n"/>
+                <outlet property="time" destination="SRW-Ib-esE" id="veM-Xw-jCm"/>
                 <outlet property="view" destination="iN0-l3-epB" id="wab-ZM-h4D"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleAspectFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+            <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <view tag="200" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfQ-bi-ZbF" userLabel="cardioTile">
                     <subviews>
@@ -31,29 +31,56 @@
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2nT-jP-8iE">
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fpb-hB-s2r">
-                                    <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="15"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resistance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1F-nk-FR2">
-                                    <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="15"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPc-BX-oon">
-                                    <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="15"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WvT-Za-LmV">
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5V-lm-ilR">
+                                            <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="15"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="xx" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fpb-hB-s2r">
+                                            <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="15"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hQQ-KF-mNe">
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Resistance:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1F-nk-FR2">
+                                            <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="15"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Op4-uc-NKt">
+                                            <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="15"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="i0p-Sc-cna">
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPc-BX-oon">
+                                            <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="15"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="xx" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRW-Ib-esE">
+                                            <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="15"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="P1F-nk-FR2" firstAttribute="width" secondItem="MPc-BX-oon" secondAttribute="width" id="2Oe-3e-PuP"/>
-                                <constraint firstItem="Fpb-hB-s2r" firstAttribute="width" secondItem="P1F-nk-FR2" secondAttribute="width" id="2wi-pP-kWJ"/>
+                                <constraint firstItem="WvT-Za-LmV" firstAttribute="leading" secondItem="2nT-jP-8iE" secondAttribute="leading" id="PBZ-uk-WGl"/>
+                                <constraint firstItem="WvT-Za-LmV" firstAttribute="width" secondItem="hQQ-KF-mNe" secondAttribute="width" id="SGR-H2-ubc"/>
+                                <constraint firstItem="hQQ-KF-mNe" firstAttribute="width" secondItem="i0p-Sc-cna" secondAttribute="width" id="yaX-Yy-27o"/>
                             </constraints>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="2nT-jP-8iE" firstAttribute="width" secondItem="sZA-QU-E6E" secondAttribute="width" id="2GJ-9A-HYc"/>
                         <constraint firstItem="R7J-Yq-Fuo" firstAttribute="centerX" secondItem="sZA-QU-E6E" secondAttribute="centerX" id="2Jn-m7-ONL"/>
@@ -67,14 +94,17 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="kfQ-bi-ZbF" secondAttribute="bottom" id="Ub8-kq-9YF"/>
-                <constraint firstItem="kfQ-bi-ZbF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="WtJ-IH-HQx"/>
-                <constraint firstAttribute="trailing" secondItem="kfQ-bi-ZbF" secondAttribute="trailing" constant="10" id="iSn-mN-kDQ"/>
-                <constraint firstItem="kfQ-bi-ZbF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="pdU-gC-0LC"/>
+                <constraint firstItem="kfQ-bi-ZbF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WtJ-IH-HQx"/>
+                <constraint firstAttribute="trailing" secondItem="kfQ-bi-ZbF" secondAttribute="trailing" id="iSn-mN-kDQ"/>
+                <constraint firstItem="kfQ-bi-ZbF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pdU-gC-0LC"/>
             </constraints>
-            <point key="canvasLocation" x="34" y="96"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="399" y="-206"/>
         </view>
     </objects>
     <resources>
