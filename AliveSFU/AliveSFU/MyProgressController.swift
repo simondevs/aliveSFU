@@ -3,26 +3,50 @@
 //  AliveSFU
 //
 //  Created by Gur Kohli on 2016-10-26.
-//  Developers: Liam O'Shaughnessy
+//  Developers: Liam O'Shaughnessy, Vivek Sharma
 //  Copyright © 2016 SimonDevs. All rights reserved.
+//  Partial functionality adapted from a third party resource: https://github.com/thefirstnikhil/chartingdemo
 //
 
 import UIKit
 import CoreData
+import JBChart
 
-class MyProgressController: UIViewController {
-    //@IBOutlet weak var stackView: UIStackView!
+//An extension to UIColor to allow the creation of our own colours using RGB numbers
+extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int) {
+        let newRed = CGFloat(red)/255
+        let newGreen = CGFloat(green)/255
+        let newBlue = CGFloat(blue)/255
+        
+        self.init(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
+    }
+}
 
+
+    //3rd party libraries added here
+class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSource {
+
+    @IBOutlet weak var barChart: JBBarChartView! //The view the bar chart rests in
+    @IBOutlet weak var informationLabel: UILabel! //The label that display info when a bar is tapped
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
-
-    let CATEGORY_CARDIO_VIEW_TAG = 100
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
+    
+    let CATEGORY_CARDIO_VIEW_TAG = 100
     let CATEGORY_STRENGTH_VIEW_TAG = 200
     let TILE_HEIGHT = CGFloat(80)
     
+    var chartLegend = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"] //x-axis information
+    //let chartData = [5, 8, 6, 2, 9, 6, 4]//sample data to display bar graph, replace with actual exercise completion numbers
+    let chartData = DataHandler.countCompletion() //Array that counts completed exercises
+    let SFURed = UIColor(red: 166, green: 25, blue: 46)
+    let SFUGrey = UIColor(red: 84, green: 88, blue: 90)
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupBarChart()
         
         let leftEdge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector (handleSwipes(_:)))
         
@@ -35,28 +59,64 @@ class MyProgressController: UIViewController {
         view.addGestureRecognizer(rightEdge)
         // Do any additional setup after loading the view, typically from a nib.
         for view in contentView.subviews {
-          //  stackView.removeArrangedSubview(view)
             view.removeFromSuperview()
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    
+        barChart.reloadData()
+        _ = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(MyProgressController.showChart), userInfo: nil, repeats: false)
+    }
+
+    
     override func viewWillAppear(_ animated: Bool) {
         populateStackView()
-        
-        //let newContentFrame = CGRect(x: contentView.frame.origin.x, y: contentView.frame.origin.y, width: contentView.frame.width, height: CGFloat(contentView.subviews.count) * TILE_HEIGHT)
-        contentViewHeight.constant = CGFloat(contentView.subviews.count) * TILE_HEIGHT
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        print("Main view: ", self.view.subviews.count)
+	contentViewHeight.constant = CGFloat(contentView.subviews.count) * TILE_HEIGHT
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         for view in contentView.subviews {
-            //stackView.removeArrangedSubview(view)
             view.removeFromSuperview()
         }
     }
+    
+    func hideChart() {
+        barChart.setState(.collapsed, animated: true)
+    }
+    
+    func showChart() {
+        barChart.setState(.expanded, animated: true)
+    }
+    
+
+    func numberOfBars(in barChartView: JBBarChartView!) -> UInt {
+        return UInt(chartData.count)
+    }
+    
+    func barChartView(_ barChartView: JBBarChartView!, heightForBarViewAt index: UInt) -> CGFloat {
+        return CGFloat(chartData[Int(index)])
+    }
+    
+    func barChartView(_ barChartView: JBBarChartView!, colorForBarViewAt index: UInt) -> UIColor! {
+        return SFURed
+        
+    }
+
+    func barChartView(_ barChartView: JBBarChartView!, didSelectBarAt index: UInt) {
+        let data = chartData[Int(index)]
+        let key = chartLegend[Int(index)]
+        
+        informationLabel.text = "Workouts completed on \(key): \(data)"
+        //Maybe change the bar graphs to a percentage, so that if all workouts are completed on that day, the bar is a maximum height.
+    }
+    
+    //Uncomment this if you wish for the labels to go away once a bar on the graph is unselected
+    /*func didDeselect(_ barChartView: JBBarChartView!) {
+        informationLabel.text = ""
+    }*/
+    
     
     override func viewDidLayoutSubviews() {
         scrollView.contentSize.height = CGFloat(contentView.subviews.count) * TILE_HEIGHT
@@ -78,12 +138,10 @@ class MyProgressController: UIViewController {
             self.view.addSubview(popoverVC.view)
             
             let tile = sender.view as! CardioTileView
-            
             popoverVC.exerciseName.text = tile.exerciseName.text
             popoverVC.time.text = tile.time.text
             popoverVC.speed.text = tile.speed.text
             popoverVC.resistance.text = tile.resistance.text
-            
             popoverVC.didMove(toParentViewController: self)
 
         } else if (sender.view?.tag == CATEGORY_STRENGTH_VIEW_TAG) {
@@ -93,13 +151,11 @@ class MyProgressController: UIViewController {
             self.view.addSubview(popoverVC.view)
             
             let tile = sender.view as! StrengthTileView
-            
             popoverVC.exerciseName.text = tile.exerciseName.text
             popoverVC.sets.text = tile.sets.text
             popoverVC.reps.text = tile.reps.text
             popoverVC.didMove(toParentViewController: self)
         }
-        print("After readonly: ", self.view.subviews.count)
     }
     
     func handleSwipes(_ recognizer: UIScreenEdgePanGestureRecognizer){
@@ -129,30 +185,50 @@ class MyProgressController: UIViewController {
                 
                 if (elem.category == elem.CATEGORY_CARDIO) {
                     let tile = CardioTileView(frame: frame, name: elem.exerciseName, time: elem.time, speed: elem.speed, resistance: elem.resistance)
-
+                    tile.tag = CATEGORY_CARDIO_VIEW_TAG
                     let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
                     tile.addGestureRecognizer(tapGesture)
                     
-                    tile.tag = CATEGORY_CARDIO_VIEW_TAG
-
                     contentView.addSubview(tile)
                 } else {
                     let tile = StrengthTileView(frame: frame, name: elem.exerciseName, sets: elem.sets, reps: elem.reps)
-
+                    tile.tag = CATEGORY_STRENGTH_VIEW_TAG
                     let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
                     tile.addGestureRecognizer(tapGesture)
                     
-                    tile.tag = CATEGORY_STRENGTH_VIEW_TAG
-
                     contentView.addSubview(tile)
                 }
-                //print("Stack Height: ", stackView.frame.height)
             }
         }
     }
-    
-    func createTile() {
+    func setupBarChart()
+    {
+        barChart.backgroundColor = UIColor.white
+        barChart.delegate = self
+        barChart.dataSource = self
+        barChart.minimumValue = 0
+        barChart.maximumValue = CGFloat(chartData.max()!) //Max value of a bar in the graph is the max value from the data array.
+        //The height of each bar is relative to this value
         
+        //NOTE: footer and header created below reduce size/space of the actual bar graph.
+        
+        //Creating a footer with appropriate Day labels. Spacing is hard coded unfortunately
+        let footer = UILabel(frame: CGRect(x: 0, y: 0, width: barChart.frame.width, height: 16))
+        footer.textColor = UIColor.black
+        footer.text = "  \(chartLegend[0])     \(chartLegend[1])     \(chartLegend[2])    \(chartLegend[3])    \(chartLegend[4])    \(chartLegend[5])        \(chartLegend[6])"
+        footer.textAlignment = NSTextAlignment.left
+        
+        //Creating a header.
+        let header = UILabel(frame: CGRect(x: 0, y: 0, width: barChart.frame.width, height: 16))
+        header.textColor = UIColor.black
+        header.text = "Workout Completion Chart"
+        header.textAlignment = NSTextAlignment.center
+        
+        barChart.footerView = footer
+        barChart.headerView = header
+        barChart.reloadData()
+        barChart.setState(.collapsed, animated: false)
     }
+
 }
 
