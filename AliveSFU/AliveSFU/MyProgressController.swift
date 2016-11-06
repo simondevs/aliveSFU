@@ -49,7 +49,6 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         setupBarChart()
         
         let leftEdge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector (handleSwipes(_:)))
-        
         let rightEdge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector (handleSwipes(_:)))
         
         leftEdge.edges = .left
@@ -122,6 +121,7 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         scrollView.contentSize.height = CGFloat(contentView.subviews.count) * TILE_HEIGHT
         scrollView.isScrollEnabled = true;
         scrollView.isUserInteractionEnabled = true;
+        scrollView.canCancelContentTouches = true;
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -158,6 +158,14 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         }
     }
     
+    func tileSwipeGesture(_ sender: UISwipeGestureRecognizer) {
+        if (sender.direction == .left) {
+            print("Left swipe on tile recognized")
+        } else if (sender.direction == .right) {
+            print("Right swipe on tile recognized")
+        }
+    }
+    
     func handleSwipes(_ recognizer: UIScreenEdgePanGestureRecognizer){
         if (recognizer.state == .recognized) {
             if(recognizer.edges == .left) {
@@ -186,8 +194,19 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
                 if (elem.category == elem.CATEGORY_CARDIO) {
                     let tile = CardioTileView(frame: frame, name: elem.exerciseName, time: elem.time, speed: elem.speed, resistance: elem.resistance)
                     tile.tag = CATEGORY_CARDIO_VIEW_TAG
+                    
                     let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
                     tile.addGestureRecognizer(tapGesture)
+                    
+                    let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector (self.tileSwipeGesture(_:)))
+                    swipeLeft.direction = .left
+                    tile.addGestureRecognizer(swipeLeft)
+                    scrollView.panGestureRecognizer.require(toFail: swipeLeft)
+                    
+                    let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector (self.tileSwipeGesture(_:)))
+                    swipeRight.direction = .right
+                    tile.addGestureRecognizer(swipeRight)
+                    scrollView.panGestureRecognizer.require(toFail: swipeRight)
                     
                     contentView.addSubview(tile)
                 } else {
@@ -195,6 +214,16 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
                     tile.tag = CATEGORY_STRENGTH_VIEW_TAG
                     let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
                     tile.addGestureRecognizer(tapGesture)
+                    
+                    let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector (self.tileSwipeGesture(_:)))
+                    swipeLeft.direction = .left
+                    tile.addGestureRecognizer(swipeLeft)
+                    scrollView.panGestureRecognizer.require(toFail: swipeLeft)
+                    
+                    let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector (self.tileSwipeGesture(_:)))
+                    swipeRight.direction = .right
+                    tile.addGestureRecognizer(swipeRight)
+                    scrollView.panGestureRecognizer.require(toFail: swipeRight)
                     
                     contentView.addSubview(tile)
                 }
