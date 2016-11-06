@@ -125,13 +125,13 @@
                     <navigationItem key="navigationItem" id="ckg-TK-IUo"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-<<<<<<< HEAD
                         <outlet property="barChart" destination="nEn-kv-wAx" id="hrL-yX-UNV"/>
-                        <outlet property="informationLabel" destination="n95-43-dKx" id="TEa-d7-atZ"/>
-=======
+<<<<<<< dd703b3997209149430d7358fbb6fd7fef4abf35
                         <outlet property="contentView" destination="EaD-Ml-CdW" id="iEO-Ws-BLt"/>
                         <outlet property="contentViewHeight" destination="YU2-20-cO2" id="ZdW-7l-sgP"/>
->>>>>>> 2501ed84110bfdd44aeb86115b8e0b90cd345dc6
+=======
+>>>>>>> Added graph on my progress page, but it is not yet connected to actual app data. That needs to be implemented before this graph can show it, obviously. Also, maybe the graph should be adjusted to show a percentage of exercises completed for that day, instead of just exercises completed, that way, the user can have a goal of making all bars reach maximum height.
+                        <outlet property="informationLabel" destination="n95-43-dKx" id="TEa-d7-atZ"/>
                         <outlet property="scrollView" destination="byQ-mq-xbx" id="jg0-yF-JvU"/>
                     </connections>
                 </viewController>
@@ -1391,6 +1391,10 @@ AAAB+g
         <image name="FitnessBuddy" width="30" height="30"/>
         <image name="Home" width="30" height="30"/>
         <image name="MyProgress" width="30" height="30"/>
+<<<<<<< dd703b3997209149430d7358fbb6fd7fef4abf35
+        <image name="Plus" width="147" height="224"/>
+=======
+>>>>>>> Added graph on my progress page, but it is not yet connected to actual app data. That needs to be implemented before this graph can show it, obviously. Also, maybe the graph should be adjusted to show a percentage of exercises completed for that day, instead of just exercises completed, that way, the user can have a goal of making all bars reach maximum height.
         <image name="SFURec" width="30" height="30"/>
         <image name="SleepAnalysis" width="30" height="30"/>
         <image name="button" width="103" height="40"/>

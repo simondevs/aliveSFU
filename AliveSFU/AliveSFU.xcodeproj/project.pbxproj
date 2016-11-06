@@ -97,6 +97,20 @@
 		};
 /* End PBXCopyFilesBuildPhase section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C699DB9F1DCDD7E50088CAEE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C699DB991DCDD7E50088CAEE /* JBChart.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		41B003971DC5B1FC00762D2E /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		A90440971DCEDF2700C77EEE /* PopoverCardioTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverCardioTile.swift; sourceTree = "<group>"; };

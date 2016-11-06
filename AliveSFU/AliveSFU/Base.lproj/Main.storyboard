@@ -1372,7 +1372,7 @@
         <image name="FitnessBuddy" width="30" height="30"/>
         <image name="Home" width="30" height="30"/>
         <image name="MyProgress" width="30" height="30"/>
-        <image name="Plus" width="147" height="224"/>
+        <image name="Plus" width="30" height="30"/>
         <image name="SFURec" width="30" height="30"/>
         <image name="SleepAnalysis" width="30" height="30"/>
         <image name="button" width="103" height="40"/>
