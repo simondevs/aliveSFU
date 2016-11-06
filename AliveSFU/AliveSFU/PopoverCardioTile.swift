@@ -15,9 +15,21 @@ class PopoverCardioTile: UIViewController {
     @IBOutlet weak var speed: UILabel!
     @IBOutlet weak var resistance: UILabel!
     
+    @IBOutlet weak var exerciseNameTextField: UITextField!
+    @IBOutlet weak var timeTextField: UITextField!
+    @IBOutlet weak var speedTextField: UITextField!
+    @IBOutlet weak var resistanceTextField: UITextField!
+    
+    @IBOutlet weak var editableButtons: UIStackView!
+    @IBOutlet weak var changeExerButton: UIButton!
+    
+    @IBOutlet weak var staticRows: UIStackView!
+    @IBOutlet weak var editableRows: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        showEditable(yes: false)
         self.showAnimate()
         
         
@@ -28,9 +40,26 @@ class PopoverCardioTile: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func changeExercise(_ sender: AnyObject) {
+            exerciseNameTextField.text = exerciseName.text
+        timeTextField.text = time.text
+        speedTextField.text = speed.text
+        resistanceTextField.text = resistance.text
+        showEditable(yes: true)
+    }
 
     @IBAction func closePopUp(_ sender: Any) {
         self.removeAnimate()
+    }
+    
+    @IBAction func deleteButton(_ sender: AnyObject) {
+    }
+    
+    @IBAction func cancelButton(_ sender: AnyObject) {
+        showEditable(yes: false)
+    }
+    
+    @IBAction func saveButton(_ sender: AnyObject) {
     }
     
     func showAnimate()
@@ -55,6 +84,16 @@ class PopoverCardioTile: UIViewController {
                     self.view.removeFromSuperview()
                 }
         });
+    }
+    
+    func showEditable(yes: Bool) {
+        exerciseName.isHidden = yes
+        staticRows.isHidden = yes
+        changeExerButton.isHidden = yes
+        
+        editableRows.isHidden = !yes;
+        exerciseNameTextField.isHidden = !yes;
+        editableButtons.isHidden = !yes;
     }
     
     /*

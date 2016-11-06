@@ -47,6 +47,10 @@ class MyProgressController: UIViewController {
         contentViewHeight.constant = CGFloat(contentView.subviews.count) * TILE_HEIGHT
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        print("Main view: ", self.view.subviews.count)
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
         for view in contentView.subviews {
             //stackView.removeArrangedSubview(view)
@@ -70,6 +74,7 @@ class MyProgressController: UIViewController {
             let popoverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "cardioTilePopover") as! PopoverCardioTile
             self.addChildViewController(popoverVC)
             popoverVC.view.frame = self.view.frame
+            popoverVC.view.tag = 600
             self.view.addSubview(popoverVC.view)
             
             let tile = sender.view as! CardioTileView
@@ -94,6 +99,7 @@ class MyProgressController: UIViewController {
             popoverVC.reps.text = tile.reps.text
             popoverVC.didMove(toParentViewController: self)
         }
+        print("After readonly: ", self.view.subviews.count)
     }
     
     func handleSwipes(_ recognizer: UIScreenEdgePanGestureRecognizer){
