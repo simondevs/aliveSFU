@@ -25,6 +25,7 @@ extension UIColor {
 
     //3rd party libraries added here
 class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSource {
+<<<<<<< 4d08d346d75ba764e653aa2995f3000027a2283d
 
     @IBOutlet weak var barChart: JBBarChartView! //The view the bar chart rests in
     @IBOutlet weak var informationLabel: UILabel! //The label that display info when a bar is tapped
@@ -36,17 +37,20 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
     let CATEGORY_STRENGTH_VIEW_TAG = 200
     let TILE_HEIGHT = CGFloat(80)
     
-<<<<<<< ff079f29058e99072e6ce7cdd8d4dcef5adec5b5
+<<<<<<< 205a979783b32b5d8a6bd4ca533184a177765eaf
     var chartLegend = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"] //x-axis information
     //let chartData = [5, 8, 6, 2, 9, 6, 4]//sample data to display bar graph, replace with actual exercise completion numbers
-    let chartData = DataHandler.countCompletion() //Array that counts completed exercises
 =======
-    var chartData = [5, 8, 6, 2, 9, 6, 4]//sample data to display bar graph, replace with actual exercise completion numbers
-    //let chartData = DataHandler.countCompletion() //Array that counts completed exercises
->>>>>>> May some colouring changes recommended by Gur. Removed comments in the interest of removing clutter.
+<<<<<<< 9d01d479b85a9fc653550f70032009cdcc0b8aa1
+    var chartLegend = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"] //x-axis information
+    //let chartData = [5, 8, 6, 2, 9, 6, 4]//sample data to display bar graph, replace with actual exercise completion numbers
+=======
+    //var chartData = [5, 8, 6, 2, 9, 6, 4]//sample data to display bar graph, replace with actual exercise completion numbers
+>>>>>>> May some colouring changes recommended by Gur. Removed comments in the interest of removing clutter. Also, the setting up of the bar chart was implemented in a function that was called in viewdidload instead of clumping all the code in viewdidload.
+>>>>>>> May some colouring changes recommended by Gur. Removed comments in the interest of removing clutter. Also, the setting up of the bar chart was implemented in a function that was called in viewdidload instead of clumping all the code in viewdidload.
+    let chartData = DataHandler.countCompletion() //Array that counts completed exercises
     let SFURed = UIColor(red: 166, green: 25, blue: 46)
     let SFUGrey = UIColor(red: 84, green: 88, blue: 90)
-<<<<<<< 1c74327f42569585123dade4af1f033d78d9a943
 =======
     @IBOutlet weak var stackView: UIStackView!
     let chartData = DataHandler.countCompletion() //Array that counts completed exercises
@@ -54,23 +58,23 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
     let SFURed = UIColor(red: 166, green: 25, blue: 46) //Creating a custom colour to match the SFU official red colour using the UIColor extension created above
     let SFUGrey = UIColor(red: 84, green: 88, blue: 90)//Customly create SFUGrey
 >>>>>>> Added a field in exercise class for completion of an exercise. Implemented a method in DataHandler to return an array of how many exercises have been completed in the days of the week. Used that method to calculate the height of the bars in the bar graphs. So now the bars in the bar graph should accurately show how many exercises are completed when the app is run.
-=======
->>>>>>> May some colouring changes recommended by Gur. Removed comments in the interest of removing clutter.
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-<<<<<<< ff079f29058e99072e6ce7cdd8d4dcef5adec5b5
+<<<<<<< 205a979783b32b5d8a6bd4ca533184a177765eaf
+<<<<<<< 4d08d346d75ba764e653aa2995f3000027a2283d
         setupBarChart()
+        
 =======
+        view.backgroundColor = UIColor.lightGray // changing the colour of whole view
         
         //bar chart setup
-        barChart.backgroundColor = UIColor.white
+        barChart.backgroundColor = SFURed //adjust colour of bars in graph
         barChart.delegate = self
         barChart.dataSource = self
         barChart.minimumValue = 0
-        barChart.maximumValue = CGFloat(chartData.max()!) //Max value of a bar in the graph is the max value from the data array.
-                                                          //The height of each bar is relative to this value
+        barChart.maximumValue = CGFloat(chartData.max()!) // max value of a bar in the graph is the max value from the data array. The visual height of each bar is relative to this value
 
         //NOTE: footer and header created below reduce size/space of the actual bar graph.
         
@@ -83,11 +87,23 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         //Creating a header.
         var header = UILabel(frame: CGRect(x: 0, y: 0, width: barChart.frame.width, height: 16))
         header.textColor = UIColor.black
+        //header.font = UIFont.systemFont(ofSize: 24)
         header.text = "Workout Completion Chart"
         header.textAlignment = NSTextAlignment.center
         
->>>>>>> May some colouring changes recommended by Gur. Removed comments in the interest of removing clutter.
+=======
+        setupBarChart()
+>>>>>>> May some colouring changes recommended by Gur. Removed comments in the interest of removing clutter. Also, the setting up of the bar chart was implemented in a function that was called in viewdidload instead of clumping all the code in viewdidload.
         
+        barChart.footerView = footer
+        barChart.headerView = header
+        
+        
+        
+        barChart.reloadData()
+        
+        barChart.setState(.collapsed, animated: false)
+>>>>>>> Added a field in exercise class for completion of an exercise. Implemented a method in DataHandler to return an array of how many exercises have been completed in the days of the week. Used that method to calculate the height of the bars in the bar graphs. So now the bars in the bar graph should accurately show how many exercises are completed when the app is run.
         let leftEdge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector (handleSwipes(_:)))
         let rightEdge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector (handleSwipes(_:)))
         
@@ -116,7 +132,16 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+<<<<<<< 4d08d346d75ba764e653aa2995f3000027a2283d
         for view in contentView.subviews {
+=======
+
+        super.viewDidDisappear(animated)
+        hideChart()
+
+        for view in stackView.subviews {
+            stackView.removeArrangedSubview(view)
+>>>>>>> Added a field in exercise class for completion of an exercise. Implemented a method in DataHandler to return an array of how many exercises have been completed in the days of the week. Used that method to calculate the height of the bars in the bar graphs. So now the bars in the bar graph should accurately show how many exercises are completed when the app is run.
             view.removeFromSuperview()
         }
     }
@@ -148,7 +173,11 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         //Maybe change the bar graphs to a percentage, so that if all workouts are completed on that day, the bar is a maximum height.
     }
     
+<<<<<<< 4d08d346d75ba764e653aa2995f3000027a2283d
     //Uncomment this if you wish for the labels to go away once a bar on the graph is unselected
+=======
+    //uncomment this if you wish for the labels to go away once a bar on the graph is unselected
+>>>>>>> Added a field in exercise class for completion of an exercise. Implemented a method in DataHandler to return an array of how many exercises have been completed in the days of the week. Used that method to calculate the height of the bars in the bar graphs. So now the bars in the bar graph should accurately show how many exercises are completed when the app is run.
     /*func didDeselect(_ barChartView: JBBarChartView!) {
         informationLabel.text = ""
     }*/
@@ -293,6 +322,40 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         barChart.footerView = footer
         barChart.headerView = header
         barChart.reloadData()
+        barChart.setState(.collapsed, animated: false)
+    }
+    
+    func setupBarChart()
+    {
+        barChart.backgroundColor = UIColor.white
+        barChart.delegate = self
+        barChart.dataSource = self
+        barChart.minimumValue = 0
+        barChart.maximumValue = CGFloat(chartData.max()!) //Max value of a bar in the graph is the max value from the data array.
+        //The height of each bar is relative to this value
+        
+        //NOTE: footer and header created below reduce size/space of the actual bar graph.
+        
+        //Creating a footer with appropriate Day labels. Spacing is hard coded unfortunately
+        var footer = UILabel(frame: CGRect(x: 0, y: 0, width: barChart.frame.width, height: 16))
+        footer.textColor = UIColor.black
+        footer.text = "  \(chartLegend[0])     \(chartLegend[1])     \(chartLegend[2])    \(chartLegend[3])    \(chartLegend[4])    \(chartLegend[5])        \(chartLegend[6])"
+        footer.textAlignment = NSTextAlignment.left
+        
+        //Creating a header.
+        var header = UILabel(frame: CGRect(x: 0, y: 0, width: barChart.frame.width, height: 16))
+        header.textColor = UIColor.black
+        header.text = "Workout Completion Chart"
+        header.textAlignment = NSTextAlignment.center
+        
+        
+        barChart.footerView = footer
+        barChart.headerView = header
+        
+        
+        
+        barChart.reloadData()
+        
         barChart.setState(.collapsed, animated: false)
     }
 
