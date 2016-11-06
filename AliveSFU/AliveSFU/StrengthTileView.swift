@@ -22,22 +22,22 @@ class StrengthTileView: UIView {
         super.init(frame: frame);
     }
     
-    init(name: String, sets: String, reps: String) {
-        self.init()
+    init(frame: CGRect, name: String, sets: String, reps: String) {
+        super.init(frame:frame)
         
         Bundle.main.loadNibNamed("StrengthTileViewUI", owner: self, options: nil);
         self.addSubview(view);    // adding the top level view to the view hierarchy
         
         self.exerciseName.text = name;
-        self.sets.text = "Sets: " + sets;
-        self.reps.text = "Reps: " + reps;
+        self.sets.text = sets;
+        self.reps.text = reps;
     }
     
     override func didMoveToSuperview() {
         if (superview != nil) {
             let yC = superview!.frame.origin.y + (TILE_HEIGHT * CGFloat(superview!.subviews.count - 1))
             
-            view.frame = CGRect(x: superview!.frame.origin.x, y: yC, width: self.frame.width, height: TILE_HEIGHT)
+           // view.frame = CGRect(x: superview!.frame.origin.x, y: yC, width: self.frame.width, height: TILE_HEIGHT)
             //self.frame = CGRect(x: superview!.frame.origin.x, y: yC, width: self.frame.width, height: TILE_HEIGHT)
             print("XCoord:", yC, " Count: ", superview!.subviews.count, " Height:", view.frame.height)
         }
