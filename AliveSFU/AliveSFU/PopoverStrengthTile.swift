@@ -1,5 +1,5 @@
 //
-//  ExerciseTileViewController.swift
+//  PopoverStrengthTile.swift
 //  AliveSFU
 //
 //  Created by Liam O'Shaughnessy on 2016-10-28.
@@ -8,11 +8,25 @@
 
 import UIKit
 
-class ExerciseTileViewController: UIViewController {
+class PopoverStrengthTile: UIViewController {
 
+    @IBOutlet weak var reps: UILabel!
+    @IBOutlet weak var sets: UILabel!
+    @IBOutlet weak var exerciseName: UILabel!
+    
+    @IBOutlet weak var exerciseNameTextField: UITextField!
+    @IBOutlet weak var setsTextField: UITextField!
+    @IBOutlet weak var repsTextField: UITextField!
+    
+    @IBOutlet weak var editableRows: UIStackView!
+    @IBOutlet weak var staticRows: UIStackView!
+    @IBOutlet weak var changeExerButton: UIButton!
+    @IBOutlet weak var editableButtons: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        self.view.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        showEditable(yes: false)
         self.showAnimate()
         
 
@@ -26,6 +40,24 @@ class ExerciseTileViewController: UIViewController {
 
     @IBAction func closePopUp(_ sender: Any) {
         self.removeAnimate()
+    }
+    
+    @IBAction func changeExercise(_ sender: AnyObject) {
+        exerciseNameTextField.text = exerciseName.text
+        setsTextField.text = sets.text
+        repsTextField.text = reps.text
+        showEditable(yes: true)
+    }
+    
+    
+    @IBAction func deleteButton(_ sender: AnyObject) {
+    }
+    
+    @IBAction func cancelButton(_ sender: AnyObject) {
+        showEditable(yes: false)
+    }
+    
+    @IBAction func saveButton(_ sender: AnyObject) {
     }
 
     func showAnimate()
@@ -52,6 +84,15 @@ class ExerciseTileViewController: UIViewController {
         });
     }
     
+    func showEditable(yes: Bool) {
+        exerciseName.isHidden = yes
+        staticRows.isHidden = yes
+        changeExerButton.isHidden = yes
+        
+        editableRows.isHidden = !yes;
+        exerciseNameTextField.isHidden = !yes;
+        editableButtons.isHidden = !yes;
+    }
     /*
     // MARK: - Navigation
 
