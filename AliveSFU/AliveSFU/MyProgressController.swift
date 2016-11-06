@@ -33,22 +33,22 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
 
     var chartLegend = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"] //x-axis information
     
-    //var chartData = [5, 8, 6, 2, 9, 6, 4]//sample data to display bar graph, replace with actual exercise completion numbers
-    let chartData = DataHandler.countCompletion() // This will count completed exercises on the day and make the graph show the results
-    let SFURed = UIColor(red: 166, green: 25, blue: 46) //Creating a custom colour to match the SFU official red colour using the UIColor extension created above
-    let SFUGrey = UIColor(red: 84, green: 88, blue: 90)//Customly create SFUGrey
+    var chartData = [5, 8, 6, 2, 9, 6, 4]//sample data to display bar graph, replace with actual exercise completion numbers
+    //let chartData = DataHandler.countCompletion() //Array that counts completed exercises
+    let SFURed = UIColor(red: 166, green: 25, blue: 46)
+    let SFUGrey = UIColor(red: 84, green: 88, blue: 90)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.lightGray // changing the colour of whole view
         
         //bar chart setup
-        barChart.backgroundColor = SFURed //adjust colour of bars in graph
+        barChart.backgroundColor = UIColor.white
         barChart.delegate = self
         barChart.dataSource = self
         barChart.minimumValue = 0
-        barChart.maximumValue = CGFloat(chartData.max()!) // max value of a bar in the graph is the max value from the data array. The visual height of each bar is relative to this value
+        barChart.maximumValue = CGFloat(chartData.max()!) //Max value of a bar in the graph is the max value from the data array.
+                                                          //The height of each bar is relative to this value
 
         //NOTE: footer and header created below reduce size/space of the actual bar graph.
         
@@ -61,7 +61,6 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         //Creating a header.
         var header = UILabel(frame: CGRect(x: 0, y: 0, width: barChart.frame.width, height: 16))
         header.textColor = UIColor.black
-        //header.font = UIFont.systemFont(ofSize: 24)
         header.text = "Workout Completion Chart"
         header.textAlignment = NSTextAlignment.center
         
@@ -131,7 +130,7 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
     }
     
     func barChartView(_ barChartView: JBBarChartView!, colorForBarViewAt index: UInt) -> UIColor! {
-        return UIColor.white
+        return SFURed
         
     }
 
@@ -143,7 +142,7 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         //Maybe change the bar graphs to a percentage, so that if all workouts are completed on that day, the bar is a maximum height.
     }
     
-    //uncomment this if you wish for the labels to go away once a bar on the graph is unselected
+    //Uncomment this if you wish for the labels to go away once a bar on the graph is unselected
     /*func didDeselect(_ barChartView: JBBarChartView!) {
         informationLabel.text = ""
     }*/
