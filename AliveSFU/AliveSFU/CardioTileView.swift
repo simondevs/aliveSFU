@@ -26,26 +26,26 @@ class CardioTileView: UIView {
         //self.addSubview(view);    // adding the top level view to the view hierarchy
     }
     
-    init(name: String, time: String, speed: String, resistance: String) {
+    init(frame: CGRect, name: String, time: String, speed: String, resistance: String) {
         //super.init(frame:UIScreen.main.bounds)
-        self.init()
+        super.init(frame: frame)
         
         Bundle.main.loadNibNamed("CardioTileViewUI", owner: self, options: nil);
         self.addSubview(view);    // adding the top level view to the view hierarchy
         
         self.exerciseName.text = name;
-        self.speed.text = "Speed: " + speed;
-        self.resistance.text = "Resistance: " + resistance;
-        self.time.text = "Time: " + time;
+        self.speed.text = speed;
+        self.resistance.text = resistance;
+        self.time.text = time;
     }
     
     override func didMoveToSuperview() {
         if (superview != nil) {
             let yC = superview!.frame.origin.y + (TILE_HEIGHT * CGFloat(superview!.subviews.count - 1))
         
-            view.frame = CGRect(x: superview!.frame.origin.x, y: yC, width: self.frame.width, height: TILE_HEIGHT)
-            self.frame = CGRect(x: superview!.frame.origin.x, y: yC, width: self.frame.width, height: TILE_HEIGHT)
-            print("XCoord:", yC, " Count: ", superview!.subviews.count, " Height:", view.frame.height)
+           // view.frame = CGRect(x: superview!.frame.origin.x, y: yC, width: self.frame.width, height: TILE_HEIGHT)
+           // self.frame = CGRect(x: superview!.frame.origin.x, y: yC, width: self.frame.width, height: TILE_HEIGHT)
+           // print("XCoord:", yC, " Count: ", superview!.subviews.count, " Height:", view.frame.height)
         }
     }
     required init?(coder aDecoder: NSCoder) {
