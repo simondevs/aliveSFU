@@ -10,7 +10,6 @@
 
 import UIKit
 import CoreData
-<<<<<<< dd703b3997209149430d7358fbb6fd7fef4abf35
 import JBChart
 
 //An extension to UIColor to allow the creation of our own colours using RGB numbers
@@ -24,9 +23,9 @@ extension UIColor {
     }
 }
 
-
     //3rd party libraries added here
 class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSource {
+<<<<<<< 4d08d346d75ba764e653aa2995f3000027a2283d
 
     @IBOutlet weak var barChart: JBBarChartView! //The view the bar chart rests in
     @IBOutlet weak var informationLabel: UILabel! //The label that display info when a bar is tapped
@@ -44,49 +43,22 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
     let SFURed = UIColor(red: 166, green: 25, blue: 46)
     let SFUGrey = UIColor(red: 84, green: 88, blue: 90)
 =======
-//Vivek added:
-import JBChart
-
-//Vivek added: An extension to UIColor to allow the creation of our own colours using RGB numbers
-extension UIColor {
-    convenience init(red: Int, green: Int, blue: Int) {
-        let newRed = CGFloat(red)/255
-        let newGreen = CGFloat(green)/255
-        let newBlue = CGFloat(blue)/255
-        
-        self.init(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
-    }
-}
-
-
-//Vivek added: 3rd party libraries added here
-class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSource {
     @IBOutlet weak var stackView: UIStackView!
-    //Vivek added:
-    @IBOutlet weak var barChart: JBBarChartView! //The view the bar chart rests in
-    //Vivek added:
-    @IBOutlet weak var informationLabel: UILabel! //The label that display info when a bar is tapped
-    @IBOutlet weak var scrollView: UIScrollView!
-    
-    //Vivek added:
-    var chartLegend = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"] //x-axis information
-    //Vivek added:
-    var chartData = [5, 8, 6, 2, 9, 6, 4]//sample data to display bar graph, replace with actual exercise completion numbers
-    //Vivek added:
+    let chartData = DataHandler.countCompletion() //Array that counts completed exercises
+    @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
     let SFURed = UIColor(red: 166, green: 25, blue: 46) //Creating a custom colour to match the SFU official red colour using the UIColor extension created above
     let SFUGrey = UIColor(red: 84, green: 88, blue: 90)//Customly create SFUGrey
->>>>>>> Added graph on my progress page, but it is not yet connected to actual app data. That needs to be implemented before this graph can show it, obviously. Also, maybe the graph should be adjusted to show a percentage of exercises completed for that day, instead of just exercises completed, that way, the user can have a goal of making all bars reach maximum height.
+>>>>>>> Added a field in exercise class for completion of an exercise. Implemented a method in DataHandler to return an array of how many exercises have been completed in the days of the week. Used that method to calculate the height of the bars in the bar graphs. So now the bars in the bar graph should accurately show how many exercises are completed when the app is run.
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-<<<<<<< dd703b3997209149430d7358fbb6fd7fef4abf35
+<<<<<<< 4d08d346d75ba764e653aa2995f3000027a2283d
         setupBarChart()
         
 =======
-        //Vivek added:
         view.backgroundColor = UIColor.lightGray // changing the colour of whole view
-        //Vivek added:
+        
         //bar chart setup
         barChart.backgroundColor = SFURed //adjust colour of bars in graph
         barChart.delegate = self
@@ -118,10 +90,8 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         barChart.reloadData()
         
         barChart.setState(.collapsed, animated: false)
-        //end of Vivek's addition/////////////////////////////////////////////////
->>>>>>> Added graph on my progress page, but it is not yet connected to actual app data. That needs to be implemented before this graph can show it, obviously. Also, maybe the graph should be adjusted to show a percentage of exercises completed for that day, instead of just exercises completed, that way, the user can have a goal of making all bars reach maximum height.
+>>>>>>> Added a field in exercise class for completion of an exercise. Implemented a method in DataHandler to return an array of how many exercises have been completed in the days of the week. Used that method to calculate the height of the bars in the bar graphs. So now the bars in the bar graph should accurately show how many exercises are completed when the app is run.
         let leftEdge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector (handleSwipes(_:)))
-        
         let rightEdge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector (handleSwipes(_:)))
         
         leftEdge.edges = .left
@@ -134,14 +104,6 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
             view.removeFromSuperview()
         }
     }
-    //Vivek added:
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    
-        barChart.reloadData()
-        var timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: Selector("showChart"), userInfo: nil, repeats: false)
-    }
-
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -157,70 +119,39 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-<<<<<<< dd703b3997209149430d7358fbb6fd7fef4abf35
+<<<<<<< 4d08d346d75ba764e653aa2995f3000027a2283d
         for view in contentView.subviews {
 =======
-        //Vivek added:
+
         super.viewDidDisappear(animated)
         hideChart()
-        ///End of Vivek's addition/////////////////////////
+
         for view in stackView.subviews {
             stackView.removeArrangedSubview(view)
->>>>>>> Added graph on my progress page, but it is not yet connected to actual app data. That needs to be implemented before this graph can show it, obviously. Also, maybe the graph should be adjusted to show a percentage of exercises completed for that day, instead of just exercises completed, that way, the user can have a goal of making all bars reach maximum height.
+>>>>>>> Added a field in exercise class for completion of an exercise. Implemented a method in DataHandler to return an array of how many exercises have been completed in the days of the week. Used that method to calculate the height of the bars in the bar graphs. So now the bars in the bar graph should accurately show how many exercises are completed when the app is run.
             view.removeFromSuperview()
         }
     }
     
-<<<<<<< dd703b3997209149430d7358fbb6fd7fef4abf35
-=======
-    //Vivek added:
->>>>>>> Added graph on my progress page, but it is not yet connected to actual app data. That needs to be implemented before this graph can show it, obviously. Also, maybe the graph should be adjusted to show a percentage of exercises completed for that day, instead of just exercises completed, that way, the user can have a goal of making all bars reach maximum height.
     func hideChart() {
         barChart.setState(.collapsed, animated: true)
     }
-    
-<<<<<<< dd703b3997209149430d7358fbb6fd7fef4abf35
-=======
+            //stackView.removeArrangedSubview(view)
     //Vivek added:
->>>>>>> Added graph on my progress page, but it is not yet connected to actual app data. That needs to be implemented before this graph can show it, obviously. Also, maybe the graph should be adjusted to show a percentage of exercises completed for that day, instead of just exercises completed, that way, the user can have a goal of making all bars reach maximum height.
-    func showChart() {
-        barChart.setState(.expanded, animated: true)
-    }
-    
-<<<<<<< dd703b3997209149430d7358fbb6fd7fef4abf35
 
-=======
-    //MARK:JBBarChartView
-    
-    //Vivek added:
->>>>>>> Added graph on my progress page, but it is not yet connected to actual app data. That needs to be implemented before this graph can show it, obviously. Also, maybe the graph should be adjusted to show a percentage of exercises completed for that day, instead of just exercises completed, that way, the user can have a goal of making all bars reach maximum height.
     func numberOfBars(in barChartView: JBBarChartView!) -> UInt {
         return UInt(chartData.count)
     }
     
-<<<<<<< dd703b3997209149430d7358fbb6fd7fef4abf35
-=======
-    //Vivek added:
->>>>>>> Added graph on my progress page, but it is not yet connected to actual app data. That needs to be implemented before this graph can show it, obviously. Also, maybe the graph should be adjusted to show a percentage of exercises completed for that day, instead of just exercises completed, that way, the user can have a goal of making all bars reach maximum height.
     func barChartView(_ barChartView: JBBarChartView!, heightForBarViewAt index: UInt) -> CGFloat {
         return CGFloat(chartData[Int(index)])
     }
     
-<<<<<<< dd703b3997209149430d7358fbb6fd7fef4abf35
     func barChartView(_ barChartView: JBBarChartView!, colorForBarViewAt index: UInt) -> UIColor! {
         return SFURed
         
     }
 
-=======
-    //Vivek added:
-    func barChartView(_ barChartView: JBBarChartView!, colorForBarViewAt index: UInt) -> UIColor! {
-        return UIColor.white
-        
-    }
-    
-    //Vivek added:
->>>>>>> Added graph on my progress page, but it is not yet connected to actual app data. That needs to be implemented before this graph can show it, obviously. Also, maybe the graph should be adjusted to show a percentage of exercises completed for that day, instead of just exercises completed, that way, the user can have a goal of making all bars reach maximum height.
     func barChartView(_ barChartView: JBBarChartView!, didSelectBarAt index: UInt) {
         let data = chartData[Int(index)]
         let key = chartLegend[Int(index)]
@@ -229,11 +160,11 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         //Maybe change the bar graphs to a percentage, so that if all workouts are completed on that day, the bar is a maximum height.
     }
     
-<<<<<<< dd703b3997209149430d7358fbb6fd7fef4abf35
+<<<<<<< 4d08d346d75ba764e653aa2995f3000027a2283d
     //Uncomment this if you wish for the labels to go away once a bar on the graph is unselected
 =======
-    //Vivek added:
->>>>>>> Added graph on my progress page, but it is not yet connected to actual app data. That needs to be implemented before this graph can show it, obviously. Also, maybe the graph should be adjusted to show a percentage of exercises completed for that day, instead of just exercises completed, that way, the user can have a goal of making all bars reach maximum height.
+    //uncomment this if you wish for the labels to go away once a bar on the graph is unselected
+>>>>>>> Added a field in exercise class for completion of an exercise. Implemented a method in DataHandler to return an array of how many exercises have been completed in the days of the week. Used that method to calculate the height of the bars in the bar graphs. So now the bars in the bar graph should accurately show how many exercises are completed when the app is run.
     /*func didDeselect(_ barChartView: JBBarChartView!) {
         informationLabel.text = ""
     }*/
@@ -243,6 +174,7 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         scrollView.contentSize.height = CGFloat(contentView.subviews.count) * TILE_HEIGHT
         scrollView.isScrollEnabled = true;
         scrollView.isUserInteractionEnabled = true;
+        scrollView.canCancelContentTouches = true;
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -279,6 +211,14 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         }
     }
     
+    func tileSwipeGesture(_ sender: UISwipeGestureRecognizer) {
+        if (sender.direction == .left) {
+        print("After readonly: ", self.view.subviews.count)
+        } else if (sender.direction == .right) {
+            print("Right swipe on tile recognized")
+        }
+    }
+    
     func handleSwipes(_ recognizer: UIScreenEdgePanGestureRecognizer){
         if (recognizer.state == .recognized) {
             if(recognizer.edges == .left) {
@@ -307,8 +247,19 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
                 if (elem.category == elem.CATEGORY_CARDIO) {
                     let tile = CardioTileView(frame: frame, name: elem.exerciseName, time: elem.time, speed: elem.speed, resistance: elem.resistance)
                     tile.tag = CATEGORY_CARDIO_VIEW_TAG
+                    
                     let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
                     tile.addGestureRecognizer(tapGesture)
+                    
+                    tile.tag = CATEGORY_CARDIO_VIEW_TAG
+                    swipeLeft.direction = .left
+                    tile.addGestureRecognizer(swipeLeft)
+                    scrollView.panGestureRecognizer.require(toFail: swipeLeft)
+                    
+                    let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector (self.tileSwipeGesture(_:)))
+                    swipeRight.direction = .right
+                    tile.addGestureRecognizer(swipeRight)
+                    scrollView.panGestureRecognizer.require(toFail: swipeRight)
                     
                     contentView.addSubview(tile)
                 } else {
@@ -316,6 +267,16 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
                     tile.tag = CATEGORY_STRENGTH_VIEW_TAG
                     let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
                     tile.addGestureRecognizer(tapGesture)
+                    
+                    tile.tag = CATEGORY_STRENGTH_VIEW_TAG
+                    swipeLeft.direction = .left
+                    tile.addGestureRecognizer(swipeLeft)
+                    scrollView.panGestureRecognizer.require(toFail: swipeLeft)
+                    
+                    let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector (self.tileSwipeGesture(_:)))
+                    swipeRight.direction = .right
+                    tile.addGestureRecognizer(swipeRight)
+                    scrollView.panGestureRecognizer.require(toFail: swipeRight)
                     
                     contentView.addSubview(tile)
                 }
