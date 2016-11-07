@@ -12,6 +12,9 @@ import UIKit
 import CoreData
 import JBChart
 
+
+/* Extensions */
+
 //An extension to UIColor to allow the creation of our own colours using RGB numbers
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {
@@ -22,13 +25,17 @@ extension UIColor {
         self.init(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
     }
 }
-
 extension Notification.Name {
     static let reload = Notification.Name("reload")
 }
 
-    //3rd party libraries added here
-class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSource {
+// ----------
+
+/* Class: MyProgressController - Handles MyProgress View */
+
+class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSource, UIGestureRecognizerDelegate {
+    
+/* IBOutlets */
     
     @IBOutlet weak var daySelected: UISegmentedControl!
     @IBOutlet weak var barChart: JBBarChartView! //The view the bar chart rests in
@@ -37,56 +44,71 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
     
-    var currDay : DaysInAWeek = DaysInAWeek.Sunday
+/* Constants */
+    
     let CATEGORY_CARDIO_VIEW_TAG = 100
     let CATEGORY_STRENGTH_VIEW_TAG = 200
     let PLACEHOLDER_TAG = 404
     let TILE_HEIGHT = CGFloat(80)
     
-    var panTileOrigin = CGPoint(x: 0, y: 0)
     
+/* Variables */
+    
+    var currDay : DaysInAWeek = DaysInAWeek.Sunday
+    var panTileOrigin = CGPoint(x: 0, y: 0)
     var chartLegend = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"] //x-axis information
     //let chartData = [5, 8, 6, 2, 9, 6, 4]//sample data to display bar graph, replace with actual exercise completion numbers
-    let chartData = DataHandler.countCompletion() //Array that counts completed exercises
+    var chartData: [Int] = [] //Array that counts completed exercises
     let SFURed = UIColor(red: 166, green: 25, blue: 46)
     let SFUGrey = UIColor(red: 84, green: 88, blue: 90)
+    
+/* Overriden Functions*/
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
+        
         let calendar = NSCalendar.current
         let date = NSDate()
         currDay = DaysInAWeek(rawValue : calendar.component(.weekday, from: date as Date))!
+        
         setupBarChart()
+        barChartView(barChart, didSelectBarAt: UInt(currDay.index - 1))
+        daySelected.selectedSegmentIndex = currDay.index - 1
         
-        //get today's date
-        
+        /* Disabling screen edges
+ 
         let leftEdge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector (handleSwipes(_:)))
         let rightEdge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector (handleSwipes(_:)))
-        
         leftEdge.edges = .left
         rightEdge.edges = .right
         
         view.addGestureRecognizer(leftEdge)
-        view.addGestureRecognizer(rightEdge)
-        // Do any additional setup after loading the view, typically from a nib.
+        view.addGestureRecognizer(rightEdge)*/
+
         for view in contentView.subviews {
             view.removeFromSuperview()
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     
         barChart.reloadData()
         _ = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(MyProgressController.showChart), userInfo: nil, repeats: false)
+        
+        let scrollPanGesture = UIPanGestureRecognizer()
+        scrollPanGesture.delegate = self
+        scrollView.addGestureRecognizer(scrollPanGesture)
     }
-    @IBAction func dayValueChangeEvent(_ sender: UISegmentedControl) {
-        var changedIndex = sender.selectedSegmentIndex
-        currDay = DaysInAWeek(rawValue: changedIndex + 1)!
-        populateStackView()
-    }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         populateStackView()
+        updateChartData()
         
         if (contentView.subviews.count == 1 && contentView.subviews.first?.tag == PLACEHOLDER_TAG) {
             contentViewHeight.constant = scrollView.frame.height
@@ -94,30 +116,33 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
             contentViewHeight.constant = CGFloat(contentView.subviews.count) * TILE_HEIGHT
         }
     }
-    
+
     override func viewDidDisappear(_ animated: Bool) {
         for view in contentView.subviews {
             view.removeFromSuperview()
         }
     }
-    
-    //Uncomment this if you wish for the labels to go away once a bar on the graph is unselected
-    /*func didDeselect(_ barChartView: JBBarChartView!) {
-        informationLabel.text = ""
-    }*/
-    
-    
+
     override func viewDidLayoutSubviews() {
-        scrollView.contentSize.height = CGFloat(contentView.subviews.count) * TILE_HEIGHT
+        scrollView.contentSize.height = CGFloat(contentView.subviews.count) * (TILE_HEIGHT + 10)
         scrollView.isScrollEnabled = true;
         scrollView.isUserInteractionEnabled = true;
         scrollView.canCancelContentTouches = true;
     }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+/* IBAction Functions */
+    
+    @IBAction func dayValueChangeEvent(_ sender: UISegmentedControl) {
+        let changedIndex = sender.selectedSegmentIndex
+        currDay = DaysInAWeek(rawValue: changedIndex + 1)!
+        populateStackView()
+    }
     
     @IBAction func showPopup(_ sender: UITapGestureRecognizer) {
 
@@ -153,6 +178,8 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         }
     }
     
+/* Member Functions*/
+    
     func tileSlideGesture(_ gesture: UIPanGestureRecognizer) {
         if (gesture.state == .began) {
             self.panTileOrigin = gesture.view!.frame.origin
@@ -162,10 +189,32 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
             gesture.view!.center = CGPoint(x: gesture.view!.center.x + translation.x/2, y: gesture.view!.center.y)
             gesture.setTranslation(CGPoint.zero, in: contentView)
         } else if (gesture.state == .ended) {
-            if (gesture.view!.center.x < 370) {
-                print("Left Drag")
-            } else if (gesture.view!.center.x > 640) {
-                print("Right Drag")
+            if (self.panTileOrigin.x - gesture.view!.frame.origin.x > 50){
+                if (gesture.view?.tag == CATEGORY_CARDIO_VIEW_TAG) {
+                    
+                    let view = gesture.view as! CardioTileView;
+                    DataHandler.markExerciseCompleted(id: view.uuid, value: true)
+                    
+                } else if (gesture.view?.tag == CATEGORY_STRENGTH_VIEW_TAG) {
+                    
+                    let view = gesture.view as! StrengthTileView;
+                    DataHandler.markExerciseCompleted(id: view.uuid, value: true)
+                }
+                updateChartData()
+                
+            } else if (gesture.view!.frame.origin.x - self.panTileOrigin.x > 50) {
+                if (gesture.view?.tag == CATEGORY_CARDIO_VIEW_TAG) {
+                    
+                    let view = gesture.view as! CardioTileView;
+                    DataHandler.markExerciseCompleted(id: view.uuid, value: false)
+                    
+                } else if (gesture.view?.tag == CATEGORY_STRENGTH_VIEW_TAG) {
+                    
+                    let view = gesture.view as! StrengthTileView;
+                    DataHandler.markExerciseCompleted(id: view.uuid, value: false)
+                    
+                }
+                updateChartData()
             }
             UIView.animate(withDuration: 0.1, animations: {gesture.view!.frame.origin = self.panTileOrigin})
         }
@@ -178,12 +227,10 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
                     self.contentView.center.x += self.contentView.frame.width
                 })
                 //If the page is at Sunday, swiping left should get you to Saturday
-                if (currDay == DaysInAWeek.Sunday)
-                {
+                if (currDay == DaysInAWeek.Sunday) {
                     currDay = DaysInAWeek.Saturday
                 }
-                else
-                {
+                else {
                     let newDay = currDay.rawValue - 1
                     currDay = DaysInAWeek(rawValue: newDay)!
                 }
@@ -199,8 +246,7 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
                 if (currDay == DaysInAWeek.Saturday) {
                     currDay = DaysInAWeek.Sunday
                 }
-                else
-                {
+                else {
                     let newDay = currDay.rawValue + 1
                     currDay = DaysInAWeek(rawValue: newDay)!
                 }
@@ -217,63 +263,67 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
     func handleReloading()
     {
         populateStackView()
+        updateChartData()
     }
     
     //Function for populating the exercise tiles
-    //TODO: there's some magic numbers in here, should consider using constants (or 'let' in this newfangled language???)
     func populateStackView() {
         //since the view is now changed, get rid of all preexisting subviews
         for view in contentView.subviews {
             view.removeFromSuperview()
         }
-        let exerciseArrayCount = DataHandler.getExerciseArrayCount()
-        if (exerciseArrayCount == 0) {
+        //Populate Exercise Tiles
+        let exerciseArray = DataHandler.getExerciseArray()
+        
+        var currDayExerCount = 0;
+        for elem in exerciseArray {
+            
+            let frame = CGRect(x: 0, y: CGFloat(contentView.subviews.count) * (TILE_HEIGHT + 5), width: scrollView.bounds.width, height: TILE_HEIGHT)
+            
+            //Only grab exercises corresponding to the current day to be displayed
+            if (elem.day == currDay)
+            {
+                if (elem.getType() == .Cardio) {
+                    let tile = CardioTileView(frame: frame, name: elem.exerciseName, time: (elem as! CardioExercise).time, speed: (elem as! CardioExercise).speed, resistance: (elem as! CardioExercise).resistance)
+                    tile.tag = CATEGORY_CARDIO_VIEW_TAG
+                    tile.uuid = elem.id
+                    let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
+                    tile.addGestureRecognizer(tapGesture)
+                    
+                    let slideGesture = UIPanGestureRecognizer(target: self, action: #selector (self.tileSlideGesture(_:)))
+                    slideGesture.delegate = self
+                    tile.addGestureRecognizer(slideGesture)
+                    //scrollView.panGestureRecognizer.require(toFail: slideGesture)
+                
+                    contentView.addSubview(tile)
+                } else {
+                    let tile = StrengthTileView(frame: frame, name: elem.exerciseName, sets: (elem as! StrengthExercise).sets, reps: (elem as! StrengthExercise).reps)
+                    tile.tag = CATEGORY_STRENGTH_VIEW_TAG
+                    tile.uuid = elem.id
+                    let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
+                    tile.addGestureRecognizer(tapGesture)
+                
+                    let slideGesture = UIPanGestureRecognizer(target: self, action: #selector (self.tileSlideGesture(_:)))
+                    slideGesture.delegate = self
+                    tile.addGestureRecognizer(slideGesture)
+                    //scrollView.panGestureRecognizer.require(toFail: slideGesture)
+                    
+                    contentView.addSubview(tile)
+                }
+                currDayExerCount += 1;
+            }
+        }
+        if (currDayExerCount == 0) {
             //Display Placeholder Exercise Tile
             let placeholder = UIImageView(image: UIImage(named: "noExercisePlaceholder"))
             placeholder.tag = PLACEHOLDER_TAG
-            placeholder.frame = CGRect(x: 0, y: 0, width: self.view.frame.width - 40, height: 500)
+            placeholder.frame = CGRect(x: 0, y: -40, width: self.view.frame.width - 40, height: 500)
             contentView.addSubview(placeholder)
-        } else {
-            //Populate Exercise Tiles
-            let exerciseArray = DataHandler.getExerciseArray()
-            for elem in exerciseArray {
-                
-                let frame = CGRect(x: 0, y: CGFloat(contentView.subviews.count) * 85, width: scrollView.bounds.width, height: TILE_HEIGHT)
-                
-                //Only grab exercises corresponding to the current day to be displayed
-                if (elem.day == currDay)
-                {
-                    if (elem.getType() == .Cardio) {
-                        let tile = CardioTileView(frame: frame, name: elem.exerciseName, time: (elem as! CardioExercise).time, speed: (elem as! CardioExercise).speed, resistance: (elem as! CardioExercise).resistance)
-                        tile.tag = CATEGORY_CARDIO_VIEW_TAG
-                        tile.uuid = elem.id
-                        let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
-                        tile.addGestureRecognizer(tapGesture)
-                        
-                    	let slideGesture = UIPanGestureRecognizer(target: self, action: #selector (self.tileSlideGesture(_:)))
-                    	tile.addGestureRecognizer(slideGesture)
-                    	scrollView.panGestureRecognizer.require(toFail: slideGesture)
-                    
-                        contentView.addSubview(tile)
-                    } else {
-                        let tile = StrengthTileView(frame: frame, name: elem.exerciseName, sets: (elem as! StrengthExercise).sets, reps: (elem as! StrengthExercise).reps)
-                        tile.tag = CATEGORY_STRENGTH_VIEW_TAG
-                        tile.uuid = elem.id
-                        let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
-                        tile.addGestureRecognizer(tapGesture)
-                    
-                    	let slideGesture = UIPanGestureRecognizer(target: self, action: #selector (self.tileSlideGesture(_:)))
-                    	tile.addGestureRecognizer(slideGesture)
-                    	scrollView.panGestureRecognizer.require(toFail: slideGesture)
-                        
-                        contentView.addSubview(tile)
-                    }
-                }
-            }
         }
     }
     func setupBarChart()
     {
+        chartData = DataHandler.countCompletion()
         barChart.backgroundColor = UIColor.white
         barChart.delegate = self
         barChart.dataSource = self
@@ -322,13 +372,20 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         return SFURed
         
     }
-    
     func barChartView(_ barChartView: JBBarChartView!, didSelectBarAt index: UInt) {
         let data = chartData[Int(index)]
         let key = chartLegend[Int(index)]
         
         informationLabel.text = "Workouts completed on \(key): \(data)"
         //Maybe change the bar graphs to a percentage, so that if all workouts are completed on that day, the bar is a maximum height.
+    }
+    func updateChartData() {
+        chartData = DataHandler.countCompletion()
+        barChart.reloadData()
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true;
     }
 
 }

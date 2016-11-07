@@ -63,9 +63,8 @@ class PopoverCardioTile: UIViewController {
     }
     
     @IBAction func deleteButton(_ sender: UIButton) {
-        let _res = DataHandler.deleteElementFromExerciseArray(id: uuid)
-        //reload the myProgress page
-        //self.view.superview?.setNeedsDisplay()
+        _ = DataHandler.deleteElementFromExerciseArray(id: uuid)
+
         removeAnimate()
         
     }
@@ -77,20 +76,14 @@ class PopoverCardioTile: UIViewController {
     
    
     @IBAction func saveButton(_ sender: UIButton) {
-        
-        //pass new values here
-        let originalExerciseName: String = exerciseName.text!
-        
+    
         //The day field and completed field are not necessary for the function, so we're passing in arbitrary numbers
         let newExerciseObject = CardioExercise(exerciseName: exerciseNameTextField.text!, day: .Sunday, completed: false, id : uuid)
         newExerciseObject.time = timeTextField.text!
         newExerciseObject.speed = speedTextField.text!
         newExerciseObject.resistance = resistanceTextField.text!
-        self.view.superview?.setNeedsDisplay()
         let _ = DataHandler.saveExerciseChanges(elem: newExerciseObject)
-        
-        //reload the myProgress page
-        //self.view.superview?.setNeedsDisplay()
+
         removeAnimate()
         
         
@@ -131,14 +124,12 @@ class PopoverCardioTile: UIViewController {
         editableButtons.isHidden = !yes;
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }

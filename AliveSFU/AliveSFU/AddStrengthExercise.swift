@@ -14,21 +14,18 @@ class AddStrengthExercise: UIViewController {
     //Mark: Properties
 
     @IBOutlet weak var exerciseNameInput: UITextField!
-   
     @IBOutlet weak var setsInput: UITextField!
     @IBOutlet weak var repsInput: UITextField!
-    //Vivek:
-    var exerciseDayStrength: Int = 0   //variable that will store the result from what is chosen on the segmented display
-    //Vivek: Whenever the segmented display is touched, the int corresponding to the day will
-    //be stored in the variable "exerciseDay"
-
-    @IBAction func theDayStrength(_ sender: UISegmentedControl) {
-        exerciseDayStrength = sender.selectedSegmentIndex
-    }
+    @IBOutlet weak var daysSegment: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let calendar = NSCalendar.current
+        let date = NSDate()
+        let currDay = DaysInAWeek(rawValue : calendar.component(.weekday, from: date as Date))!
+        daysSegment.selectedSegmentIndex = currDay.index - 1
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,8 +44,8 @@ class AddStrengthExercise: UIViewController {
             //fairly certain that generating the uuid here and passing it to factory is an example of dependency injection and therefore good programming standards
             let uuid = NSUUID().uuidString //generate a unique UUID to use as indexing key for this exercise
             
-            //remember to increment exerciseDayCardio by 1 because the NSDate indexing for weekdays start at 1
-            let newExercise = ExerciseFactory.returnExerciseByCategory(type: ExerciseType.Strength, exerciseName: exerciseNameInput.text!, day: DaysInAWeek(rawValue : exerciseDayStrength+1)!, completed: false, id : uuid)
+            //remember to increment daysSegment by 1 because the NSDate indexing for weekdays start at 1
+            let newExercise = ExerciseFactory.returnExerciseByCategory(type: ExerciseType.Strength, exerciseName: exerciseNameInput.text!, day: DaysInAWeek(rawValue : daysSegment.selectedSegmentIndex + 1)!, completed: false, id : uuid)
 
             (newExercise as! StrengthExercise).sets = setsInput.text!
             (newExercise as! StrengthExercise).reps = repsInput.text!
@@ -66,7 +63,14 @@ class AddStrengthExercise: UIViewController {
     @IBAction func cancelButton(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)
     }
-   
-
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
 
