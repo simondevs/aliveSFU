@@ -35,7 +35,10 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
     
     let CATEGORY_CARDIO_VIEW_TAG = 100
     let CATEGORY_STRENGTH_VIEW_TAG = 200
+    let PLACEHOLDER_TAG = 404
     let TILE_HEIGHT = CGFloat(80)
+    
+    var panTileOrigin = CGPoint(x: 0, y: 0)
     
     var chartLegend = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"] //x-axis information
     //let chartData = [5, 8, 6, 2, 9, 6, 4]//sample data to display bar graph, replace with actual exercise completion numbers
@@ -72,7 +75,12 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
     
     override func viewWillAppear(_ animated: Bool) {
         populateStackView()
-	contentViewHeight.constant = CGFloat(contentView.subviews.count) * TILE_HEIGHT
+        
+        if (contentView.subviews.count == 1 && contentView.subviews.first?.tag == PLACEHOLDER_TAG) {
+            contentViewHeight.constant = scrollView.frame.height
+        } else {
+            contentViewHeight.constant = CGFloat(contentView.subviews.count) * TILE_HEIGHT
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -158,11 +166,21 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         }
     }
     
-    func tileSwipeGesture(_ sender: UISwipeGestureRecognizer) {
-        if (sender.direction == .left) {
-            print("Left swipe on tile recognized")
-        } else if (sender.direction == .right) {
-            print("Right swipe on tile recognized")
+    func tileSlideGesture(_ gesture: UIPanGestureRecognizer) {
+        if (gesture.state == .began) {
+            self.panTileOrigin = gesture.view!.frame.origin
+        }
+        if (gesture.state == .began || gesture.state == .changed) {
+            let translation = gesture.translation(in: contentView)
+            gesture.view!.center = CGPoint(x: gesture.view!.center.x + translation.x/2, y: gesture.view!.center.y)
+            gesture.setTranslation(CGPoint.zero, in: contentView)
+        } else if (gesture.state == .ended) {
+            if (gesture.view!.center.x < 370) {
+                print("Left Drag")
+            } else if (gesture.view!.center.x > 640) {
+                print("Right Drag")
+            }
+            UIView.animate(withDuration: 0.1, animations: {gesture.view!.frame.origin = self.panTileOrigin})
         }
     }
     
@@ -182,7 +200,10 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         let exerciseArrayCount = DataHandler.getExerciseArrayCount()
         if (exerciseArrayCount == 0) {
             //Display Placeholder Exercise Tile
-            print("Works")
+            let placeholder = UIImageView(image: UIImage(named: "noExercisePlaceholder"))
+            placeholder.tag = PLACEHOLDER_TAG
+            placeholder.frame = CGRect(x: 0, y: 0, width: self.view.frame.width - 40, height: 500)
+            contentView.addSubview(placeholder)
         } else {
             //Populate Exercise Tiles
             let exerciseArray = DataHandler.getExerciseArray()
@@ -198,15 +219,9 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
                     let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
                     tile.addGestureRecognizer(tapGesture)
                     
-                    let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector (self.tileSwipeGesture(_:)))
-                    swipeLeft.direction = .left
-                    tile.addGestureRecognizer(swipeLeft)
-                    scrollView.panGestureRecognizer.require(toFail: swipeLeft)
-                    
-                    let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector (self.tileSwipeGesture(_:)))
-                    swipeRight.direction = .right
-                    tile.addGestureRecognizer(swipeRight)
-                    scrollView.panGestureRecognizer.require(toFail: swipeRight)
+                    let slideGesture = UIPanGestureRecognizer(target: self, action: #selector (self.tileSlideGesture(_:)))
+                    tile.addGestureRecognizer(slideGesture)
+                    scrollView.panGestureRecognizer.require(toFail: slideGesture)
                     
                     contentView.addSubview(tile)
                 } else {
@@ -215,15 +230,9 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
                     let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
                     tile.addGestureRecognizer(tapGesture)
                     
-                    let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector (self.tileSwipeGesture(_:)))
-                    swipeLeft.direction = .left
-                    tile.addGestureRecognizer(swipeLeft)
-                    scrollView.panGestureRecognizer.require(toFail: swipeLeft)
-                    
-                    let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector (self.tileSwipeGesture(_:)))
-                    swipeRight.direction = .right
-                    tile.addGestureRecognizer(swipeRight)
-                    scrollView.panGestureRecognizer.require(toFail: swipeRight)
+                    let slideGesture = UIPanGestureRecognizer(target: self, action: #selector (self.tileSlideGesture(_:)))
+                    tile.addGestureRecognizer(slideGesture)
+                    scrollView.panGestureRecognizer.require(toFail: slideGesture)
                     
                     contentView.addSubview(tile)
                 }
