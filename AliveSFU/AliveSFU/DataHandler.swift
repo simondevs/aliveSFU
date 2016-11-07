@@ -3,7 +3,7 @@
 //  AliveSFU
 //
 //  Created by Gur Kohli on 2016-11-01.
-//  Developers: Vivek Sharma
+//  Developers: Vivek Sharma, Gagan Kaur
 //  Copyright © 2016 SimonDevs. All rights reserved.
 //
 
@@ -65,9 +65,31 @@ class DataHandler {
         
     }
     
-    class func deleteElementFromExerciseArray() -> Int {
-        return 0;
+    class func deleteElementFromExerciseArray(name: String) -> Int {
+        
+ 
+        let moc = AppDataController().managedObjectContext
+    
+        //get access to Exercise entity
+        let entityFetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "Exercise")
+       
+        let predicate = NSPredicate(format: "exerciseName = %@",name)
+        entityFetchReq.predicate = predicate
+       
+        do {
+            //get exerciseArray element where exerciseName = name
+            var fetchedResult = try moc.fetch(entityFetchReq) as! [NSManagedObject]
+            try moc.delete(fetchedResult[0])
+            try moc.save()
+            return 0;
+        }
+            
+        catch {
+            fatalError("Failed to fetch element! Error: \(error)")
+        }
     }
+    
+    
     class func deleteExerciseArray() -> Int {
         let moc = AppDataController().managedObjectContext
         let entityFetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "Exercise")
@@ -83,6 +105,8 @@ class DataHandler {
             fatalError("Failed to delete array! Error: \(error)")
         }
     }
+    
+    
     class func saveElementToExerciseArray(elem: Exercise) -> Int {
         
         let moc = AppDataController().managedObjectContext
@@ -113,6 +137,80 @@ class DataHandler {
         }
         return 0;
     }
+    
+    //save changes to exercise array in popover
+    //go to exercise array, find the element we are changing and change the attribute to the new one
+    class func saveExerciseChanges(elem: Exercise, name: String) -> Int {
+      
+        let moc = AppDataController().managedObjectContext
+       
+        //get access to Exercise entity
+        let entityFetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "Exercise")
+        
+        let predicate = NSPredicate(format: "exerciseName = %@",name)
+        
+        //now entityFetch req will contain only those elements that match the predicate condition
+        entityFetchReq.predicate = predicate
+        
+        do {
+            //get exerciseArray element where exerciseName = name
+            
+            
+            var fetchedResult = try moc.fetch(entityFetchReq) as! [NSManagedObject]
+            
+                let exercise = fetchedResult[0]
+                
+                // Strength
+                if (elem.category == elem.CATEGORY_STRENGTH) {
+                    
+                    if elem.exerciseName != "" {
+                        exercise.setValue(elem.exerciseName, forKey: "exerciseName")
+                    }
+                    
+                    if elem.sets != "" {
+                        exercise.setValue(elem.sets, forKey: "sets")
+                    }
+                    
+                    if elem.reps != "" {
+                        exercise.setValue(elem.reps, forKey: "reps")
+                    }
+                
+                }
+                
+                // Cardio
+                else {
+                
+                    if elem.exerciseName != "" {
+                        exercise.setValue(elem.exerciseName, forKey: "exerciseName")
+                    }
+                
+                    if elem.speed != "" {
+                        exercise.setValue(elem.speed, forKey: "speed")
+                    }
+                
+                    if elem.resistance != "" {
+                        exercise.setValue(elem.resistance, forKey: "resistance")
+                    }
+                
+                    if elem.time != "" {
+                        exercise.setValue(elem.time, forKey: "time")
+                    }
+                
+                }
+
+            try moc.save()
+            
+            }
+            
+        catch let error as NSError {
+            print("Could not save \(error), \(error.userInfo)")
+            return -1
+        }
+        print (">7<")
+        
+        return 0;
+    }
+    
     
     //Returns an array 7 integers long with each index holding that day's amount of completed exercises
     //Main use will be in the graph for my progress

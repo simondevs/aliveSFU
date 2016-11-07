@@ -22,6 +22,10 @@ extension UIColor {
         self.init(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
     }
 }
+extension Notification.Name {
+    static let reload = Notification.Name("reload")
+}
+
     //3rd party libraries added here
 class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSource {
     
