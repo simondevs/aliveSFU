@@ -142,6 +142,12 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         let changedIndex = sender.selectedSegmentIndex
         currDay = DaysInAWeek(rawValue: changedIndex + 1)!
         populateStackView()
+        
+        if (contentView.subviews.count == 1 && contentView.subviews.first?.tag == PLACEHOLDER_TAG) {
+            contentViewHeight.constant = scrollView.frame.height
+        } else {
+            contentViewHeight.constant = CGFloat(contentView.subviews.count) * TILE_HEIGHT
+        }
     }
     
     @IBAction func showPopup(_ sender: UITapGestureRecognizer) {
