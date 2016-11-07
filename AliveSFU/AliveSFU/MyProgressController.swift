@@ -23,6 +23,10 @@ extension UIColor {
     }
 }
 
+extension Notification.Name {
+    static let reload = Notification.Name("reload")
+}
+
 
     //3rd party libraries added here
 class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSource {
@@ -43,8 +47,15 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
     let SFURed = UIColor(red: 166, green: 25, blue: 46)
     let SFUGrey = UIColor(red: 84, green: 88, blue: 90)
 
+    
+    /*func reloadContentData(_notification: Notification){
+        contentView.reloadInputViews()
+    }*/
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         setupBarChart()
         
@@ -61,7 +72,15 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         for view in contentView.subviews {
             view.removeFromSuperview()
         }
+        
+       
+       // NotificationCenter.default.addObserver(self, selector: #selector(self.viewWillAppear(_: )), name: .reload, object: nil)
+        
+        
+        
+        
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -74,6 +93,8 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
     override func viewWillAppear(_ animated: Bool) {
         populateStackView()
 	contentViewHeight.constant = CGFloat(contentView.subviews.count) * TILE_HEIGHT
+       
+        //self.view.reloadData()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
