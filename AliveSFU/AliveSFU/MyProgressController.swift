@@ -148,6 +148,7 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         } else {
             contentViewHeight.constant = CGFloat(contentView.subviews.count) * TILE_HEIGHT
         }
+        scrollView.layoutIfNeeded()
     }
     
     @IBAction func showPopup(_ sender: UITapGestureRecognizer) {
