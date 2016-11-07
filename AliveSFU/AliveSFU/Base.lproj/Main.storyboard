@@ -70,9 +70,7 @@
                                             <segue destination="Vt8-nt-Zfn" kind="show" id="Ahf-Lr-ECp"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n95-43-dKx">
-                                        <frame key="frameInset" width="340" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n95-43-dKx">
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.65098039220000004" green="0.098039215690000001" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -80,7 +78,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="n95-43-dKx" firstAttribute="top" secondItem="kmH-zc-yYp" secondAttribute="top" id="Cal-H9-taI"/>
+                                    <constraint firstAttribute="bottom" secondItem="n95-43-dKx" secondAttribute="bottom" constant="-7" id="OSB-jq-vRK"/>
+                                    <constraint firstItem="n95-43-dKx" firstAttribute="leading" secondItem="ud5-vu-E9k" secondAttribute="leading" id="Pfr-jF-yKP"/>
                                     <constraint firstItem="kmH-zc-yYp" firstAttribute="top" secondItem="ud5-vu-E9k" secondAttribute="top" id="abp-VB-2G7"/>
+                                    <constraint firstItem="n95-43-dKx" firstAttribute="trailing" secondItem="kmH-zc-yYp" secondAttribute="trailing" id="mK8-KA-3ek"/>
                                     <constraint firstItem="kmH-zc-yYp" firstAttribute="leading" secondItem="ud5-vu-E9k" secondAttribute="leading" constant="299" id="mcp-2J-quM"/>
                                     <constraint firstAttribute="trailing" secondItem="kmH-zc-yYp" secondAttribute="trailing" constant="3" id="uHn-UZ-KP9"/>
                                     <constraint firstItem="kmH-zc-yYp" firstAttribute="centerY" secondItem="ud5-vu-E9k" secondAttribute="centerY" id="wk9-Hq-429"/>
@@ -91,34 +93,51 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EaD-Ml-CdW">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="436" id="YU2-20-cO2"/>
+                                            <constraint firstAttribute="height" constant="436" id="Ie3-uD-xtf"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="EaD-Ml-CdW" firstAttribute="width" secondItem="byQ-mq-xbx" secondAttribute="width" id="6MW-5w-KEb"/>
-                                    <constraint firstAttribute="trailing" secondItem="EaD-Ml-CdW" secondAttribute="trailing" id="FbR-eA-q5Q"/>
-                                    <constraint firstAttribute="bottom" secondItem="EaD-Ml-CdW" secondAttribute="bottom" id="pWh-b8-2IW"/>
-                                    <constraint firstItem="EaD-Ml-CdW" firstAttribute="leading" secondItem="byQ-mq-xbx" secondAttribute="leading" id="xdV-PX-839"/>
-                                    <constraint firstItem="EaD-Ml-CdW" firstAttribute="top" secondItem="byQ-mq-xbx" secondAttribute="top" id="zh5-TL-ddo"/>
+                                    <constraint firstAttribute="trailing" secondItem="EaD-Ml-CdW" secondAttribute="trailing" id="HbM-KY-9vg"/>
+                                    <constraint firstItem="EaD-Ml-CdW" firstAttribute="top" secondItem="byQ-mq-xbx" secondAttribute="top" id="ceP-wi-6bX"/>
+                                    <constraint firstAttribute="bottom" secondItem="EaD-Ml-CdW" secondAttribute="bottom" constant="-43" id="iW3-Yd-wAS"/>
+                                    <constraint firstItem="EaD-Ml-CdW" firstAttribute="centerX" secondItem="byQ-mq-xbx" secondAttribute="centerX" id="s4Y-jl-3a9"/>
+                                    <constraint firstItem="EaD-Ml-CdW" firstAttribute="leading" secondItem="byQ-mq-xbx" secondAttribute="leading" id="vkT-zy-F2T"/>
                                 </constraints>
                             </scrollView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="P8h-RZ-csf">
+                                <segments>
+                                    <segment title="S"/>
+                                    <segment title="M"/>
+                                    <segment title="T"/>
+                                    <segment title="W"/>
+                                    <segment title="T"/>
+                                    <segment title="F"/>
+                                    <segment title="S"/>
+                                </segments>
+                                <color key="tintColor" red="0.65098039220000004" green="0.098039215690000001" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="dayValueChangeEvent:" destination="dEw-ij-UTy" eventType="valueChanged" id="Weg-zS-eAE"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="nEn-kv-wAx" secondAttribute="leading" id="GFl-QZ-9hk"/>
                             <constraint firstItem="ud5-vu-E9k" firstAttribute="top" secondItem="nEn-kv-wAx" secondAttribute="bottom" constant="20" id="Hue-As-rlE"/>
-                            <constraint firstItem="byQ-mq-xbx" firstAttribute="top" secondItem="ud5-vu-E9k" secondAttribute="bottom" constant="15" id="IdC-xb-AXL"/>
                             <constraint firstAttribute="leadingMargin" secondItem="ud5-vu-E9k" secondAttribute="leading" id="KXF-Tx-whK"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="byQ-mq-xbx" secondAttribute="leading" id="Oz1-sc-w1S"/>
+                            <constraint firstItem="P8h-RZ-csf" firstAttribute="top" secondItem="ud5-vu-E9k" secondAttribute="bottom" constant="15" id="OFV-09-4CZ"/>
+                            <constraint firstItem="P8h-RZ-csf" firstAttribute="trailing" secondItem="ud5-vu-E9k" secondAttribute="trailing" id="QHS-Hv-NR7"/>
                             <constraint firstItem="nEn-kv-wAx" firstAttribute="top" secondItem="ne0-Tp-18N" secondAttribute="bottom" constant="8" id="VzS-NO-c4h"/>
+                            <constraint firstItem="byQ-mq-xbx" firstAttribute="top" secondItem="P8h-RZ-csf" secondAttribute="bottom" constant="15" id="aHD-0N-dAO"/>
                             <constraint firstItem="ud5-vu-E9k" firstAttribute="width" secondItem="nEn-kv-wAx" secondAttribute="width" id="bhq-ye-hsr"/>
-                            <constraint firstItem="BqK-2W-GwH" firstAttribute="top" secondItem="byQ-mq-xbx" secondAttribute="bottom" constant="8" id="bnI-6A-JlV"/>
+                            <constraint firstItem="byQ-mq-xbx" firstAttribute="trailing" secondItem="P8h-RZ-csf" secondAttribute="trailing" id="c6z-yC-cke"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ud5-vu-E9k" secondAttribute="trailing" id="cah-Ef-4bf"/>
                             <constraint firstItem="BqK-2W-GwH" firstAttribute="top" secondItem="ud5-vu-E9k" secondAttribute="bottom" constant="459" id="fFy-kb-aKd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nEn-kv-wAx" secondAttribute="trailing" id="g7m-w2-6Sy"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="byQ-mq-xbx" secondAttribute="trailing" id="q5D-w5-K32"/>
-                            <constraint firstItem="byQ-mq-xbx" firstAttribute="width" secondItem="ud5-vu-E9k" secondAttribute="width" id="v40-aB-fIT"/>
+                            <constraint firstItem="BqK-2W-GwH" firstAttribute="top" secondItem="byQ-mq-xbx" secondAttribute="bottom" constant="8" symbolic="YES" id="oaE-La-u9i"/>
+                            <constraint firstItem="P8h-RZ-csf" firstAttribute="leading" secondItem="ud5-vu-E9k" secondAttribute="leading" id="q9d-d7-eXx"/>
+                            <constraint firstItem="byQ-mq-xbx" firstAttribute="leading" secondItem="P8h-RZ-csf" secondAttribute="leading" id="w6f-ph-pKG"/>
                             <constraint firstItem="BqK-2W-GwH" firstAttribute="top" secondItem="nEn-kv-wAx" secondAttribute="bottom" constant="512" id="zYv-KU-kZF"/>
                         </constraints>
                     </view>
@@ -127,7 +146,8 @@
                     <connections>
                         <outlet property="barChart" destination="nEn-kv-wAx" id="hrL-yX-UNV"/>
                         <outlet property="contentView" destination="EaD-Ml-CdW" id="iEO-Ws-BLt"/>
-                        <outlet property="contentViewHeight" destination="YU2-20-cO2" id="ZdW-7l-sgP"/>
+                        <outlet property="contentViewHeight" destination="Ie3-uD-xtf" id="asN-gx-PSp"/>
+                        <outlet property="daySelected" destination="P8h-RZ-csf" id="yJO-g2-Ku7"/>
                         <outlet property="informationLabel" destination="n95-43-dKx" id="TEa-d7-atZ"/>
                         <outlet property="scrollView" destination="byQ-mq-xbx" id="jg0-yF-JvU"/>
                     </connections>
@@ -686,10 +706,6 @@
                                             <segment title="S"/>
                                         </segments>
                                         <color key="tintColor" red="0.65098039220000004" green="0.098039215690000001" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="theDayCardio:" destination="mkf-Hg-IUR" eventType="valueChanged" id="bNc-hF-eR2"/>
-                                            <action selector="theDayStrength:" destination="fa0-Ee-UU8" eventType="valueChanged" id="901-mT-bRs"/>
-                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -758,6 +774,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="daysSegment" destination="b55-nT-xOY" id="GB4-4e-RwP"/>
                         <outlet property="exerciseNameInput" destination="oTv-6E-8gF" id="jrW-3D-irp"/>
                         <outlet property="repsInput" destination="n4b-FF-bzL" id="A8B-9L-Rob"/>
                         <outlet property="setsInput" destination="Kym-YQ-BJI" id="Vj0-wf-TTk"/>
@@ -953,9 +970,6 @@
                                             <segment title="S"/>
                                         </segments>
                                         <color key="tintColor" red="0.65098039220000004" green="0.098039215690000001" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="theDayCardio:" destination="mkf-Hg-IUR" eventType="valueChanged" id="lFT-AE-V4I"/>
-                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1030,6 +1044,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="daysSegment" destination="2G9-K0-Z1Y" id="mVp-D3-5Vm"/>
                         <outlet property="exerciseNameInput" destination="ylB-v7-Jmh" id="QU8-Zr-OIM"/>
                         <outlet property="resistanceInput" destination="eHb-F3-q9e" id="V8f-kB-EP0"/>
                         <outlet property="speedInput" destination="5GZ-ay-ADx" id="rei-ca-lpF"/>
@@ -1372,7 +1387,7 @@
         <image name="FitnessBuddy" width="30" height="30"/>
         <image name="Home" width="30" height="30"/>
         <image name="MyProgress" width="30" height="30"/>
-        <image name="Plus" width="147" height="224"/>
+        <image name="Plus" width="30" height="30"/>
         <image name="SFURec" width="30" height="30"/>
         <image name="SleepAnalysis" width="30" height="30"/>
         <image name="button" width="103" height="40"/>

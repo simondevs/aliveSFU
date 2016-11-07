@@ -42,11 +42,7 @@
 		C699DBAC1DCDD8570088CAEE /* JBLineChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = C699DBA61DCDD8570088CAEE /* JBLineChartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C699DBAD1DCDD8570088CAEE /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = C699DBA71DCDD8570088CAEE /* JBLineChartView.m */; };
 		C699DBAF1DCDDCC00088CAEE /* PracticeBarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699DBAE1DCDDCC00088CAEE /* PracticeBarGraph.swift */; };
-<<<<<<< dd703b3997209149430d7358fbb6fd7fef4abf35
 		FA7FB3171DC333BD00781EFB /* PopoverStrengthTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FB3161DC333BD00781EFB /* PopoverStrengthTile.swift */; };
-=======
-		FA7FB3171DC333BD00781EFB /* ExerciseTileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FB3161DC333BD00781EFB /* ExerciseTileViewController.swift */; };
->>>>>>> Added graph on my progress page, but it is not yet connected to actual app data. That needs to be implemented before this graph can show it, obviously. Also, maybe the graph should be adjusted to show a percentage of exercises completed for that day, instead of just exercises completed, that way, the user can have a goal of making all bars reach maximum height.
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +97,23 @@
 		};
 /* End PBXCopyFilesBuildPhase section */
 
+<<<<<<< HEAD
+/* Begin PBXCopyFilesBuildPhase section */
+		C699DB9F1DCDD7E50088CAEE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C699DB991DCDD7E50088CAEE /* JBChart.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+=======
+>>>>>>> simondevs-dev
 /* Begin PBXFileReference section */
 		41B003971DC5B1FC00762D2E /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		A90440971DCEDF2700C77EEE /* PopoverCardioTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverCardioTile.swift; sourceTree = "<group>"; };
@@ -144,11 +157,7 @@
 		C699DBA61DCDD8570088CAEE /* JBLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartView.h; sourceTree = "<group>"; };
 		C699DBA71DCDD8570088CAEE /* JBLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartView.m; sourceTree = "<group>"; };
 		C699DBAE1DCDDCC00088CAEE /* PracticeBarGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeBarGraph.swift; sourceTree = "<group>"; };
-<<<<<<< dd703b3997209149430d7358fbb6fd7fef4abf35
 		FA7FB3161DC333BD00781EFB /* PopoverStrengthTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverStrengthTile.swift; sourceTree = "<group>"; };
-=======
-		FA7FB3161DC333BD00781EFB /* ExerciseTileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTileViewController.swift; sourceTree = "<group>"; };
->>>>>>> Added graph on my progress page, but it is not yet connected to actual app data. That needs to be implemented before this graph can show it, obviously. Also, maybe the graph should be adjusted to show a percentage of exercises completed for that day, instead of just exercises completed, that way, the user can have a goal of making all bars reach maximum height.
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

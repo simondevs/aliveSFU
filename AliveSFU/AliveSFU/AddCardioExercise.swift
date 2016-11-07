@@ -17,18 +17,17 @@ class AddCardioExercise: UIViewController {
     @IBOutlet weak var speedInput: UITextField!
     @IBOutlet weak var timeInput: UITextField!
     @IBOutlet weak var resistanceInput: UITextField!
-    //Vivek:
-    var exerciseDayCardio: Int = 0
-    //Vivek:
-    
+    @IBOutlet weak var daysSegment: UISegmentedControl!
 
-    @IBAction func theDayCardio(_ sender: UISegmentedControl) {
-        exerciseDayCardio = sender.selectedSegmentIndex
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let calendar = NSCalendar.current
+        let date = NSDate()
+        let currDay = DaysInAWeek(rawValue : calendar.component(.weekday, from: date as Date))!
+        daysSegment.selectedSegmentIndex = currDay.index - 1
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,19 +38,15 @@ class AddCardioExercise: UIViewController {
     //Mark: Action
 
     @IBAction func saveButton(_ sender: UIButton) {
-        if ((exerciseNameInput.text != "") && (timeInput.text != ""))
+        if ((exerciseNameInput.text != "") && (timeInput.text != "") && (speedInput.text != "") && (resistanceInput.text != "") )
         {
-            let newExercise = Exercise()
-            newExercise.exerciseName = exerciseNameInput.text!
-            newExercise.resistance = resistanceInput.text!
-            newExercise.setDay(day1: exerciseDayCardio)
-            newExercise.category = newExercise.CATEGORY_CARDIO
-            if (speedInput.text != "") {
-                newExercise.speed = speedInput.text!
-            }
-            if (timeInput.text != "") {
-                newExercise.time = timeInput.text!
-            }
+            //fairly certain that generating the uuid here and passing it to factory is an example of dependency injection and therefore good programming standards
+            let uuid = NSUUID().uuidString //generate a unique UUID to use as indexing key for this exercise
+
+            let newExercise = ExerciseFactory.returnExerciseByCategory(type: .Cardio, exerciseName: exerciseNameInput.text!, day: DaysInAWeek(rawValue : daysSegment.selectedSegmentIndex + 1)!, completed: false, id : uuid)
+            (newExercise as! CardioExercise).speed = speedInput.text!
+            (newExercise as! CardioExercise).resistance = resistanceInput.text!
+            (newExercise as! CardioExercise).time = timeInput.text!
             let result = DataHandler.saveElementToExerciseArray(elem: newExercise)
             if (result == -1) {
                 //Handle Error
@@ -66,6 +61,15 @@ class AddCardioExercise: UIViewController {
     
     @IBAction func cancelButton(_ sender: UIButton) {
         self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
 
