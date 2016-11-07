@@ -30,7 +30,6 @@
 		A9AE2C4B1DC1824C00FB5BC0 /* SleepAnalysisController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE2C4A1DC1824C00FB5BC0 /* SleepAnalysisController.swift */; };
 		A9DD17601DC9682F00979495 /* AppData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9DD175E1DC9682F00979495 /* AppData.xcdatamodeld */; };
 		A9DD17621DC968F300979495 /* AppDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD17611DC968F300979495 /* AppDataController.swift */; };
-<<<<<<< HEAD
 		C699DB8C1DCDD7E50088CAEE /* JBChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C699DB831DCDD7E50088CAEE /* JBChart.framework */; };
 		C699DB931DCDD7E50088CAEE /* JBChartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C699DB921DCDD7E50088CAEE /* JBChartTests.m */; };
 		C699DB951DCDD7E50088CAEE /* JBChart.h in Headers */ = {isa = PBXBuildFile; fileRef = C699DB851DCDD7E50088CAEE /* JBChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -43,10 +42,11 @@
 		C699DBAC1DCDD8570088CAEE /* JBLineChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = C699DBA61DCDD8570088CAEE /* JBLineChartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C699DBAD1DCDD8570088CAEE /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = C699DBA71DCDD8570088CAEE /* JBLineChartView.m */; };
 		C699DBAF1DCDDCC00088CAEE /* PracticeBarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699DBAE1DCDDCC00088CAEE /* PracticeBarGraph.swift */; };
-		FA7FB3171DC333BD00781EFB /* ExerciseTileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FB3161DC333BD00781EFB /* ExerciseTileViewController.swift */; };
-=======
+<<<<<<< dd703b3997209149430d7358fbb6fd7fef4abf35
 		FA7FB3171DC333BD00781EFB /* PopoverStrengthTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FB3161DC333BD00781EFB /* PopoverStrengthTile.swift */; };
->>>>>>> 2501ed84110bfdd44aeb86115b8e0b90cd345dc6
+=======
+		FA7FB3171DC333BD00781EFB /* ExerciseTileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FB3161DC333BD00781EFB /* ExerciseTileViewController.swift */; };
+>>>>>>> Added graph on my progress page, but it is not yet connected to actual app data. That needs to be implemented before this graph can show it, obviously. Also, maybe the graph should be adjusted to show a percentage of exercises completed for that day, instead of just exercises completed, that way, the user can have a goal of making all bars reach maximum height.
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,7 +131,6 @@
 		A9AE2C4A1DC1824C00FB5BC0 /* SleepAnalysisController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepAnalysisController.swift; sourceTree = "<group>"; };
 		A9DD175F1DC9682F00979495 /* AppData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppData.xcdatamodel; sourceTree = "<group>"; };
 		A9DD17611DC968F300979495 /* AppDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDataController.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		C699DB831DCDD7E50088CAEE /* JBChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JBChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C699DB851DCDD7E50088CAEE /* JBChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBChart.h; sourceTree = "<group>"; };
 		C699DB861DCDD7E50088CAEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -145,10 +144,11 @@
 		C699DBA61DCDD8570088CAEE /* JBLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLineChartView.h; sourceTree = "<group>"; };
 		C699DBA71DCDD8570088CAEE /* JBLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLineChartView.m; sourceTree = "<group>"; };
 		C699DBAE1DCDDCC00088CAEE /* PracticeBarGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeBarGraph.swift; sourceTree = "<group>"; };
-		FA7FB3161DC333BD00781EFB /* ExerciseTileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTileViewController.swift; sourceTree = "<group>"; };
-=======
+<<<<<<< dd703b3997209149430d7358fbb6fd7fef4abf35
 		FA7FB3161DC333BD00781EFB /* PopoverStrengthTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverStrengthTile.swift; sourceTree = "<group>"; };
->>>>>>> 2501ed84110bfdd44aeb86115b8e0b90cd345dc6
+=======
+		FA7FB3161DC333BD00781EFB /* ExerciseTileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTileViewController.swift; sourceTree = "<group>"; };
+>>>>>>> Added graph on my progress page, but it is not yet connected to actual app data. That needs to be implemented before this graph can show it, obviously. Also, maybe the graph should be adjusted to show a percentage of exercises completed for that day, instead of just exercises completed, that way, the user can have a goal of making all bars reach maximum height.
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

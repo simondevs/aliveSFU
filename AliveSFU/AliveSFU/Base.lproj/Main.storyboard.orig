@@ -65,7 +65,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ud5-vu-E9k" userLabel="Exercise Label View">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmH-zc-yYp">
-                                        <state key="normal" image="07783FE5-C692-4B6F-B8AC-1F40B8213796"/>
+                                        <state key="normal" image="Plus"/>
                                         <connections>
                                             <segue destination="Vt8-nt-Zfn" kind="show" id="Ahf-Lr-ECp"/>
                                         </connections>
@@ -125,13 +125,12 @@
                     <navigationItem key="navigationItem" id="ckg-TK-IUo"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-<<<<<<< HEAD
                         <outlet property="barChart" destination="nEn-kv-wAx" id="hrL-yX-UNV"/>
-                        <outlet property="informationLabel" destination="n95-43-dKx" id="TEa-d7-atZ"/>
 =======
                         <outlet property="contentView" destination="EaD-Ml-CdW" id="iEO-Ws-BLt"/>
                         <outlet property="contentViewHeight" destination="YU2-20-cO2" id="ZdW-7l-sgP"/>
->>>>>>> 2501ed84110bfdd44aeb86115b8e0b90cd345dc6
+=======
+                        <outlet property="informationLabel" destination="n95-43-dKx" id="TEa-d7-atZ"/>
                         <outlet property="scrollView" destination="byQ-mq-xbx" id="jg0-yF-JvU"/>
                     </connections>
                 </viewController>
@@ -1372,25 +1371,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="07783FE5-C692-4B6F-B8AC-1F40B8213796" width="600" height="167">
-            <mutableData key="keyedArchiveRepresentation">
-YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBMU
-GR4fJSYsLzU4VSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBz
-V05TQ29sb3KAAoAMEiTAAACAA4AKWns2MDAsIDE2N33SFQoWGFpOUy5vYmplY3RzoReABIAJ0hUKGhii
-GxyABYAGgAkQBdMgCiEiIyRXTlMuYmFzZVtOUy5yZWxhdGl2ZYAAgAiAB18QfGZpbGU6Ly8vQXBwbGlj
-YXRpb25zL1hjb2RlLmFwcC9Db250ZW50cy9QbHVnSW5zL0lERUludGVyZmFjZUJ1aWxkZXJLaXQuaWRl
-cGx1Z2luL0NvbnRlbnRzL1Jlc291cmNlcy9JQk1pc3NpbmdJbWFnZUdseXBoLnRpZmbSJygpKlokY2xh
-c3NuYW1lWCRjbGFzc2VzVU5TVVJMoikrWE5TT2JqZWN00icoLS5XTlNBcnJheaItK9MwMQoyMzRXTlNX
-aGl0ZVxOU0NvbG9yU3BhY2VEMCAwABADgAvSJyg2N1dOU0NvbG9yojYr0icoOTpXTlNJbWFnZaI5K18Q
-D05TS2V5ZWRBcmNoaXZlctE9PlRyb290gAEACAARABoAIwAtADIANwBFAEsAVgBdAGQAcQB4AIAAggCE
-AIkAiwCNAJgAnQCoAKoArACuALMAtgC4ALoAvAC+AMUAzQDZANsA3QDfAV4BYwFuAXcBfQGAAYkBjgGW
-AZkBoAGoAbUBugG8Ab4BwwHLAc4B0wHbAd4B8AHzAfgAAAAAAAACAQAAAAAAAAA/AAAAAAAAAAAAAAAA
-AAAB+g
-</mutableData>
-        </image>
         <image name="FitnessBuddy" width="30" height="30"/>
         <image name="Home" width="30" height="30"/>
         <image name="MyProgress" width="30" height="30"/>
+<<<<<<< 9f0c0d9209afc55d7599cf6ac7b3cb56468b866c
+        <image name="Plus" width="147" height="224"/>
+=======
+        <image name="Plus" width="147" height="224"/>
+>>>>>>> Fixed wrong image for "Add Exercise" button
         <image name="SFURec" width="30" height="30"/>
         <image name="SleepAnalysis" width="30" height="30"/>
         <image name="button" width="103" height="40"/>

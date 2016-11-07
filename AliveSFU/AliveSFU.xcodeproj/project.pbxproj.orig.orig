@@ -97,6 +97,7 @@
 		};
 /* End PBXCopyFilesBuildPhase section */
 
+<<<<<<< HEAD
 /* Begin PBXCopyFilesBuildPhase section */
 		C699DB9F1DCDD7E50088CAEE /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -111,6 +112,8 @@
 		};
 /* End PBXCopyFilesBuildPhase section */
 
+=======
+>>>>>>> simondevs-dev
 /* Begin PBXFileReference section */
 		41B003971DC5B1FC00762D2E /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		A90440971DCEDF2700C77EEE /* PopoverCardioTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverCardioTile.swift; sourceTree = "<group>"; };
@@ -903,7 +906,6 @@
 				C699DB9B1DCDD7E50088CAEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 		C699DBA01DCDD7E50088CAEE /* Build configuration list for PBXNativeTarget "JBChartTests" */ = {
 			isa = XCConfigurationList;
@@ -912,7 +914,6 @@
 				C699DB9D1DCDD7E50088CAEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
