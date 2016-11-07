@@ -3,7 +3,7 @@
 //  AliveSFU
 //
 //  Created by Gur Kohli on 2016-10-26.
-//  Developers: Liam O'Shaughnessy, Vivek Sharma
+//  Developers: Liam O'Shaughnessy, Vivek Sharma, Jim Park, Gagan Kaur, Gur Kohli
 //  Copyright © 2016 SimonDevs. All rights reserved.
 //  Partial functionality adapted from a third party resource: https://github.com/thefirstnikhil/chartingdemo
 //
@@ -22,6 +22,11 @@ extension UIColor {
         self.init(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
     }
 }
+
+extension Notification.Name {
+    static let reload = Notification.Name("reload")
+}
+
     //3rd party libraries added here
 class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSource {
     

@@ -1,12 +1,13 @@
 //
 //  PopoverCardioTile.swift
 //  AliveSFU
-//
 //  Created by Gur Kohli on 2016-11-05.
+//  Developers: Gagan Kaur
 //  Copyright © 2016 SimonDevs. All rights reserved.
 //
 
 import UIKit
+import CoreData
 
 class PopoverCardioTile: UIViewController {
     
@@ -26,12 +27,19 @@ class PopoverCardioTile: UIViewController {
     @IBOutlet weak var staticRows: UIStackView!
     @IBOutlet weak var editableRows: UIStackView!
     
+    
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
+    
+    weak var myProgressViewController: MyProgressController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white.withAlphaComponent(0.8)
         showEditable(yes: false)
         self.showAnimate()
         
+        //NotificationCenter.default.post(name: .reload, object: nil)
         
         // Do any additional setup after loading the view.
     }
@@ -52,14 +60,43 @@ class PopoverCardioTile: UIViewController {
         self.removeAnimate()
     }
     
-    @IBAction func deleteButton(_ sender: AnyObject) {
+    @IBAction func deleteButton(_ sender: UIButton) {
+        
+        let name1: String = exerciseName.text!
+        let _res = DataHandler.deleteElementFromExerciseArray(name: name1)
+        myProgressViewController?.populateStackView()
+        removeAnimate()
+        
     }
+    
     
     @IBAction func cancelButton(_ sender: AnyObject) {
         showEditable(yes: false)
     }
     
-    @IBAction func saveButton(_ sender: AnyObject) {
+   
+    @IBAction func saveButton(_ sender: UIButton) {
+        
+        //pass new values here
+        
+        let originalExerciseName: String = exerciseName.text!
+        
+        let newExerciseObject = Exercise()
+        
+        newExerciseObject.category = newExerciseObject.CATEGORY_CARDIO
+        newExerciseObject.exerciseName = exerciseNameTextField.text!
+      
+        newExerciseObject.time = timeTextField.text!
+        newExerciseObject.speed = speedTextField.text!
+        newExerciseObject.resistance = resistanceTextField.text!
+        
+        let _ = DataHandler.saveExerciseChanges(elem: newExerciseObject, name: originalExerciseName)
+        
+        myProgressViewController?.populateStackView()
+        
+        removeAnimate()
+        
+        
     }
     
     func showAnimate()
