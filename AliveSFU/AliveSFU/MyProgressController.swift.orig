@@ -3,7 +3,7 @@
 //  AliveSFU
 //
 //  Created by Gur Kohli on 2016-10-26.
-//  Developers: Liam O'Shaughnessy, Vivek Sharma
+//  Developers: Liam O'Shaughnessy, Vivek Sharma, Jim Park, Gagan Kaur, Gur Kohli
 //  Copyright © 2016 SimonDevs. All rights reserved.
 //  Partial functionality adapted from a third party resource: https://github.com/thefirstnikhil/chartingdemo
 //
@@ -23,37 +23,43 @@ extension UIColor {
     }
 }
 
+<<<<<<< HEAD
+    static let reload = Notification.Name("reload")
+=======
     //3rd party libraries added here
 class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSource {
 <<<<<<< 4d08d346d75ba764e653aa2995f3000027a2283d
-
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var barChart: JBBarChartView! //The view the bar chart rests in
     @IBOutlet weak var informationLabel: UILabel! //The label that display info when a bar is tapped
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
     
+    var currDay : DaysInAWeek = DaysInAWeek.Sunday
     let CATEGORY_CARDIO_VIEW_TAG = 100
     let CATEGORY_STRENGTH_VIEW_TAG = 200
+    let PLACEHOLDER_TAG = 404
     let TILE_HEIGHT = CGFloat(80)
+    
+    var panTileOrigin = CGPoint(x: 0, y: 0)
     
     var chartLegend = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"] //x-axis information
     //let chartData = [5, 8, 6, 2, 9, 6, 4]//sample data to display bar graph, replace with actual exercise completion numbers
     let chartData = DataHandler.countCompletion() //Array that counts completed exercises
     let SFURed = UIColor(red: 166, green: 25, blue: 46)
     let SFUGrey = UIColor(red: 84, green: 88, blue: 90)
-=======
-    @IBOutlet weak var stackView: UIStackView!
+    let CATEGORY_CARDIO_VIEW_TAG = 100
     let chartData = DataHandler.countCompletion() //Array that counts completed exercises
-    @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
-    let SFURed = UIColor(red: 166, green: 25, blue: 46) //Creating a custom colour to match the SFU official red colour using the UIColor extension created above
-    let SFUGrey = UIColor(red: 84, green: 88, blue: 90)//Customly create SFUGrey
+    @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
+    let CATEGORY_STRENGTH_VIEW_TAG = 200
+    let TILE_HEIGHT = CGFloat(80)
 >>>>>>> Added a field in exercise class for completion of an exercise. Implemented a method in DataHandler to return an array of how many exercises have been completed in the days of the week. Used that method to calculate the height of the bars in the bar graphs. So now the bars in the bar graph should accurately show how many exercises are completed when the app is run.
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-<<<<<<< 4d08d346d75ba764e653aa2995f3000027a2283d
+        let calendar = NSCalendar.current
+        currDay = DaysInAWeek(rawValue : calendar.component(.weekday, from: date as Date))!
         setupBarChart()
         
 =======
@@ -65,7 +71,7 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         barChart.dataSource = self
         barChart.minimumValue = 0
         barChart.maximumValue = CGFloat(chartData.max()!) // max value of a bar in the graph is the max value from the data array. The visual height of each bar is relative to this value
-
+        //get today's date
         //NOTE: footer and header created below reduce size/space of the actual bar graph.
         
         //Creating a footer with appropriate Day labels. Spacing is hard coded unfortunately
@@ -111,53 +117,32 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         barChart.reloadData()
         _ = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(MyProgressController.showChart), userInfo: nil, repeats: false)
     }
-
+    @IBAction func dayValueChangeEvent(_ sender: UISegmentedControl) {
+        var changedIndex = sender.selectedSegmentIndex
+        currDay = DaysInAWeek(rawValue: changedIndex + 1)!
+        populateStackView()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         populateStackView()
-	contentViewHeight.constant = CGFloat(contentView.subviews.count) * TILE_HEIGHT
-    }
-    
+<<<<<<< HEAD
+        //let newContentFrame = CGRect(x: contentView.frame.origin.x, y: contentView.frame.origin.y, width: contentView.frame.width, height: CGFloat(contentView.subviews.count) * TILE_HEIGHT)
+            contentViewHeight.constant = scrollView.frame.height
+        } else {
+        contentViewHeight.constant = CGFloat(contentView.subviews.count) * TILE_HEIGHT
+        }
+=======
+    override func viewDidAppear(_ animated: Bool) {
+        print("Main view: ", self.view.subviews.count)
     override func viewDidDisappear(_ animated: Bool) {
-<<<<<<< 4d08d346d75ba764e653aa2995f3000027a2283d
+<<<<<<< HEAD
         for view in contentView.subviews {
 =======
-
-        super.viewDidDisappear(animated)
-        hideChart()
-
-        for view in stackView.subviews {
-            stackView.removeArrangedSubview(view)
->>>>>>> Added a field in exercise class for completion of an exercise. Implemented a method in DataHandler to return an array of how many exercises have been completed in the days of the week. Used that method to calculate the height of the bars in the bar graphs. So now the bars in the bar graph should accurately show how many exercises are completed when the app is run.
+=======
             view.removeFromSuperview()
         }
-    }
-    
-    func hideChart() {
-        barChart.setState(.collapsed, animated: true)
-    }
             //stackView.removeArrangedSubview(view)
-    //Vivek added:
-
-    func numberOfBars(in barChartView: JBBarChartView!) -> UInt {
-        return UInt(chartData.count)
-    }
-    
-    func barChartView(_ barChartView: JBBarChartView!, heightForBarViewAt index: UInt) -> CGFloat {
-        return CGFloat(chartData[Int(index)])
-    }
-    
-    func barChartView(_ barChartView: JBBarChartView!, colorForBarViewAt index: UInt) -> UIColor! {
-        return SFURed
-        
-    }
-
-    func barChartView(_ barChartView: JBBarChartView!, didSelectBarAt index: UInt) {
-        let data = chartData[Int(index)]
-        let key = chartLegend[Int(index)]
-        
-        informationLabel.text = "Workouts completed on \(key): \(data)"
-        //Maybe change the bar graphs to a percentage, so that if all workouts are completed on that day, the bar is a maximum height.
+    func showChart() {
     }
     
 <<<<<<< 4d08d346d75ba764e653aa2995f3000027a2283d
@@ -181,16 +166,19 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         // Dispose of any resources that can be recreated.
     }
     
+    
     @IBAction func showPopup(_ sender: UITapGestureRecognizer) {
-        
+
         if (sender.view?.tag == CATEGORY_CARDIO_VIEW_TAG) {
             let popoverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "cardioTilePopover") as! PopoverCardioTile
             self.addChildViewController(popoverVC)
             popoverVC.view.frame = self.view.frame
             popoverVC.view.tag = 600
+            popoverVC.rootViewController = self
             self.view.addSubview(popoverVC.view)
             
             let tile = sender.view as! CardioTileView
+            popoverVC.uuid = tile.uuid
             popoverVC.exerciseName.text = tile.exerciseName.text
             popoverVC.time.text = tile.time.text
             popoverVC.speed.text = tile.speed.text
@@ -201,9 +189,11 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
             let popoverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "strengthTilePopover") as! PopoverStrengthTile
             self.addChildViewController(popoverVC)
             popoverVC.view.frame = self.view.frame
+            popoverVC.rootViewController = self
             self.view.addSubview(popoverVC.view)
             
             let tile = sender.view as! StrengthTileView
+            popoverVC.uuid = tile.uuid
             popoverVC.exerciseName.text = tile.exerciseName.text
             popoverVC.sets.text = tile.sets.text
             popoverVC.reps.text = tile.reps.text
@@ -211,39 +201,95 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         }
     }
     
-    func tileSwipeGesture(_ sender: UISwipeGestureRecognizer) {
-        if (sender.direction == .left) {
-        print("After readonly: ", self.view.subviews.count)
-        } else if (sender.direction == .right) {
-            print("Right swipe on tile recognized")
+<<<<<<< HEAD
+            self.panTileOrigin = gesture.view!.frame.origin
+        }
+        if (gesture.state == .began || gesture.state == .changed) {
+            let translation = gesture.translation(in: contentView)
+            gesture.view!.center = CGPoint(x: gesture.view!.center.x + translation.x/2, y: gesture.view!.center.y)
+            gesture.setTranslation(CGPoint.zero, in: contentView)
+            if (gesture.view!.center.x < 370) {
+                print("Left Drag")
+            } else if (gesture.view!.center.x > 640) {
+            }
+            UIView.animate(withDuration: 0.1, animations: {gesture.view!.frame.origin = self.panTileOrigin})
         }
     }
     
+=======
+    //Event handler for detecting when the user swipes the page left or right
+    //Post condition: should change the currently displayed page
+>>>>>>> 213b23343675f14220415433901ff86bd64e0907
     func handleSwipes(_ recognizer: UIScreenEdgePanGestureRecognizer){
         if (recognizer.state == .recognized) {
             if(recognizer.edges == .left) {
-                print("Swipe Right from left edge ")//dummy code
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.contentView.center.x += self.contentView.frame.width
+                })
+                //If the page is at Sunday, swiping left should get you to Saturday
+                if (currDay == DaysInAWeek.Sunday)
+                {
+                    currDay = DaysInAWeek.Saturday
                 }
+                else
+                {
+                    let newDay = currDay.rawValue - 1
+                    currDay = DaysInAWeek(rawValue: newDay)!
+                }
+                daySelected.selectedSegmentIndex = currDay.rawValue - 1 //change segment value as well
+                populateStackView()
+                contentView.center.x -= contentView.frame.width
+            }
             if(recognizer.edges == .right) {
-                print("Swipe Left from right edge") //dummy code
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.contentView.center.x -= self.contentView.frame.width
+                })
+                //If the page is at Saturday, swiping right should get you to Sunday
+                if (currDay == DaysInAWeek.Saturday) {
+                    currDay = DaysInAWeek.Sunday
                 }
+                else
+                {
+                    let newDay = currDay.rawValue + 1
+                    currDay = DaysInAWeek(rawValue: newDay)!
+                }
+                daySelected.selectedSegmentIndex = currDay.rawValue - 1 //change segment value as well
+                populateStackView()
+                contentView.center.x += contentView.frame.width
+            }
+            //Recenter contentview since it changed from swiping
         }
-        //NEED TO GET ARRAY DATA AND CHANGE TILES IN THE VIEW CONTROLLER
     }
     
+    //Function that handles the reloading of My Progress page when something is updated from another view
+    //e.g. when a tile is changed, this function is called to update the changed tiles and the graphs
+    func handleReloading()
+    {
+        populateStackView()
+    }
+    
+    //Function for populating the exercise tiles
+    //TODO: there's some magic numbers in here, should consider using constants (or 'let' in this newfangled language???)
     func populateStackView() {
+        //since the view is now changed, get rid of all preexisting subviews
+        for view in contentView.subviews {
+            view.removeFromSuperview()
+        }
         let exerciseArrayCount = DataHandler.getExerciseArrayCount()
         if (exerciseArrayCount == 0) {
             //Display Placeholder Exercise Tile
-            print("Works")
+            let placeholder = UIImageView(image: UIImage(named: "noExercisePlaceholder"))
+            placeholder.tag = PLACEHOLDER_TAG
+            placeholder.frame = CGRect(x: 0, y: 0, width: self.view.frame.width - 40, height: 500)
+            contentView.addSubview(placeholder)
         } else {
             //Populate Exercise Tiles
             let exerciseArray = DataHandler.getExerciseArray()
-            
             for elem in exerciseArray {
                 
-                let frame = CGRect(x: 0, y: CGFloat(contentView.subviews.count - 1) * 85, width: scrollView.bounds.width, height: TILE_HEIGHT)
+                let frame = CGRect(x: 0, y: CGFloat(contentView.subviews.count) * 85, width: scrollView.bounds.width, height: TILE_HEIGHT)
                 
+<<<<<<< HEAD
                 if (elem.category == elem.CATEGORY_CARDIO) {
                     let tile = CardioTileView(frame: frame, name: elem.exerciseName, time: elem.time, speed: elem.speed, resistance: elem.resistance)
                     tile.tag = CATEGORY_CARDIO_VIEW_TAG
@@ -251,10 +297,9 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
                     let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
                     tile.addGestureRecognizer(tapGesture)
                     
-                    tile.tag = CATEGORY_CARDIO_VIEW_TAG
-                    swipeLeft.direction = .left
+                    let slideGesture = UIPanGestureRecognizer(target: self, action: #selector (self.tileSlideGesture(_:)))
+
                     tile.addGestureRecognizer(swipeLeft)
-                    scrollView.panGestureRecognizer.require(toFail: swipeLeft)
                     
                     let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector (self.tileSwipeGesture(_:)))
                     swipeRight.direction = .right
@@ -268,21 +313,38 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
                     let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
                     tile.addGestureRecognizer(tapGesture)
                     
-                    tile.tag = CATEGORY_STRENGTH_VIEW_TAG
-                    swipeLeft.direction = .left
+                    let slideGesture = UIPanGestureRecognizer(target: self, action: #selector (self.tileSlideGesture(_:)))
+                    tile.addGestureRecognizer(slideGesture)
+                    scrollView.panGestureRecognizer.require(toFail: slideGesture)
+                    
+                    contentView.addSubview(tile)
+=======
+                //Only grab exercises corresponding to the current day to be displayed
+                if (elem.day == currDay)
+                {
+                    if (elem.getType() == .Cardio) {
+                        let tile = CardioTileView(frame: frame, name: elem.exerciseName, time: (elem as! CardioExercise).time, speed: (elem as! CardioExercise).speed, resistance: (elem as! CardioExercise).resistance)
+                        tile.tag = CATEGORY_CARDIO_VIEW_TAG
+                        tile.uuid = elem.id
+                        let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
+                        tile.addGestureRecognizer(tapGesture)
+                        
+                        contentView.addSubview(tile)
+                    } else {
+                        let tile = StrengthTileView(frame: frame, name: elem.exerciseName, sets: (elem as! StrengthExercise).sets, reps: (elem as! StrengthExercise).reps)
+                        tile.tag = CATEGORY_STRENGTH_VIEW_TAG
+
                     tile.addGestureRecognizer(swipeLeft)
                     scrollView.panGestureRecognizer.require(toFail: swipeLeft)
                     
-                    let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector (self.tileSwipeGesture(_:)))
                     swipeRight.direction = .right
-                    tile.addGestureRecognizer(swipeRight)
                     scrollView.panGestureRecognizer.require(toFail: swipeRight)
-                    
-                    contentView.addSubview(tile)
+                        contentView.addSubview(tile)
+                    }
+                //print("Stack Height: ", stackView.frame.height)
                 }
             }
         }
-    }
     func setupBarChart()
     {
         barChart.backgroundColor = UIColor.white
@@ -310,6 +372,36 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         barChart.headerView = header
         barChart.reloadData()
         barChart.setState(.collapsed, animated: false)
+    }
+    
+    func hideChart() {
+        barChart.setState(.collapsed, animated: true)
+    }
+    
+    func showChart() {
+        barChart.setState(.expanded, animated: true)
+    }
+    
+    
+    func numberOfBars(in barChartView: JBBarChartView!) -> UInt {
+        return UInt(chartData.count)
+    }
+    
+    func barChartView(_ barChartView: JBBarChartView!, heightForBarViewAt index: UInt) -> CGFloat {
+        return CGFloat(chartData[Int(index)])
+    }
+    
+    func barChartView(_ barChartView: JBBarChartView!, colorForBarViewAt index: UInt) -> UIColor! {
+        return SFURed
+        
+    }
+    
+    func barChartView(_ barChartView: JBBarChartView!, didSelectBarAt index: UInt) {
+        let data = chartData[Int(index)]
+        let key = chartLegend[Int(index)]
+        
+        informationLabel.text = "Workouts completed on \(key): \(data)"
+        //Maybe change the bar graphs to a percentage, so that if all workouts are completed on that day, the bar is a maximum height.
     }
 
 }
