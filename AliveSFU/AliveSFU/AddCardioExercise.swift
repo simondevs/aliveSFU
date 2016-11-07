@@ -39,19 +39,16 @@ class AddCardioExercise: UIViewController {
     //Mark: Action
 
     @IBAction func saveButton(_ sender: UIButton) {
-        if ((exerciseNameInput.text != "") && (timeInput.text != ""))
+        if ((exerciseNameInput.text != "") && (timeInput.text != "") && (speedInput.text != "") && (resistanceInput.text != "") )
         {
-            let newExercise = Exercise()
-            newExercise.exerciseName = exerciseNameInput.text!
-            newExercise.resistance = resistanceInput.text!
-            newExercise.setDay(day1: exerciseDayCardio)
-            newExercise.category = newExercise.CATEGORY_CARDIO
-            if (speedInput.text != "") {
-                newExercise.speed = speedInput.text!
-            }
-            if (timeInput.text != "") {
-                newExercise.time = timeInput.text!
-            }
+            //fairly certain that generating the uuid here and passing it to factory is an example of dependency injection and therefore good programming standards
+            let uuid = NSUUID().uuidString //generate a unique UUID to use as indexing key for this exercise
+            
+            //remember to increment exerciseDayCardio by 1 because the NSDate indexing for weekdays start at 1
+            let newExercise = ExerciseFactory.returnExerciseByCategory(type: .Cardio, exerciseName: exerciseNameInput.text!, day: DaysInAWeek(rawValue : exerciseDayCardio+1)!, completed: false, id : uuid)
+            (newExercise as! CardioExercise).speed = speedInput.text!
+            (newExercise as! CardioExercise).resistance = resistanceInput.text!
+            (newExercise as! CardioExercise).time = timeInput.text!
             let result = DataHandler.saveElementToExerciseArray(elem: newExercise)
             if (result == -1) {
                 //Handle Error

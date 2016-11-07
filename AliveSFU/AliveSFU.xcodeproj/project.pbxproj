@@ -903,6 +903,7 @@
 				C699DB9B1DCDD7E50088CAEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C699DBA01DCDD7E50088CAEE /* Build configuration list for PBXNativeTarget "JBChartTests" */ = {
 			isa = XCConfigurationList;
@@ -911,6 +912,7 @@
 				C699DB9D1DCDD7E50088CAEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

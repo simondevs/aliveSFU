@@ -1,15 +1,18 @@
 //
 //  PopoverCardioTile.swift
 //  AliveSFU
-//
 //  Created by Gur Kohli on 2016-11-05.
+//  Developers: Gagan Kaur
 //  Copyright © 2016 SimonDevs. All rights reserved.
 //
 
 import UIKit
+import CoreData
 
 class PopoverCardioTile: UIViewController {
     
+    var currCardioExercise : CardioExercise? = nil
+    var uuid : String = ""
     @IBOutlet weak var exerciseName: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var speed: UILabel!
@@ -26,12 +29,19 @@ class PopoverCardioTile: UIViewController {
     @IBOutlet weak var staticRows: UIStackView!
     @IBOutlet weak var editableRows: UIStackView!
     
+    
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
+    
+    weak var rootViewController: MyProgressController? //TODO: find something more elegant
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white.withAlphaComponent(0.8)
         showEditable(yes: false)
         self.showAnimate()
         
+        //NotificationCenter.default.post(name: .reload, object: nil)
         
         // Do any additional setup after loading the view.
     }
@@ -52,14 +62,38 @@ class PopoverCardioTile: UIViewController {
         self.removeAnimate()
     }
     
-    @IBAction func deleteButton(_ sender: AnyObject) {
+    @IBAction func deleteButton(_ sender: UIButton) {
+        let _res = DataHandler.deleteElementFromExerciseArray(id: uuid)
+        //reload the myProgress page
+        //self.view.superview?.setNeedsDisplay()
+        removeAnimate()
+        
     }
+    
     
     @IBAction func cancelButton(_ sender: AnyObject) {
         showEditable(yes: false)
     }
     
-    @IBAction func saveButton(_ sender: AnyObject) {
+   
+    @IBAction func saveButton(_ sender: UIButton) {
+        
+        //pass new values here
+        let originalExerciseName: String = exerciseName.text!
+        
+        //The day field and completed field are not necessary for the function, so we're passing in arbitrary numbers
+        let newExerciseObject = CardioExercise(exerciseName: exerciseNameTextField.text!, day: .Sunday, completed: false, id : uuid)
+        newExerciseObject.time = timeTextField.text!
+        newExerciseObject.speed = speedTextField.text!
+        newExerciseObject.resistance = resistanceTextField.text!
+        self.view.superview?.setNeedsDisplay()
+        let _ = DataHandler.saveExerciseChanges(elem: newExerciseObject)
+        
+        //reload the myProgress page
+        //self.view.superview?.setNeedsDisplay()
+        removeAnimate()
+        
+        
     }
     
     func showAnimate()
@@ -81,6 +115,7 @@ class PopoverCardioTile: UIViewController {
             }, completion:{(finished : Bool) in
                 if (finished)
                 {
+                    self.rootViewController!.handleReloading() //reload My Progress page
                     self.view.removeFromSuperview()
                 }
         });
