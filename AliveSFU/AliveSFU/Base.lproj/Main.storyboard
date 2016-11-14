@@ -24,33 +24,198 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Home Page" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="92.5" y="313" width="190.5" height="41.5"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="aliveSFU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eH-E2-YAf" userLabel="aliveSFU">
+                                <rect key="frame" x="30" y="-2" width="315" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5Eq-qk-f4q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
+                                <color key="textColor" red="0.71168619394302368" green="0.0" blue="0.15891879796981812" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by HomePageController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="85" y="362.5" width="205.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC9-C2-iao" userLabel="MyProfile">
+                                <rect key="frame" x="138" y="103" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="e9r-yV-C3d"/>
+                                    <constraint firstAttribute="width" secondItem="DC9-C2-iao" secondAttribute="height" multiplier="1:1" id="rOV-Ev-KL3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <state key="normal" title="MyProfile" backgroundImage="circularButton"/>
+                                <state key="selected" backgroundImage="circularButton"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="LS2-pW-yo9" userLabel="Row1">
+                                <rect key="frame" x="30" y="278" width="315" height="80"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iRa-RH-hYZ" userLabel="Col1">
+                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="80"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcm-FT-8CH" userLabel="Step Count">
+                                                <rect key="frame" x="0.0" y="0.0" width="137.5" height="40"/>
+                                                <color key="backgroundColor" red="0.71168619394302368" green="0.0" blue="0.15891879796981812" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="stepCountVar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOv-Dl-eGs" userLabel="stepCount">
+                                                <rect key="frame" x="0.0" y="40" width="137.5" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="oOv-Dl-eGs" firstAttribute="height" secondItem="dcm-FT-8CH" secondAttribute="height" id="r6x-6Q-QsQ"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XoE-Dq-YAJ" userLabel="Col2">
+                                        <rect key="frame" x="177.5" y="0.0" width="137.5" height="80"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories Burned" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qjb-Yx-eBm" userLabel="Calories Burned">
+                                                <rect key="frame" x="0.0" y="0.0" width="137.5" height="40"/>
+                                                <color key="backgroundColor" red="0.71168619394302368" green="0.0" blue="0.15891879796981812" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="calorieBurned" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKM-IX-4a7" userLabel="calorieBurned">
+                                                <rect key="frame" x="0.0" y="40" width="137.5" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="eKM-IX-4a7" firstAttribute="height" secondItem="Qjb-Yx-eBm" secondAttribute="height" id="zC4-E1-tH6"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="iRa-RH-hYZ" firstAttribute="width" secondItem="XoE-Dq-YAJ" secondAttribute="width" id="NTx-VX-TjY"/>
+                                    <constraint firstAttribute="height" constant="80" id="zs9-l7-lFt"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AzW-qG-PRp" userLabel="Row2">
+                                <rect key="frame" x="30" y="433" width="315" height="80"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uWZ-Ej-hJy" userLabel="Col1">
+                                        <rect key="frame" x="89" y="0.0" width="138" height="80"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Sleep" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2y-Lg-OZv" userLabel="Today's Sleep">
+                                                <rect key="frame" x="0.0" y="0.0" width="138" height="40"/>
+                                                <color key="backgroundColor" red="0.71168619394302368" green="0.0" blue="0.15891879796981812" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="todaySleep" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24Y-2I-iJu" userLabel="todaySleep">
+                                                <rect key="frame" x="0.0" y="40" width="138" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="P2y-Lg-OZv" firstAttribute="width" secondItem="24Y-2I-iJu" secondAttribute="width" id="M9N-ah-VSW"/>
+                                            <constraint firstItem="P2y-Lg-OZv" firstAttribute="height" secondItem="24Y-2I-iJu" secondAttribute="height" id="lVm-Xk-OFf"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="uWZ-Ej-hJy" firstAttribute="centerY" secondItem="AzW-qG-PRp" secondAttribute="centerY" id="3u6-rf-qJq"/>
+                                    <constraint firstItem="uWZ-Ej-hJy" firstAttribute="centerX" secondItem="AzW-qG-PRp" secondAttribute="centerX" id="8Cd-As-BWH"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="AzW-qG-PRp" firstAttribute="top" secondItem="LS2-pW-yo9" secondAttribute="bottom" constant="75" id="8ow-Wh-ntU"/>
+                            <constraint firstItem="DC9-C2-iao" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="HZW-vE-BXA"/>
+                            <constraint firstItem="uWZ-Ej-hJy" firstAttribute="width" secondItem="iRa-RH-hYZ" secondAttribute="width" id="KUX-jM-n1e"/>
+                            <constraint firstItem="DC9-C2-iao" firstAttribute="top" secondItem="2eH-E2-YAf" secondAttribute="bottom" constant="65" id="RVV-21-gBx"/>
+                            <constraint firstItem="AzW-qG-PRp" firstAttribute="height" secondItem="LS2-pW-yo9" secondAttribute="height" id="UvP-m6-yqv"/>
+                            <constraint firstItem="LS2-pW-yo9" firstAttribute="top" secondItem="DC9-C2-iao" secondAttribute="bottom" constant="75" id="Vx3-DZ-g4A"/>
+                            <constraint firstItem="LS2-pW-yo9" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" constant="-60" id="X0B-MJ-1P2"/>
+                            <constraint firstItem="uWZ-Ej-hJy" firstAttribute="height" secondItem="iRa-RH-hYZ" secondAttribute="height" id="XG6-Iv-Ys4"/>
+                            <constraint firstItem="LS2-pW-yo9" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="ZzG-P3-ID0"/>
+                            <constraint firstItem="2eH-E2-YAf" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="cUe-57-tcb"/>
+                            <constraint firstItem="AzW-qG-PRp" firstAttribute="width" secondItem="LS2-pW-yo9" secondAttribute="width" id="d5A-l0-Agm"/>
+                            <constraint firstItem="2eH-E2-YAf" firstAttribute="width" secondItem="LS2-pW-yo9" secondAttribute="width" id="gPR-tW-PGH"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="2eH-E2-YAf" secondAttribute="bottom" constant="580" id="hMJ-mG-8jW"/>
+                            <constraint firstItem="AzW-qG-PRp" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="yFK-IQ-QZy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7iR-Hg-k8g"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1889" y="1549"/>
+            <point key="canvasLocation" x="-1807.2" y="1594.4527736131936"/>
         </scene>
         <!--My Progress Controller-->
         <scene sceneID="6YM-Va-vi3">
@@ -1510,6 +1675,7 @@
         <image name="SleepAnalysis" width="30" height="30"/>
         <image name="button" width="103" height="40"/>
         <image name="cardio" width="30" height="30"/>
+        <image name="circularButton" width="150" height="150"/>
         <image name="popover" width="147" height="224"/>
         <image name="strength" width="30" height="30"/>
     </resources>
