@@ -66,7 +66,6 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = true
         
         let calendar = NSCalendar.current
         let date = NSDate()
@@ -109,6 +108,7 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
     override func viewWillAppear(_ animated: Bool) {
         populateStackView()
         updateChartData()
+        self.navigationController?.isNavigationBarHidden = true
         
         if (contentView.subviews.count == 1 && contentView.subviews.first?.tag == PLACEHOLDER_TAG) {
             contentViewHeight.constant = scrollView.frame.height
