@@ -52,6 +52,9 @@
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <state key="normal" title="MyProfile" backgroundImage="circularButton"/>
                                 <state key="selected" backgroundImage="circularButton"/>
+                                <connections>
+                                    <action selector="openMyProfile:" destination="9pv-A4-QxB" eventType="touchUpInside" id="UdV-mY-t8M"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="LS2-pW-yo9" userLabel="Row1">
                                 <rect key="frame" x="30" y="278" width="315" height="80"/>
@@ -212,6 +215,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7iR-Hg-k8g"/>
+                    <connections>
+                        <outlet property="calorieBurned" destination="eKM-IX-4a7" id="9px-tR-2jG"/>
+                        <outlet property="stepCount" destination="oOv-Dl-eGs" id="pUd-hh-KYF"/>
+                        <outlet property="todaySleep" destination="24Y-2I-iJu" id="Sf0-TX-Tvg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
