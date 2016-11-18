@@ -18,6 +18,9 @@ class AddStrengthExercise: UIViewController {
     @IBOutlet weak var repsInput: UITextField!
     @IBOutlet weak var daysSegment: UISegmentedControl!
     
+    @IBOutlet weak var category: UIView!
+    @IBOutlet weak var form: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,6 +29,10 @@ class AddStrengthExercise: UIViewController {
         let date = NSDate()
         let currDay = DaysInAWeek(rawValue : calendar.component(.weekday, from: date as Date))!
         daysSegment.selectedSegmentIndex = currDay.index - 1
+        
+        let borderColor = UIColor.init(red: 238, green: 238, blue: 238).cgColor
+        category.layer.borderColor = borderColor
+        form.layer.borderColor = borderColor
     }
     
     override func didReceiveMemoryWarning() {

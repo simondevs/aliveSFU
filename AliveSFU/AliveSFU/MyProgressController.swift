@@ -43,7 +43,8 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
-    
+    @IBOutlet weak var exerciseLabel: UIView!
+
 /* Constants */
     
     let CATEGORY_CARDIO_VIEW_TAG = 100
@@ -85,6 +86,11 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         view.addGestureRecognizer(leftEdge)
         view.addGestureRecognizer(rightEdge)*/
 
+        let borderColor = UIColor.init(red: 238, green: 238, blue: 238).cgColor
+        contentView.layer.borderColor = borderColor
+        barChart.layer.borderColor = borderColor
+        exerciseLabel.layer.borderColor = borderColor
+        
         for view in contentView.subviews {
             view.removeFromSuperview()
         }
