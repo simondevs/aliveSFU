@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JBChart
 
 class SleepAnalysisController: UIViewController {
     
@@ -15,11 +16,16 @@ class SleepAnalysisController: UIViewController {
     @IBOutlet weak var percentageSpentSleeping: UILabel!
     @IBOutlet weak var timesWokenUp: UILabel!
     @IBOutlet weak var timeTakenToSleep: UILabel!
+    @IBOutlet weak var graphView: JBBarChartView!
+    @IBOutlet weak var labelView: UIView!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let borderColor = UIColor.init(red: 238, green: 238, blue: 238).cgColor
+        graphView.layer.borderColor = borderColor
+        labelView.layer.borderColor = borderColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
