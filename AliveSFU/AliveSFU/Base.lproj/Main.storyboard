@@ -353,26 +353,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" text="Sleep Analysis" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="g3T-uV-CBy">
-                                <rect key="frame" x="70" y="291" width="235" height="42"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loaded by SleepAnalysisController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXA-fY-dvL">
-                                <rect key="frame" x="76" y="341" width="224" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8C-nx-OwB" userLabel="Graph View" customClass="JBBarChartView">
+                                <rect key="frame" x="15" y="72" width="345" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ptZ-KN-2Sg" userLabel="Rows">
+                                <rect key="frame" x="15" y="146" width="345" height="432"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percentage of time in bed user spent sleeping: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXn-HN-m5R">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="108.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time spent Sleeping:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bp4-xF-5Ts">
+                                        <rect key="frame" x="0.0" y="108.5" width="345" height="108"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2E-ka-gGH">
+                                        <rect key="frame" x="0.0" y="216.5" width="345" height="108"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MS2-3r-h5d">
+                                        <rect key="frame" x="0.0" y="324.5" width="345" height="107.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="kXn-HN-m5R" firstAttribute="height" secondItem="Bp4-xF-5Ts" secondAttribute="height" id="IW4-3V-Yp6"/>
+                                    <constraint firstItem="MS2-3r-h5d" firstAttribute="height" secondItem="F2E-ka-gGH" secondAttribute="height" id="cbG-c2-O1D"/>
+                                    <constraint firstItem="Bp4-xF-5Ts" firstAttribute="height" secondItem="F2E-ka-gGH" secondAttribute="height" id="kue-4c-FqL"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="DXA-fY-dvL" firstAttribute="centerX" secondItem="g3T-uV-CBy" secondAttribute="centerX" id="L7O-qk-xvR"/>
-                            <constraint firstItem="g3T-uV-CBy" firstAttribute="centerX" secondItem="2pl-tQ-BQb" secondAttribute="centerX" id="MPE-fe-ikQ"/>
-                            <constraint firstItem="g3T-uV-CBy" firstAttribute="centerY" secondItem="2pl-tQ-BQb" secondAttribute="centerY" id="ODb-sg-heq"/>
-                            <constraint firstItem="DXA-fY-dvL" firstAttribute="top" secondItem="g3T-uV-CBy" secondAttribute="bottom" id="oVf-UY-OwE"/>
+                            <constraint firstItem="p8C-nx-OwB" firstAttribute="width" secondItem="2pl-tQ-BQb" secondAttribute="width" constant="-30" id="1GT-kl-PcG"/>
+                            <constraint firstItem="p8C-nx-OwB" firstAttribute="top" secondItem="8gF-UH-7rq" secondAttribute="bottom" constant="8" id="FMO-qY-2lh"/>
+                            <constraint firstItem="aCp-ED-uQR" firstAttribute="top" secondItem="p8C-nx-OwB" secondAttribute="bottom" constant="512" id="Tqk-Hc-ADR"/>
+                            <constraint firstItem="ptZ-KN-2Sg" firstAttribute="centerX" secondItem="2pl-tQ-BQb" secondAttribute="centerX" id="XeO-Fg-GNE"/>
+                            <constraint firstItem="p8C-nx-OwB" firstAttribute="centerX" secondItem="2pl-tQ-BQb" secondAttribute="centerX" id="fBZ-a6-TtC"/>
+                            <constraint firstItem="ptZ-KN-2Sg" firstAttribute="top" secondItem="p8C-nx-OwB" secondAttribute="bottom" constant="40" id="gir-cf-jtw"/>
+                            <constraint firstItem="ptZ-KN-2Sg" firstAttribute="width" secondItem="p8C-nx-OwB" secondAttribute="width" id="hBz-Ql-xb0"/>
+                            <constraint firstItem="aCp-ED-uQR" firstAttribute="top" secondItem="ptZ-KN-2Sg" secondAttribute="bottom" constant="40" id="w5g-nD-The"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SlB-Q0-DVa"/>
@@ -380,7 +409,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EWB-Mp-iVC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2180" y="1585"/>
+            <point key="canvasLocation" x="2180" y="1584.5577211394304"/>
         </scene>
         <!--Recreation Controller-->
         <scene sceneID="wg7-f3-ORb">
