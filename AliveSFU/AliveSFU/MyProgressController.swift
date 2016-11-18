@@ -116,11 +116,7 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         updateChartData()
         self.navigationController?.isNavigationBarHidden = true
         
-        if (contentView.subviews.count == 1 && contentView.subviews.first?.tag == PLACEHOLDER_TAG) {
-            contentViewHeight.constant = scrollView.frame.height
-        } else {
-            contentViewHeight.constant = CGFloat(contentView.subviews.count) * TILE_HEIGHT
-        }
+        updateContentViewSize()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -130,7 +126,7 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
     }
 
     override func viewDidLayoutSubviews() {
-        scrollView.contentSize.height = CGFloat(contentView.subviews.count) * (TILE_HEIGHT + 10)
+        scrollView.contentSize.height = CGFloat(contentView.subviews.count) * (TILE_HEIGHT + 5)
         scrollView.isScrollEnabled = true;
         scrollView.isUserInteractionEnabled = true;
         scrollView.canCancelContentTouches = true;
@@ -148,12 +144,8 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         let changedIndex = sender.selectedSegmentIndex
         currDay = DaysInAWeek(rawValue: changedIndex + 1)!
         populateStackView()
+        updateContentViewSize()
         
-        if (contentView.subviews.count == 1 && contentView.subviews.first?.tag == PLACEHOLDER_TAG) {
-            contentViewHeight.constant = scrollView.frame.height
-        } else {
-            contentViewHeight.constant = CGFloat(contentView.subviews.count) * TILE_HEIGHT
-        }
         scrollView.layoutIfNeeded()
     }
     
@@ -277,6 +269,7 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
     {
         populateStackView()
         updateChartData()
+        updateContentViewSize()
     }
     
     //Function for populating the exercise tiles
@@ -395,6 +388,14 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
     func updateChartData() {
         chartData = DataHandler.countCompletion()
         barChart.reloadData()
+    }
+    
+    func updateContentViewSize() {
+        if (contentView.subviews.count == 1 && contentView.subviews.first?.tag == PLACEHOLDER_TAG) {
+            contentViewHeight.constant = scrollView.frame.height
+        } else {
+            contentViewHeight.constant = CGFloat(contentView.subviews.count) * (TILE_HEIGHT + 5)
+        }
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {

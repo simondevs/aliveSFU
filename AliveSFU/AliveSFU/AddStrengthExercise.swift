@@ -9,7 +9,7 @@
 
 import UIKit
 
-class AddStrengthExercise: UIViewController {
+class AddStrengthExercise: UIViewController, UITextFieldDelegate {
     
     //Mark: Properties
 
@@ -38,6 +38,11 @@ class AddStrengthExercise: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     //Mark: Action

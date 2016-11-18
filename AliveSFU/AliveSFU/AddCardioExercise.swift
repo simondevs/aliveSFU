@@ -9,7 +9,7 @@
 
 import UIKit
 
-class AddCardioExercise: UIViewController {
+class AddCardioExercise: UIViewController, UITextFieldDelegate {
     
     //Mark: Properties
 
@@ -35,6 +35,11 @@ class AddCardioExercise: UIViewController {
         category.layer.borderColor = borderColor
         form.layer.borderColor = borderColor
         
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     override func didReceiveMemoryWarning() {
