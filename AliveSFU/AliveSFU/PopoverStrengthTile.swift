@@ -3,13 +3,16 @@
 //  AliveSFU
 //
 //  Created by Liam O'Shaughnessy on 2016-10-28.
+//  Developers: Gagan Kaur
+
 //  Copyright © 2016 SimonDevs. All rights reserved.
 //
 
 import UIKit
 
-class PopoverStrengthTile: UIViewController {
+class PopoverStrengthTile: UIViewController, UITextFieldDelegate {
 
+    var uuid : String = ""
     @IBOutlet weak var reps: UILabel!
     @IBOutlet weak var sets: UILabel!
     @IBOutlet weak var exerciseName: UILabel!
@@ -22,6 +25,10 @@ class PopoverStrengthTile: UIViewController {
     @IBOutlet weak var staticRows: UIStackView!
     @IBOutlet weak var changeExerButton: UIButton!
     @IBOutlet weak var editableButtons: UIStackView!
+    
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
+    weak var rootViewController: MyProgressController? //TODO: find something more elegant
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +44,11 @@ class PopoverStrengthTile: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 
     @IBAction func closePopUp(_ sender: Any) {
         self.removeAnimate()
@@ -48,17 +60,31 @@ class PopoverStrengthTile: UIViewController {
         repsTextField.text = reps.text
         showEditable(yes: true)
     }
+
     
-    
-    @IBAction func deleteButton(_ sender: AnyObject) {
+    @IBAction func deleteButton(_ sender: UIButton) {
+        _ = DataHandler.deleteElementFromExerciseArray(id: uuid)
+        removeAnimate()
     }
+   
     
     @IBAction func cancelButton(_ sender: AnyObject) {
         showEditable(yes: false)
     }
     
-    @IBAction func saveButton(_ sender: AnyObject) {
+    @IBAction func saveButton(_ sender: UIButton) {
+        //The day field and completed field are not necessary for the function, so we're passing in arbitrary numbers
+        let newExerciseObject = StrengthExercise(exerciseName: exerciseNameTextField.text!, day: .Sunday, completed: false, id : uuid)
+        newExerciseObject.exerciseName = exerciseNameTextField.text!
+        newExerciseObject.sets = setsTextField.text!
+        newExerciseObject.reps = repsTextField.text!
+        
+        let _ = DataHandler.saveExerciseChanges(elem: newExerciseObject)
+        
+        removeAnimate()
+        
     }
+    
 
     func showAnimate()
     {
@@ -79,6 +105,7 @@ class PopoverStrengthTile: UIViewController {
         }, completion:{(finished : Bool) in
             if (finished)
             {
+                self.rootViewController!.handleReloading() //reload My Progress page
                 self.view.removeFromSuperview()
             }
         });
@@ -93,14 +120,13 @@ class PopoverStrengthTile: UIViewController {
         exerciseNameTextField.isHidden = !yes;
         editableButtons.isHidden = !yes;
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
-    */
-
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }

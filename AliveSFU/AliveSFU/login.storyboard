@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3Es-oy-JsM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login Page View Controller-->
+        <scene sceneID="una-G3-j8P">
+            <objects>
+                <viewController id="3Es-oy-JsM" customClass="LoginPageViewController" customModule="AliveSFU" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yxV-cN-GJS"/>
+                        <viewControllerLayoutGuide type="bottom" id="eYa-sm-cFm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fxH-eN-bw3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg3" translatesAutoresizingMaskIntoConstraints="NO" id="3ZC-3e-cJ9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3K-Lr-PqU">
+                                <rect key="frame" x="20" y="308.5" width="335" height="50"/>
+                                <color key="backgroundColor" red="0.65098039220000004" green="0.098039215690000001" blue="0.18039215689999999" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5h6-Ns-da4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
+                                <state key="normal" title="Login with SFU Credentials">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="login:" destination="3Es-oy-JsM" eventType="touchUpInside" id="Mf6-QD-pip"/>
+                                    <segue destination="9w5-Sk-Vju" kind="popoverPresentation" popoverAnchorView="K3K-Lr-PqU" id="y8v-ve-Lai">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="K3K-Lr-PqU" firstAttribute="centerX" secondItem="fxH-eN-bw3" secondAttribute="centerX" id="0Z9-eT-Oxs"/>
+                            <constraint firstItem="3ZC-3e-cJ9" firstAttribute="width" secondItem="fxH-eN-bw3" secondAttribute="width" id="5f2-iI-gtb"/>
+                            <constraint firstItem="3ZC-3e-cJ9" firstAttribute="height" secondItem="fxH-eN-bw3" secondAttribute="height" id="AJ9-RG-yqb"/>
+                            <constraint firstItem="K3K-Lr-PqU" firstAttribute="width" secondItem="fxH-eN-bw3" secondAttribute="width" constant="-40" id="D7A-Np-M9v"/>
+                            <constraint firstItem="3ZC-3e-cJ9" firstAttribute="centerX" secondItem="fxH-eN-bw3" secondAttribute="centerX" id="c9z-vo-cg2"/>
+                            <constraint firstItem="3ZC-3e-cJ9" firstAttribute="centerY" secondItem="fxH-eN-bw3" secondAttribute="centerY" id="eWT-9u-bl6"/>
+                            <constraint firstItem="K3K-Lr-PqU" firstAttribute="centerY" secondItem="fxH-eN-bw3" secondAttribute="centerY" id="t7J-cb-EOB"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l36-2v-vUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-311.19999999999999" y="-728.18590704647681"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JEo-WS-5Tn">
+            <objects>
+                <viewController id="9w5-Sk-Vju" customClass="SFUCASViewController" customModule="AliveSFU" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QXz-Se-eef"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q5U-Cq-nUY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UOm-hJ-6Ae">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3AV-MF-1fT">
+                                <rect key="frame" x="-1" y="-1" width="376" height="668"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3AV-MF-1fT" firstAttribute="width" secondItem="UOm-hJ-6Ae" secondAttribute="width" id="2Ge-MH-y5J"/>
+                            <constraint firstItem="3AV-MF-1fT" firstAttribute="height" secondItem="UOm-hJ-6Ae" secondAttribute="height" id="Doe-c1-lSj"/>
+                            <constraint firstItem="3AV-MF-1fT" firstAttribute="centerX" secondItem="UOm-hJ-6Ae" secondAttribute="centerX" id="jJb-dv-YkU"/>
+                            <constraint firstItem="3AV-MF-1fT" firstAttribute="centerY" secondItem="UOm-hJ-6Ae" secondAttribute="centerY" id="zQW-aF-2v9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webContainer" destination="3AV-MF-1fT" id="qZ8-TB-0Ml"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N3p-tX-Sho" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="660" y="-728"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="login_bg3" width="500" height="333"/>
+    </resources>
+</document>

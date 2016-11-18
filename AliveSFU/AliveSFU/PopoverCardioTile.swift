@@ -1,15 +1,18 @@
 //
 //  PopoverCardioTile.swift
 //  AliveSFU
-//
 //  Created by Gur Kohli on 2016-11-05.
+//  Developers: Gagan Kaur
 //  Copyright © 2016 SimonDevs. All rights reserved.
 //
 
 import UIKit
+import CoreData
 
-class PopoverCardioTile: UIViewController {
+class PopoverCardioTile: UIViewController, UITextFieldDelegate {
     
+    var currCardioExercise : CardioExercise? = nil
+    var uuid : String = ""
     @IBOutlet weak var exerciseName: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var speed: UILabel!
@@ -26,12 +29,19 @@ class PopoverCardioTile: UIViewController {
     @IBOutlet weak var staticRows: UIStackView!
     @IBOutlet weak var editableRows: UIStackView!
     
+    
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
+    
+    weak var rootViewController: MyProgressController? //TODO: find something more elegant
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white.withAlphaComponent(0.8)
         showEditable(yes: false)
         self.showAnimate()
         
+        //NotificationCenter.default.post(name: .reload, object: nil)
         
         // Do any additional setup after loading the view.
     }
@@ -40,6 +50,12 @@ class PopoverCardioTile: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     @IBAction func changeExercise(_ sender: AnyObject) {
             exerciseNameTextField.text = exerciseName.text
         timeTextField.text = time.text
@@ -52,14 +68,31 @@ class PopoverCardioTile: UIViewController {
         self.removeAnimate()
     }
     
-    @IBAction func deleteButton(_ sender: AnyObject) {
+    @IBAction func deleteButton(_ sender: UIButton) {
+        _ = DataHandler.deleteElementFromExerciseArray(id: uuid)
+
+        removeAnimate()
+        
     }
+    
     
     @IBAction func cancelButton(_ sender: AnyObject) {
         showEditable(yes: false)
     }
     
-    @IBAction func saveButton(_ sender: AnyObject) {
+   
+    @IBAction func saveButton(_ sender: UIButton) {
+    
+        //The day field and completed field are not necessary for the function, so we're passing in arbitrary numbers
+        let newExerciseObject = CardioExercise(exerciseName: exerciseNameTextField.text!, day: .Sunday, completed: false, id : uuid)
+        newExerciseObject.time = timeTextField.text!
+        newExerciseObject.speed = speedTextField.text!
+        newExerciseObject.resistance = resistanceTextField.text!
+        let _ = DataHandler.saveExerciseChanges(elem: newExerciseObject)
+
+        removeAnimate()
+        
+        
     }
     
     func showAnimate()
@@ -81,6 +114,7 @@ class PopoverCardioTile: UIViewController {
             }, completion:{(finished : Bool) in
                 if (finished)
                 {
+                    self.rootViewController!.handleReloading() //reload My Progress page
                     self.view.removeFromSuperview()
                 }
         });
@@ -96,14 +130,12 @@ class PopoverCardioTile: UIViewController {
         editableButtons.isHidden = !yes;
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
