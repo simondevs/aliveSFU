@@ -9,6 +9,13 @@
 import UIKit
 
 class SleepAnalysisController: UIViewController {
+    
+    @IBOutlet weak var hoursInBed: UILabel!
+    @IBOutlet weak var hoursSlept: UILabel!
+    @IBOutlet weak var percentageSpentSleeping: UILabel!
+    @IBOutlet weak var timesWokenUp: UILabel!
+    @IBOutlet weak var timeTakenToSleep: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
