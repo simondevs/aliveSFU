@@ -11,6 +11,13 @@ import HealthKit
 
 class SubpageViewController: UIViewController, UITextFieldDelegate {
     
+    let ERROR_MISSING_ALL_FIELDS = "Missing required fields!"
+    let ERROR_MISSING_GENDER = "Missing 'Gender'"
+    let ERROR_MISSING_AGE = "Missing 'Age'"
+    let ERROR_MISSING_GOALS = "Missing 'Goals'"
+    let ERROR_MISSING_FREQUENCY = "Missing 'Frequency'"
+    let ERROR_NO_OPTION_SELECTED = "No option selected!"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -34,23 +41,51 @@ class SubpageViewController: UIViewController, UITextFieldDelegate {
     
     func getSubpages() -> [SubpageViewController] {
         // Initialized arr with an empty view controller to make it 1-indexed
-        var arr = [SubpageViewController()]
+        var arr = [UIViewController()]
         
         let subpage1 = UIStoryboard(name: "firstTime", bundle: nil).instantiateViewController(withIdentifier: "1") as! Subpage1ViewController
         let subpage2 = UIStoryboard(name: "firstTime", bundle: nil).instantiateViewController(withIdentifier: "2") as! Subpage2ViewController
         let subpage3 = UIStoryboard(name: "firstTime", bundle: nil).instantiateViewController(withIdentifier: "3") as! Subpage3ViewController
         let subpage4 = UIStoryboard(name: "firstTime", bundle: nil).instantiateViewController(withIdentifier: "4") as! Subpage4ViewController
-        
+    
         arr.append(subpage1)
         arr.append(subpage2)
         arr.append(subpage3)
         arr.append(subpage4)
         
-        return arr
+        return arr as! [SubpageViewController]
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    @IBAction func nextAction(_ sender: UIButton) {
+        if (validateFields()) {
+            let index = Int(self.restorationIdentifier!)!
+            let parent = self.parent as! PageViewController
+            parent.setViewController(index: index+1, direction: .forward)
+        }
+    }
+    
+    @IBAction func previousAction(_ sender: UIButton) {
+        let index = Int(self.restorationIdentifier!)!
+        let parent = self.parent as! PageViewController
+        parent.setViewController(index: index-1, direction: .reverse)
+    }
+    
+    @IBAction func finishAction(_ sender: UIButton) {
+        if (validateFields()) {
+            let parent = self.parent as! PageViewController
+            parent.saveDataToStorage()
+            
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateInitialViewController()!
+            vc.modalPresentationStyle = .fullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true, completion: nil)
+            
+        }
     }
 }
 
@@ -61,7 +96,6 @@ class SubpageViewController: UIViewController, UITextFieldDelegate {
 class Subpage1ViewController: SubpageViewController {
     
     @IBOutlet weak var userFirstName: UITextField!
-    
     @IBOutlet weak var userLastName: UITextField!
     @IBOutlet weak var userGender: UISegmentedControl!
     @IBOutlet weak var userPhoneNumber: UITextField!
@@ -79,29 +113,24 @@ class Subpage1ViewController: SubpageViewController {
     //Post condition: return false if any of the fields aren't filled properly, return true if they're all filled properly
     override func validateFields() -> Bool {
         errorAlertLabel.isHidden = true
-        //I have no idea how to check if the segment index is selected at all or not
-        //Using this spaghetti check to see if the user has selected a gender
-        if (userGender.selectedSegmentIndex != 0 && userGender.selectedSegmentIndex != 1)
-        {
-            errorAlertLabel.text = "Gender not selected!"
+
+        //Check if gender is selected
+        if (userGender.selectedSegmentIndex != 0 && userGender.selectedSegmentIndex != 1) {
+            errorAlertLabel.text = ERROR_MISSING_GENDER
             errorAlertLabel.isHidden = false
             return false
         }
         //Outline in red the textfields that are missing
         let textViews : [UITextField] = [userFirstName, userLastName, userEmail]
-        for textField in textViews
-        {
-            if (textField.text?.isEmpty)!
-            {
-                let myColor : UIColor = UIColor.red
-                textField.layer.borderColor = myColor.cgColor
+        for textField in textViews {
+            if (textField.text?.isEmpty)! {
+                textField.layer.borderColor = UIColor.red.cgColor
                 textField.layer.borderWidth = 1
-                errorAlertLabel.text = "Fields are missing!"
+                errorAlertLabel.text = ERROR_MISSING_ALL_FIELDS
                 errorAlertLabel.isHidden = false
                 
             }
-            else
-            {
+            else {
                 textField.layer.borderWidth = 0
             }
         }
@@ -109,17 +138,15 @@ class Subpage1ViewController: SubpageViewController {
             return true
         }
         else {
- 
             return false
         }
     }
-    @IBAction func nextBtnAction(_ sender: UIButton) {
-        if (validateFields()) {
-            performSegue(withIdentifier: "showSubpage2", sender: self)
-        } else {
-            // Show errors if field not validated
-        }
+    
+    func getDataForSave() -> PersonalDetails {
+        let pd = PersonalDetails(firstName: userFirstName.text!, lastName: userLastName.text!, gender: userGender.selectedSegmentIndex, phoneNumber: userPhoneNumber.text, email: userEmail.text!)
+        return pd
     }
+    
 }
 
 class Subpage2ViewController: SubpageViewController {
@@ -147,74 +174,58 @@ class Subpage2ViewController: SubpageViewController {
     
     override func validateFields() -> Bool {
         
-        errorAlertLabel.text = "Fields are missing!"
+        errorAlertLabel.text = ERROR_MISSING_ALL_FIELDS
         errorAlertLabel.isHidden = true
-        //I have no idea how to check if the segment index is selected at all or not
-        //Using this spaghetti check to see if the user has selected a gender
-        
         
         //check if an age group has been selected
         var ageSelected : Bool = false
-        for button in ageGroup
-        {
-            if (button.isSelected)
-            {
+        for button in ageGroup {
+            if (button.isSelected) {
                 ageSelected = true
             }
         }
-        if (!ageSelected)
-        {
-            errorAlertLabel.text = "Age not selected!"
+        if (!ageSelected) {
+            errorAlertLabel.text = ERROR_MISSING_AGE
             errorAlertLabel.isHidden = false
             return false
         }
         //check if a goal has been selected
         var goalSelected : Bool = false
-        for button in personalGoals
-        {
-            if (button.isSelected)
-            {
+        for button in personalGoals {
+            if (button.isSelected) {
                 goalSelected = true
             }
         }
-        if (!goalSelected)
-        {
-            errorAlertLabel.text = "Goals not selected!"
+        if (!goalSelected) {
+            errorAlertLabel.text = ERROR_MISSING_GOALS
             errorAlertLabel.isHidden = false
             return false
         }
         
         //check if a frequency has been selected
         var freqSelected : Bool = false
-        for button in fitnessFrequency
-        {
-            if (button.isSelected)
-            {
+        for button in fitnessFrequency {
+            if (button.isSelected) {
                 freqSelected = true
             }
         }
-        if (!freqSelected)
-        {
-            errorAlertLabel.text = "Frequency not selected!"
+        if (!freqSelected) {
+            errorAlertLabel.text = ERROR_MISSING_FREQUENCY
             errorAlertLabel.isHidden = false
             return false
         }
         
-
         //Outline in red the textfields that are missing
         let textViews : [UITextField] = height + weight
-        for textField in textViews
-        {
-            if (textField.text?.isEmpty)!
-            {
+        for textField in textViews {
+            if (textField.text?.isEmpty)! {
                 let myColor : UIColor = UIColor.red
                 textField.layer.borderColor = myColor.cgColor
                 textField.layer.borderWidth = 1
                 errorAlertLabel.isHidden = false
-                
+                errorAlertLabel.text = ERROR_MISSING_ALL_FIELDS
             }
-            else
-            {
+            else {
                 textField.layer.borderWidth = 0
             }
         }
@@ -222,7 +233,6 @@ class Subpage2ViewController: SubpageViewController {
             return true
         }
         else {
-            
             return false
         }
     }
@@ -308,15 +318,39 @@ class Subpage2ViewController: SubpageViewController {
             }
         }
     }
-
-    @IBAction func nextBtnAction(_ sender: UIButton) {
-        if (validateFields()) {
-            performSegue(withIdentifier: "showSubpage3", sender: self)
-        } else {
-            // Show errors if field not validated
-        }
-    }
     
+    func getDataForSave() -> FitnessDetails {
+        let heightFeet = Int(self.height[0].text!)!
+        let heightInches = Int(self.height[1].text!)!
+        let weight = Double(self.weight[0].text!)!
+        
+        var age = -1
+        for (index, btn) in ageGroup.enumerated() {
+            if (btn.isSelected) {
+                age = index
+                break
+            }
+        }
+        
+        var fitnessFreq = -1
+        for (index, btn) in fitnessFrequency.enumerated() {
+            if (btn.isSelected) {
+                fitnessFreq = index
+                break
+            }
+        }
+        
+        var goals = -1
+        for (index, btn) in personalGoals.enumerated() {
+            if (btn.isSelected) {
+                goals = index
+                break
+            }
+        }
+        let fd = FitnessDetails(heightFeet: heightFeet, heightInches: heightInches, weight: weight, ageGroup: age, fitnessFreq: fitnessFreq, personalGoals: goals)
+        
+        return fd
+    }
 }
 
 class Subpage3ViewController: SubpageViewController {
@@ -339,7 +373,7 @@ class Subpage3ViewController: SubpageViewController {
         }
         if (!selected)
         {
-            errorAlertLabel.text = "Select an option!"
+            errorAlertLabel.text = ERROR_NO_OPTION_SELECTED
             errorAlertLabel.isHidden = false
         }
         // Check if the fields are filled before moving to next page
@@ -370,14 +404,18 @@ class Subpage3ViewController: SubpageViewController {
         }
     }
     
-    @IBAction func nextBtnAction(_ sender: UIButton) {
-        if (validateFields()) {
-            performSegue(withIdentifier: "showSubpage4", sender: self)
-        } else {
-            // Show errors if field not validated
+    func getDataForSave() -> Bool {
+        for btn in enableDisableSleepAnalysis {
+            if (btn.isSelected) {
+                if (btn.tag == ENABLE_BUTTON_TAG) {
+                    return true
+                } else {
+                    return false
+                }
+            }
         }
+        return true
     }
-    
 }
 
 class Subpage4ViewController: SubpageViewController {
@@ -400,7 +438,7 @@ class Subpage4ViewController: SubpageViewController {
         }
         if (!selected)
         {
-            errorAlertLabel.text = "Select an option!"
+            errorAlertLabel.text = ERROR_NO_OPTION_SELECTED
             errorAlertLabel.isHidden = false
         }
         // Check if the fields are filled before moving to next page
@@ -425,12 +463,16 @@ class Subpage4ViewController: SubpageViewController {
         }
     }
     
-    @IBAction func finishBtnAction(_ sender: Any) {
-        if (validateFields()) {
-            // Gather up all data from the 4 view controllers and add to local storage
-            // This is where the persistence stuff would come in handy
+    func getDataForSave() -> Bool {
+        for btn in enableDisableButton {
+            if (btn.isSelected) {
+                if (btn.tag == ENABLE_BUTTON_TAG) {
+                    return true
+                } else {
+                    return false
+                }
+            }
         }
+        return true
     }
-    
-    
 }
