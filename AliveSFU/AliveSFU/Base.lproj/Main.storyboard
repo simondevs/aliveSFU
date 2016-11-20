@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -387,8 +387,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4th-vY-ch6" userLabel="Graph View" customClass="JBBarChartView">
-                                        <rect key="frame" x="15" y="72" width="345" height="34"/>
+                                        <rect key="frame" x="15" y="-44" width="345" height="150"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="fto-dH-h6g"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
@@ -692,7 +695,6 @@
                                     <constraint firstItem="4th-vY-ch6" firstAttribute="centerX" secondItem="Jel-Vt-EYS" secondAttribute="centerX" id="Rbe-HN-s1j"/>
                                     <constraint firstItem="A8P-uE-wTm" firstAttribute="centerX" secondItem="Jel-Vt-EYS" secondAttribute="centerX" id="TPn-Tj-aCW"/>
                                     <constraint firstItem="wNx-NH-ieD" firstAttribute="width" secondItem="D5r-lg-NMl" secondAttribute="width" id="Tjb-ae-tlP"/>
-                                    <constraint firstItem="4th-vY-ch6" firstAttribute="top" secondItem="Jel-Vt-EYS" secondAttribute="top" constant="72" id="Uac-xa-O5I"/>
                                     <constraint firstItem="D5r-lg-NMl" firstAttribute="width" secondItem="u0g-K9-Pha" secondAttribute="width" id="Xjr-8k-cCG"/>
                                     <constraint firstItem="4th-vY-ch6" firstAttribute="width" secondItem="Jel-Vt-EYS" secondAttribute="width" constant="-30" id="YTH-PR-3lW"/>
                                     <constraint firstItem="u0g-K9-Pha" firstAttribute="width" secondItem="4th-vY-ch6" secondAttribute="width" id="bZh-pr-eUh"/>

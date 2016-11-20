@@ -12,7 +12,7 @@ import CoreData
 
 class DataHandler {
     
-    class func initFlagsAndPersonalData() {
+    class func initDataHandlerData() {
         let moc = AppDataController().managedObjectContext
         
         // To make sure we have only one user details
@@ -45,6 +45,26 @@ class DataHandler {
             }
         } catch {
             print("Error setting flags")
+        }
+        
+        let sa = NSFetchRequest<NSFetchRequestResult>(entityName: "SleepAnalysis")
+        sa.predicate = NSPredicate(format: "primaryKey = 1")
+        
+        do {
+            let fetchedResult = try moc.fetch(sa) as! [NSManagedObject]
+            if (fetchedResult.count == 0) {
+                let mo = NSEntityDescription.insertNewObject(forEntityName: "SleepAnalysis", into: moc)
+                mo.setValue("1", forKey: "primaryKey")
+                mo.setValue(0, forKey: "sunday")
+                mo.setValue(0, forKey: "monday")
+                mo.setValue(0, forKey: "tuesday")
+                mo.setValue(0, forKey: "wednesday")
+                mo.setValue(0, forKey: "thursday")
+                mo.setValue(0, forKey: "friday")
+                mo.setValue(0, forKey: "saturday")
+            }
+        } catch {
+            print("Error setting sleep analysis weekly data")
         }
         
         do {
@@ -360,5 +380,70 @@ class DataHandler {
             print("Could not save \(error), \(error.userInfo)")
         }
 
+    }
+    
+    class func setSleepAnalysisDataForDay(day: Int, value: Double) {
+        var dayOfWeek: String
+        switch day {
+        case 1:
+            dayOfWeek = "sunday"
+        case 2:
+            dayOfWeek = "monday"
+        case 3:
+            dayOfWeek = "tuesday"
+        case 4:
+            dayOfWeek = "wednesday"
+        case 5:
+            dayOfWeek = "thursday"
+        case 6:
+            dayOfWeek = "friday"
+        case 7:
+            dayOfWeek = "saturday"
+        default:
+            dayOfWeek = "sunday"
+        }
+
+        let moc = AppDataController().managedObjectContext
+        
+        let sa = NSFetchRequest<NSFetchRequestResult>(entityName: "SleepAnalysis")
+        sa.predicate = NSPredicate(format: "primaryKey = 1")
+        do {
+            let fetchedResults = try moc.fetch(sa) as! [NSManagedObject]
+            let mo = fetchedResults[0]
+            
+            mo.setValue(value, forKey: dayOfWeek)
+        } catch {
+            fatalError("Failed to fetch array! Error: \(error)")
+        }
+        do {
+            try moc.save()
+        } catch let error as NSError {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+    }
+    
+    class func getSleepAnalysisData() -> [Double] {
+        var result: [Double] = [0, 0, 0, 0, 0, 0, 0]
+        
+        let moc = AppDataController().managedObjectContext
+        
+        let sa = NSFetchRequest<NSFetchRequestResult>(entityName: "SleepAnalysis")
+        sa.predicate = NSPredicate(format: "primaryKey = 1")
+        do {
+            let fetchedResults = try moc.fetch(sa) as! [NSManagedObject]
+            let mo = fetchedResults[0]
+            
+            result[0] = mo.value(forKey: "sunday") as! Double
+            result[1] = mo.value(forKey: "monday") as! Double
+            result[2] = mo.value(forKey: "tuesday") as! Double
+            result[3] = mo.value(forKey: "wednesday") as! Double
+            result[4] = mo.value(forKey: "thursday") as! Double
+            result[5] = mo.value(forKey: "friday") as! Double
+            result[6] = mo.value(forKey: "saturday") as! Double
+            
+        } catch {
+            fatalError("Failed to fetch array! Error: \(error)")
+        }
+        return result
     }
 }
