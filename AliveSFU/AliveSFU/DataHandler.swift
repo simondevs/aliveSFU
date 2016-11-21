@@ -446,4 +446,89 @@ class DataHandler {
         }
         return result
     }
+    
+    class func getPersonalDetails() -> PersonalDetails {
+        
+        let moc = AppDataController().managedObjectContext
+        var pd: PersonalDetails
+        
+        let details = NSFetchRequest<NSFetchRequestResult>(entityName: "UserDetails")
+        details.predicate = NSPredicate(format: "primaryKey = 1")
+        do {
+            let fetchedResults = try moc.fetch(details) as! [NSManagedObject]
+            let mo = fetchedResults[0]
+            
+            let firstN = mo.value(forKey: "firstName") as! String
+            let lastN = mo.value(forKey: "lastName") as! String
+            let phone = mo.value(forKey: "phoneNumber") as! String
+            let gender = mo.value(forKey: "gender") as! Int
+            let email = mo.value(forKey: "email") as! String
+            
+            pd = PersonalDetails(firstName: firstN, lastName: lastN, gender: gender, phoneNumber: phone, email: email)
+            
+        } catch {
+            fatalError("Failed to fetch array! Error: \(error)")
+        }
+        return pd
+    }
+    
+    class func getFitnessDetails() -> FitnessDetails {
+        
+        let moc = AppDataController().managedObjectContext
+        var fd: FitnessDetails
+        
+        let details = NSFetchRequest<NSFetchRequestResult>(entityName: "UserDetails")
+        details.predicate = NSPredicate(format: "primaryKey = 1")
+        do {
+            let fetchedResults = try moc.fetch(details) as! [NSManagedObject]
+            let mo = fetchedResults[0]
+            
+            let ageGr = mo.value(forKey: "ageGroup") as! Int
+            let freq = mo.value(forKey: "frequency") as! Int
+            let heightFt = mo.value(forKey: "heightFeet") as! Int
+            let heightIn = mo.value(forKey: "heightInches") as! Int
+            let weight = mo.value(forKey: "weight") as! Double
+            let personalGoals = mo.value(forKey: "personalGoals") as! String
+            
+            fd = FitnessDetails(heightFeet: heightFt, heightInches: heightIn, weight: weight, ageGroup: ageGr, fitnessFreq: freq, personalGoals: personalGoals)
+            
+        } catch {
+            fatalError("Failed to fetch array! Error: \(error)")
+        }
+        return fd
+    }
+    
+    class func updateProfile(pd: PersonalDetails, fd: FitnessDetails) {
+        let moc = AppDataController().managedObjectContext
+        
+        // To make sure we have only one user details
+        let details = NSFetchRequest<NSFetchRequestResult>(entityName: "UserDetails")
+        details.predicate = NSPredicate(format: "primaryKey = 1")
+        
+        do {
+            var fetchedResult = try moc.fetch(details) as! [NSManagedObject]
+            let mo = fetchedResult[0]
+            
+            mo.setValue(pd.firstName, forKey: "firstName")
+            mo.setValue(pd.lastName, forKey: "lastName")
+            mo.setValue(pd.phoneNumber, forKey: "phoneNumber")
+            mo.setValue(pd.gender, forKey: "gender")
+            mo.setValue(pd.email, forKey: "email")
+            
+            mo.setValue(fd.ageGroup, forKey: "ageGroup")
+            mo.setValue(fd.fitnessFreq, forKey: "frequency")
+            mo.setValue(fd.heightFeet, forKey: "heightFeet")
+            mo.setValue(fd.heightInches, forKey: "heightInches")
+            mo.setValue(fd.personalGoals, forKey: "personalGoals")
+            mo.setValue(fd.weight, forKey: "weight")
+        } catch {
+            print("Error setting details")
+        }
+        do {
+            try moc.save()
+        } catch let error as NSError {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+    }
+
 }
