@@ -424,9 +424,6 @@ class DataHandler {
     
     class func getSleepAnalysisData() -> [Double] {
         
-        let calendar = NSCalendar.current
-        var comps = calendar.dateComponents([.weekday, .year, .month, .day, .hour, .minute, .second], from: Date())
-        
         var result: [Double] = [0, 0, 0, 0, 0, 0, 0]
         
         let moc = AppDataController().managedObjectContext
@@ -436,81 +433,15 @@ class DataHandler {
         do {
             let fetchedResults = try moc.fetch(sa) as! [NSManagedObject]
             let mo = fetchedResults[0]
-            if ((comps.weekday!) == 1)
-            {
-                result[0] = mo.value(forKey: "sunday") as! Double
-                result[1] = 0
-                result[2] = 0
-                result[3] = 0
-                result[4] = 0
-                result[5] = 0
-                result[6] = 0
-            }
-            else if ((comps.weekday!) == 2)
-            {
-                result[0] = mo.value(forKey: "sunday") as! Double
-                result[1] = mo.value(forKey: "monday") as! Double
-                result[2] = 0
-                result[3] = 0
-                result[4] = 0
-                result[5] = 0
-                result[6] = 0
-            }
-            else if ((comps.weekday!) == 3)
-            {
-                result[0] = mo.value(forKey: "sunday") as! Double
-                result[1] = mo.value(forKey: "monday") as! Double
-                result[2] = mo.value(forKey: "tuesday") as! Double
-                result[3] = 0
-                result[4] = 0
-                result[5] = 0
-                result[6] = 0
-            }
-            else if ((comps.weekday!) == 4)
-            {
-                result[0] = mo.value(forKey: "sunday") as! Double
-                result[1] = mo.value(forKey: "monday") as! Double
-                result[2] = mo.value(forKey: "tuesday") as! Double
-                result[3] = mo.value(forKey: "wednesday") as! Double
-                result[4] = 0
-                result[5] = 0
-                result[6] = 0
-            }
-            else if ((comps.weekday!) == 5)
-            {
-                result[0] = mo.value(forKey: "sunday") as! Double
-                result[1] = mo.value(forKey: "monday") as! Double
-                result[2] = mo.value(forKey: "tuesday") as! Double
-                result[3] = mo.value(forKey: "wednesday") as! Double
-                result[4] = mo.value(forKey: "thursday") as! Double
-                result[5] = 0
-                result[6] = 0
-            }
-            else if ((comps.weekday!) == 6)
-            {
-                result[0] = mo.value(forKey: "sunday") as! Double
-                result[1] = mo.value(forKey: "monday") as! Double
-                result[2] = mo.value(forKey: "tuesday") as! Double
-                result[3] = mo.value(forKey: "wednesday") as! Double
-                result[4] = mo.value(forKey: "thursday") as! Double
-                result[5] = mo.value(forKey: "friday") as! Double
-                result[6] = 0
-            }
-            else if ((comps.weekday!) == 7)
-            {
-                result[0] = mo.value(forKey: "sunday") as! Double
-                result[1] = mo.value(forKey: "monday") as! Double
-                result[2] = mo.value(forKey: "tuesday") as! Double
-                result[3] = mo.value(forKey: "wednesday") as! Double
-                result[4] = mo.value(forKey: "thursday") as! Double
-                result[5] = mo.value(forKey: "friday") as! Double
-                result[6] = mo.value(forKey: "saturday") as! Double
-            }
 
-            
-            //result = [1,2,3,4,2,1,6]
-
-            
+            result[0] = mo.value(forKey: "sunday") as! Double
+            result[1] = mo.value(forKey: "monday") as! Double
+            result[2] = mo.value(forKey: "tuesday") as! Double
+            result[3] = mo.value(forKey: "wednesday") as! Double
+            result[4] = mo.value(forKey: "thursday") as! Double
+            result[5] = mo.value(forKey: "friday") as! Double
+            result[6] = mo.value(forKey: "saturday") as! Double
+           // result = [1,2,3,4,2,1,6] //uncomment for testing purposes
             
         } catch {
             fatalError("Failed to fetch array! Error: \(error)")
