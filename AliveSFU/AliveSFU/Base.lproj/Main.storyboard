@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -88,13 +88,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="35"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfX-yW-d4p">
-                                                <rect key="frame" x="0.0" y="0.0" width="123" height="35"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="122.5" height="35"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0c-y6-8GB" userLabel="Value">
-                                                <rect key="frame" x="123" y="0.0" width="222" height="35"/>
+                                                <rect key="frame" x="122.5" y="0.0" width="222.5" height="35"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oXb-40-xa8" userLabel="userHeightFt">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="35"/>
@@ -125,7 +125,7 @@
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4O-U5-pwz">
-                                                        <rect key="frame" x="180" y="0.0" width="42" height="35"/>
+                                                        <rect key="frame" x="180" y="0.0" width="42.5" height="35"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -145,13 +145,13 @@
                                         <rect key="frame" x="0.0" y="37" width="345" height="35"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0I-eW-6wW">
-                                                <rect key="frame" x="0.0" y="0.0" width="123" height="35"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="122.5" height="35"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUq-fg-xEd" userLabel="Value">
-                                                <rect key="frame" x="123" y="0.0" width="222" height="35"/>
+                                                <rect key="frame" x="122.5" y="0.0" width="222.5" height="35"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R0T-zn-VCd" userLabel="userHeightFt">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="35"/>
@@ -184,7 +184,7 @@
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lb" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzZ-h3-gkW">
-                                                        <rect key="frame" x="180" y="0.0" width="42" height="35"/>
+                                                        <rect key="frame" x="180" y="0.0" width="42.5" height="35"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -438,7 +438,7 @@
                                 </constraints>
                             </stackView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Missing required fields!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="il1-DZ-55i">
-                                <rect key="frame" x="15" y="534" width="345" height="26"/>
+                                <rect key="frame" x="15" y="534" width="345" height="25.5"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="22"/>
                                 <color key="textColor" red="0.65444970130000002" green="0.1736934483" blue="0.18311929699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -560,7 +560,6 @@
                                 <state key="normal" title="MyProfile" backgroundImage="circularButton"/>
                                 <state key="selected" backgroundImage="circularButton"/>
                                 <connections>
-                                    <action selector="openMyProfile:" destination="9pv-A4-QxB" eventType="touchUpInside" id="UdV-mY-t8M"/>
                                     <segue destination="1H8-ky-Ifz" kind="show" id="cgu-SC-zr8"/>
                                 </connections>
                             </button>
@@ -568,10 +567,10 @@
                                 <rect key="frame" x="30" y="278" width="315" height="80"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iRa-RH-hYZ" userLabel="Col1">
-                                        <rect key="frame" x="0.0" y="0.0" width="138" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcm-FT-8CH" userLabel="Step Count">
-                                                <rect key="frame" x="0.0" y="0.0" width="138" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="137.5" height="40"/>
                                                 <color key="backgroundColor" red="0.71168619394302368" green="0.0" blue="0.15891879796981812" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -587,7 +586,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOv-Dl-eGs" userLabel="stepCount">
-                                                <rect key="frame" x="0.0" y="40" width="138" height="40"/>
+                                                <rect key="frame" x="0.0" y="40" width="137.5" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -608,10 +607,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uWZ-Ej-hJy" userLabel="Col1">
-                                        <rect key="frame" x="178" y="0.0" width="137" height="80"/>
+                                        <rect key="frame" x="177.5" y="0.0" width="137.5" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Sleep" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2y-Lg-OZv" userLabel="Today's Sleep">
-                                                <rect key="frame" x="0.0" y="0.0" width="137" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="137.5" height="40"/>
                                                 <color key="backgroundColor" red="0.71168619394302368" green="0.0" blue="0.15891879796981812" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -627,7 +626,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24Y-2I-iJu" userLabel="todaySleep">
-                                                <rect key="frame" x="0.0" y="40" width="137" height="40"/>
+                                                <rect key="frame" x="0.0" y="40" width="137.5" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -658,10 +657,10 @@
                                 <rect key="frame" x="30" y="433" width="315" height="80"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XoE-Dq-YAJ" userLabel="Col2">
-                                        <rect key="frame" x="0.0" y="0.0" width="138" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qjb-Yx-eBm">
-                                                <rect key="frame" x="0.0" y="0.0" width="138" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="137.5" height="40"/>
                                                 <color key="backgroundColor" red="0.71168619394302368" green="0.0" blue="0.15891879796981812" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -677,7 +676,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKM-IX-4a7" userLabel="bmr">
-                                                <rect key="frame" x="0.0" y="40" width="138" height="40"/>
+                                                <rect key="frame" x="0.0" y="40" width="137.5" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -698,10 +697,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jy9-KQ-18C" userLabel="Col2">
-                                        <rect key="frame" x="178" y="0.0" width="137" height="80"/>
+                                        <rect key="frame" x="177.5" y="0.0" width="137.5" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2D-eo-RcN">
-                                                <rect key="frame" x="0.0" y="0.0" width="137" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="137.5" height="40"/>
                                                 <color key="backgroundColor" red="0.71168619389999999" green="0.0" blue="0.158918798" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -717,7 +716,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEu-Xc-Wkh" userLabel="bmi">
-                                                <rect key="frame" x="0.0" y="40" width="137" height="40"/>
+                                                <rect key="frame" x="0.0" y="40" width="137.5" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -764,7 +763,6 @@
                     <connections>
                         <outlet property="bmiCount" destination="vEu-Xc-Wkh" id="OrH-6j-xvr"/>
                         <outlet property="bmrCount" destination="eKM-IX-4a7" id="M3C-Xq-xGv"/>
-                        <outlet property="calorieBurned" destination="eKM-IX-4a7" id="9px-tR-2jG"/>
                         <outlet property="stepCount" destination="oOv-Dl-eGs" id="pUd-hh-KYF"/>
                         <outlet property="todaySleep" destination="24Y-2I-iJu" id="Sf0-TX-Tvg"/>
                     </connections>
@@ -982,10 +980,10 @@
                                         <rect key="frame" x="15" y="191" width="345" height="80"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3GG-G8-T1b" userLabel="Col1">
-                                                <rect key="frame" x="0.0" y="0.0" width="153" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="152.5" height="80"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total hours in bed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHV-eU-blU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="153" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="152.5" height="40"/>
                                                         <color key="backgroundColor" red="0.71168619389999999" green="0.0" blue="0.158918798" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1001,7 +999,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAz-hj-5tB" userLabel="hoursBed">
-                                                        <rect key="frame" x="0.0" y="40" width="153" height="40"/>
+                                                        <rect key="frame" x="0.0" y="40" width="152.5" height="40"/>
                                                         <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -1022,10 +1020,10 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xp3-Qi-sKb" userLabel="Col2">
-                                                <rect key="frame" x="193" y="0.0" width="152" height="80"/>
+                                                <rect key="frame" x="192.5" y="0.0" width="152.5" height="80"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total hours slept" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vna-c0-ZjC">
-                                                        <rect key="frame" x="0.0" y="0.0" width="152" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="152.5" height="40"/>
                                                         <color key="backgroundColor" red="0.71168619389999999" green="0.0" blue="0.158918798" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1041,7 +1039,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGm-jG-2UZ" userLabel="hoursSlept">
-                                                        <rect key="frame" x="0.0" y="40" width="152" height="40"/>
+                                                        <rect key="frame" x="0.0" y="40" width="152.5" height="40"/>
                                                         <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -1277,26 +1275,26 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error accessing sleep data from Health app" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k09-Y5-kmu">
-                                        <rect key="frame" x="15" y="80" width="325" height="58"/>
+                                        <rect key="frame" x="15" y="80" width="325" height="57.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
                                         <color key="textColor" red="0.65098039220000004" green="0.098039215690000001" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is due to one of the following reasons:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiD-RQ-muT">
-                                        <rect key="frame" x="15" y="153" width="325" height="42"/>
+                                        <rect key="frame" x="15" y="152.5" width="325" height="41.5"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1) No sleep analysis data is available in the Health app" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rt-SD-E2s" userLabel="reason1">
-                                        <rect key="frame" x="35" y="210" width="285" height="40"/>
+                                        <rect key="frame" x="35" y="209" width="285" height="39.5"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2) aliveSFU has not been permitted to read Sleep Analysis data" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8z-jT-lu5" userLabel="reason2">
-                                        <rect key="frame" x="35" y="265" width="285" height="40"/>
+                                        <rect key="frame" x="35" y="263.5" width="285" height="39.5"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1457,13 +1455,13 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="235" height="23"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFP-dx-0yQ" userLabel="Time">
-                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="23"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exerciseTime" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otj-AL-Mnu">
-                                                        <rect key="frame" x="118" y="0.0" width="117" height="23"/>
+                                                        <rect key="frame" x="117.5" y="0.0" width="117.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -1479,13 +1477,13 @@
                                                 <rect key="frame" x="0.0" y="33" width="235" height="23"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A67-ft-i9q" userLabel="Speed">
-                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="23"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exerciseSpeed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vga-pv-B00">
-                                                        <rect key="frame" x="118" y="0.0" width="117" height="23"/>
+                                                        <rect key="frame" x="117.5" y="0.0" width="117.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -1501,13 +1499,13 @@
                                                 <rect key="frame" x="0.0" y="66" width="235" height="23"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resistance:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLH-Hv-rte" userLabel="Resistance">
-                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="23"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exerciseResistance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIg-s5-QL8">
-                                                        <rect key="frame" x="118" y="0.0" width="117" height="23"/>
+                                                        <rect key="frame" x="117.5" y="0.0" width="117.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -1528,13 +1526,13 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="235" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kV-cu-eiD" userLabel="Time">
-                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="30"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uyW-Aq-jgt" userLabel="exerciseTime">
-                                                        <rect key="frame" x="118" y="0.0" width="117" height="30"/>
+                                                        <rect key="frame" x="117.5" y="0.0" width="117.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1553,13 +1551,13 @@
                                                 <rect key="frame" x="0.0" y="40" width="235" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnj-NK-YDo" userLabel="Speed">
-                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="30"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b33-oo-xAZ" userLabel="exerciseSpeed">
-                                                        <rect key="frame" x="118" y="0.0" width="117" height="30"/>
+                                                        <rect key="frame" x="117.5" y="0.0" width="117.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1578,13 +1576,13 @@
                                                 <rect key="frame" x="0.0" y="80" width="235" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resistance:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSc-w9-NOT" userLabel="Resistance">
-                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="30"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9oQ-Tl-d4W" userLabel="exerciseResistance">
-                                                        <rect key="frame" x="118" y="0.0" width="117" height="30"/>
+                                                        <rect key="frame" x="117.5" y="0.0" width="117.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1759,7 +1757,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2q-4C-r88" userLabel="Add Exercise">
-                                <rect key="frame" x="17" y="72" width="343" height="64"/>
+                                <rect key="frame" x="16" y="72" width="343" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOz-YI-f1c">
                                         <rect key="frame" x="38" y="6" width="266" height="52"/>
@@ -1785,7 +1783,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnV-QY-9YW" userLabel="Category">
-                                <rect key="frame" x="17" y="200" width="343" height="40"/>
+                                <rect key="frame" x="16" y="200" width="343" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Og-Eo-E83">
                                         <rect key="frame" x="110" y="0.0" width="122" height="40"/>
@@ -1854,7 +1852,7 @@
                                 <rect key="frame" x="16" y="72" width="343" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sB-39-G8K">
-                                        <rect key="frame" x="39" y="6" width="266" height="52"/>
+                                        <rect key="frame" x="39.5" y="6" width="265.5" height="52"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="45"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1880,7 +1878,7 @@
                                 <rect key="frame" x="16" y="186" width="343" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strength" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qF-ZQ-K6R">
-                                        <rect key="frame" x="115" y="0.0" width="114" height="40"/>
+                                        <rect key="frame" x="115.5" y="0.0" width="113.5" height="40"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                         <color key="textColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1908,7 +1906,7 @@
                                 <rect key="frame" x="16" y="246" width="343" height="210"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuL-z7-q6V">
-                                        <rect key="frame" x="8" y="8" width="142" height="23"/>
+                                        <rect key="frame" x="8" y="8" width="141.5" height="23"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                         <color key="textColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1926,16 +1924,16 @@
                                         <rect key="frame" x="8" y="86" width="327" height="63"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WBG-b0-eJG" userLabel="Sets">
-                                                <rect key="frame" x="0.0" y="0.0" width="164" height="63"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="163.5" height="63"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sets:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1r8-LX-PyP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="164" height="23"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kym-YQ-BJI" userLabel="setsField">
-                                                        <rect key="frame" x="0.0" y="33" width="164" height="30"/>
+                                                        <rect key="frame" x="0.0" y="33" width="163.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1946,16 +1944,16 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="J6I-Bj-PKN" userLabel="Reps">
-                                                <rect key="frame" x="164" y="0.0" width="163" height="63"/>
+                                                <rect key="frame" x="163.5" y="0.0" width="163.5" height="63"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxN-zp-hyu" userLabel="Reps:">
-                                                        <rect key="frame" x="0.0" y="0.0" width="163" height="23"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n4b-FF-bzL" userLabel="repsField">
-                                                        <rect key="frame" x="0.0" y="33" width="163" height="30"/>
+                                                        <rect key="frame" x="0.0" y="33" width="163.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -2017,7 +2015,7 @@
                                 <rect key="frame" x="16" y="552" width="343" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qk3-Fk-gG8">
-                                        <rect key="frame" x="0.0" y="0.0" width="172" height="35"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="35"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -2027,7 +2025,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gU-Wi-h8t">
-                                        <rect key="frame" x="172" y="0.0" width="171" height="35"/>
+                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="35"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                         <state key="normal" title="Save">
                                             <color key="titleColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
@@ -2160,7 +2158,7 @@
                                 <rect key="frame" x="16" y="64" width="343" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WlL-2y-qPz">
-                                        <rect key="frame" x="39" y="6" width="266" height="52"/>
+                                        <rect key="frame" x="39.5" y="6" width="265.5" height="52"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="45"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2186,7 +2184,7 @@
                                 <rect key="frame" x="16" y="181" width="343" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cardio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFF-vT-usk">
-                                        <rect key="frame" x="127" y="0.0" width="89" height="40"/>
+                                        <rect key="frame" x="127.5" y="0.0" width="88.5" height="40"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                         <color key="textColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2214,7 +2212,7 @@
                                 <rect key="frame" x="16" y="241" width="343" height="285"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waf-d3-gu2">
-                                        <rect key="frame" x="8" y="8" width="142" height="23"/>
+                                        <rect key="frame" x="8" y="8" width="141.5" height="23"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                         <color key="textColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2232,16 +2230,16 @@
                                         <rect key="frame" x="8" y="86" width="327" height="63"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lvu-SG-cac" userLabel="Sets">
-                                                <rect key="frame" x="0.0" y="0.0" width="164" height="63"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="163.5" height="63"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resistance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feG-7x-u4J">
-                                                        <rect key="frame" x="0.0" y="0.0" width="164" height="23"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eHb-F3-q9e" userLabel="resistanceField">
-                                                        <rect key="frame" x="0.0" y="33" width="164" height="30"/>
+                                                        <rect key="frame" x="0.0" y="33" width="163.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -2252,16 +2250,16 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XJZ-eD-nj2" userLabel="Reps">
-                                                <rect key="frame" x="164" y="0.0" width="163" height="63"/>
+                                                <rect key="frame" x="163.5" y="0.0" width="163.5" height="63"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ms-Fm-VFH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="163" height="23"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5GZ-ay-ADx" userLabel="speedField">
-                                                        <rect key="frame" x="0.0" y="33" width="163" height="30"/>
+                                                        <rect key="frame" x="0.0" y="33" width="163.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -2346,7 +2344,7 @@
                                 <rect key="frame" x="16" y="552" width="343" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiq-Gy-29i">
-                                        <rect key="frame" x="0.0" y="0.0" width="172" height="35"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="35"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -2356,7 +2354,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Afn-rC-Of3">
-                                        <rect key="frame" x="172" y="0.0" width="171" height="35"/>
+                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="35"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                         <state key="normal" title="Save">
                                             <color key="titleColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
@@ -2408,7 +2406,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zMr-RJ-43P" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Progress" image="MyProgress" id="Y1T-c3-H8a"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="j5g-ZX-V4y">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j5g-ZX-V4y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2427,7 +2425,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Tc-Ec-2uS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="Home" id="acW-dT-cKf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Qth-Kk-4Tg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qth-Kk-4Tg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2446,7 +2444,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4fo-ie-cUS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="SFU Recreation" image="SFURec" id="cPa-gy-q4n"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="POw-dR-IcF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="POw-dR-IcF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2465,7 +2463,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kVp-AD-rBg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Fitness Buddy" image="FitnessBuddy" id="BfT-eT-oqx"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Oyw-3I-6Y0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Oyw-3I-6Y0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2484,7 +2482,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dkn-dD-jMB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Sleep Analysis" image="SleepAnalysis" id="Lad-D0-DEy"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Vq7-eG-p3B">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vq7-eG-p3B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2549,13 +2547,13 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="235" height="23"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sets:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNm-a3-C0c" userLabel="Sets">
-                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="23"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exerciseSets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQI-O4-wLo">
-                                                        <rect key="frame" x="118" y="0.0" width="117" height="23"/>
+                                                        <rect key="frame" x="117.5" y="0.0" width="117.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -2571,13 +2569,13 @@
                                                 <rect key="frame" x="0.0" y="33" width="235" height="23"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reps:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JlY-uE-OlK" userLabel="Reps">
-                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="23"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exerciseReps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRd-I7-VlH">
-                                                        <rect key="frame" x="118" y="0.0" width="117" height="23"/>
+                                                        <rect key="frame" x="117.5" y="0.0" width="117.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -2598,13 +2596,13 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="235" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sets:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ykj-3F-CDj" userLabel="Sets">
-                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="30"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NvP-sh-n1j" userLabel="exerciseSets">
-                                                        <rect key="frame" x="118" y="0.0" width="117" height="30"/>
+                                                        <rect key="frame" x="117.5" y="0.0" width="117.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -2623,13 +2621,13 @@
                                                 <rect key="frame" x="0.0" y="40" width="235" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reps:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9p-AI-hrY" userLabel="Reps">
-                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="30"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cyc-nk-0nx" userLabel="exerciseReps">
-                                                        <rect key="frame" x="118" y="0.0" width="117" height="30"/>
+                                                        <rect key="frame" x="117.5" y="0.0" width="117.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
