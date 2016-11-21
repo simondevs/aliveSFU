@@ -52,6 +52,7 @@ class SleepAnalysisController: UIViewController, JBBarChartViewDelegate, JBBarCh
         labelView.layer.borderColor = borderColor
         errorView.layer.borderColor = borderColor
         setupBarChart()
+        barChart.reloadData()
         barChartView(barChart, didSelectBarAt: UInt(currDay.index - 1))
         
     }
