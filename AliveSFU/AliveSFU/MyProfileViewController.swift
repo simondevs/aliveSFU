@@ -89,6 +89,13 @@ class MyProfileViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func logOutAction(_ sender: Any) {
+        DataHandler.setUserLoggedIn(isLoggedIn: false)
+        
+        let sb = UIStoryboard(name: "login", bundle: nil)
+        let vc = sb.instantiateInitialViewController()!
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func saveButtonAction(_ sender: Any) {
