@@ -165,7 +165,7 @@ class SleepAnalysisController: UIViewController, JBBarChartViewDelegate, JBBarCh
         formattedDate.dateStyle = .long
         let dateString = formattedDate.string(from: date)
         let calendar = Calendar(identifier: .gregorian)
-        let components = calendar.component(.day, from: date)
+        let components = calendar.component(.weekday, from: date)
         let dayOfWeek = components
         
         let healthStore = HKHealthStore()
