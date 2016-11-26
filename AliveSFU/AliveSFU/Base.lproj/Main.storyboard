@@ -1546,7 +1546,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="C5B-uO-Zic"/>
                     <connections>
-                        <outlet property="graphView" destination="hKQ-X4-yDh" id="XxB-Le-U79"/>
+                        <outlet property="barChart" destination="hKQ-X4-yDh" id="uu8-7K-dBh"/>
                         <outlet property="overlayHeight" destination="5MT-e6-lZf" id="e3a-v0-XKu"/>
                         <outlet property="overlayHours" destination="DZF-aW-qT3" id="XQ5-65-2Qq"/>
                         <outlet property="todayHourView" destination="Cak-cF-O42" id="lt5-CL-mFb"/>
