@@ -19,6 +19,8 @@
 		A953E2281DC97F620059F78E /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A953E2271DC97F620059F78E /* DataHandler.swift */; };
 		A953E22A1DC98F060059F78E /* CardioTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A953E2291DC98F060059F78E /* CardioTileView.swift */; };
 		A953E22C1DCA8EB00059F78E /* CardioTileViewUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = A953E22B1DCA8EB00059F78E /* CardioTileViewUI.xib */; };
+		A9545BB91DE98BB60012A448 /* ProgramsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9545BB71DE98BB60012A448 /* ProgramsViewController.swift */; };
+		A9545BBA1DE98BB60012A448 /* TrainersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9545BB81DE98BB60012A448 /* TrainersViewController.swift */; };
 		A985705F1DC2E1D100C3AA32 /* AddNewExerciseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A985705E1DC2E1D100C3AA32 /* AddNewExerciseController.swift */; };
 		A98570621DC2E7FF00C3AA32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A98570601DC2E7FF00C3AA32 /* Main.storyboard */; };
 		A98570641DC315B100C3AA32 /* AddStrengthExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98570631DC315B100C3AA32 /* AddStrengthExercise.swift */; };
@@ -119,6 +121,8 @@
 		A953E2271DC97F620059F78E /* DataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 		A953E2291DC98F060059F78E /* CardioTileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardioTileView.swift; sourceTree = "<group>"; };
 		A953E22B1DCA8EB00059F78E /* CardioTileViewUI.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardioTileViewUI.xib; sourceTree = "<group>"; };
+		A9545BB71DE98BB60012A448 /* ProgramsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramsViewController.swift; sourceTree = "<group>"; };
+		A9545BB81DE98BB60012A448 /* TrainersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainersViewController.swift; sourceTree = "<group>"; };
 		A985705E1DC2E1D100C3AA32 /* AddNewExerciseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewExerciseController.swift; sourceTree = "<group>"; };
 		A98570611DC2E7FF00C3AA32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A98570631DC315B100C3AA32 /* AddStrengthExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStrengthExercise.swift; sourceTree = "<group>"; };
@@ -262,6 +266,15 @@
 			name = "Data Handler";
 			sourceTree = "<group>";
 		};
+		A97772D71DE94F7500559A8F /* SFU Recreation */ = {
+			isa = PBXGroup;
+			children = (
+				A9545BB71DE98BB60012A448 /* ProgramsViewController.swift */,
+				A9545BB81DE98BB60012A448 /* TrainersViewController.swift */,
+			);
+			name = "SFU Recreation";
+			sourceTree = "<group>";
+		};
 		A9A729D71DE26A410085D399 /* Home Page */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +314,7 @@
 				A9FCD5E51DDF19CF00A75BCC /* AliveSFU.entitlements */,
 				A9AE2C1F1DC17F9900FB5BC0 /* Assets.xcassets */,
 				A92A2C171DD7D5BA00E0B679 /* Top Level View Controllers */,
+				A97772D71DE94F7500559A8F /* SFU Recreation */,
 				A92A2C161DD7D42D00E0B679 /* MyProgress */,
 				A9AE2C161DC17F9900FB5BC0 /* AppDelegate.swift */,
 				A92A2C2C1DDA9B8E00E0B679 /* Data Handler */,
@@ -600,6 +614,7 @@
 			files = (
 				A9DD17621DC968F300979495 /* AppDataController.swift in Sources */,
 				A90440981DCEDF2700C77EEE /* PopoverCardioTile.swift in Sources */,
+				A9545BB91DE98BB60012A448 /* ProgramsViewController.swift in Sources */,
 				A92A2C191DD7D71200E0B679 /* LoginPageViewController.swift in Sources */,
 				A9AE2C4B1DC1824C00FB5BC0 /* SleepAnalysisController.swift in Sources */,
 				A9AE2C1B1DC17F9900FB5BC0 /* SFURecreationController.swift in Sources */,
@@ -607,6 +622,7 @@
 				A9A729D61DE269E00085D399 /* MyProfileViewController.swift in Sources */,
 				A9AE2C471DC1822D00FB5BC0 /* MyProgressController.swift in Sources */,
 				A98570641DC315B100C3AA32 /* AddStrengthExercise.swift in Sources */,
+				A9545BBA1DE98BB60012A448 /* TrainersViewController.swift in Sources */,
 				FA7FB3171DC333BD00781EFB /* PopoverStrengthTile.swift in Sources */,
 				41B003981DC5B1FC00762D2E /* Exercise.swift in Sources */,
 				A91D9D1A1DCC634F00603AC6 /* StrengthTileView.swift in Sources */,
