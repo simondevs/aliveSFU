@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
@@ -25,10 +22,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" tag="1000" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="jQX-us-MkI" userLabel="pd">
-                                <rect key="frame" x="10" y="74" width="355" height="176"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="Q4w-mx-hLx">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="29"/>
                                         <segments>
                                             <segment title="Male"/>
                                             <segment title="Female"/>
@@ -36,7 +31,6 @@
                                         <color key="tintColor" red="0.65098039220000004" green="0.098039215690000001" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TPe-gy-3Yi" userLabel="userFirstName">
-                                        <rect key="frame" x="0.0" y="30" width="355" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="wdd-Fo-YIq"/>
                                         </constraints>
@@ -48,7 +42,6 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="apP-bb-rHJ" userLabel="userLastName">
-                                        <rect key="frame" x="0.0" y="67" width="355" height="35"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -57,7 +50,6 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number (optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SjB-Zj-hab" userLabel="userPhoneNumber">
-                                        <rect key="frame" x="0.0" y="104" width="355" height="35"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -66,7 +58,6 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aR6-8R-fC2" userLabel="userEmail">
-                                        <rect key="frame" x="0.0" y="141" width="355" height="35"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -82,22 +73,17 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" tag="1000" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="EnJ-FN-y7k" userLabel="dd">
-                                <rect key="frame" x="15" y="270" width="345" height="249"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5t2-Tj-Ndp" userLabel="Height">
-                                        <rect key="frame" x="0.0" y="0.0" width="345" height="35"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfX-yW-d4p">
-                                                <rect key="frame" x="0.0" y="0.0" width="122.5" height="35"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0c-y6-8GB" userLabel="Value">
-                                                <rect key="frame" x="122.5" y="0.0" width="222.5" height="35"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oXb-40-xa8" userLabel="userHeightFt">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="60" id="FoW-Ay-YH9"/>
                                                             <constraint firstAttribute="height" constant="35" id="baq-VR-XIa"/>
@@ -110,13 +96,11 @@
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ft" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1f-Vd-h78">
-                                                        <rect key="frame" x="60" y="0.0" width="60" height="35"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q88-c8-ZbK" userLabel="userHeightInch">
-                                                        <rect key="frame" x="120" y="0.0" width="60" height="35"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -125,7 +109,6 @@
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4O-U5-pwz">
-                                                        <rect key="frame" x="180" y="0.0" width="42.5" height="35"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -142,19 +125,15 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62Y-VM-KsZ" userLabel="Weight">
-                                        <rect key="frame" x="0.0" y="37" width="345" height="35"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0I-eW-6wW">
-                                                <rect key="frame" x="0.0" y="0.0" width="122.5" height="35"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUq-fg-xEd" userLabel="Value">
-                                                <rect key="frame" x="122.5" y="0.0" width="222.5" height="35"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R0T-zn-VCd" userLabel="userHeightFt">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="60" id="2dC-QV-M29"/>
                                                             <constraint firstAttribute="height" constant="35" id="aoQ-xt-wb3"/>
@@ -168,13 +147,11 @@
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Om9-OX-Jar">
-                                                        <rect key="frame" x="60" y="0.0" width="60" height="35"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nYP-aR-vmy" userLabel="userHeightInch">
-                                                        <rect key="frame" x="120" y="0.0" width="60" height="35"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -184,7 +161,6 @@
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lb" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzZ-h3-gkW">
-                                                        <rect key="frame" x="180" y="0.0" width="42.5" height="35"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -201,16 +177,13 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age Group:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0d-G1-hZk">
-                                        <rect key="frame" x="0.0" y="74" width="345" height="20"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W94-Rg-PX1" userLabel="Checkboxes">
-                                        <rect key="frame" x="0.0" y="96" width="345" height="35"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQd-t0-N1G">
-                                                <rect key="frame" x="0.0" y="0.0" width="69" height="35"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="17-20">
@@ -224,7 +197,6 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VB0-c3-hwy">
-                                                <rect key="frame" x="69" y="0.0" width="69" height="35"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="20-22">
@@ -238,7 +210,6 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2C-u4-22x">
-                                                <rect key="frame" x="138" y="0.0" width="69" height="35"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="22-25">
@@ -252,7 +223,6 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKN-rf-4n3">
-                                                <rect key="frame" x="207" y="0.0" width="69" height="35"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="25-30">
@@ -266,7 +236,6 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AU5-pL-F0W">
-                                                <rect key="frame" x="276" y="0.0" width="69" height="35"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="30+">
@@ -288,16 +257,13 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fitness Frequency (hours / week):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTw-Vq-Bub">
-                                        <rect key="frame" x="0.0" y="133" width="345" height="20"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YC1-9e-ONo" userLabel="Checkboxes">
-                                        <rect key="frame" x="0.0" y="155" width="345" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tn7-WG-nzp">
-                                                <rect key="frame" x="0.0" y="0.0" width="69" height="30"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="0-5 ">
@@ -311,7 +277,6 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0K-Ko-oRd">
-                                                <rect key="frame" x="69" y="0.0" width="69" height="30"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="5-10">
@@ -325,7 +290,6 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqQ-lX-6Bx">
-                                                <rect key="frame" x="138" y="0.0" width="69" height="30"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="10-15">
@@ -339,7 +303,6 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLR-QD-ZtY">
-                                                <rect key="frame" x="207" y="0.0" width="69" height="30"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="15-20">
@@ -353,7 +316,6 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbW-yv-55X">
-                                                <rect key="frame" x="276" y="0.0" width="69" height="30"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="20+">
@@ -375,16 +337,13 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Goals:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MO-LZ-BRt">
-                                        <rect key="frame" x="0.0" y="187" width="345" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Pb-bb-FIG" userLabel="Checkboxes">
-                                        <rect key="frame" x="0.0" y="219" width="345" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmv-KE-Fic">
-                                                <rect key="frame" x="0.0" y="0.0" width="115" height="30"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="Weight Loss">
@@ -398,7 +357,6 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQF-A5-rNX">
-                                                <rect key="frame" x="115" y="0.0" width="115" height="30"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="Strength">
@@ -412,7 +370,6 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qi4-XS-gYr">
-                                                <rect key="frame" x="230" y="0.0" width="115" height="30"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="Maintenance">
@@ -438,13 +395,11 @@
                                 </constraints>
                             </stackView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Missing required fields!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="il1-DZ-55i">
-                                <rect key="frame" x="15" y="534" width="345" height="25.5"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="22"/>
                                 <color key="textColor" red="0.65444970130000002" green="0.1736934483" blue="0.18311929699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ut-pN-shk" userLabel="Back">
-                                <rect key="frame" x="53" y="538" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="1Ny-Ah-nyh"/>
                                     <constraint firstAttribute="width" secondItem="6ut-pN-shk" secondAttribute="height" multiplier="1:1" id="kEj-LZ-lpM"/>
@@ -458,7 +413,6 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2Z-9Q-vPb" userLabel="Next">
-                                <rect key="frame" x="253" y="538" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Y2Z-9Q-vPb" secondAttribute="height" multiplier="1:1" id="2hf-iR-bSw"/>
                                     <constraint firstAttribute="width" constant="70" id="mQ6-28-420"/>
@@ -532,10 +486,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IR6-cu-LkT" userLabel="Label">
-                                <rect key="frame" x="15" y="72" width="345" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Trainers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cb0-Ls-31b">
-                                        <rect key="frame" x="47" y="6" width="251" height="52"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="45"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="highlightedColor" red="0.98422783609999998" green="0.98436874149999998" blue="0.98419696089999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -558,7 +510,6 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gkg-E9-jUd" userLabel="Web Container">
-                                <rect key="frame" x="15" y="146" width="345" height="462"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -604,10 +555,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivp-bf-OLu" userLabel="Label">
-                                <rect key="frame" x="15" y="72" width="345" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Programs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Az6-Pe-eiy">
-                                        <rect key="frame" x="75" y="6" width="196" height="52"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="45"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="highlightedColor" red="0.98422783609999998" green="0.98436874149999998" blue="0.98419696089999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -630,7 +579,6 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICF-3z-sh5" userLabel="Web Container">
-                                <rect key="frame" x="15" y="146" width="345" height="432"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -643,14 +591,11 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDQ-LV-86a" userLabel="Buttons">
-                                <rect key="frame" x="15" y="578" width="345" height="40"/>
                                 <subviews>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="NJZ-tD-iWh">
-                                        <rect key="frame" x="154" y="1" width="37" height="37"/>
                                         <color key="color" red="0.65098039220000004" green="0.098039215690000001" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </activityIndicatorView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKV-i9-8v2">
-                                        <rect key="frame" x="164.5" y="12" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="15" id="KOk-4a-Owe"/>
                                             <constraint firstAttribute="width" secondItem="uKV-i9-8v2" secondAttribute="height" id="SHx-9r-sk2"/>
@@ -716,10 +661,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIu-Mc-LLd" userLabel="Label">
-                                <rect key="frame" x="15" y="72" width="345" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAQ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6OX-vl-ypc">
-                                        <rect key="frame" x="127" y="6" width="91" height="52"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="45"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="highlightedColor" red="0.98422783609999998" green="0.98436874149999998" blue="0.98419696089999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -754,10 +697,10 @@
             </objects>
             <point key="canvasLocation" x="-1730" y="3050"/>
         </scene>
-        <!--View Controller-->
+        <!--Tutorials View Controller-->
         <scene sceneID="oUu-Co-1zs">
             <objects>
-                <viewController id="zTS-kH-ZZa" sceneMemberID="viewController">
+                <viewController id="zTS-kH-ZZa" customClass="TutorialsViewController" customModule="AliveSFU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2mc-M0-byA"/>
                         <viewControllerLayoutGuide type="bottom" id="ece-cd-FFr"/>
@@ -767,10 +710,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vx4-i5-N9r" userLabel="Label">
-                                <rect key="frame" x="15" y="72" width="345" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorials" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asm-O5-PqP">
-                                        <rect key="frame" x="87" y="6" width="171" height="52"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="45"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="highlightedColor" red="0.98422783609999998" green="0.98436874149999998" blue="0.98419696089999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -792,18 +733,84 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0F8-QR-ncz">
+                                <attributedString key="attributedText">
+                                    <fragment content="Disclaimer">
+                                        <attributes>
+                                            <color key="NSColor" red="0.1315498948097229" green="0.45545655488967896" blue="0.94523674249649048" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" red="0.26808133721351624" green="0.65593105554580688" blue="0.97269994020462036" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="73N-LD-efX">
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="59l-zE-86a">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WZ7-1D-Lbu">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="L4G-7I-qHv">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vx4-i5-N9r" firstAttribute="centerX" secondItem="FsI-aS-zAI" secondAttribute="centerX" id="157-S0-IMk"/>
+                            <constraint firstItem="73N-LD-efX" firstAttribute="leading" secondItem="59l-zE-86a" secondAttribute="leading" id="4gV-ag-xG0"/>
+                            <constraint firstItem="59l-zE-86a" firstAttribute="top" secondItem="73N-LD-efX" secondAttribute="bottom" constant="12" id="4oc-9s-405"/>
+                            <constraint firstItem="73N-LD-efX" firstAttribute="trailing" secondItem="59l-zE-86a" secondAttribute="trailing" id="8tG-0V-sKW"/>
+                            <constraint firstItem="0F8-QR-ncz" firstAttribute="top" secondItem="vx4-i5-N9r" secondAttribute="bottom" constant="16" id="Ngj-vh-ieC"/>
                             <constraint firstItem="vx4-i5-N9r" firstAttribute="top" secondItem="2mc-M0-byA" secondAttribute="bottom" constant="8" id="Nn4-r5-aIO"/>
+                            <constraint firstItem="0F8-QR-ncz" firstAttribute="leading" secondItem="FsI-aS-zAI" secondAttribute="leading" constant="146" id="Pl4-f1-A8p"/>
+                            <constraint firstItem="73N-LD-efX" firstAttribute="centerX" secondItem="vx4-i5-N9r" secondAttribute="centerX" id="SvR-Lp-0xk"/>
+                            <constraint firstItem="73N-LD-efX" firstAttribute="leading" secondItem="FsI-aS-zAI" secondAttribute="leading" id="m1u-Ln-nFi"/>
+                            <constraint firstItem="73N-LD-efX" firstAttribute="top" secondItem="0F8-QR-ncz" secondAttribute="bottom" constant="11" id="nXO-Wb-TCz"/>
+                            <constraint firstItem="59l-zE-86a" firstAttribute="bottom" secondItem="ece-cd-FFr" secondAttribute="top" id="p0a-ke-G2M"/>
                             <constraint firstItem="vx4-i5-N9r" firstAttribute="width" secondItem="FsI-aS-zAI" secondAttribute="width" constant="-30" id="tAg-Wb-VMc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="59l-zE-86a" id="i4W-dV-P4p"/>
+                        <outlet property="disclaimerLabel" destination="0F8-QR-ncz" id="JYC-Ms-bxb"/>
+                        <outlet property="searchBar" destination="73N-LD-efX" id="ogD-CR-Y35"/>
+                        <outlet property="searchDisplayController" destination="ILH-nN-new" id="Mj0-SS-IVa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ES6-cE-niQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="qxb-JN-wYb">
+                    <connections>
+                        <outlet property="delegate" destination="zTS-kH-ZZa" id="l8f-oM-fBe"/>
+                        <outlet property="searchContentsController" destination="zTS-kH-ZZa" id="PGT-R6-rxm"/>
+                        <outlet property="searchResultsDataSource" destination="zTS-kH-ZZa" id="8zl-pc-X1s"/>
+                        <outlet property="searchResultsDelegate" destination="zTS-kH-ZZa" id="IJw-LO-6HM"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="ILH-nN-new">
+                    <connections>
+                        <outlet property="delegate" destination="zTS-kH-ZZa" id="X1P-Es-jaA"/>
+                        <outlet property="searchContentsController" destination="zTS-kH-ZZa" id="sMY-9x-3dR"/>
+                        <outlet property="searchResultsDataSource" destination="zTS-kH-ZZa" id="wvk-W9-imx"/>
+                        <outlet property="searchResultsDelegate" destination="zTS-kH-ZZa" id="anM-l2-ECS"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-1730" y="2337"/>
+            <point key="canvasLocation" x="-1730.4000000000001" y="2336.5817091454273"/>
         </scene>
         <!--Home Page Controller-->
         <scene sceneID="hNz-n2-bh7">
@@ -818,7 +825,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="aliveSFU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eH-E2-YAf" userLabel="aliveSFU">
-                                <rect key="frame" x="30" y="-2" width="315" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="5Eq-qk-f4q"/>
@@ -837,7 +843,6 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC9-C2-iao" userLabel="MyProfile">
-                                <rect key="frame" x="138" y="103" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="e9r-yV-C3d"/>
                                     <constraint firstAttribute="width" secondItem="DC9-C2-iao" secondAttribute="height" multiplier="1:1" id="rOV-Ev-KL3"/>
@@ -850,13 +855,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="LS2-pW-yo9" userLabel="Row1">
-                                <rect key="frame" x="30" y="278" width="315" height="80"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iRa-RH-hYZ" userLabel="Col1">
-                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcm-FT-8CH" userLabel="Step Count">
-                                                <rect key="frame" x="0.0" y="0.0" width="137.5" height="40"/>
                                                 <color key="backgroundColor" red="0.71168619394302368" green="0.0" blue="0.15891879796981812" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -872,7 +874,6 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOv-Dl-eGs" userLabel="stepCount">
-                                                <rect key="frame" x="0.0" y="40" width="137.5" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -893,10 +894,8 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uWZ-Ej-hJy" userLabel="Col1">
-                                        <rect key="frame" x="177.5" y="0.0" width="137.5" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Sleep" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2y-Lg-OZv" userLabel="Today's Sleep">
-                                                <rect key="frame" x="0.0" y="0.0" width="137.5" height="40"/>
                                                 <color key="backgroundColor" red="0.71168619394302368" green="0.0" blue="0.15891879796981812" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -912,7 +911,6 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24Y-2I-iJu" userLabel="todaySleep">
-                                                <rect key="frame" x="0.0" y="40" width="137.5" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -940,13 +938,10 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="uqW-VU-2jB" userLabel="Row21">
-                                <rect key="frame" x="30" y="433" width="315" height="80"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XoE-Dq-YAJ" userLabel="Col2">
-                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qjb-Yx-eBm">
-                                                <rect key="frame" x="0.0" y="0.0" width="137.5" height="40"/>
                                                 <color key="backgroundColor" red="0.71168619394302368" green="0.0" blue="0.15891879796981812" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -962,7 +957,6 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKM-IX-4a7" userLabel="bmr">
-                                                <rect key="frame" x="0.0" y="40" width="137.5" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -983,10 +977,8 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jy9-KQ-18C" userLabel="Col2">
-                                        <rect key="frame" x="177.5" y="0.0" width="137.5" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2D-eo-RcN">
-                                                <rect key="frame" x="0.0" y="0.0" width="137.5" height="40"/>
                                                 <color key="backgroundColor" red="0.71168619389999999" green="0.0" blue="0.158918798" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1002,7 +994,6 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEu-Xc-Wkh" userLabel="bmi">
-                                                <rect key="frame" x="0.0" y="40" width="137.5" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -1070,7 +1061,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nEn-kv-wAx" userLabel="Graph View" customClass="JBBarChartView">
-                                <rect key="frame" x="16" y="72" width="343" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1083,10 +1073,8 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ud5-vu-E9k" userLabel="Exercise Label View">
-                                <rect key="frame" x="16" y="126" width="343" height="33"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmH-zc-yYp">
-                                        <rect key="frame" x="299" y="-4" width="41" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="kmH-zc-yYp" secondAttribute="height" multiplier="1:1" id="N3k-k7-DyW"/>
                                         </constraints>
@@ -1096,7 +1084,6 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n95-43-dKx">
-                                        <rect key="frame" x="0.0" y="0.0" width="299" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.65098039220000004" green="0.098039215690000001" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1123,10 +1110,8 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byQ-mq-xbx">
-                                <rect key="frame" x="16" y="217" width="343" height="393"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EaD-Ml-CdW">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="436"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="436" id="Ie3-uD-xtf"/>
@@ -1151,7 +1136,6 @@
                                 </constraints>
                             </scrollView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="P8h-RZ-csf">
-                                <rect key="frame" x="16" y="174" width="343" height="29"/>
                                 <segments>
                                     <segment title="S"/>
                                     <segment title="M"/>
@@ -1216,10 +1200,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jel-Vt-EYS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4th-vY-ch6" userLabel="Graph View" customClass="JBBarChartView">
-                                        <rect key="frame" x="15" y="-44" width="345" height="150"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="fto-dH-h6g"/>
@@ -1235,10 +1217,8 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u0g-K9-Pha">
-                                        <rect key="frame" x="15" y="126" width="345" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleep Analysis for last night" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I23-0H-1pv">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
                                                 <color key="textColor" red="0.65098039220000004" green="0.098039215690000001" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1263,13 +1243,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="D5r-lg-NMl" userLabel="Row1">
-                                        <rect key="frame" x="15" y="191" width="345" height="80"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3GG-G8-T1b" userLabel="Col1">
-                                                <rect key="frame" x="0.0" y="0.0" width="152.5" height="80"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total hours in bed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHV-eU-blU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="152.5" height="40"/>
                                                         <color key="backgroundColor" red="0.71168619389999999" green="0.0" blue="0.158918798" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1285,7 +1262,6 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAz-hj-5tB" userLabel="hoursBed">
-                                                        <rect key="frame" x="0.0" y="40" width="152.5" height="40"/>
                                                         <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -1306,10 +1282,8 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xp3-Qi-sKb" userLabel="Col2">
-                                                <rect key="frame" x="192.5" y="0.0" width="152.5" height="80"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total hours slept" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vna-c0-ZjC">
-                                                        <rect key="frame" x="0.0" y="0.0" width="152.5" height="40"/>
                                                         <color key="backgroundColor" red="0.71168619389999999" green="0.0" blue="0.158918798" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1325,7 +1299,6 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGm-jG-2UZ" userLabel="hoursSlept">
-                                                        <rect key="frame" x="0.0" y="40" width="152.5" height="40"/>
                                                         <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -1352,13 +1325,10 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNx-NH-ieD" userLabel="Row2">
-                                        <rect key="frame" x="15" y="291" width="345" height="80"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Q0p-df-0O8" userLabel="Col1">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="80"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="% of time spent sleeping" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOd-K5-a1T">
-                                                        <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
                                                         <color key="backgroundColor" red="0.71168619389999999" green="0.0" blue="0.158918798" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1374,7 +1344,6 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxu-vz-KCE" userLabel="percentageSleeping">
-                                                        <rect key="frame" x="0.0" y="40" width="345" height="40"/>
                                                         <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -1404,13 +1373,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pg0-kS-sIn" userLabel="Row3">
-                                        <rect key="frame" x="15" y="391" width="345" height="80"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kGg-9u-gVa" userLabel="Col1">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="80"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# of times woken up at night" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jd-tt-0iF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
                                                         <color key="backgroundColor" red="0.71168619389999999" green="0.0" blue="0.158918798" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1426,7 +1392,6 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSL-O1-KpS" userLabel="countWokenUp">
-                                                        <rect key="frame" x="0.0" y="40" width="345" height="40"/>
                                                         <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -1456,13 +1421,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXL-Tf-rLR" userLabel="Row4">
-                                        <rect key="frame" x="15" y="491" width="345" height="80"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="V2e-et-Mbn" userLabel="Col1">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="80"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time taken to fall asleep" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ2-o6-XS0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
                                                         <color key="backgroundColor" red="0.71168619389999999" green="0.0" blue="0.158918798" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1478,7 +1440,6 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="an9-za-lgD" userLabel="timeFallAsleep">
-                                                        <rect key="frame" x="0.0" y="40" width="345" height="40"/>
                                                         <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -1508,7 +1469,6 @@
                                         </constraints>
                                     </view>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unable to gather &quot;Asleep&quot; data from HealthKit. Using &quot;On Bed&quot; data as estimate" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8P-uE-wTm" userLabel="AsleepUnavailable">
-                                        <rect key="frame" x="15" y="586" width="345" height="28"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                         <color key="textColor" red="0.65098039220000004" green="0.098039215690000001" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1543,7 +1503,6 @@
                                 </constraints>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="w10-3b-ch3">
-                                <rect key="frame" x="163" y="239" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="w10-3b-ch3" secondAttribute="height" multiplier="1:1" id="MLM-Lq-yeP"/>
                                     <constraint firstAttribute="width" constant="50" id="aLv-q3-eT3"/>
@@ -1551,36 +1510,30 @@
                                 <color key="color" red="0.65098039220000004" green="0.098039215690000001" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r2X-9W-fJy" userLabel="Error View">
-                                <rect key="frame" x="10" y="173" width="355" height="320"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="error icon" translatesAutoresizingMaskIntoConstraints="NO" id="j5U-MA-OUY">
-                                        <rect key="frame" x="152" y="10" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="j5U-MA-OUY" secondAttribute="height" multiplier="1:1" id="CRL-qD-0dB"/>
                                             <constraint firstAttribute="width" constant="50" id="lho-kS-Uc3"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error accessing sleep data from Health app" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k09-Y5-kmu">
-                                        <rect key="frame" x="15" y="80" width="325" height="57.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
                                         <color key="textColor" red="0.65098039220000004" green="0.098039215690000001" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is due to one of the following reasons:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiD-RQ-muT">
-                                        <rect key="frame" x="15" y="152.5" width="325" height="41.5"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1) No sleep analysis data is available in the Health app" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rt-SD-E2s" userLabel="reason1">
-                                        <rect key="frame" x="35" y="209" width="285" height="39.5"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2) aliveSFU has not been permitted to read Sleep Analysis data" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8z-jT-lu5" userLabel="reason2">
-                                        <rect key="frame" x="35" y="263.5" width="285" height="39.5"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1662,10 +1615,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tun-Ip-BGx" userLabel="Main View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKQ-X4-yDh" userLabel="Graph View" customClass="JBBarChartView">
-                                        <rect key="frame" x="15" y="-44" width="345" height="150"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="JRA-Pe-geD"/>
@@ -1681,10 +1632,8 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cak-cF-O42" userLabel="Hours">
-                                        <rect key="frame" x="15" y="156" width="345" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Hours: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmc-7x-IYI">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
                                                 <color key="textColor" red="0.65098039220000004" green="0.098039215690000001" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1709,10 +1658,8 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vmp-33-2wI" userLabel="Btn1">
-                                        <rect key="frame" x="15" y="266" width="345" height="100"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpg-bJ-S1n" userLabel="Tutorials">
-                                                <rect key="frame" x="47.5" y="5" width="90" height="90"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Lpg-bJ-S1n" secondAttribute="height" multiplier="1:1" id="Kcd-OK-Nql"/>
                                                     <constraint firstAttribute="width" constant="90" id="go4-Pj-VkI"/>
@@ -1726,7 +1673,6 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rL-pD-X0V" userLabel="Trainers">
-                                                <rect key="frame" x="207.5" y="5" width="90" height="90"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="0rL-pD-X0V" secondAttribute="height" multiplier="1:1" id="Lo4-6H-p8t"/>
                                                 </constraints>
@@ -1749,10 +1695,8 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qjV-X0-nzf" userLabel="Btn2">
-                                        <rect key="frame" x="15" y="416" width="345" height="100"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKj-be-z83">
-                                                <rect key="frame" x="47.5" y="5" width="90" height="90"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="JKj-be-z83" secondAttribute="height" multiplier="1:1" id="HPZ-RL-9dd"/>
                                                     <constraint firstAttribute="width" constant="90" id="lvX-qg-acu"/>
@@ -1766,7 +1710,6 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hr4-0U-c0L">
-                                                <rect key="frame" x="207.5" y="5" width="90" height="90"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Hr4-0U-c0L" secondAttribute="height" multiplier="1:1" id="j9R-7V-VUJ"/>
                                                 </constraints>
@@ -1805,11 +1748,8 @@
                                 </constraints>
                             </view>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZF-aW-qT3" userLabel="overlay hours">
-                                <rect key="frame" x="15" y="196" width="345" height="164"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1ki-1h-oR6" userLabel="list">
-                                        <rect key="frame" x="0.0" y="0.0" width="345" height="164"/>
-                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1ki-1h-oR6" userLabel="list"/>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1868,25 +1808,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVw-aT-phy" userLabel="background">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <action selector="closePopUp:" destination="PzC-io-0un" eventType="touchUpInside" id="e0L-oi-ThO"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9cp-1W-DQm">
-                                <rect key="frame" x="60" y="150" width="255" height="367"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popover" translatesAutoresizingMaskIntoConstraints="NO" id="lrm-IR-RZz">
-                                        <rect key="frame" x="0.0" y="0.0" width="255" height="367"/>
-                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popover" translatesAutoresizingMaskIntoConstraints="NO" id="lrm-IR-RZz"/>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLS-o9-AR7" userLabel="exerciseName">
-                                        <rect key="frame" x="10" y="50" width="235" height="30"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0EF-GZ-4xh" userLabel="editableExerciseName">
-                                        <rect key="frame" x="10" y="50" width="235" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -1895,25 +1829,20 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cardio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GW7-Af-ZFp">
-                                        <rect key="frame" x="20" y="85" width="215" height="23"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Jbv-QR-x0C" userLabel="rows">
-                                        <rect key="frame" x="10" y="139" width="235" height="89"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xw6-Rn-5Po" userLabel="col3">
-                                                <rect key="frame" x="0.0" y="0.0" width="235" height="23"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFP-dx-0yQ" userLabel="Time">
-                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exerciseTime" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otj-AL-Mnu">
-                                                        <rect key="frame" x="117.5" y="0.0" width="117.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -1926,16 +1855,13 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jyf-aT-3Ae" userLabel="col2">
-                                                <rect key="frame" x="0.0" y="33" width="235" height="23"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A67-ft-i9q" userLabel="Speed">
-                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exerciseSpeed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vga-pv-B00">
-                                                        <rect key="frame" x="117.5" y="0.0" width="117.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -1948,16 +1874,13 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOe-GP-qI4" userLabel="col1">
-                                                <rect key="frame" x="0.0" y="66" width="235" height="23"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resistance:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLH-Hv-rte" userLabel="Resistance">
-                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exerciseResistance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIg-s5-QL8">
-                                                        <rect key="frame" x="117.5" y="0.0" width="117.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -1972,19 +1895,15 @@
                                         </subviews>
                                     </stackView>
                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aeG-eG-2NP" userLabel="editableRows">
-                                        <rect key="frame" x="10" y="129" width="235" height="110"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lzk-bv-nn5" userLabel="col3">
-                                                <rect key="frame" x="0.0" y="0.0" width="235" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kV-cu-eiD" userLabel="Time">
-                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="30"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uyW-Aq-jgt" userLabel="exerciseTime">
-                                                        <rect key="frame" x="117.5" y="0.0" width="117.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -2000,16 +1919,13 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3a-8L-2in" userLabel="col2">
-                                                <rect key="frame" x="0.0" y="40" width="235" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnj-NK-YDo" userLabel="Speed">
-                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="30"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b33-oo-xAZ" userLabel="exerciseSpeed">
-                                                        <rect key="frame" x="117.5" y="0.0" width="117.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -2025,16 +1941,13 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8I-iC-Nnk" userLabel="col1">
-                                                <rect key="frame" x="0.0" y="80" width="235" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resistance:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSc-w9-NOT" userLabel="Resistance">
-                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="30"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9oQ-Tl-d4W" userLabel="exerciseResistance">
-                                                        <rect key="frame" x="117.5" y="0.0" width="117.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -2052,7 +1965,6 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpo-gM-qnI" userLabel="changeExercise">
-                                        <rect key="frame" x="38" y="252" width="180" height="40"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                         <state key="normal" title="Change Exercise" backgroundImage="button">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2062,10 +1974,8 @@
                                         </connections>
                                     </button>
                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PYZ-lE-nOB" userLabel="editableButtons">
-                                        <rect key="frame" x="38" y="252" width="180" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA3-mZ-g71" userLabel="cancelExercise">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="40"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                 <state key="normal" title="Cancel" backgroundImage="button">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2075,7 +1985,6 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bO-dc-EPr" userLabel="saveExercise">
-                                                <rect key="frame" x="90" y="0.0" width="90" height="40"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                 <state key="normal" title="Save" backgroundImage="button">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2090,7 +1999,6 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dud-yv-c1e" userLabel="deleteExercise">
-                                        <rect key="frame" x="38" y="302" width="180" height="40"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
                                         <size key="titleShadowOffset" width="0.0" height="1"/>
                                         <state key="normal" title="Delete Exercise" backgroundImage="button">
@@ -2186,7 +2094,6 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrv-ib-Cca" userLabel="Cardio">
-                                <rect key="frame" x="152" y="408" width="71" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mrv-ib-Cca" secondAttribute="height" multiplier="1:1" id="V7Z-AA-86l"/>
                                 </constraints>
@@ -2196,7 +2103,6 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nab-od-y4s" userLabel="Strength">
-                                <rect key="frame" x="152" y="275" width="71" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Nab-od-y4s" secondAttribute="height" multiplier="1:1" id="QII-cI-hNY"/>
                                 </constraints>
@@ -2209,10 +2115,8 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2q-4C-r88" userLabel="Add Exercise">
-                                <rect key="frame" x="16" y="72" width="343" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOz-YI-f1c">
-                                        <rect key="frame" x="38" y="6" width="266" height="52"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="45"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="highlightedColor" red="0.98422783613204956" green="0.98436874151229858" blue="0.98419696092605591" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2235,10 +2139,8 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnV-QY-9YW" userLabel="Category">
-                                <rect key="frame" x="16" y="200" width="343" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Og-Eo-E83">
-                                        <rect key="frame" x="110" y="0.0" width="122" height="40"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                         <color key="textColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2301,10 +2203,8 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uja-Ji-lTP" userLabel="Add Exercise">
-                                <rect key="frame" x="16" y="72" width="343" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sB-39-G8K">
-                                        <rect key="frame" x="39.5" y="6" width="265.5" height="52"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="45"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2327,10 +2227,8 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wkO-v5-FVm" userLabel="Strength">
-                                <rect key="frame" x="16" y="186" width="343" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strength" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qF-ZQ-K6R">
-                                        <rect key="frame" x="115.5" y="0.0" width="113.5" height="40"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                         <color key="textColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2355,16 +2253,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uu6-sb-f1A" userLabel="Form">
-                                <rect key="frame" x="16" y="246" width="343" height="210"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuL-z7-q6V">
-                                        <rect key="frame" x="8" y="8" width="141.5" height="23"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                         <color key="textColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oTv-6E-8gF" userLabel="exerciseField">
-                                        <rect key="frame" x="8" y="41" width="327" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -2373,19 +2268,15 @@
                                         </connections>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2d-3t-JZV" userLabel="SetsReps">
-                                        <rect key="frame" x="8" y="86" width="327" height="63"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WBG-b0-eJG" userLabel="Sets">
-                                                <rect key="frame" x="0.0" y="0.0" width="163.5" height="63"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sets:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1r8-LX-PyP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kym-YQ-BJI" userLabel="setsField">
-                                                        <rect key="frame" x="0.0" y="33" width="163.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -2396,16 +2287,13 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="J6I-Bj-PKN" userLabel="Reps">
-                                                <rect key="frame" x="163.5" y="0.0" width="163.5" height="63"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxN-zp-hyu" userLabel="Reps:">
-                                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n4b-FF-bzL" userLabel="repsField">
-                                                        <rect key="frame" x="0.0" y="33" width="163.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -2424,7 +2312,6 @@
                                         </constraints>
                                     </stackView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="b55-nT-xOY">
-                                        <rect key="frame" x="8" y="174" width="327" height="29"/>
                                         <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
                                         <segments>
                                             <segment title="S"/>
@@ -2464,10 +2351,8 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KgE-iN-Iml" userLabel="Buttons">
-                                <rect key="frame" x="16" y="552" width="343" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qk3-Fk-gG8">
-                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="35"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -2477,7 +2362,6 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gU-Wi-h8t">
-                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="35"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                         <state key="normal" title="Save">
                                             <color key="titleColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
@@ -2535,14 +2419,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" text="Fitness Buddy Finder" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="QSn-M0-FOP">
-                                <rect key="frame" x="16" y="300" width="341" height="42"/>
+                                <frame key="frameInset" minX="16" minY="300" width="341" height="42"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loaded by FitnessBuddyFinder Controller" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdQ-rl-b5b">
-                                <rect key="frame" x="54" y="349" width="268" height="17"/>
+                                <frame key="frameInset" minX="54" minY="349" width="268" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -2607,10 +2491,8 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oFh-Z2-uHA" userLabel="Add Exercise">
-                                <rect key="frame" x="16" y="64" width="343" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WlL-2y-qPz">
-                                        <rect key="frame" x="39.5" y="6" width="265.5" height="52"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="45"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2633,10 +2515,8 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enc-BE-2FW" userLabel="Cardio">
-                                <rect key="frame" x="16" y="181" width="343" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cardio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFF-vT-usk">
-                                        <rect key="frame" x="127.5" y="0.0" width="88.5" height="40"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
                                         <color key="textColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2661,16 +2541,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YHZ-fE-9hw" userLabel="Form">
-                                <rect key="frame" x="16" y="241" width="343" height="285"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waf-d3-gu2">
-                                        <rect key="frame" x="8" y="8" width="141.5" height="23"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                         <color key="textColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ylB-v7-Jmh" userLabel="exerciseField">
-                                        <rect key="frame" x="8" y="41" width="327" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -2679,19 +2556,15 @@
                                         </connections>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVe-Uz-dvA" userLabel="SetsReps">
-                                        <rect key="frame" x="8" y="86" width="327" height="63"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lvu-SG-cac" userLabel="Sets">
-                                                <rect key="frame" x="0.0" y="0.0" width="163.5" height="63"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resistance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feG-7x-u4J">
-                                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eHb-F3-q9e" userLabel="resistanceField">
-                                                        <rect key="frame" x="0.0" y="33" width="163.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -2702,16 +2575,13 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XJZ-eD-nj2" userLabel="Reps">
-                                                <rect key="frame" x="163.5" y="0.0" width="163.5" height="63"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ms-Fm-VFH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5GZ-ay-ADx" userLabel="speedField">
-                                                        <rect key="frame" x="0.0" y="33" width="163.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -2730,16 +2600,13 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ogZ-2n-yQD" userLabel="Time">
-                                        <rect key="frame" x="8" y="164" width="327" height="63"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btV-RZ-XUx" userLabel="Time:">
-                                                <rect key="frame" x="0.0" y="0.0" width="327" height="23"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                 <color key="textColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="01X-hu-oTv" userLabel="timeField">
-                                                <rect key="frame" x="0.0" y="33" width="327" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -2750,7 +2617,6 @@
                                         </subviews>
                                     </stackView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2G9-K0-Z1Y">
-                                        <rect key="frame" x="8" y="252" width="327" height="29"/>
                                         <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
                                         <segments>
                                             <segment title="S"/>
@@ -2793,10 +2659,8 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yAj-GX-DeY" userLabel="Buttons">
-                                <rect key="frame" x="16" y="552" width="343" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiq-Gy-29i">
-                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="35"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -2806,7 +2670,6 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Afn-rC-Of3">
-                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="35"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                         <state key="normal" title="Save">
                                             <color key="titleColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
@@ -2960,25 +2823,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DyU-YN-d3M" userLabel="background">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <action selector="closePopUp:" destination="7aa-LM-oHZ" eventType="touchUpInside" id="xAE-4a-3sy"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Cg-nE-5HU">
-                                <rect key="frame" x="60" y="150" width="255" height="367"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popover" translatesAutoresizingMaskIntoConstraints="NO" id="QeC-1F-57Y">
-                                        <rect key="frame" x="0.0" y="0.0" width="255" height="367"/>
-                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popover" translatesAutoresizingMaskIntoConstraints="NO" id="QeC-1F-57Y"/>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ti2-IM-DWG" userLabel="exerciseName">
-                                        <rect key="frame" x="10" y="50" width="235" height="30"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNj-ay-XBD" userLabel="editableExerciseName">
-                                        <rect key="frame" x="10" y="50" width="235" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -2987,25 +2844,20 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strength" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cx-iN-wQl" userLabel="Strength">
-                                        <rect key="frame" x="20" y="85" width="215" height="23"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LWr-r3-lWQ" userLabel="rows">
-                                        <rect key="frame" x="10" y="156" width="235" height="56"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Sb-MG-Vo3" userLabel="col2">
-                                                <rect key="frame" x="0.0" y="0.0" width="235" height="23"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sets:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNm-a3-C0c" userLabel="Sets">
-                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exerciseSets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQI-O4-wLo">
-                                                        <rect key="frame" x="117.5" y="0.0" width="117.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -3018,16 +2870,13 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J6T-BF-vKE" userLabel="col1">
-                                                <rect key="frame" x="0.0" y="33" width="235" height="23"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reps:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JlY-uE-OlK" userLabel="Reps">
-                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exerciseReps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRd-I7-VlH">
-                                                        <rect key="frame" x="117.5" y="0.0" width="117.5" height="23"/>
                                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -3042,19 +2891,15 @@
                                         </subviews>
                                     </stackView>
                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OlG-dH-ROH" userLabel="editableRows">
-                                        <rect key="frame" x="10" y="149" width="235" height="70"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39r-ce-4pi" userLabel="col2">
-                                                <rect key="frame" x="0.0" y="0.0" width="235" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sets:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ykj-3F-CDj" userLabel="Sets">
-                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="30"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NvP-sh-n1j" userLabel="exerciseSets">
-                                                        <rect key="frame" x="117.5" y="0.0" width="117.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -3070,16 +2915,13 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W35-DG-yRB" userLabel="col1">
-                                                <rect key="frame" x="0.0" y="40" width="235" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reps:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9p-AI-hrY" userLabel="Reps">
-                                                        <rect key="frame" x="0.0" y="0.0" width="117.5" height="30"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cyc-nk-0nx" userLabel="exerciseReps">
-                                                        <rect key="frame" x="117.5" y="0.0" width="117.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -3097,7 +2939,6 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W90-Cn-66z" userLabel="changeExercise">
-                                        <rect key="frame" x="38" y="252" width="180" height="40"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                         <state key="normal" title="Change Exercise" backgroundImage="button">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -3107,10 +2948,8 @@
                                         </connections>
                                     </button>
                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIR-gO-AYC" userLabel="editableButtons">
-                                        <rect key="frame" x="38" y="252" width="180" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BS-fK-EmJ" userLabel="cancelExercise">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="40"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                 <state key="normal" title="Cancel" backgroundImage="button">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -3120,7 +2959,6 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WMs-BR-qAC" userLabel="saveExercise">
-                                                <rect key="frame" x="90" y="0.0" width="90" height="40"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                                 <state key="normal" title="Save" backgroundImage="button">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -3135,7 +2973,6 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNF-5W-Wuy" userLabel="deleteExercise">
-                                        <rect key="frame" x="38" y="302" width="180" height="40"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
                                         <state key="normal" title="Delete Exercise" backgroundImage="button">
                                             <color key="titleColor" red="0.65098039215686276" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>

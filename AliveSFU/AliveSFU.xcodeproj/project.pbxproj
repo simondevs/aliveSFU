@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38ACDECF1DEBCDF3009BD164 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACDECD1DEBCDF3009BD164 /* ExerciseCell.swift */; };
+		38ACDED01DEBCDF3009BD164 /* ExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38ACDECE1DEBCDF3009BD164 /* ExerciseCell.xib */; };
+		38ACDED31DEBCF66009BD164 /* TutorialExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACDED21DEBCF66009BD164 /* TutorialExercise.swift */; };
+		38E002291DEB6C7A0086A43F /* TutorialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E002281DEB6C7A0086A43F /* TutorialsViewController.swift */; };
 		41B003981DC5B1FC00762D2E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B003971DC5B1FC00762D2E /* Exercise.swift */; };
 		A90440981DCEDF2700C77EEE /* PopoverCardioTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90440971DCEDF2700C77EEE /* PopoverCardioTile.swift */; };
 		A91D9D1A1DCC634F00603AC6 /* StrengthTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91D9D191DCC634F00603AC6 /* StrengthTileView.swift */; };
@@ -109,6 +113,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		38ACDECD1DEBCDF3009BD164 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
+		38ACDECE1DEBCDF3009BD164 /* ExerciseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExerciseCell.xib; sourceTree = "<group>"; };
+		38ACDED21DEBCF66009BD164 /* TutorialExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialExercise.swift; sourceTree = "<group>"; };
+		38E002281DEB6C7A0086A43F /* TutorialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialsViewController.swift; sourceTree = "<group>"; };
 		41B003971DC5B1FC00762D2E /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		A90440971DCEDF2700C77EEE /* PopoverCardioTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverCardioTile.swift; sourceTree = "<group>"; };
 		A91D9D191DCC634F00603AC6 /* StrengthTileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrengthTileView.swift; sourceTree = "<group>"; };
@@ -208,6 +216,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38ACDED11DEBCF00009BD164 /* Tutorials */ = {
+			isa = PBXGroup;
+			children = (
+				38ACDECE1DEBCDF3009BD164 /* ExerciseCell.xib */,
+				38ACDECD1DEBCDF3009BD164 /* ExerciseCell.swift */,
+				38E002281DEB6C7A0086A43F /* TutorialsViewController.swift */,
+				38ACDED21DEBCF66009BD164 /* TutorialExercise.swift */,
+			);
+			name = Tutorials;
+			sourceTree = "<group>";
+		};
 		A92A2C161DD7D42D00E0B679 /* MyProgress */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +288,7 @@
 		A97772D71DE94F7500559A8F /* SFU Recreation */ = {
 			isa = PBXGroup;
 			children = (
+				38ACDED11DEBCF00009BD164 /* Tutorials */,
 				A9545BB71DE98BB60012A448 /* ProgramsViewController.swift */,
 				A9545BB81DE98BB60012A448 /* TrainersViewController.swift */,
 			);
@@ -511,7 +531,7 @@
 					A9AE2C121DC17F9900FB5BC0 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 3TTPMU2CZK;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
@@ -568,6 +588,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A92A2C201DDA826900E0B679 /* firstTime.storyboard in Resources */,
+				38ACDED01DEBCDF3009BD164 /* ExerciseCell.xib in Resources */,
 				A92A2C1B1DD7E11900E0B679 /* login.storyboard in Resources */,
 				A98570621DC2E7FF00C3AA32 /* Main.storyboard in Resources */,
 				A91D9D1E1DCC6C6600603AC6 /* StrengthTileViewUI.xib in Resources */,
@@ -617,7 +638,9 @@
 				A9545BB91DE98BB60012A448 /* ProgramsViewController.swift in Sources */,
 				A92A2C191DD7D71200E0B679 /* LoginPageViewController.swift in Sources */,
 				A9AE2C4B1DC1824C00FB5BC0 /* SleepAnalysisController.swift in Sources */,
+				38ACDECF1DEBCDF3009BD164 /* ExerciseCell.swift in Sources */,
 				A9AE2C1B1DC17F9900FB5BC0 /* SFURecreationController.swift in Sources */,
+				38E002291DEB6C7A0086A43F /* TutorialsViewController.swift in Sources */,
 				A9AE2C171DC17F9900FB5BC0 /* AppDelegate.swift in Sources */,
 				A9A729D61DE269E00085D399 /* MyProfileViewController.swift in Sources */,
 				A9AE2C471DC1822D00FB5BC0 /* MyProgressController.swift in Sources */,
@@ -638,6 +661,7 @@
 				A9AE2C491DC1823C00FB5BC0 /* FitnessBuddyController.swift in Sources */,
 				A953E2281DC97F620059F78E /* DataHandler.swift in Sources */,
 				A985705F1DC2E1D100C3AA32 /* AddNewExerciseController.swift in Sources */,
+				38ACDED31DEBCF66009BD164 /* TutorialExercise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
