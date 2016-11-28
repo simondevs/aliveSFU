@@ -9,6 +9,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 class DataHandler {
     
@@ -199,6 +200,42 @@ class DataHandler {
             return -1
         }
         return 0;
+    }
+    
+    class func populateTutorialExercises() -> Int
+    {
+        if let jsonData = NSDataAsset(name: "tutorialExercises") {
+            let moc = AppDataController().managedObjectContext
+            let data = jsonData.data
+            do {
+                let jsonData = try? JSONSerialization.jsonObject(with: data, options: [])
+                if let array = jsonData as? [Any] {
+                    for element in array {
+                        let newExercise = NSEntityDescription.insertNewObject(forEntityName: "TutorialExercise", into: moc)
+                        if let jsonObj = element as? [String: Any] {
+                            if let name = jsonObj["name"] as? String {
+                                newExercise.setValue(name, forKey: "name")
+                            }
+                            if let targetMuscle = jsonObj["targetMuscle"] as? String {
+                                newExercise.setValue(targetMuscle, forKey: "targetMuscle")
+                            }
+                            if let equipmentName = jsonObj["equipmentName"] as? String {
+                                newExercise.setValue(equipmentName, forKey: "equipmentName")
+                                
+                            }
+                        }
+                    }
+                }
+
+            } catch {
+                print(error)
+            }
+
+        }
+        
+
+        return 0;
+        
     }
     
     //save changes to exercise array in popover
