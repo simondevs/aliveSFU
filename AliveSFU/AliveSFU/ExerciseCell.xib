@@ -40,7 +40,7 @@
                 <outlet property="exerciseName" destination="MS6-gg-pil" id="gfo-A8-SnA"/>
                 <outlet property="exerciseThumbnail" destination="v1O-2h-J9G" id="9ej-DW-3AL"/>
             </connections>
-            <point key="canvasLocation" x="142.5" y="136"/>
+            <point key="canvasLocation" x="189.5" y="74"/>
         </collectionViewCell>
     </objects>
 </document>

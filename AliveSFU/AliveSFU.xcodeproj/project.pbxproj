@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		38ACDECF1DEBCDF3009BD164 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACDECD1DEBCDF3009BD164 /* ExerciseCell.swift */; };
 		38ACDED01DEBCDF3009BD164 /* ExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38ACDECE1DEBCDF3009BD164 /* ExerciseCell.xib */; };
+		38ACDED91DEEC3A8009BD164 /* TutorialsDisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACDED81DEEC3A8009BD164 /* TutorialsDisclaimerViewController.swift */; };
+		38ACDEDB1DEECA6F009BD164 /* TutorialInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACDEDA1DEECA6F009BD164 /* TutorialInstructionsViewController.swift */; };
 		38E002291DEB6C7A0086A43F /* TutorialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E002281DEB6C7A0086A43F /* TutorialsViewController.swift */; };
 		41B003981DC5B1FC00762D2E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B003971DC5B1FC00762D2E /* Exercise.swift */; };
 		A90440981DCEDF2700C77EEE /* PopoverCardioTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90440971DCEDF2700C77EEE /* PopoverCardioTile.swift */; };
@@ -114,6 +116,8 @@
 /* Begin PBXFileReference section */
 		38ACDECD1DEBCDF3009BD164 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		38ACDECE1DEBCDF3009BD164 /* ExerciseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExerciseCell.xib; sourceTree = "<group>"; };
+		38ACDED81DEEC3A8009BD164 /* TutorialsDisclaimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialsDisclaimerViewController.swift; sourceTree = "<group>"; };
+		38ACDEDA1DEECA6F009BD164 /* TutorialInstructionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialInstructionsViewController.swift; sourceTree = "<group>"; };
 		38E002281DEB6C7A0086A43F /* TutorialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialsViewController.swift; sourceTree = "<group>"; };
 		41B003971DC5B1FC00762D2E /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		A90440971DCEDF2700C77EEE /* PopoverCardioTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverCardioTile.swift; sourceTree = "<group>"; };
@@ -220,6 +224,8 @@
 				38ACDECE1DEBCDF3009BD164 /* ExerciseCell.xib */,
 				38ACDECD1DEBCDF3009BD164 /* ExerciseCell.swift */,
 				38E002281DEB6C7A0086A43F /* TutorialsViewController.swift */,
+				38ACDED81DEEC3A8009BD164 /* TutorialsDisclaimerViewController.swift */,
+				38ACDEDA1DEECA6F009BD164 /* TutorialInstructionsViewController.swift */,
 			);
 			name = Tutorials;
 			sourceTree = "<group>";
@@ -633,6 +639,7 @@
 				A9DD17621DC968F300979495 /* AppDataController.swift in Sources */,
 				A90440981DCEDF2700C77EEE /* PopoverCardioTile.swift in Sources */,
 				A9545BB91DE98BB60012A448 /* ProgramsViewController.swift in Sources */,
+				38ACDEDB1DEECA6F009BD164 /* TutorialInstructionsViewController.swift in Sources */,
 				A92A2C191DD7D71200E0B679 /* LoginPageViewController.swift in Sources */,
 				A9AE2C4B1DC1824C00FB5BC0 /* SleepAnalysisController.swift in Sources */,
 				38ACDECF1DEBCDF3009BD164 /* ExerciseCell.swift in Sources */,
@@ -645,6 +652,7 @@
 				A9545BBA1DE98BB60012A448 /* TrainersViewController.swift in Sources */,
 				FA7FB3171DC333BD00781EFB /* PopoverStrengthTile.swift in Sources */,
 				41B003981DC5B1FC00762D2E /* Exercise.swift in Sources */,
+				38ACDED91DEEC3A8009BD164 /* TutorialsDisclaimerViewController.swift in Sources */,
 				A91D9D1A1DCC634F00603AC6 /* StrengthTileView.swift in Sources */,
 				A9A729CA1DE10F4E0085D399 /* PageViewController.swift in Sources */,
 				A9A729D41DE169E70085D399 /* Flags.swift in Sources */,

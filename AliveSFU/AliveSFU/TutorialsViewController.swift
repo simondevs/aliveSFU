@@ -27,6 +27,11 @@ class TutorialsViewController: UIViewController, UICollectionViewDataSource, UIS
         //Initially, our data source would be the complete list of exercises
         cells = dataSourceManager.completeExerciseList
         
+        //add gesture recognizer to the collection view
+        let gesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.goToInsturctionsPage(_:)))
+        self.collectionView.addGestureRecognizer(gesture)
+        
+        //set margins between the cells
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 177, height: 204)
         layout.minimumInteritemSpacing = 10
@@ -35,21 +40,39 @@ class TutorialsViewController: UIViewController, UICollectionViewDataSource, UIS
         collectionView.reloadData()
 
     }
-
+    
+    //Function that occures when a tap gesture is detected on one of the collection view cells
+    func goToInsturctionsPage(_ sender : UITapGestureRecognizer) {
+        if (!cells.isEmpty) {
+            let pointInCollectionView: CGPoint = sender.location(in: self.collectionView)
+            var selectedIndexPath = collectionView.indexPathForItem(at: pointInCollectionView)
+            performSegue(withIdentifier: "toInstructionsPageSegue", sender: cells[(selectedIndexPath?.row)!])
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        //when the segue to the instructions page happens, send in the cell exercise object as wellß
+        if segue.identifier == "toInstructionsPageSegue" {
+            let newViewController = segue.destination as! TutorialInstructionsViewController
+            newViewController.exercise = (sender as? TutorialExercise)!
+        }
     }
-    */
+    // Set the indexPath of the selected item as the sender for the segue
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cells.count
     }
