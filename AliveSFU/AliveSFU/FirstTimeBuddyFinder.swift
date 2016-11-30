@@ -1,15 +1,15 @@
 //
-//  BuddyFinderSettings.swift
+//  FirstTimeBuddyFinder.swift
 //  AliveSFU
 //
-//  Created by Gur Kohli on 2016-11-29.
+//  Created by Gur Kohli on 2016-11-30.
 //  Copyright © 2016 SimonDevs. All rights reserved.
 //
 
 import UIKit
 
-class BuddyFinderSettings: UIViewController {
-    
+class FirstTimeBuddyFinder: UIViewController {
+
     @IBOutlet weak var gender: UISegmentedControl!
     @IBOutlet var ageGroup: [UIButton]!
     @IBOutlet var fitnessFrequency: [UIButton]!
@@ -67,8 +67,4 @@ class BuddyFinderSettings: UIViewController {
         sender.isSelected = !sender.isSelected
     }
 
-    @IBAction func cancelButton(_ sender: UIButton) {
-         self.navigationController?.popToRootViewController(animated: true)
-    }
-    
 }

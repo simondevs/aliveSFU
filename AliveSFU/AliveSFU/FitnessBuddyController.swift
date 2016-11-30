@@ -13,6 +13,18 @@ class FitnessBuddyController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let doesBuddyProfileExist = DataHandler.doesBuddyProfileExist()
+        
+        if (!doesBuddyProfileExist) {
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "FirstTimeBuddyFinder")
+            vc.modalPresentationStyle = .fullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            
+            self.present(vc, animated: true, completion: nil)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
