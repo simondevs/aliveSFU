@@ -10,14 +10,36 @@ import UIKit
 
 class BuddyFinderSettings: UIViewController {
     
+    let ERROR_MISSING_ALL_FIELDS = "Missing required fields!"
+    let ERROR_MISSING_GENDER = "Missing 'Gender'"
+    let ERROR_MISSING_AGE = "Missing 'Age'"
+    let ERROR_MISSING_GOALS = "Missing 'Goals'"
+    let ERROR_MISSING_FREQUENCY = "Missing 'Frequency'"
+    let ERROR_NO_OPTION_SELECTED = "No option selected!"
+    
     @IBOutlet weak var gender: UISegmentedControl!
     @IBOutlet var ageGroup: [UIButton]!
     @IBOutlet var fitnessFrequency: [UIButton]!
     @IBOutlet var personalGoals: [UIButton]!
+    @IBOutlet weak var errorAlertLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let bd = DataHandler.getBuddyDetails()
+        
+        gender.selectedSegmentIndex = bd.gender
+        ageGroup[bd.ageGroup].isSelected = true
+        fitnessFrequency[bd.fitnessFreq].isSelected = true
+        
+        let goals = bd.personalGoals.components(separatedBy: ",")
+        if (goals.first != "") {
+            for char in goals {
+                let index = Int(char)!
+                personalGoals[index].isSelected = true
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,6 +54,10 @@ class BuddyFinderSettings: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
         
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     @IBAction func selectFitnessFrequency(_ sender: UIButton) {
@@ -69,6 +95,99 @@ class BuddyFinderSettings: UIViewController {
 
     @IBAction func cancelButton(_ sender: UIButton) {
          self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    @IBAction func saveButtonAction(_ sender: Any) {
+        if (validateFields()) {
+            
+            var age = -1
+            for (index, btn) in ageGroup.enumerated() {
+                if (btn.isSelected) {
+                    age = index
+                    break
+                }
+            }
+            
+            var fitnessFreq = -1
+            for (index, btn) in fitnessFrequency.enumerated() {
+                if (btn.isSelected) {
+                    fitnessFreq = index
+                    break
+                }
+            }
+            
+            var goalArr: [String] = []
+            for (index, btn) in personalGoals.enumerated() {
+                if (btn.isSelected) {
+                    goalArr.append(String(index))
+                }
+            }
+            let goals = goalArr.joined(separator: ",")
+            
+            let buddyDetails = BuddyDetails(ageGroup: age, fitnessFreq: fitnessFreq, personalGoals: goals, gender: gender.selectedSegmentIndex)
+            
+            DataHandler.updateBuddyProfile(bd: buddyDetails)
+            
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+    }
+
+    func validateFields() -> Bool {
+        
+        errorAlertLabel.text = ERROR_MISSING_ALL_FIELDS
+        errorAlertLabel.isHidden = true
+        
+        //check if gender is selected
+        if (gender.selectedSegmentIndex != 0 && gender.selectedSegmentIndex != 1) {
+            errorAlertLabel.text = ERROR_MISSING_GENDER
+            errorAlertLabel.isHidden = false
+            return false
+        }
+        
+        //check if an age group has been selected
+        var ageSelected : Bool = false
+        for button in ageGroup {
+            if (button.isSelected) {
+                ageSelected = true
+            }
+        }
+        if (!ageSelected) {
+            errorAlertLabel.text = ERROR_MISSING_AGE
+            errorAlertLabel.isHidden = false
+            return false
+        }
+        //check if a goal has been selected
+        var goalSelected : Bool = false
+        for button in personalGoals {
+            if (button.isSelected) {
+                goalSelected = true
+            }
+        }
+        if (!goalSelected) {
+            errorAlertLabel.text = ERROR_MISSING_GOALS
+            errorAlertLabel.isHidden = false
+            return false
+        }
+        
+        //check if a frequency has been selected
+        var freqSelected : Bool = false
+        for button in fitnessFrequency {
+            if (button.isSelected) {
+                freqSelected = true
+            }
+        }
+        if (!freqSelected) {
+            errorAlertLabel.text = ERROR_MISSING_FREQUENCY
+            errorAlertLabel.isHidden = false
+            return false
+        }
+        
+        if (errorAlertLabel.isHidden) {
+            return true
+        }
+        else {
+            return false
+        }
     }
     
 }
