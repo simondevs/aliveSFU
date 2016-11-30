@@ -1,12 +1,12 @@
 [
   {
     "name": "Pec Dec",
-    "equipmentName": "Pec Dec",
+    "equipmentName": "Pec Dec Machine",
     "targetMuscle": "Chest"
   },
   {
     "name": "Reverse Pec Dec",
-    "equipmentName": "Pec Dec",
+    "equipmentName": "Pec Dec Machine",
     "targetMuscle": "Rear Shoulders"
   },
   {
@@ -20,8 +20,8 @@
     "targetMuscle": "Chest"
   },
   {
-    "name": "Tricep Pushdown",
-    "equipmentName": "Tricep Pushdown Machine",
+    "name": "Tricep Pushdowns",
+    "equipmentName": "Tricep Machine",
     "targetMuscle": "Tricep"
   },
   {

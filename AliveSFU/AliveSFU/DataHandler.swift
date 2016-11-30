@@ -202,6 +202,7 @@ class DataHandler {
         return 0;
     }
     
+    //Populate CoreDate with the tutorial exercises
     class func populateTutorialExercises() -> Int
     {
         if let jsonData = NSDataAsset(name: "tutorialExercises") {

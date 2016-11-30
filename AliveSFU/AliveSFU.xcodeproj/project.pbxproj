@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		38ACDECF1DEBCDF3009BD164 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACDECD1DEBCDF3009BD164 /* ExerciseCell.swift */; };
 		38ACDED01DEBCDF3009BD164 /* ExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38ACDECE1DEBCDF3009BD164 /* ExerciseCell.xib */; };
-		38ACDED31DEBCF66009BD164 /* TutorialExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACDED21DEBCF66009BD164 /* TutorialExercise.swift */; };
 		38E002291DEB6C7A0086A43F /* TutorialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E002281DEB6C7A0086A43F /* TutorialsViewController.swift */; };
 		41B003981DC5B1FC00762D2E /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B003971DC5B1FC00762D2E /* Exercise.swift */; };
 		A90440981DCEDF2700C77EEE /* PopoverCardioTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90440971DCEDF2700C77EEE /* PopoverCardioTile.swift */; };
@@ -115,7 +114,6 @@
 /* Begin PBXFileReference section */
 		38ACDECD1DEBCDF3009BD164 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		38ACDECE1DEBCDF3009BD164 /* ExerciseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExerciseCell.xib; sourceTree = "<group>"; };
-		38ACDED21DEBCF66009BD164 /* TutorialExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialExercise.swift; sourceTree = "<group>"; };
 		38E002281DEB6C7A0086A43F /* TutorialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialsViewController.swift; sourceTree = "<group>"; };
 		41B003971DC5B1FC00762D2E /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		A90440971DCEDF2700C77EEE /* PopoverCardioTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverCardioTile.swift; sourceTree = "<group>"; };
@@ -222,7 +220,6 @@
 				38ACDECE1DEBCDF3009BD164 /* ExerciseCell.xib */,
 				38ACDECD1DEBCDF3009BD164 /* ExerciseCell.swift */,
 				38E002281DEB6C7A0086A43F /* TutorialsViewController.swift */,
-				38ACDED21DEBCF66009BD164 /* TutorialExercise.swift */,
 			);
 			name = Tutorials;
 			sourceTree = "<group>";
@@ -661,7 +658,6 @@
 				A9AE2C491DC1823C00FB5BC0 /* FitnessBuddyController.swift in Sources */,
 				A953E2281DC97F620059F78E /* DataHandler.swift in Sources */,
 				A985705F1DC2E1D100C3AA32 /* AddNewExerciseController.swift in Sources */,
-				38ACDED31DEBCF66009BD164 /* TutorialExercise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
