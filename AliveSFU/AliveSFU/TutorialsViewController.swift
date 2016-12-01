@@ -20,15 +20,16 @@ class TutorialsViewController: UIViewController, UICollectionViewDataSource, UIS
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+
         searchBar.delegate = self
-        //collectionView.dataSource = self
+        
         //Registering the custom xib cell to be used as a collectionview cell
         collectionView.register(UINib(nibName: "ExerciseCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         //Initially, our data source would be the complete list of exercises
         cells = dataSourceManager.completeExerciseList
         
         //add gesture recognizer to the collection view
-        let gesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.goToInsturctionsPage(_:)))
+        let gesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.goToInstructionsPage(_:)))
         self.collectionView.addGestureRecognizer(gesture)
         
         //set margins between the cells
@@ -42,11 +43,14 @@ class TutorialsViewController: UIViewController, UICollectionViewDataSource, UIS
     }
     
     //Function that occures when a tap gesture is detected on one of the collection view cells
-    func goToInsturctionsPage(_ sender : UITapGestureRecognizer) {
+    func goToInstructionsPage(_ sender : UITapGestureRecognizer) {
+        self.view.endEditing(true) // hide keyboard
         if (!cells.isEmpty) {
             let pointInCollectionView: CGPoint = sender.location(in: self.collectionView)
             var selectedIndexPath = collectionView.indexPathForItem(at: pointInCollectionView)
-            performSegue(withIdentifier: "toInstructionsPageSegue", sender: cells[(selectedIndexPath?.row)!])
+            if (selectedIndexPath != nil) {
+                performSegue(withIdentifier: "toInstructionsPageSegue", sender: cells[(selectedIndexPath?.row)!])
+            }
         }
     }
     override func didReceiveMemoryWarning() {
@@ -83,6 +87,11 @@ class TutorialsViewController: UIViewController, UICollectionViewDataSource, UIS
         //cell.backgroundColor = UIColor.black
         return cell
     }
+    
+    // hide keyboard when clicked anywhere else
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
 
 // MARK: - Searchbar stuff
@@ -107,6 +116,7 @@ extension TutorialsViewController {
         
         //self.myTableView.reloadData()
     }
+    
 }
 
 //Class that gets tutorial exercises from stored JSON file
