@@ -546,6 +546,7 @@
                                     <constraint firstItem="cb0-Ls-31b" firstAttribute="top" secondItem="IR6-cu-LkT" secondAttribute="top" constant="6" id="BmR-Md-Wpt"/>
                                     <constraint firstItem="cb0-Ls-31b" firstAttribute="centerY" secondItem="IR6-cu-LkT" secondAttribute="centerY" id="MY4-GD-np5"/>
                                     <constraint firstItem="cb0-Ls-31b" firstAttribute="centerX" secondItem="IR6-cu-LkT" secondAttribute="centerX" id="dhC-Sp-Da3"/>
+                                    <constraint firstAttribute="height" constant="64" id="lG6-LW-yc0"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -617,6 +618,7 @@
                                 <constraints>
                                     <constraint firstItem="Az6-Pe-eiy" firstAttribute="top" secondItem="ivp-bf-OLu" secondAttribute="top" constant="6" id="fzl-D7-NVF"/>
                                     <constraint firstItem="Az6-Pe-eiy" firstAttribute="centerX" secondItem="ivp-bf-OLu" secondAttribute="centerX" id="owf-8p-5lD"/>
+                                    <constraint firstAttribute="height" constant="64" id="xuE-tk-kQa"/>
                                     <constraint firstItem="Az6-Pe-eiy" firstAttribute="centerY" secondItem="ivp-bf-OLu" secondAttribute="centerY" id="zYV-4H-LES"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -645,10 +647,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDQ-LV-86a" userLabel="Buttons">
                                 <rect key="frame" x="15" y="578" width="345" height="40"/>
                                 <subviews>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="NJZ-tD-iWh">
-                                        <rect key="frame" x="154" y="1.5" width="37" height="37"/>
-                                        <color key="color" red="0.65098039220000004" green="0.098039215690000001" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </activityIndicatorView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKV-i9-8v2">
                                         <rect key="frame" x="165" y="12.5" width="15" height="15"/>
                                         <constraints>
@@ -672,9 +670,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="9Gp-7O-1FH"/>
                                     <constraint firstItem="uKV-i9-8v2" firstAttribute="centerX" secondItem="xDQ-LV-86a" secondAttribute="centerX" id="DDZ-w5-xTq"/>
-                                    <constraint firstItem="NJZ-tD-iWh" firstAttribute="centerY" secondItem="xDQ-LV-86a" secondAttribute="centerY" id="Hm5-6t-bbg"/>
                                     <constraint firstItem="uKV-i9-8v2" firstAttribute="centerY" secondItem="xDQ-LV-86a" secondAttribute="centerY" id="kYV-XD-I8B"/>
-                                    <constraint firstItem="NJZ-tD-iWh" firstAttribute="centerX" secondItem="xDQ-LV-86a" secondAttribute="centerX" id="mip-Rp-37j"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -694,7 +690,6 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="uKV-i9-8v2" id="eTu-uy-0NS"/>
-                        <outlet property="loadingIndicator" destination="NJZ-tD-iWh" id="Xi0-zw-1eq"/>
                         <outlet property="trainerLabel" destination="ivp-bf-OLu" id="HEn-Fh-Gng"/>
                         <outlet property="webContainer" destination="ICF-3z-sh5" id="d1Z-c5-Pbb"/>
                     </connections>

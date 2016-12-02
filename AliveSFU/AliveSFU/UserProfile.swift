@@ -19,6 +19,13 @@ class PersonalDetails: UserProfile {
     internal var gender: Int = -1
     internal var email: String = ""
 
+    init() {
+        self.firstName = ""
+        self.lastName = ""
+        self.email = ""
+        self.phoneNumber = ""
+        self.gender = -1
+    }
     required init(firstName: String, lastName: String, gender: Int, phoneNumber: String?, email: String) {
         self.firstName = firstName
         self.lastName = lastName
@@ -36,6 +43,14 @@ class FitnessDetails: UserProfile {
     internal var fitnessFreq: Int = -1
     internal var personalGoals: String = ""
     
+    init() {
+        self.heightFeet = -1
+        self.heightInches = -1
+        self.weight = -1
+        self.ageGroup = -1
+        self.fitnessFreq = -1
+        self.personalGoals = ""
+    }
     required init(heightFeet: Int, heightInches: Int, weight: Double, ageGroup: Int, fitnessFreq: Int, personalGoals: String) {
         self.heightFeet = heightFeet
         self.heightInches = heightInches

@@ -18,6 +18,13 @@ class BuddyDetails: BuddyProfile {
     internal var fitnessFreq: Int = -1
     internal var personalGoals: String = ""
     
+    init() {
+        self.ageGroup = -1
+        self.fitnessFreq = -1
+        self.personalGoals = ""
+        self.gender = -1
+    }
+    
     required init(ageGroup: Int, fitnessFreq: Int, personalGoals: String, gender: Int) {
         self.ageGroup = ageGroup
         self.fitnessFreq = fitnessFreq

@@ -8,6 +8,10 @@
         <attribute name="primaryKey" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="profileExists" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
     </entity>
+    <entity name="CurrentUser" representedClassName="CurrentUser" syncable="YES" codeGenerationType="class">
+        <attribute name="primaryKey" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Exercise" representedClassName="ExerciseMO" syncable="YES">
         <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="completed" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -51,11 +55,16 @@
         <attribute name="primaryKey" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
+    <entity name="Users" representedClassName="Users" syncable="YES" codeGenerationType="class">
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Exercise" positionX="-63" positionY="-18" width="128" height="195"/>
-        <element name="Flags" positionX="-54" positionY="99" width="128" height="120"/>
-        <element name="SleepAnalysis" positionX="-54" positionY="108" width="128" height="165"/>
-        <element name="UserDetails" positionX="-63" positionY="54" width="128" height="225"/>
-        <element name="BuddyDetails" positionX="-54" positionY="108" width="128" height="135"/>
+        <element name="BuddyDetails" positionX="-83" positionY="279" width="128" height="135"/>
+        <element name="Exercise" positionX="-63" positionY="-18" width="128" height="193"/>
+        <element name="Flags" positionX="-207" positionY="99" width="128" height="118"/>
+        <element name="SleepAnalysis" positionX="-270" positionY="279" width="128" height="165"/>
+        <element name="UserDetails" positionX="-371" positionY="9" width="128" height="223"/>
+        <element name="CurrentUser" positionX="-504" positionY="279" width="128" height="73"/>
+        <element name="Users" positionX="-504" positionY="117" width="128" height="60"/>
     </elements>
 </model>
