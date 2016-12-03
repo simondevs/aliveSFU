@@ -16,6 +16,7 @@ class StrengthTileView: UIView {
     @IBOutlet weak var exerciseName: UILabel!
     @IBOutlet weak var sets: UILabel!
     @IBOutlet weak var reps: UILabel!
+    @IBOutlet weak var mainView: UIView!
     
     let TILE_HEIGHT = CGFloat(20);
     let PADDING = CGFloat(20);

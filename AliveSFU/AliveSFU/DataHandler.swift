@@ -288,6 +288,31 @@ class DataHandler {
         
     }
     
+    class func isExerciseCompleted(id: String) -> Bool {
+        
+        let moc = AppDataController().managedObjectContext
+        
+        //get access to Exercise entity
+        let entityFetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "Exercise")
+        let predicate = NSPredicate(format: "id = %@", id)
+        
+        //now entityFetch req will contain only those elements that match the predicate condition
+        entityFetchReq.predicate = predicate
+        
+        do {
+            //get exerciseArray element where exercise id matched
+            var fetchedResult = try moc.fetch(entityFetchReq) as! [NSManagedObject]
+            let mo = fetchedResult[0]
+            let val = mo.value(forKey: "completed") as! Bool
+            
+            return val
+        }
+        catch {
+            fatalError("Failed to fetch element! Error: \(error)")
+        }
+        return false
+    }
+    
     //Returns an array 7 integers long with each index holding that day's amount of completed exercises
     //Main use will be in the graph for my progress
     class func countCompletion() -> [Int]

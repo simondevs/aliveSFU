@@ -17,6 +17,7 @@ class CardioTileView: UIView {
     @IBOutlet weak var speed: UILabel!
     @IBOutlet weak var resistance: UILabel!
     @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var mainView: UIView!
 
     let TILE_HEIGHT = CGFloat(20);
     let PADDING = CGFloat(20);
