@@ -82,7 +82,7 @@ class FirstTimeBuddyFinder: UIViewController {
         errorAlertLabel.isHidden = true
         
         //check if gender is selected
-        if (gender.selectedSegmentIndex != 0 && gender.selectedSegmentIndex != 1) {
+        if (gender.selectedSegmentIndex != 0 && gender.selectedSegmentIndex != 1 && gender.selectedSegmentIndex != 2) {
             errorAlertLabel.text = ERROR_MISSING_GENDER
             errorAlertLabel.isHidden = false
             return false
