@@ -56,7 +56,6 @@ class FitnessBuddyPopover: UIViewController {
         }, completion:{(finished : Bool) in
             if (finished)
             {
-                self.rootViewController!.handleReloading() //reload My Progress page
                 self.view.removeFromSuperview()
             }
         });

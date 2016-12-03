@@ -157,6 +157,13 @@ class SleepAnalysisController: UIViewController, JBBarChartViewDelegate, JBBarCh
         barChart.reloadData()
     }
     
+    func hourToString(hour:Double) -> String {
+        let hours = Int(floor(hour))
+        let mins = Int(floor(hour * 60).truncatingRemainder(dividingBy: 60))
+        let secs = Int(floor(hour * 3600).truncatingRemainder(dividingBy: 60))
+        
+        return String(format:"%d:%02d:%02d", hours, mins, secs)
+    }
     
     func retrieveSleepAnalysis() {
         let date = Date()
@@ -200,6 +207,8 @@ class SleepAnalysisController: UIViewController, JBBarChartViewDelegate, JBBarCh
                             var minStartDateAsleep = minStartDateBed
                             var maxEndDateAsleep = maxEndDateBed
                             var isAsleepDataAvailable = false
+                            var isFirstAsleep = false
+                            var totalHoursAsleep = 0.0
                             
                             let THRESHOLD_FOR_VALID_TIME = Double(5/60) //5 minutes = 5/60 hours
                             var noOfValidSamples = 0
@@ -212,41 +221,33 @@ class SleepAnalysisController: UIViewController, JBBarChartViewDelegate, JBBarCh
                                         
                                         minStartDateBed = minStartDateBed.compare(sample.startDate) == ComparisonResult.orderedDescending ? sample.startDate : minStartDateBed
                                         
-                                        if (lastValidStartDate.timeIntervalSince(sample.endDate) >= THRESHOLD_FOR_VALID_TIME) {
-                                            lastValidStartDate = sample.startDate
-                                            noOfValidSamples += 1
-                                        }
-                                        
                                         if (sample.value == HKCategoryValueSleepAnalysis.asleep.rawValue) {
                                             isAsleepDataAvailable = true
-                                            // If it's the first asleep sample
-                                            minStartDateAsleep = minStartDateAsleep == minStartDateBed ? sample.startDate : minStartDateAsleep
-                                            maxEndDateAsleep = maxEndDateAsleep == maxEndDateBed ? sample.endDate : maxEndDateBed
                                             
-                                            // For every other asleep sample
-                                            minStartDateAsleep = minStartDateAsleep.compare(sample.startDate) == ComparisonResult.orderedDescending ? sample.startDate : minStartDateAsleep
-                                            maxEndDateAsleep = maxEndDateAsleep.compare(sample.endDate) == ComparisonResult.orderedAscending ? maxEndDateAsleep : maxEndDateAsleep
-                                            
+                                            minStartDateAsleep = sample.startDate
+                                            maxEndDateAsleep = sample.endDate
+                                            totalHoursAsleep += maxEndDateAsleep.timeIntervalSince(minStartDateAsleep) / 3600
+                                            noOfValidSamples += 1
                                         }
                                     }
                                 }
                             }
                             
                             let totalHoursInBed = maxEndDateBed.timeIntervalSince(minStartDateBed) / 3600
-                            let totalHoursAsleep = maxEndDateAsleep.timeIntervalSince(minStartDateAsleep) / 3600
+                            totalHoursAsleep = totalHoursAsleep == 0.0 ? totalHoursInBed : totalHoursAsleep
                             let percentageOfTimeSlept = (totalHoursAsleep / totalHoursInBed) * 100
                             let noOfTimesWokenUp = noOfValidSamples
-                            let timeTakenToFallAsleep = minStartDateAsleep.timeIntervalSince(minStartDateBed) / 60
+                            let timeTakenToFallAsleep = minStartDateAsleep.timeIntervalSince(minStartDateBed) / 3600
                             
                             if (!isAsleepDataAvailable) {
                                 // Asleep data not available. Let user know
                                 self.asleepUnavailableWarning.isHidden = false
                             }
                             
-                            self.hoursInBed.text = String(format: "%.1f", totalHoursInBed)
-                            self.hoursSlept.text = String(format: "%.1f", totalHoursAsleep)
+                            self.hoursInBed.text = self.hourToString(hour: totalHoursInBed)
+                            self.hoursSlept.text = self.hourToString(hour: totalHoursAsleep)
                             self.percentageSpentSleeping.text = String(format: "%.1f",percentageOfTimeSlept) + "%"
-                            self.timeTakenToSleep.text = String(format: "%.1f", timeTakenToFallAsleep) + " min"
+                            self.timeTakenToSleep.text = self.hourToString(hour: timeTakenToFallAsleep)
                             self.timesWokenUp.text = String(noOfTimesWokenUp)
                             
                             // Saving total hours slept for graph
