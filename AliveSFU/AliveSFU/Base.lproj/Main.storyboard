@@ -701,7 +701,7 @@
         <!--View Controller-->
         <scene sceneID="6PD-Wm-NeN">
             <objects>
-                <viewController id="yeB-kd-Fh7" sceneMemberID="viewController">
+                <viewController id="yeB-kd-Fh7" customClass="FAQViewController" customModule="AliveSFU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="a7M-sY-HIc"/>
                         <viewControllerLayoutGuide type="bottom" id="RYK-1B-Z2S"/>

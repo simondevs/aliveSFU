@@ -19,6 +19,7 @@
 		A91D9D1A1DCC634F00603AC6 /* StrengthTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91D9D191DCC634F00603AC6 /* StrengthTileView.swift */; };
 		A91D9D1E1DCC6C6600603AC6 /* StrengthTileViewUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = A91D9D1D1DCC6C6600603AC6 /* StrengthTileViewUI.xib */; };
 		A92143CD1DF26291004E27DA /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92143CC1DF26291004E27DA /* SearchResultController.swift */; };
+		A92143CF1DF263E2004E27DA /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92143CE1DF263E2004E27DA /* FAQViewController.swift */; };
 		A92A2C191DD7D71200E0B679 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A2C181DD7D71200E0B679 /* LoginPageViewController.swift */; };
 		A92A2C1B1DD7E11900E0B679 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A92A2C1A1DD7E11900E0B679 /* login.storyboard */; };
 		A92A2C1E1DD7E1BE00E0B679 /* SFUCASViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A2C1D1DD7E1BE00E0B679 /* SFUCASViewController.swift */; };
@@ -134,6 +135,7 @@
 		A91D9D191DCC634F00603AC6 /* StrengthTileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrengthTileView.swift; sourceTree = "<group>"; };
 		A91D9D1D1DCC6C6600603AC6 /* StrengthTileViewUI.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StrengthTileViewUI.xib; sourceTree = "<group>"; };
 		A92143CC1DF26291004E27DA /* SearchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		A92143CE1DF263E2004E27DA /* FAQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		A92A2C181DD7D71200E0B679 /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		A92A2C1A1DD7E11900E0B679 /* login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
 		A92A2C1D1DD7E1BE00E0B679 /* SFUCASViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFUCASViewController.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				38ACDED11DEBCF00009BD164 /* Tutorials */,
 				A9545BB71DE98BB60012A448 /* ProgramsViewController.swift */,
 				A9545BB81DE98BB60012A448 /* TrainersViewController.swift */,
+				A92143CE1DF263E2004E27DA /* FAQViewController.swift */,
 			);
 			name = "SFU Recreation";
 			sourceTree = "<group>";
@@ -680,6 +683,7 @@
 				38E002291DEB6C7A0086A43F /* TutorialsViewController.swift in Sources */,
 				A959868A1DEF8AEA005CFFE9 /* BuddyFinderSettings.swift in Sources */,
 				A9B0D06E1DEEC7A2004CBF4D /* BuddyProfile.swift in Sources */,
+				A92143CF1DF263E2004E27DA /* FAQViewController.swift in Sources */,
 				A9AE2C171DC17F9900FB5BC0 /* AppDelegate.swift in Sources */,
 				A9B0D0701DEEC841004CBF4D /* FirstTimeBuddyFinder.swift in Sources */,
 				A9A729D61DE269E00085D399 /* MyProfileViewController.swift in Sources */,
