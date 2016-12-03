@@ -2687,6 +2687,11 @@
                             <constraint firstItem="bIB-bn-Ln2" firstAttribute="centerX" secondItem="wJU-L8-aB9" secondAttribute="centerX" id="ixg-aZ-ffG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentView" destination="m3S-TQ-9jn" id="8La-vb-Fdz"/>
+                        <outlet property="contentViewHeight" destination="oRC-fB-fqR" id="2BO-wH-Tzz"/>
+                        <outlet property="scrollView" destination="AM8-eq-etl" id="kzb-xK-1y9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HW6-Yh-uau" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
