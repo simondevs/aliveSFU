@@ -41,37 +41,35 @@ class firebaseController {
                 let body = jsonBody as? [String : Any]
                 //parse each user object
                 for userProfile in body! {
-                    if let generatedObject = userProfile.value as? [String : Any] {
-                        if let data = generatedObject.values.first as? [String : Any] {
-                            var newProfile = firebaseProfile()
-                            //if any of the below checks fail, continue to the next profile since a user profile is messed up
-                            if let devID = data["devID"] as? String {
-                                newProfile.devID = devID
-                            }
-                            else {
-                                continue
-                            }
-                            if let userName = data["userName"] as? String {
-                                newProfile.userName = userName
-                            }
-                            else {
-                                continue
-                            }
-                            if let hashNum = data["hashNum"] as? String {
-                                let num = Int(hashNum)
-                                if num != nil {
-                                    newProfile.hashNum = num!
-                                }
-                                else {
-                                    continue
-                                }
-                            }
-                            else {
-                                continue
-                            }
-                            //check if nil and nothing has been added
-                            profiles.append(newProfile)
+                    if let data = userProfile.value as? [String : Any] {
+                        var newProfile = firebaseProfile()
+                        //if any of the below checks fail, continue to the next profile since a user profile is messed up
+                        if let devID = data["devID"] as? String {
+                            newProfile.devID = devID
                         }
+                        else {
+                            continue
+                        }
+                        if let userName = data["userName"] as? String {
+                            newProfile.userName = userName
+                        }
+                        else {
+                            continue
+                        }
+                        if let hashNum = data["hashNum"] as? String {
+                            let num = Int(hashNum)
+                            if num != nil {
+                                newProfile.hashNum = num!
+                            }
+                            else {
+                                continue
+                            }
+                        }
+                        else {
+                            continue
+                        }
+                        //check if nil and nothing has been added
+                        profiles.append(newProfile)
                     }
                     
                 }

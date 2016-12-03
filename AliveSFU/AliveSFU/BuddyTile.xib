@@ -9,12 +9,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardioTileView" customModule="AliveSFU" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BuddyTileView" customModule="AliveSFU" customModuleProvider="target">
             <connections>
-                <outlet property="exerciseName" destination="R7J-Yq-Fuo" id="FzL-y0-rge"/>
-                <outlet property="resistance" destination="Op4-uc-NKt" id="h6h-6q-RKS"/>
-                <outlet property="speed" destination="Fpb-hB-s2r" id="b6u-BV-PfH"/>
-                <outlet property="time" destination="SRW-Ib-esE" id="veM-Xw-jCm"/>
+                <outlet property="age" destination="Fpb-hB-s2r" id="T11-TB-WIG"/>
+                <outlet property="freq" destination="Op4-uc-NKt" id="PEp-LU-Scx"/>
+                <outlet property="goals" destination="SRW-Ib-esE" id="eKz-pg-SwW"/>
+                <outlet property="name" destination="R7J-Yq-Fuo" id="Iq1-v9-EPg"/>
                 <outlet property="view" destination="iN0-l3-epB" id="wab-ZM-h4D"/>
             </connections>
         </placeholder>
@@ -23,7 +23,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <view tag="200" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfQ-bi-ZbF" userLabel="cardioTile">
+                <view tag="200" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfQ-bi-ZbF" userLabel="searchTile">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7J-Yq-Fuo">

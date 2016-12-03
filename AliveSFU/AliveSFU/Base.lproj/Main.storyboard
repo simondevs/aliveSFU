@@ -2604,6 +2604,11 @@
                             <constraint firstItem="7iB-2L-p00" firstAttribute="centerY" secondItem="xtT-y1-zdb" secondAttribute="centerY" id="yG8-dc-Mut"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentView" destination="XYD-4B-0ba" id="u3C-nr-SgE"/>
+                        <outlet property="contentViewHeight" destination="fsS-Nl-hJd" id="HC8-D1-52o"/>
+                        <outlet property="scrollView" destination="33S-ZG-iak" id="Zzi-X8-a2N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rOC-60-Lbv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
