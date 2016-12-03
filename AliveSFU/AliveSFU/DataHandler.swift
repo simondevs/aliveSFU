@@ -78,6 +78,15 @@ class DataHandler {
                     mo.setValue(0, forKey: "thursday")
                     mo.setValue(0, forKey: "friday")
                     mo.setValue(0, forKey: "saturday")
+                    
+                    let sd = SleepDetails()
+                    
+                    mo.setValue(sd.lastAsleepHours, forKey: "lastAsleepHours")
+                    mo.setValue(sd.lastBedHours, forKey: "lastBedHours")
+                    mo.setValue(sd.lastPercentage, forKey: "lastPercentage")
+                    mo.setValue(sd.lastTimesWokenUp, forKey: "lastTimesWokenUp")
+                    mo.setValue(sd.lastTimeTakenFallAsleep, forKey: "lastTimeTakenFallAsleep")
+                    mo.setValue(sd.isAsleepDataAvailable, forKey: "lastIsAsleepDataAvailable")
                 }
             } catch {
                 print("Error setting sleep analysis weekly data")
@@ -504,6 +513,59 @@ class DataHandler {
         }
         
         return result
+    }
+    
+    class func setLastSleepAnalysisData(sd: SleepDetails) {
+        
+        if let currentUser = getCurrentUser() {
+            
+            let moc = AppDataController().managedObjectContext
+            
+            let sa = NSFetchRequest<NSFetchRequestResult>(entityName: "SleepAnalysis")
+            sa.predicate = NSPredicate(format: "primaryKey = %@",currentUser)
+            do {
+                let fetchedResults = try moc.fetch(sa) as! [NSManagedObject]
+                let mo = fetchedResults[0]
+                
+                mo.setValue(sd.lastAsleepHours, forKey: "lastAsleepHours")
+                mo.setValue(sd.lastBedHours, forKey: "lastBedHours")
+                mo.setValue(sd.lastPercentage, forKey: "lastPercentage")
+                mo.setValue(sd.lastTimesWokenUp, forKey: "lastTimesWokenUp")
+                mo.setValue(sd.lastTimeTakenFallAsleep, forKey: "lastTimeTakenFallAsleep")
+                mo.setValue(sd.isAsleepDataAvailable, forKey: "lastIsAsleepDataAvailable")
+                
+                try moc.save()
+            } catch {
+                fatalError("Failed to save array! Error: \(error)")
+            }
+        }
+    }
+    
+    class func getLastSleepAnalysisData() -> SleepDetails {
+        
+        let sd = SleepDetails()
+        if let currentUser = getCurrentUser() {
+            
+            let moc = AppDataController().managedObjectContext
+            
+            let sa = NSFetchRequest<NSFetchRequestResult>(entityName: "SleepAnalysis")
+            sa.predicate = NSPredicate(format: "primaryKey = %@",currentUser)
+            do {
+                let fetchedResults = try moc.fetch(sa) as! [NSManagedObject]
+                let mo = fetchedResults[0]
+                
+                sd.lastAsleepHours = mo.value(forKey: "lastAsleepHours") as! Double
+                sd.lastBedHours = mo.value(forKey: "lastBedHours") as! Double
+                sd.lastPercentage = mo.value(forKey: "lastPercentage") as! Double
+                sd.lastTimesWokenUp = mo.value(forKey: "lastTimesWokenUp") as! Int
+                sd.lastTimeTakenFallAsleep = mo.value(forKey: "lastTimeTakenFallAsleep") as! Double
+                sd.isAsleepDataAvailable = mo.value(forKey: "lastIsAsleepDataAvailable") as! Bool
+
+            } catch {
+                fatalError("Failed to save array! Error: \(error)")
+            }
+        }
+        return sd
     }
     
     class func getPersonalDetails() -> PersonalDetails {
