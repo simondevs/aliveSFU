@@ -70,7 +70,6 @@ class firebaseController {
                         }
                         //check if nil and nothing has been added
                         profiles.append(newProfile)
-                        
                     }
                     
                 }
