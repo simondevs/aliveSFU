@@ -42,7 +42,7 @@ class firebaseController {
                 //parse each user object
                 for userProfile in body! {
                     if let data = userProfile.value as? [String : Any] {
-                        var newProfile = firebaseProfile()
+                        let newProfile = firebaseProfile()
                         //if any of the below checks fail, continue to the next profile since a user profile is messed up
                         if let devID = data["devID"] as? String {
                             newProfile.devID = devID

@@ -132,8 +132,8 @@ class SFURecreationController: UIViewController, JBBarChartViewDelegate, JBBarCh
     }
     
     func barChartView(_ barChartView: JBBarChartView!, didSelectBarAt index: UInt) {
-        let data = chartData[Int(index)]
-        let key = chartLegend[Int(index)]
+        _ = chartData[Int(index)]
+        _ = chartLegend[Int(index)]
         
         //informationLabel.text = "People at the gym on \(key): \(data)"
         //Maybe change the bar graphs to a percentage, so that if all workouts are completed on that day, the bar is a maximum height.

@@ -151,7 +151,7 @@ class SFUCASViewController: UIViewController, WKNavigationDelegate, XMLParserDel
         // Login failed. Take user back to main login screen. 
         // Maybe also have an error 
         stopLoadUI()
-        self.navigationController?.popViewController(animated: true)
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     // Webview Delegate Function

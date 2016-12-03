@@ -134,8 +134,8 @@ class SleepAnalysisController: UIViewController, JBBarChartViewDelegate, JBBarCh
     }
     
     func barChartView(_ barChartView: JBBarChartView!, didSelectBarAt index: UInt) {
-        let data = chartData[Int(index)]
-        let key = chartLegend[Int(index)]
+        _ = chartData[Int(index)]
+        _ = chartLegend[Int(index)]
         
         //Uncomment below if implementing a label to display hours slept when a bar is touched
         //infoLabel.text = "Workouts completed on \(key): \(data)"
@@ -207,12 +207,8 @@ class SleepAnalysisController: UIViewController, JBBarChartViewDelegate, JBBarCh
                             var minStartDateAsleep = minStartDateBed
                             var maxEndDateAsleep = maxEndDateBed
                             var isAsleepDataAvailable = false
-                            var isFirstAsleep = false
                             var totalHoursAsleep = 0.0
-                            
-                            let THRESHOLD_FOR_VALID_TIME = Double(5/60) //5 minutes = 5/60 hours
                             var noOfValidSamples = 0
-                            var lastValidStartDate = minStartDateBed
                             
                             for item in result {
                                 if let sample = item as? HKCategorySample {

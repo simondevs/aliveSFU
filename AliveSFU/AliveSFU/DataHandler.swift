@@ -158,7 +158,8 @@ class DataHandler {
         do {
             //get exerciseArray element where exerciseName = name
             var fetchedResult = try moc.fetch(entityFetchReq) as! [NSManagedObject]
-            try moc.delete(fetchedResult[0])
+            moc.delete(fetchedResult[0])
+            
             try moc.save()
             return 0;
         }

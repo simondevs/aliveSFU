@@ -161,8 +161,8 @@ class FirstTimeBuddyFinder: UIViewController {
             let goals = goalArr.joined(separator: ",")
             
             let buddyDetails = BuddyDetails(ageGroup: age, fitnessFreq: fitnessFreq, personalGoals: goals, gender: gender.selectedSegmentIndex)
-            DataHandler.saveBuddyProfile(bd: buddyDetails)
-            self.navigationController?.popToRootViewController(animated: true)
+            _ = DataHandler.saveBuddyProfile(bd: buddyDetails)
+            _ = self.navigationController?.popToRootViewController(animated: true)
         }
     }
     

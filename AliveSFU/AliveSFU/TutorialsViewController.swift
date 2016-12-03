@@ -134,7 +134,7 @@ class TutorialExercisesManager {
             if let array = jsonData as? [Any] {
                 for element in array {
                     if let jsonObj = element as? [String: Any] {
-                        var newExercise = TutorialExercise()
+                        let newExercise = TutorialExercise()
                         if let name = jsonObj["name"] as? String {
                             newExercise.name = name
                         }

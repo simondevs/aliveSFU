@@ -94,7 +94,7 @@ class BuddyFinderSettings: UIViewController {
     }
 
     @IBAction func cancelButton(_ sender: UIButton) {
-         self.navigationController?.popToRootViewController(animated: true)
+         _ = self.navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func saveButtonAction(_ sender: Any) {
@@ -128,7 +128,7 @@ class BuddyFinderSettings: UIViewController {
             
             DataHandler.updateBuddyProfile(bd: buddyDetails)
             
-            self.navigationController?.popToRootViewController(animated: true)
+            _ = self.navigationController?.popToRootViewController(animated: true)
         }
     }
 
