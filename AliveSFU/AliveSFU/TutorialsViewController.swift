@@ -97,13 +97,8 @@ class TutorialsViewController: UIViewController, UICollectionViewDataSource, UIS
 // MARK: - Searchbar stuff
 extension TutorialsViewController {
     
-    func test(arr : [firebaseProfile]) {
-        print("ay")
-    }
     //1
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        var ctrl = firebaseController()
-        ctrl.returnClosestMatch(weight: 3, function: test)
         cells = dataSourceManager.returnExercisesByKeyword(line: searchText)
         collectionView.reloadData()
         
