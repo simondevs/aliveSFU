@@ -10,7 +10,7 @@ import Foundation
 
 //Defining all the REST call types
 public enum requestType : String {
-    case GET = "GET", POST = "POST", DELETE = "DELETE", PUT = "PUT"
+    case GET = "GET", DELETE = "DELETE", PUT = "PUT"
 }
 
 class firebaseController {
@@ -41,37 +41,36 @@ class firebaseController {
                 let body = jsonBody as? [String : Any]
                 //parse each user object
                 for userProfile in body! {
-                    if let generatedObject = userProfile.value as? [String : Any] {
-                        if let data = generatedObject.values.first as? [String : Any] {
-                            var newProfile = firebaseProfile()
-                            //if any of the below checks fail, continue to the next profile since a user profile is messed up
-                            if let devID = data["devID"] as? String {
-                                newProfile.devID = devID
-                            }
-                            else {
-                                continue
-                            }
-                            if let userName = data["userName"] as? String {
-                                newProfile.userName = userName
-                            }
-                            else {
-                                continue
-                            }
-                            if let hashNum = data["hashNum"] as? String {
-                                let num = Int(hashNum)
-                                if num != nil {
-                                    newProfile.hashNum = num!
-                                }
-                                else {
-                                    continue
-                                }
-                            }
-                            else {
-                                continue
-                            }
-                            //check if nil and nothing has been added
-                            profiles.append(newProfile)
+                    if let data = userProfile.value as? [String : Any] {
+                        var newProfile = firebaseProfile()
+                        //if any of the below checks fail, continue to the next profile since a user profile is messed up
+                        if let devID = data["devID"] as? String {
+                            newProfile.devID = devID
                         }
+                        else {
+                            continue
+                        }
+                        if let userName = data["userName"] as? String {
+                            newProfile.userName = userName
+                        }
+                        else {
+                            continue
+                        }
+                        if let hashNum = data["hashNum"] as? String {
+                            let num = Int(hashNum)
+                            if num != nil {
+                                newProfile.hashNum = num!
+                            }
+                            else {
+                                continue
+                            }
+                        }
+                        else {
+                            continue
+                        }
+                        //check if nil and nothing has been added
+                        profiles.append(newProfile)
+                        
                     }
                     
                 }
@@ -91,30 +90,6 @@ class firebaseController {
                 function(profiles)
             }
             }.resume()
-    }
-    
-    //adds new user to the remote firebase database
-    func addNewUser(newUser: firebaseProfile) {
-        var request = URLRequest(url: URL(string : "https://alivesfu-30553.firebaseio.com/\(newUser.devID).json?auth=\(databaseKey)")!)
-        request.httpMethod = requestType.POST.rawValue //making a POST request
-        let postString = "{\"devID\" : \"\(newUser.devID)\", \"userName\" : \"\(newUser.userName)\", \"hashNum\" : \"\(newUser.hashNum)\"}"
-        request.httpBody = postString.data(using: .utf8)
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
-                return
-            }
-            
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-            }
-            
-            let responseString = String(data: data, encoding: .utf8)
-            print("responseString = \(responseString)")
-        }
-        task.resume()
-        
     }
     
     //removes a user from firebase database
@@ -139,9 +114,10 @@ class firebaseController {
         task.resume()
     }
     
-    //edits a user configuration at the remote firebase database
-    func editUser(newUser: firebaseProfile) {
-        var request = URLRequest(url: URL(string : "https://alivesfu-30553.firebaseio.com/\(newUser.devID).json?auth=\(databaseKey)")!)
+    //configureUser() will either edit a user if it exists, or add one if it doesn't exist
+    //Use it for both editing or adding a user
+    func configureUser(newUser: firebaseProfile) {
+        var request = URLRequest(url: URL(string : "https://alivesfu-30553.firebaseio.com/\(newUser.userName).json?auth=\(databaseKey)")!)
         request.httpMethod = requestType.PUT.rawValue //making a PUT request
         let postString = "{\"devID\" : \"\(newUser.devID)\", \"userName\" : \"\(newUser.userName)\", \"hashNum\" : \"\(newUser.hashNum)\"}"
         request.httpBody = postString.data(using: .utf8)

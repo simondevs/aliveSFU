@@ -61,7 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.window?.makeKeyAndVisible()
             }
         }
-        
         return true
     }/*
     func application(application: UIApplication, shouldSaveApplicationState coder: NSCoder) -> Bool {
