@@ -198,13 +198,13 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
                 if (gesture.view?.tag == CATEGORY_CARDIO_VIEW_TAG) {
                     
                     let view = gesture.view as! CardioTileView;
-                    view.mainView.backgroundColor = SFURed.withAlphaComponent(0.5)
+                    setExerciseTileBGColor(isCompleted: true, isCardio: true, cardioView: view, strengthView: nil)
                     DataHandler.markExerciseCompleted(id: view.uuid, value: true)
                     
                 } else if (gesture.view?.tag == CATEGORY_STRENGTH_VIEW_TAG) {
                     
                     let view = gesture.view as! StrengthTileView;
-                    view.mainView.backgroundColor = SFURed.withAlphaComponent(0.5)
+                    setExerciseTileBGColor(isCompleted: true, isCardio: false, cardioView: nil, strengthView: view)
                     DataHandler.markExerciseCompleted(id: view.uuid, value: true)
                 }
                 updateChartData()
@@ -213,13 +213,13 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
                 if (gesture.view?.tag == CATEGORY_CARDIO_VIEW_TAG) {
                     
                     let view = gesture.view as! CardioTileView;
-                    setExerciseTileBGColor(isCompleted: false, view: view.mainView)
+                    setExerciseTileBGColor(isCompleted: false, isCardio: true, cardioView: view, strengthView: nil)
                     DataHandler.markExerciseCompleted(id: view.uuid, value: false)
                     
                 } else if (gesture.view?.tag == CATEGORY_STRENGTH_VIEW_TAG) {
                     
                     let view = gesture.view as! StrengthTileView;
-                    setExerciseTileBGColor(isCompleted: false, view: view.mainView)
+                    setExerciseTileBGColor(isCompleted: false, isCardio: false, cardioView: nil, strengthView: view)
                     DataHandler.markExerciseCompleted(id: view.uuid, value: false)
                     
                 }
@@ -390,11 +390,23 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         }
     }
     
-    func setExerciseTileBGColor(isCompleted: Bool, view: UIView) {
-        if (isCompleted) {
-            view.backgroundColor = SFURed.withAlphaComponent(0.5)
+    func setExerciseTileBGColor(isCompleted: Bool, isCardio: Bool, cardioView: CardioTileView?, strengthView: StrengthTileView?) {
+        if (isCardio) {
+            if (isCompleted) {
+                cardioView!.mainView.backgroundColor = SFURed.withAlphaComponent(0.5)
+                cardioView!.checkmark.isHidden = false
+            } else {
+                cardioView!.mainView.backgroundColor = SFURed
+                cardioView!.checkmark.isHidden = true
+            }
         } else {
-            view.backgroundColor = SFURed
+            if (isCompleted) {
+                strengthView!.mainView.backgroundColor = SFURed.withAlphaComponent(0.5)
+                strengthView!.checkmark.isHidden = false
+            } else {
+                strengthView!.mainView.backgroundColor = SFURed
+                strengthView!.checkmark.isHidden = true
+            }
         }
     }
     
@@ -413,7 +425,7 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
             cardioTile!.addGestureRecognizer(slideGesture)
             
             if (DataHandler.isExerciseCompleted(id: cardioTile!.uuid)) {
-                setExerciseTileBGColor(isCompleted: true, view: cardioTile!.mainView)
+                setExerciseTileBGColor(isCompleted: true, isCardio: true, cardioView: cardioTile, strengthView: nil)
             }
         } else {
 
@@ -426,7 +438,7 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
             strengthTile!.addGestureRecognizer(slideGesture)
             
             if (DataHandler.isExerciseCompleted(id: strengthTile!.uuid)) {
-                setExerciseTileBGColor(isCompleted: true, view: strengthTile!.mainView)
+                setExerciseTileBGColor(isCompleted: true, isCardio: false, cardioView: nil, strengthView: strengthTile)
             }
         }
     }
