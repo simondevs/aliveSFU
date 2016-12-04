@@ -16,6 +16,7 @@ class SFURecreationController: UIViewController {
     @IBOutlet weak var overlayHours: UIView!
     @IBOutlet weak var todayHourView: UIView!
     @IBOutlet weak var overlayHeight: NSLayoutConstraint!
+    @IBOutlet weak var hourLabel: UILabel!
     
     var isOverlayOpen = false
     var isAnimating = false
@@ -28,9 +29,18 @@ class SFURecreationController: UIViewController {
 	let tapGesture = UITapGestureRecognizer(target: self, action: #selector (todayHoursAction(_:)))
         todayHourView.addGestureRecognizer(tapGesture)
         todayHourView.isUserInteractionEnabled = true
-        
         overlayHeight.constant = 0
         isOverlayOpen = false
+        
+        let date = Date()
+        let calendar = Calendar(identifier: .gregorian)
+        let day = calendar.component(.weekday, from: date)
+        
+        if (day <= 4) {
+            hourLabel.text = "7:00am - 9:00pm"
+        } else {
+            hourLabel.text = "10:00am - 5:00pm"
+        }
 
     }
     
@@ -58,6 +68,7 @@ class SFURecreationController: UIViewController {
             //Open overlay
             var frame = overlayHours.frame
             frame.size.height = HEIGHT_OF_OVERLAY
+            overlayHeight.constant = HEIGHT_OF_OVERLAY
             if (!isAnimating) {
                 isAnimating = true
                 UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {self.overlayHours.frame = frame}, completion: {(completed: Bool) -> Void in
