@@ -6,11 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardioTileView" customModule="AliveSFU" customModuleProvider="target">
             <connections>
+                <outlet property="checkmark" destination="mF5-AI-lRO" id="rKt-6C-dTf"/>
                 <outlet property="exerciseName" destination="R7J-Yq-Fuo" id="FzL-y0-rge"/>
                 <outlet property="mainView" destination="kfQ-bi-ZbF" id="zxa-4X-gFd"/>
                 <outlet property="resistance" destination="Op4-uc-NKt" id="h6h-6q-RKS"/>
@@ -28,7 +31,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="365" height="75"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7J-Yq-Fuo">
-                            <rect key="frame" x="98" y="8" width="169.5" height="29"/>
+                            <rect key="frame" x="98.5" y="8" width="169.5" height="29"/>
                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -95,6 +98,14 @@
                                 <constraint firstItem="hQQ-KF-mNe" firstAttribute="width" secondItem="i0p-Sc-cna" secondAttribute="width" id="yaX-Yy-27o"/>
                             </constraints>
                         </stackView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="mF5-AI-lRO">
+                            <rect key="frame" x="8" y="8" width="23" height="21"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="M7F-dN-jDF"/>
+                                <constraint firstAttribute="width" secondItem="mF5-AI-lRO" secondAttribute="height" multiplier="39:38" constant="1.4473684210526301" id="iaP-TS-nDs"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.65098039220000004" green="0.098039215690000001" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -102,7 +113,10 @@
                         <constraint firstItem="2nT-jP-8iE" firstAttribute="width" secondItem="kfQ-bi-ZbF" secondAttribute="width" id="EOn-mu-Rm3"/>
                         <constraint firstItem="R7J-Yq-Fuo" firstAttribute="top" secondItem="kfQ-bi-ZbF" secondAttribute="top" constant="8" id="J3b-B2-jPJ"/>
                         <constraint firstItem="2nT-jP-8iE" firstAttribute="centerX" secondItem="kfQ-bi-ZbF" secondAttribute="centerX" id="Lnq-Uo-yz8"/>
+                        <constraint firstItem="mF5-AI-lRO" firstAttribute="width" secondItem="mF5-AI-lRO" secondAttribute="height" multiplier="39:38" constant="1.4473684210526301" id="d7Q-46-gqt"/>
+                        <constraint firstItem="mF5-AI-lRO" firstAttribute="leading" secondItem="kfQ-bi-ZbF" secondAttribute="leadingMargin" id="ehf-J7-lu1"/>
                         <constraint firstItem="R7J-Yq-Fuo" firstAttribute="centerX" secondItem="kfQ-bi-ZbF" secondAttribute="centerX" id="gCa-jE-lI0"/>
+                        <constraint firstItem="mF5-AI-lRO" firstAttribute="top" secondItem="R7J-Yq-Fuo" secondAttribute="top" id="rMd-cq-qd0"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -138,6 +152,9 @@
             <point key="canvasLocation" x="403.5" y="-206.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="Checkmark" width="50" height="50"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
