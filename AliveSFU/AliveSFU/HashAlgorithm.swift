@@ -1,5 +1,5 @@
 //
-//  BuddyNumber.swift
+//  HashAlgorithm.swift
 //  AliveSFU
 //
 //  Created by Liam O'Shaughnessy on 2016-12-01.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BuddyNumber
+class HashAlgorithm
 {
     let STRENGTH = "Strength"
     let WEIGHT = "Weight Loss"
@@ -18,7 +18,7 @@ class BuddyNumber
     let AGE_WEIGHT = 100
     let FRE_WEIGHT = 10
     
-    func fieldToHash(profile: BuddyProfile) -> Int{
+    func fieldToHash(profile: BuddyDetails) -> Int{
         var id : Int = 0 //Buddy Number
         
         let bd = DataHandler.getBuddyDetails()
@@ -32,10 +32,10 @@ class BuddyNumber
                 id += 1*PER_WEIGHT
             }
             if(element == STRENGTH){
-                id += 2000
+                id += 2*PER_WEIGHT
             }
             if(element == MAINTENANCE){
-                id += 4000
+                id += 4*PER_WEIGHT
             }
         }
         id += (gen+1)*GEN_WEIGHT //Adding the rest of the weights
@@ -44,7 +44,7 @@ class BuddyNumber
         
         return id
     }
-    func hashToField(id: Int) -> BuddyProfile{
+    func hashToField(id: Int) -> BuddyDetails{
         let profile = BuddyDetails(ageGroup: -1, fitnessFreq: -1, personalGoals: "", gender: -1)
         
         profile.gender = (id / GEN_WEIGHT)-1

@@ -75,16 +75,6 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         setupBarChart()
         barChartView(barChart, didSelectBarAt: UInt(currDay.index - 1))
         daySelected.selectedSegmentIndex = currDay.index - 1
-        
-        /* Disabling screen edges
- 
-        let leftEdge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector (handleSwipes(_:)))
-        let rightEdge = UIScreenEdgePanGestureRecognizer(target: self, action: #selector (handleSwipes(_:)))
-        leftEdge.edges = .left
-        rightEdge.edges = .right
-        
-        view.addGestureRecognizer(leftEdge)
-        view.addGestureRecognizer(rightEdge)*/
 
         let borderColor = UIColor.init(red: 238, green: 238, blue: 238).cgColor
         contentView.layer.borderColor = borderColor
@@ -229,43 +219,6 @@ class MyProgressController: UIViewController, JBBarChartViewDelegate, JBBarChart
         }
     }
     
-    func handleSwipes(_ recognizer: UIScreenEdgePanGestureRecognizer){
-        if (recognizer.state == .recognized) {
-            if(recognizer.edges == .left) {
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.contentView.center.x += self.contentView.frame.width
-                })
-                //If the page is at Sunday, swiping left should get you to Saturday
-                if (currDay == DaysInAWeek.Sunday) {
-                    currDay = DaysInAWeek.Saturday
-                }
-                else {
-                    let newDay = currDay.rawValue - 1
-                    currDay = DaysInAWeek(rawValue: newDay)!
-                }
-                daySelected.selectedSegmentIndex = currDay.rawValue - 1 //change segment value as well
-                populateStackView()
-                contentView.center.x -= contentView.frame.width
-            }
-            if(recognizer.edges == .right) {
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.contentView.center.x -= self.contentView.frame.width
-                })
-                //If the page is at Saturday, swiping right should get you to Sunday
-                if (currDay == DaysInAWeek.Saturday) {
-                    currDay = DaysInAWeek.Sunday
-                }
-                else {
-                    let newDay = currDay.rawValue + 1
-                    currDay = DaysInAWeek(rawValue: newDay)!
-                }
-                daySelected.selectedSegmentIndex = currDay.rawValue - 1 //change segment value as well
-                populateStackView()
-                contentView.center.x += contentView.frame.width
-            }
-            //Recenter contentview since it changed from swiping
-        }
-    }
     
     //Function that handles the reloading of My Progress page when something is updated from another view
     //e.g. when a tile is changed, this function is called to update the changed tiles and the graphs

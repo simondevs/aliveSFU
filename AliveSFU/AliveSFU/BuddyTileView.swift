@@ -18,6 +18,8 @@ class BuddyTileView: UIView {
     @IBOutlet weak var freq: UILabel!
     @IBOutlet weak var goals: UILabel!
     
+    var goalsStr = ""
+    
     var isDeleted: Bool = false
     var uuid: String = ""
     
@@ -28,16 +30,51 @@ class BuddyTileView: UIView {
         super.init(frame: frame);
     }
     
-    init(frame: CGRect, name: String, goals: String, age: String, freq: String) {
+    init(frame: CGRect, name: String, goals: String, age: Int, freq: Int) {
         super.init(frame: frame)
         
-        Bundle.main.loadNibNamed("SearchTile", owner: self, options: nil);
+        Bundle.main.loadNibNamed("BuddyTile", owner: self, options: nil);
         self.addSubview(view);    // adding the top level view to the view hierarchy
         
+        var ageStr = ""
+        switch age {
+        case 0:
+            ageStr = "17-19"
+        case 1:
+            ageStr = "20-22"
+        case 2:
+            ageStr = "23-25"
+        case 3:
+            ageStr = "26-29"
+        case 4:
+            ageStr = "30+"
+        default:
+            ageStr = "20-22"
+        }
+        
+        var freqStr = ""
+        switch freq {
+        case 0:
+            freqStr = "0-5 hrs/wk"
+        case 1:
+            freqStr = "5-10 hrs/wk"
+        case 2:
+            freqStr = "10-15 hrs/wk"
+        case 3:
+            freqStr = "15-20 hrs/wk"
+        case 4:
+            freqStr = "20+ hrs/wk"
+        default:
+            freqStr = "0-5 hrs/wk"
+        }
+        
+        self.goalsStr = goals
+        let goalsArr = goals.components(separatedBy: ",")
+        
         self.name.text = name;
-        self.age.text = age;
-        self.freq.text = freq;
-        self.goals.text = goals;
+        self.age.text = ageStr;
+        self.freq.text = freqStr;
+        self.goals.text = String(goalsArr.count);
     }
     
     required init?(coder aDecoder: NSCoder) {

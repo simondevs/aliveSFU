@@ -32,7 +32,7 @@ class SearchResultController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         //self.navigationController?.isNavigationBarHidden = true
-        populateStackView()
+        populateSearch()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -73,7 +73,7 @@ class SearchResultController: UIViewController, UIGestureRecognizerDelegate {
                 
             } else if (gesture.view!.frame.origin.x - self.panTileOrigin.x > 50) {
                 let view = gesture.view as! BuddyTileView;
-                deleteBuddyFromResults(tile: view)
+                //deleteBuddyFromResults(tile: view)
                 
                 //updateChartData()
             }
@@ -97,7 +97,7 @@ class SearchResultController: UIViewController, UIGestureRecognizerDelegate {
         popoverVC.age.text = tile.age.text
         popoverVC.frequency.text = tile.freq.text
         popoverVC.name.text = tile.name.text
-        popoverVC.goals.text = tile.goals.text
+        popoverVC.goals.text = tile.goalsStr
         
         popoverVC.didMove(toParentViewController: self)
         
@@ -146,19 +146,22 @@ class SearchResultController: UIViewController, UIGestureRecognizerDelegate {
         
     }
     
-    func populateStackView() {
+    func populateSearch() {
         //since the view is now changed, get rid of all preexisting subviews
         for view in contentView.subviews {
             view.removeFromSuperview()
         }
         //Populate Exercise Tiles
+        let hashMaker = HashAlgorithm()
+        let buddyCriteria = DataHandler.getBuddyDetails()
+        let hash = hashMaker.fieldToHash(profile: buddyCriteria)
         let firebaseCtlr = firebaseController()
-        /*firebaseCtlr.returnClosestMatch(weight: 5, function: {profile in
+        firebaseCtlr.returnClosestMatch(weight: hash, function: {profile in
             self.buddies = profile
             print(self.buddies)
             var count = 0
             for buddy in self.buddies {
-                //let hashToFields =          //Wait for liam to finish it
+                let bd = hashMaker.hashToField(id: buddy.hashNum)        //Wait for liam to finish it
                 
                 // Add func showPopup that will show the popup > ADDED
                 // Add func tileSlideGesture that will send a request to the
@@ -166,9 +169,9 @@ class SearchResultController: UIViewController, UIGestureRecognizerDelegate {
                 // > ADDED function to delete buddy from search results
                 
                 
-                let frame = CGRect(x: 0, y: CGFloat(self.contentView.subviews.count) * (self.TILE_HEIGHT + 5), width: self.scrollView.bounds.width, height: self.TILE_HEIGHT)
+                let frame = CGRect(x: self.contentView.frame.origin.x + 5, y: 5 + CGFloat(self.contentView.subviews.count) * (self.TILE_HEIGHT + 5), width: self.contentView.bounds.width - 5, height: self.TILE_HEIGHT)
                 
-                let tile = BuddyTileView(frame: frame, name: hash.name, goals: hash.goals, age: hash.age, freq: hash.freq)
+                let tile = BuddyTileView(frame: frame, name: buddy.userName, goals: bd.personalGoals, age: bd.ageGroup, freq: bd.fitnessFreq)
                 
                 tile.uuid = buddy.devID
                 
@@ -178,11 +181,10 @@ class SearchResultController: UIViewController, UIGestureRecognizerDelegate {
                 let slideGesture = UIPanGestureRecognizer(target: self, action: #selector (self.tileSlideGesture(_:)))
                 slideGesture.delegate = self
                 tile.addGestureRecognizer(slideGesture)
-                //scrollView.panGestureRecognizer.require(toFail: slideGesture)
-                buddyTiles.append(tile)
-                contentView.addSubview(tile)
+                self.buddyTiles.append(tile)
+                self.contentView.addSubview(tile)
+                count += 1;
             }
-            count += 1;
             //}
             if (count == 0) {
                 //Display Placeholder Exercise Tile
@@ -196,8 +198,12 @@ class SearchResultController: UIViewController, UIGestureRecognizerDelegate {
                  contentView.addSubview(placeholder)
                  */
             }
+            //if (self.contentView.subviews.count == 1 && self.contentView.subviews.first?.tag == PLACEHOLDER_TAG) {
+            //    self.contentViewHeight.constant = scrollView.frame.height
+            //} else {
+                self.contentViewHeight.constant = CGFloat(self.contentView.subviews.count) * (self.TILE_HEIGHT + 5)
+            //}
         })
-    }*/
     }
 
  }
