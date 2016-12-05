@@ -12,11 +12,12 @@ import UIKit
 class BuddyTileView: UIView {
     
     @IBOutlet var view: UIView!
-    
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var age: UILabel!
     @IBOutlet weak var freq: UILabel!
     @IBOutlet weak var goals: UILabel!
+    @IBOutlet weak var checkmark: UIImageView!
     
     var goalsStr = ""
     var dbprofile = firebaseProfile()
@@ -36,6 +37,11 @@ class BuddyTileView: UIView {
         
         Bundle.main.loadNibNamed("BuddyTile", owner: self, options: nil);
         self.addSubview(view);    // adding the top level view to the view hierarchy
+        
+        let origImage = UIImage(named: "Checkmark");
+        let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
+        checkmark.image = tintedImage
+        checkmark.isHidden = true
         
         var ageStr = ""
         switch age {

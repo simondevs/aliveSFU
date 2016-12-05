@@ -6,14 +6,17 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BuddyTileView" customModule="AliveSFU" customModuleProvider="target">
             <connections>
                 <outlet property="age" destination="Fpb-hB-s2r" id="T11-TB-WIG"/>
+                <outlet property="checkmark" destination="s91-CF-2bC" id="mKq-Yq-zj7"/>
                 <outlet property="freq" destination="Op4-uc-NKt" id="PEp-LU-Scx"/>
                 <outlet property="goals" destination="SRW-Ib-esE" id="eKz-pg-SwW"/>
+                <outlet property="mainView" destination="kfQ-bi-ZbF" id="FqS-hF-vHo"/>
                 <outlet property="name" destination="R7J-Yq-Fuo" id="Iq1-v9-EPg"/>
                 <outlet property="view" destination="iN0-l3-epB" id="wab-ZM-h4D"/>
             </connections>
@@ -104,12 +107,22 @@
                                 <constraint firstItem="WvT-Za-LmV" firstAttribute="leading" secondItem="2nT-jP-8iE" secondAttribute="leading" id="PBZ-uk-WGl"/>
                             </constraints>
                         </stackView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="s91-CF-2bC">
+                            <rect key="frame" x="8" y="8" width="23" height="21"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="s91-CF-2bC" secondAttribute="height" multiplier="39:38" constant="1.4473684210526301" id="0eu-AW-aaH"/>
+                                <constraint firstAttribute="height" constant="21" id="UEb-vz-O7h"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.65098039220000004" green="0.098039215690000001" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="2nT-jP-8iE" firstAttribute="width" secondItem="kfQ-bi-ZbF" secondAttribute="width" constant="-10" id="ASa-Kq-4JA"/>
                         <constraint firstItem="R7J-Yq-Fuo" firstAttribute="centerX" secondItem="kfQ-bi-ZbF" secondAttribute="centerX" id="Bd5-MS-jvh"/>
                         <constraint firstItem="2nT-jP-8iE" firstAttribute="centerX" secondItem="kfQ-bi-ZbF" secondAttribute="centerX" id="DeR-Nb-bnI"/>
+                        <constraint firstItem="s91-CF-2bC" firstAttribute="top" secondItem="kfQ-bi-ZbF" secondAttribute="top" constant="8" id="I2o-of-bPU"/>
+                        <constraint firstItem="s91-CF-2bC" firstAttribute="leading" secondItem="kfQ-bi-ZbF" secondAttribute="leading" constant="8" id="LMf-IB-PCR"/>
                         <constraint firstAttribute="bottom" secondItem="2nT-jP-8iE" secondAttribute="bottom" constant="6" id="Z6m-TX-0hS"/>
                         <constraint firstItem="R7J-Yq-Fuo" firstAttribute="top" secondItem="kfQ-bi-ZbF" secondAttribute="top" constant="8" id="xKO-iy-btL"/>
                         <constraint firstItem="R7J-Yq-Fuo" firstAttribute="width" secondItem="2nT-jP-8iE" secondAttribute="width" id="zYf-qv-3rw"/>
@@ -125,6 +138,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="kfQ-bi-ZbF" secondAttribute="bottom" id="Ub8-kq-9YF"/>
                 <constraint firstItem="kfQ-bi-ZbF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WtJ-IH-HQx"/>
@@ -135,9 +149,21 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                    <integer key="value" value="1"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="399" y="-206"/>
         </view>
     </objects>
+    <resources>
+        <image name="Checkmark" width="50" height="50"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
