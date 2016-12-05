@@ -802,4 +802,64 @@ class DataHandler {
             print("Could not save \(error), \(error.userInfo)")
         }
     }
+    
+    class func getOutgoingRequests() -> [firebaseProfile] {
+        
+        var requests = [firebaseProfile]()
+        
+        let moc = AppDataController().managedObjectContext
+        let entityFetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "OutgoingRequests")
+        do {
+            let fetchedResults = try moc.fetch(entityFetchReq) as! [NSManagedObject]
+            for result in fetchedResults {
+                let hash = result.value(forKey: "hashkey") as! Int
+                let name = result.value(forKey: "username") as! String
+                let newElem = firebaseProfile(devID: "", userName: name, hashNum: hash)
+                requests.append(newElem)
+            }
+            return requests
+        } catch {
+            fatalError("Failed to fetch array! Error: \(error)")
+        }
+    }
+    
+    class func addOutgoingRequest(req: firebaseProfile) {
+        let moc = AppDataController().managedObjectContext
+       
+        let details = NSFetchRequest<NSFetchRequestResult>(entityName: "OutgoingRequests")
+        details.predicate = NSPredicate(format: "username = %@", req.userName)
+        do {
+            let fetchedResults = try moc.fetch(details) as! [NSManagedObject]
+            if (fetchedResults.count == 0) {
+                let mo = NSEntityDescription.insertNewObject(forEntityName: "OutgoingRequests", into: moc)
+                mo.setValue(req.userName, forKey: "username")
+                mo.setValue(req.hashNum, forKey: "hashkey")
+            }
+            try moc.save()
+        } catch let error as NSError {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+    }
+    
+    class func deleteOutgoingRequest(username: String) {
+        
+        let moc = AppDataController().managedObjectContext
+
+        let entityFetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "OutgoingRequests")
+        
+        let predicate = NSPredicate(format: "username = %@",username)
+        entityFetchReq.predicate = predicate
+        
+        do {
+            //get exerciseArray element where exerciseName = name
+            var fetchedResult = try moc.fetch(entityFetchReq) as! [NSManagedObject]
+            moc.delete(fetchedResult[0])
+            
+            try moc.save()
+        }
+            
+        catch {
+            fatalError("Failed to fetch element! Error: \(error)")
+        }
+    }
 }

@@ -19,6 +19,7 @@ class BuddyTileView: UIView {
     @IBOutlet weak var goals: UILabel!
     
     var goalsStr = ""
+    var dbprofile = firebaseProfile()
     
     var isDeleted: Bool = false
     var uuid: String = ""
@@ -71,7 +72,9 @@ class BuddyTileView: UIView {
         self.goalsStr = goals
         let goalsArr = goals.components(separatedBy: ",")
         
-        self.name.text = name;
+        let buddyName = name.substring(to: name.index(name.startIndex, offsetBy: 2)) + "***"
+        
+        self.name.text = buddyName
         self.age.text = ageStr;
         self.freq.text = freqStr;
         self.goals.text = String(goalsArr.count);

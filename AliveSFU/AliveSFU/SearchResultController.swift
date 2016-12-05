@@ -44,19 +44,7 @@ class SearchResultController: UIViewController, UIGestureRecognizerDelegate {
     func sendRequestToBuddy(buddy: firebaseProfile) {
         // let
     }
-    
-    // updates isDeleted flag of that BuddyTile to true
-    // Reloads search results by calling reloadBuddy
-    func deleteBuddyFromResults(tile: BuddyTileView) {
-        
-        tile.setIsDeleted()
-        reloadBuddy()
-        
-    }
-    
-    //on slide gesture, perform one of the following functions depending on the gesture:
-    // > sendRequestToBuddy, or
-    // > deleteBuddyFromResults
+
     func tileSlideGesture(_ gesture: UIPanGestureRecognizer) {
         if (gesture.state == .began) {
             self.panTileOrigin = gesture.view!.frame.origin
@@ -67,13 +55,13 @@ class SearchResultController: UIViewController, UIGestureRecognizerDelegate {
             gesture.setTranslation(CGPoint.zero, in: contentView)
         } else if (gesture.state == .ended) {
             if (self.panTileOrigin.x - gesture.view!.frame.origin.x > 50){
-                //let view = gesture.view as! BuddyTileView;
-                //sendRequestToBuddy(buddy: buddy)
-                //updateChartData()
+                let view = gesture.view as! BuddyTileView;
+                
+                //Send request to this buddy
+                DataHandler.addOutgoingRequest(req: view.dbprofile)
                 
             } else if (gesture.view!.frame.origin.x - self.panTileOrigin.x > 50) {
-                let view = gesture.view as! BuddyTileView;
-                //deleteBuddyFromResults(tile: view)
+                //let view = gesture.view as! BuddyTileView;
                 
                 //updateChartData()
             }
@@ -102,49 +90,6 @@ class SearchResultController: UIViewController, UIGestureRecognizerDelegate {
         popoverVC.didMove(toParentViewController: self)
         
     }
-
-
-    func reloadBuddy(){
-        
-        //this function will be called when we want to reload teh buddy view but not include the deleted tiles
-        
-        //since the view is now changed, get rid of all preexisting subviews
-        for view in contentView.subviews {
-            view.removeFromSuperview()
-        }
-        if buddyTiles.isEmpty == false {
-            for tile in buddyTiles{
-                if (tile.getIsDeleted() == false) {
-                    
-                    let frame = CGRect(x: 0, y: CGFloat(contentView.subviews.count) * (TILE_HEIGHT + 5), width: scrollView.bounds.width, height: TILE_HEIGHT)
-                    
-                    //let tile = BuddyTileView(frame: , name: hash.name, goals: hash.goals, age: hash.age, freq: hash.freq)
-                    //tile.uuid = buddy.id
-                    let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
-                    tile.addGestureRecognizer(tapGesture)
-                    
-                    let slideGesture = UIPanGestureRecognizer(target: self, action: #selector (self.tileSlideGesture(_:)))
-                    slideGesture.delegate = self
-                    tile.addGestureRecognizer(slideGesture)
-                    //scrollView.panGestureRecognizer.require(toFail: slideGesture)
-                    contentView.addSubview(tile)
-                }
-            }
-        }
-        else {
-            //Display Placeholder Exercise Tile
-            
-            // Create a new image for this placeholder
-            
-            /*
-             let placeholder = UIImageView(image: UIImage(named: "noExercisePlaceholder"))
-             placeholder.tag = PLACEHOLDER_TAG
-             placeholder.frame = CGRect(x: 0, y: -40, width: self.view.frame.width - 40, height: 500)
-             contentView.addSubview(placeholder)
-             */
-        }
-        
-    }
     
     func populateSearch() {
         //since the view is now changed, get rid of all preexisting subviews
@@ -161,19 +106,13 @@ class SearchResultController: UIViewController, UIGestureRecognizerDelegate {
             print(self.buddies)
             var count = 0
             for buddy in self.buddies {
-                let bd = hashMaker.hashToField(id: buddy.hashNum)        //Wait for liam to finish it
-                
-                // Add func showPopup that will show the popup > ADDED
-                // Add func tileSlideGesture that will send a request to the
-                //          particular user
-                // > ADDED function to delete buddy from search results
-                
+                let bd = hashMaker.hashToField(id: buddy.hashNum)
                 
                 let frame = CGRect(x: self.contentView.frame.origin.x + 5, y: 5 + CGFloat(self.contentView.subviews.count) * (self.TILE_HEIGHT + 5), width: self.contentView.bounds.width - 5, height: self.TILE_HEIGHT)
                 
                 let tile = BuddyTileView(frame: frame, name: buddy.userName, goals: bd.personalGoals, age: bd.ageGroup, freq: bd.fitnessFreq)
                 
-                tile.uuid = buddy.devID
+                tile.dbprofile = buddy
                 
                 let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
                 tile.addGestureRecognizer(tapGesture)
