@@ -108,12 +108,8 @@ class HomePageController: UIViewController {
         self.bmrCount.text = NSString(format: "%.2f", bmrCountResult) as String
 
         //today's sleep
-        let weekSleep = DataHandler.getSleepAnalysisData()
-        let sleepDate = Date()
-        let sleepCalendar = Calendar(identifier: .gregorian)
-        let sleepDay = sleepCalendar.component(.weekday, from: sleepDate)
-        let sleep = weekSleep[sleepDay-1]
-        self.todaySleep.text = hourToString(hour: sleep)
+        let weekSleep = DataHandler.getLastSleepAnalysisData().lastAsleepHours
+        self.todaySleep.text = hourToString(hour: weekSleep)
     }
     
     func hourToString(hour:Double) -> String {
