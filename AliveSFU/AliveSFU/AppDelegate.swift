@@ -61,6 +61,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.window?.makeKeyAndVisible()
             }
         }
+        var ctrl = firebaseController()
+        
         return true
     }/*
     func application(application: UIApplication, shouldSaveApplicationState coder: NSCoder) -> Bool {

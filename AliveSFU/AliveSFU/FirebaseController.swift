@@ -138,4 +138,97 @@ class firebaseController {
         
     }
     
+    //get requests for this user
+    func getUsers(weight: Int, function : @escaping ([firebaseProfile]) -> Void) {
+        let url = URL(string: "https://alivesfu-30553.firebaseio.com/\(userID)/requests.json?auth=\(databaseKey)")
+        var profiles = [firebaseProfile]()
+        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            //check if an error is returned form the server
+            if error != nil {
+                print(error!)
+                return
+            }
+            
+            
+            do {
+                let jsonBody = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
+                let body = jsonBody as? [String : Any]
+                //parse each user object
+                for userProfile in body! {
+                    if let data = userProfile.value as? [String : Any] {
+                        let newProfile = firebaseProfile()
+                        //if any of the below checks fail, continue to the next profile since a user profile is messed up
+                        if let devID = data["devID"] as? String {
+                            newProfile.devID = devID
+                        }
+                        else {
+                            continue
+                        }
+                        if let userName = data["userName"] as? String {
+                            newProfile.userName = userName
+                        }
+                        else {
+                            continue
+                        }
+                        if let hashNum = data["hashNum"] as? String {
+                            let num = Int(hashNum)
+                            if num != nil {
+                                newProfile.hashNum = num!
+                            }
+                            else {
+                                continue
+                            }
+                        }
+                        else {
+                            continue
+                        }
+                        //check if nil and nothing has been added
+                        profiles.append(newProfile)
+                    }
+                    
+                }
+                if !profiles.isEmpty {
+                    //sort array by how closer it is to the inputted weight integer
+                    profiles = profiles.sorted(by: {
+                        (left: firebaseProfile, right: firebaseProfile) -> Bool in
+                        return abs(weight-left.hashNum) < abs(weight-right.hashNum)
+                    })
+                }
+                
+            } catch let error {
+                print(error)
+            }
+            
+            DispatchQueue.main.async {
+                function(profiles)
+            }
+            }.resume()
+    }
+    
+    //send a request
+    func sendRequest(userName : String, hashNum: Int) {
+        let username = DataHandler.getCurrentUser()
+        
+        var request = URLRequest(url: URL(string : "https://alivesfu-30553.firebaseio.com/\(newUser.userName)/requests.json?auth=\(databaseKey)")!)
+        request.httpMethod = requestType.PUT.rawValue //making a PUT request
+        let postString = "{\"\(username)\" : {\"userName\" : \"\(userName)\", \"hashNum\" : \"\(newUser.hashNum)\"}}"
+        request.httpBody = postString.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(error)")
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response)")
+            }
+            
+            let responseString = String(data: data, encoding: .utf8)
+            print("responseString = \(responseString)")
+        }
+        task.resume()
+        
+    }
+    
 }
