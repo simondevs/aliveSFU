@@ -20,12 +20,11 @@ class HashAlgorithm
     
     func fieldToHash(profile: BuddyDetails) -> Int{
         var id : Int = 0 //Buddy Number
-        
-        let bd = DataHandler.getBuddyDetails()
-        let age = bd.ageGroup
-        let gen = bd.gender
-        let fre = bd.fitnessFreq
-        let per = bd.personalGoals.components(separatedBy: ",")
+
+        let age = profile.ageGroup
+        let gen = profile.gender
+        let fre = profile.fitnessFreq
+        let per = profile.personalGoals.components(separatedBy: ",")
         
         for element in per{ //Need to loop through all the goals selected
             if element == WEIGHT{
@@ -45,7 +44,7 @@ class HashAlgorithm
         return id
     }
     func hashToField(id: Int) -> BuddyDetails{
-        let profile = BuddyDetails(ageGroup: -1, fitnessFreq: -1, personalGoals: "", gender: -1)
+        let profile = BuddyDetails()
         
         profile.gender = (id / GEN_WEIGHT)-1
         
