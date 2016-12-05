@@ -49,32 +49,6 @@ class IncomingRequests: UIViewController, UIGestureRecognizerDelegate {
     }
     /* Member Functions*/
     
-    func tileSlideGesture(_ gesture: UIPanGestureRecognizer) {
-        if (gesture.state == .began) {
-            self.panTileOrigin = gesture.view!.frame.origin
-        }
-        if (gesture.state == .began || gesture.state == .changed) {
-            let translation = gesture.translation(in: contentView)
-            gesture.view!.center = CGPoint(x: gesture.view!.center.x + translation.x/2, y: gesture.view!.center.y)
-            gesture.setTranslation(CGPoint.zero, in: contentView)
-        } else if (gesture.state == .ended) {
-            if (self.panTileOrigin.x - gesture.view!.frame.origin.x > 50){
-                let view = gesture.view as! BuddyTileView;
-                
-                //Send request to this buddy
-                DataHandler.addOutgoingRequest(req: view.dbprofile)
-                setTileBGColor(isCompleted: true, view: view)
-                let ctrl = firebaseController()
-                ctrl.sendRequest(user: view.dbprofile) //send a request to this user
-            } else if (gesture.view!.frame.origin.x - self.panTileOrigin.x > 50) {
-                //let view = gesture.view as! BuddyTileView;
-                
-                //updateChartData()
-            }
-            UIView.animate(withDuration: 0.1, animations: {gesture.view!.frame.origin = self.panTileOrigin})
-        }
-    }
-    
     // show Popup with buddy info on tap gesture
     @IBAction func showPopup(_ sender: UITapGestureRecognizer) {
         
@@ -117,7 +91,7 @@ class IncomingRequests: UIViewController, UIGestureRecognizerDelegate {
             for elem in outgoingRequests {
                 if elem.userName == buddy.userName {
                     //a match has been found!
-                    let bd = hashMaker.hashToField(id: DataHandler.getHashNum())
+                    let bd = hashMaker.hashToField(id: buddy.hashNum)
                     
                     let frame = CGRect(x: self.contentView.frame.origin.x + 5, y: 5 + CGFloat(self.contentView.subviews.count) * (self.TILE_HEIGHT + 5), width: self.contentView.bounds.width - 5, height: self.TILE_HEIGHT)
                     
@@ -127,10 +101,7 @@ class IncomingRequests: UIViewController, UIGestureRecognizerDelegate {
                     
                     let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
                     tile.addGestureRecognizer(tapGesture)
-                    
-                    let slideGesture = UIPanGestureRecognizer(target: self, action: #selector (self.tileSlideGesture(_:)))
-                    slideGesture.delegate = self
-                    tile.addGestureRecognizer(slideGesture)
+
                     self.buddyTiles.append(tile)
                     self.contentView.addSubview(tile)
                     count += 1;
