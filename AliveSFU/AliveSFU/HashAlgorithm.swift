@@ -10,9 +10,9 @@ import Foundation
 
 class HashAlgorithm
 {
-    let STRENGTH = "Strength"
-    let WEIGHT = "Weight Loss"
-    let MAINTENANCE = "Maintenance"
+    let STRENGTH = "1"
+    let WEIGHT = "0"
+    let MAINTENANCE = "2"
     let GEN_WEIGHT = 10000
     let PER_WEIGHT = 1000
     let AGE_WEIGHT = 100
@@ -51,19 +51,19 @@ class HashAlgorithm
         let per = (id % GEN_WEIGHT) / PER_WEIGHT
         switch per{
         case 7:
-            profile.personalGoals = "Weight Loss,Strength,Maintenance"
+            profile.personalGoals = "0,1,2"
         case 6:
-            profile.personalGoals = "Strength,Maintenance"
+            profile.personalGoals = "1,2"
         case 5:
-            profile.personalGoals = "Weight Loss,Maintenance"
+            profile.personalGoals = "0,2"
         case 4:
-            profile.personalGoals = "Maintenance"
+            profile.personalGoals = "2"
         case 3:
-            profile.personalGoals = "Weight Loss,Strength"
+            profile.personalGoals = "0,1"
         case 2:
-            profile.personalGoals = "Strength"
+            profile.personalGoals = "1"
         case 1:
-            profile.personalGoals = "Weight Loss"
+            profile.personalGoals = "0"
         default:
             profile.personalGoals = ""
         }

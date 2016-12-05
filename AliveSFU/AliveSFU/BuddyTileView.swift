@@ -69,8 +69,19 @@ class BuddyTileView: UIView {
             freqStr = "0-5 hrs/wk"
         }
         
-        self.goalsStr = goals
+        var goalsStrArr = [String]()
         let goalsArr = goals.components(separatedBy: ",")
+        for goal in goalsArr {
+            if goal == "0" {
+                goalsStrArr.append("Weight")
+            } else if goal == "1" {
+                goalsStrArr.append("Strength")
+            } else if goal == "2" {
+                goalsStrArr.append("Maintenance")
+            }
+        }
+        
+        self.goalsStr = goalsStrArr.joined(separator: ", ")
         
         let buddyName = name.substring(to: name.index(name.startIndex, offsetBy: 2)) + "***"
         
