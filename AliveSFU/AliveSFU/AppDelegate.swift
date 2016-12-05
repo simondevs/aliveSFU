@@ -61,13 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.window?.makeKeyAndVisible()
             }
         }
-        var ctrl = firebaseController()
-        DataHandler.deleteAllIncomingRequests() //clear all the incoming requests already stored
-        ctrl.getRequests(weight: DataHandler.getHashNum()) { (profiles) in
-            for profile in profiles {
-                DataHandler.addIncomingRequest(req: profile)
-            }
-        }
         
         return true
     }/*

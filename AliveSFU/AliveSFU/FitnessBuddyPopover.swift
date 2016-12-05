@@ -39,9 +39,20 @@ class FitnessBuddyPopover: UIViewController {
     }*/
     
     @IBAction func acceptBtn(_ sender: UIButton) {
-        name.text = username + "@sfu.ca"
-        sender.setTitle("Send an email!", for: .normal)
-        sender.isUserInteractionEnabled = false
+        if (sender.title(for: .normal) == "Send an email!")
+        {
+            if let url = URL(string: "https://connect.sfu.ca") {
+                UIApplication.shared.open(url, options: [:]) {
+                    boolean in
+                    // do something with the boolean
+                }
+            }
+        }
+        else
+        {
+            name.text = username + "@sfu.ca"
+            sender.setTitle("Send an email!", for: .normal)
+        }
     }
     
     func showAnimate() {

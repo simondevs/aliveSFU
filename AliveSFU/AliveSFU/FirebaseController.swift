@@ -152,7 +152,7 @@ class firebaseController {
         let url = URL(string: "https://alivesfu-30553.firebaseio.com/" + username! + "/requests.json?auth=\(databaseKey)")
         //skip if the user doesn't have any pending requests
         if url != nil {
-        let profiles = [firebaseProfile]()
+        var profiles = [firebaseProfile]()
         URLSession.shared.dataTask(with: url!) { (data, response, error) in
             //check if an error is returned from the server
             if error != nil {
@@ -180,7 +180,8 @@ class firebaseController {
                         else {
                             continue
                         }*/
-                        DataHandler.addIncomingRequest(req: request)
+                        profiles.append(request)
+                        //DataHandler.addIncomingRequest(req: request)
                     }
                     
                 }
