@@ -58,6 +58,8 @@ class SearchResultController: UIViewController, UIGestureRecognizerDelegate {
                 DataHandler.addOutgoingRequest(req: view.dbprofile)
                 ctrl.sendRequest(user : view.dbprofile)
                 
+                setTileBGColor(isCompleted: true, view: view)
+                
             } else if (gesture.view!.frame.origin.x - self.panTileOrigin.x > 50) {
                 //let view = gesture.view as! BuddyTileView;
                 
@@ -112,8 +114,9 @@ class SearchResultController: UIViewController, UIGestureRecognizerDelegate {
                 
                 tile.dbprofile = buddy
                 
-                let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
-                tile.addGestureRecognizer(tapGesture)
+                //don't add the popup for regular display
+                //let tapGesture = UITapGestureRecognizer(target: self, action:  #selector (self.showPopup(_:)))
+                //tile.addGestureRecognizer(tapGesture)
                 
                 let slideGesture = UIPanGestureRecognizer(target: self, action: #selector (self.tileSlideGesture(_:)))
                 slideGesture.delegate = self
@@ -122,25 +125,19 @@ class SearchResultController: UIViewController, UIGestureRecognizerDelegate {
                 self.contentView.addSubview(tile)
                 count += 1;
             }
-            //}
-            if (count == 0) {
-                //Display Placeholder Exercise Tile
-                
-                // Create a new image for this placeholder
-                
-                /*
-                 let placeholder = UIImageView(image: UIImage(named: "noExercisePlaceholder"))
-                 placeholder.tag = PLACEHOLDER_TAG
-                 placeholder.frame = CGRect(x: 0, y: -40, width: self.view.frame.width - 40, height: 500)
-                 contentView.addSubview(placeholder)
-                 */
-            }
-            //if (self.contentView.subviews.count == 1 && self.contentView.subviews.first?.tag == PLACEHOLDER_TAG) {
-            //    self.contentViewHeight.constant = scrollView.frame.height
-            //} else {
-                self.contentViewHeight.constant = CGFloat(self.contentView.subviews.count) * (self.TILE_HEIGHT + 5)
-            //}
+            self.contentViewHeight.constant = CGFloat(self.contentView.subviews.count) * (self.TILE_HEIGHT + 5)
         })
     }
+    func setTileBGColor(isCompleted: Bool, view: BuddyTileView) {
+        let SFURed = UIColor(red: 166, green: 25, blue: 46)
+        if (isCompleted) {
+            view.mainView.backgroundColor = SFURed.withAlphaComponent(0.5)
+            view.checkmark.isHidden = false
+        } else {
+            view.mainView.backgroundColor = SFURed
+            view.checkmark.isHidden = true
+        }
+    }
+
 
  }

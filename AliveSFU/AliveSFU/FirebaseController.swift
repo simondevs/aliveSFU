@@ -10,7 +10,7 @@ import Foundation
 
 //Defining all the REST call types
 public enum requestType : String {
-    case GET = "GET", DELETE = "DELETE", PUT = "PUT"
+    case GET = "GET", DELETE = "DELETE", PUT = "PUT", PATCH = "PATCH"
 }
 
 class firebaseController {
@@ -51,6 +51,10 @@ class firebaseController {
                             continue
                         }
                         if let userName = data["userName"] as? String {
+                            //omit yourself
+                            if userName == DataHandler.getCurrentUser() {
+                                continue
+                            }
                             newProfile.userName = userName
                         }
                         else {
@@ -142,10 +146,15 @@ class firebaseController {
     //call this function at startup
     func getRequests(weight: Int, function : @escaping ([firebaseProfile]) -> Void) {
         let username = DataHandler.getCurrentUser()
-        let url = URL(string: "https://alivesfu-30553.firebaseio.com/\(username)/requests.json?auth=\(databaseKey)")
-        var profiles = [firebaseProfile]()
+        if username == nil {
+            return
+        }
+        let url = URL(string: "https://alivesfu-30553.firebaseio.com/" + username! + "/requests.json?auth=\(databaseKey)")
+        //skip if the user doesn't have any pending requests
+        if url != nil {
+        let profiles = [firebaseProfile]()
         URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            //check if an error is returned form the server
+            //check if an error is returned from the server
             if error != nil {
                 print(error!)
                 return
@@ -158,18 +167,19 @@ class firebaseController {
                     for userProfile in body {
                         //a request that has been made for this user
                         let request = firebaseProfile()
-                        if let username = userProfile.value as? String {
+                        if let username = userProfile.key as? String{
                             request.userName = username
                         }
                         else {
                             continue
                         }
+                        /*
                         if let hashnum = userProfile.key as? String {
                             request.hashNum = Int(hashnum)!
                         }
                         else {
                             continue
-                        }
+                        }*/
                         DataHandler.addIncomingRequest(req: request)
                     }
                     
@@ -185,15 +195,17 @@ class firebaseController {
                 function(profiles)
             }
             }.resume()
+        }
     }
     
-    //send a request
+    //send a request to this user
     func sendRequest(user: firebaseProfile) {
-        
         let username = DataHandler.getCurrentUser()
-        var request = URLRequest(url: URL(string : "https://alivesfu-30553.firebaseio.com/\(user.userName)/requests.json?auth=\(databaseKey)")!)
-        request.httpMethod = requestType.PUT.rawValue //making a PUT request
-        let postString = "{\"from\" : \"\(username)\"}"
+        let requrl = URL(string : "https://alivesfu-30553.firebaseio.com/\(user.userName)/requests.json?auth=\(databaseKey)")!
+        let postString = "{\"" + username! + "\": \"from\"}"//"{\"requests\": {\"" + username! + "\": \"from\"}}"
+        var request = URLRequest(url: requrl)
+        request.httpMethod = requestType.PATCH.rawValue //making a PUT request
+        
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error

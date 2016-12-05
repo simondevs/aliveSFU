@@ -10,12 +10,13 @@ import UIKit
 
 class FitnessBuddyPopover: UIViewController {
     
+    var username : String = ""
     @IBOutlet weak var age: UILabel!
     @IBOutlet weak var frequency: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var goals: UILabel!
     @IBOutlet weak var acceptButton: UIButton!
-    @IBOutlet weak var rejectButton: UIButton!
+    //@IBOutlet weak var rejectButton: UIButton!
     weak var rootViewController: UIViewController? //TODO: find something more elegant
     
     var uuid: String = ""
@@ -34,12 +35,13 @@ class FitnessBuddyPopover: UIViewController {
         self.removeAnimate()
     }
     
-    @IBAction func rejectBtn(_ sender: AnyObject) {
-        
-    }
+   /* @IBAction func rejectBtn(_ sender: AnyObject) {
+    }*/
     
     @IBAction func acceptBtn(_ sender: UIButton) {
-        
+        name.text = username + "@sfu.ca"
+        sender.setTitle("Send an email!", for: .normal)
+        sender.isUserInteractionEnabled = false
     }
     
     func showAnimate() {

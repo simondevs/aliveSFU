@@ -339,7 +339,7 @@ class DataHandler {
         return dayArray
     }
     
-    class func saveProfile(pd: PersonalDetails, fd: FitnessDetails, enableSleep: Bool, enableFitnessBuddy: Bool) -> Int {
+    class func saveProfile(pd: PersonalDetails, fd: FitnessDetails, enableSleep: Bool, enableFitnessBuddy: Bool, hash : Int) -> Int {
         
         if let currentUser = getCurrentUser() {
             let moc = AppDataController().managedObjectContext
@@ -357,7 +357,7 @@ class DataHandler {
                 mo.setValue(pd.phoneNumber, forKey: "phoneNumber")
                 mo.setValue(pd.gender, forKey: "gender")
                 mo.setValue(pd.email, forKey: "email")
-                
+                mo.setValue(hash, forKey : "hashnum")
                 mo.setValue(fd.ageGroup, forKey: "ageGroup")
                 mo.setValue(fd.fitnessFreq, forKey: "frequency")
                 mo.setValue(fd.heightFeet, forKey: "heightFeet")
@@ -620,6 +620,24 @@ class DataHandler {
             }
         }
         return fd
+    }
+    
+    class func getHashNum() -> Int {
+
+        if let currentUser = getCurrentUser() {
+            let moc = AppDataController().managedObjectContext
+            
+            let details = NSFetchRequest<NSFetchRequestResult>(entityName: "UserDetails")
+            do {
+                let fetchedResults = try moc.fetch(details) as! [NSManagedObject]
+                let mo = fetchedResults[0]
+                
+                return mo.value(forKey: "hashnum") as! Int
+            } catch {
+                fatalError("Failed to fetch array! Error: \(error)")
+            }
+        }
+        return 0 //hackz
     }
     
     class func updateProfile(pd: PersonalDetails, fd: FitnessDetails) {
@@ -924,7 +942,7 @@ class DataHandler {
     }
     
     //Clear and refresh all the incoming requests
-    class func deleteAllIncomingRequests(username: String) {
+    class func deleteAllIncomingRequests() {
         
         let moc = AppDataController().managedObjectContext
         let entityFetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "IncomingRequests")

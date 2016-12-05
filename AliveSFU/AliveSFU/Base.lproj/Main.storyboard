@@ -728,13 +728,13 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 
 -Fill in the One on One Training Client Profile form available online or at the Rec Office &amp; Fitness Centre.
 -Visit the Recreation Office. Online registration is not available for this service.
 -If you have any questions about one-on-one training, please stop by or contact the Fitness Centre at 778.782.4950.
 
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="Helvetica"/>
                                             <font key="NSOriginalFont" size="14" name="Helvetica"/>
@@ -747,7 +747,7 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 
 SFU Recreation members pick up a stamp card at the Fitness Centre or Pool and are entered to win some fabulous prizes! 
 -Get a stamp for working out at least 30 min at the Fitness Centre or Pool.  Maximum one stamp per day. -Collect three stamps in one week, and qualify for one prize draw entry. 
@@ -756,7 +756,7 @@ SFU Recreation members pick up a stamp card at the Fitness Centre or Pool and ar
 Hand your card in at the end of the period and winners will be contacted shortly thereafter!
 
 
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="Helvetica"/>
                                             <font key="NSOriginalFont" size="14" name="Helvetica"/>
@@ -796,14 +796,14 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 
 Recreation Memberships are included in tuition for students who are registered for 3 or more credits and who are not registered in designated “off-campus” programs (may include distance education, co-op, on-line courses and some graduate students)
 
 How to Activate your Membership:
  1)      Check your Membership eligibility 2)      Complete a waiver 3)      Bring your ID Card to access Recreation facilities and services
 
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="Helvetica"/>
                                             <font key="NSOriginalFont" size="14" name="Helvetica"/>
@@ -816,7 +816,7 @@ How to Activate your Membership:
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 
 Burnaby Recreation Members have access to the Fitness Centre, Drop-in Swim, Drop-in Sports, Intramural Leagues, squash, racquetball, and tennis courts, table tennis, and the outdoor track. Recreation programs are open to non-members but program participants are still required to agree to and submit a waiver form.
 
@@ -827,7 +827,7 @@ An SFU Surrey Recreation Membership provides access to City of Surrey operated f
 The SFU Vancouver Recreation Membership provides access to Vancouver Parks Board operated fitness centres, public skating, and public swimming sessions during operating hours at participating facilities.
 
 
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="Helvetica"/>
                                             <font key="NSOriginalFont" size="14" name="Helvetica"/>
@@ -875,12 +875,12 @@ Eligible students are still required to agree to and submit a waiver form. The w
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 
 Students only need to visit the Recreation Office if they:
 - Want to complete a paper waiver instead of completing it online. - Do not meet the Membership eligibility criteria - Are FIC or exchange students - Want to purchase a Membership for a family member (see Family Membership information below). - Want to purchase a book or gym locker. 
 Otherwise, if you have agreed to and submitted your waiver online, your Recreation Membership will automatically be linked to your SFU card and you can simply proceed with using Recreation facilities and services.
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="Helvetica"/>
                                             <font key="NSOriginalFont" size="14" name="Helvetica"/>
@@ -892,46 +892,7 @@ Cg
 </string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="28">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="56">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="84">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="112">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="140">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="168">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="196">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="224">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="252">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="280">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="308">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="336">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="Are exchange students eligible for a Recreation Membership?">
@@ -1001,14 +962,14 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 FIC student Recreation Memberships will be available approximately 2 weeks from the start of the academic term. This delay is due to the time required to input FIC student information into the SFU Student Information System. 
 FIC students can activate their Recreation Membership by:
 1) Visiting the Recreation Office (Lorne Davis Complex 110). 2) Agreeing to and submitting a waiver form.
 After the waiver form has been submitted, the Recreation Membership will be linked directly to the FIC card. The Membership will be active for one semester, provided that the individual remains an active FIC student and meets eligibility criteria over that timeframe.
 
 
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="Helvetica"/>
                                             <font key="NSOriginalFont" size="14" name="Helvetica"/>
@@ -1048,11 +1009,11 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">                                                               
+                                        <string key="content">                                                               
 
 To increase weight loss and aid in fat loss a balanced diet with lean protein, healthy fats and complex carbohydrates is essential. Lean protein could include eggs, chicken breast or fish. Healthy fats could include Avocado or nuts and seeds, and complex carbs like brown rice are great. Also make sure to include fruits and vegetables in order to get essential vitamins and nutrients your body needs. Remember that, in order to lose weight, the calories you burn in a day must be more than what you are consuming. 
 
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="Helvetica"/>
                                             <font key="NSOriginalFont" size="14" name="Helvetica"/>
@@ -1065,11 +1026,11 @@ To increase weight loss and aid in fat loss a balanced diet with lean protein, h
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 
 Assuming that you have a good diet and provide enough stimulation to your muscles, you should see a difference in 3 months. Please note that this is just a general guideline because it also depends on genes. Also, other people might/will notice the difference before you do. 
 
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="Helvetica"/>
                                             <font key="NSOriginalFont" size="14" name="Helvetica"/>
@@ -1082,12 +1043,12 @@ Assuming that you have a good diet and provide enough stimulation to your muscle
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 
 A mixture of diet, cardio and resistance training will help you reduce fat. However, it is important to keep in mind that you cannot lose fat in one specific part of your body i.e. using techniques to reduce fat throughout the body will be effective for the belly too. For diet you will want to keep an eye on your caloric balance making sure Caloric Expenditure is greater than Caloric Intake. Running, Biking and Circuit training are a few of many cardio exercises that will help with your goal. 
 Resistance training using compound exercises that recruit many muscle groups is a good way to build lean muscles which burn fat when you are at rest. Some good compound exercises are: Squats, lunges, bench press and rows. Abdominal exercises for example plank or crunch will build and help to define your abdominal muscles. 
 
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="Helvetica"/>
                                             <font key="NSOriginalFont" size="14" name="Helvetica"/>
@@ -1100,29 +1061,29 @@ Resistance training using compound exercises that recruit many muscle groups is 
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 
 Stretching helps improve flexibility and range of motion. It will also aid in recovery of your muscles as it helps with circulation. This is important since recovery is needed for muscle growth and development. Moreover, with increases flexibility and increased range of motion, stretching will help prevent injuries. 
 
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="Helvetica"/>
                                             <font key="NSOriginalFont" size="14" name="Helvetica"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">I know I shouldn’t be eating before bed, but ever since I’ve started working out on a regular basis I have been waking up in the middle of the night painfully hungry. Should I try to ignore the pain or are there healthy foods I can eat before bed to mitigate this?</mutableString>
+                                        <string key="content">I know I shouldn’t be eating before bed, but ever since I’ve started working out on a regular basis I have been waking up in the middle of the night painfully hungry. Should I try to ignore the pain or are there healthy foods I can eat before bed to mitigate this?</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="Helvetica-Bold"/>
                                             <font key="NSOriginalFont" size="14" name="Helvetica-Bold"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 
 There are definitely healthy options for snacks to eat before bed to decrease your hunger at night. Complex carbohydrates are best because they have finer (which will keep you full) as well as vitamins and minerals. Avoid high protein foods as there are some claims that protein is hard to digest so it many disrupt your sleep. Some examples of food you could try could be a banana, oatmeal, whole grain cereal with low fat milk, or yogurt with fresh fruit. Avoid processed foods as they tend to have higher levels of sugar, fat, and salt and are not as nutritionally dense as other options. Make sure you are also eating enough during the day to suit your new active lifestyle.
 
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="Helvetica"/>
                                             <font key="NSOriginalFont" size="14" name="Helvetica"/>
@@ -1155,7 +1116,7 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">It may be possible to lose fat in the chest region as a man. But targeted site specific fat loss is a myth. A good analogy as to how fat loss may work is imagining fat accumulation on your body as a big pile of snow, and losing fat as shining sunlight on the pile. If it happens that the fat in your chest region was the last place it was put on it will also be the first place that it will come off. However, if this is not the case it will take longer and be more difficult.</mutableString>
+                                        <string key="content">It may be possible to lose fat in the chest region as a man. But targeted site specific fat loss is a myth. A good analogy as to how fat loss may work is imagining fat accumulation on your body as a big pile of snow, and losing fat as shining sunlight on the pile. If it happens that the fat in your chest region was the last place it was put on it will also be the first place that it will come off. However, if this is not the case it will take longer and be more difficult.</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -4695,19 +4656,9 @@ Cg
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gZs-mk-6oM">
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MzL-jz-vtn" userLabel="reject">
-                                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
-                                                        <size key="titleShadowOffset" width="0.0" height="1"/>
-                                                        <state key="normal" title="Reject" backgroundImage="button">
-                                                            <color key="titleColor" red="0.65098039220000004" green="0.098039215690000001" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="rejectBtn:" destination="iyq-1U-063" eventType="touchUpInside" id="BYF-YW-jVE"/>
-                                                        </connections>
-                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GzC-oF-4fW" userLabel="accept">
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
-                                                        <state key="normal" title="Accept" backgroundImage="button">
+                                                        <state key="normal" title="Get Contact Info" backgroundImage="button">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
@@ -4715,9 +4666,6 @@ Cg
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="GzC-oF-4fW" firstAttribute="width" secondItem="MzL-jz-vtn" secondAttribute="width" id="SmD-lv-etC"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
                                     </stackView>
@@ -4755,7 +4703,6 @@ Cg
                         <outlet property="frequency" destination="OVM-RF-9pJ" id="WBQ-sJ-XXj"/>
                         <outlet property="goals" destination="62G-gT-1qX" id="rhi-4W-r6x"/>
                         <outlet property="name" destination="ixr-57-kWt" id="QzQ-Km-QCD"/>
-                        <outlet property="rejectButton" destination="MzL-jz-vtn" id="9ct-v7-13m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rjL-0P-nCX" userLabel="First Responder" sceneMemberID="firstResponder"/>
