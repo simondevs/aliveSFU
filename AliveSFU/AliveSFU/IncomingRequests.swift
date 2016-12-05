@@ -16,6 +16,15 @@ class IncomingRequests: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //check if our user has sent a request for any of these users
+        //if so, then a match has been found
+        let outgoingRequests = DataHandler.getOutgoingRequests()
+        let username = DataHandler.getCurrentUser()
+        for elem in outgoingRequests {
+            if elem.userName == username {
+                //a match has been found!
+            }
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
     

@@ -40,10 +40,6 @@ class SearchResultController: UIViewController, UIGestureRecognizerDelegate {
         
     }
     /* Member Functions*/
-    
-    func sendRequestToBuddy(buddy: firebaseProfile) {
-        // let
-    }
 
     func tileSlideGesture(_ gesture: UIPanGestureRecognizer) {
         if (gesture.state == .began) {
@@ -57,8 +53,10 @@ class SearchResultController: UIViewController, UIGestureRecognizerDelegate {
             if (self.panTileOrigin.x - gesture.view!.frame.origin.x > 50){
                 let view = gesture.view as! BuddyTileView;
                 
+                let ctrl = firebaseController()
                 //Send request to this buddy
                 DataHandler.addOutgoingRequest(req: view.dbprofile)
+                ctrl.sendRequest(user : view.dbprofile)
                 
             } else if (gesture.view!.frame.origin.x - self.panTileOrigin.x > 50) {
                 //let view = gesture.view as! BuddyTileView;

@@ -138,9 +138,11 @@ class firebaseController {
         
     }
     
-    //get requests for this user
-    func getUsers(weight: Int, function : @escaping ([firebaseProfile]) -> Void) {
-        let url = URL(string: "https://alivesfu-30553.firebaseio.com/\(userID)/requests.json?auth=\(databaseKey)")
+    //get all requests waiting for this user
+    //call this function at startup
+    func getRequests(weight: Int, function : @escaping ([firebaseProfile]) -> Void) {
+        let username = DataHandler.getCurrentUser()
+        let url = URL(string: "https://alivesfu-30553.firebaseio.com/\(username)/requests.json?auth=\(databaseKey)")
         var profiles = [firebaseProfile]()
         URLSession.shared.dataTask(with: url!) { (data, response, error) in
             //check if an error is returned form the server
@@ -149,56 +151,36 @@ class firebaseController {
                 return
             }
             
-            
             do {
                 let jsonBody = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
-                let body = jsonBody as? [String : Any]
-                //parse each user object
-                for userProfile in body! {
-                    if let data = userProfile.value as? [String : Any] {
-                        let newProfile = firebaseProfile()
-                        //if any of the below checks fail, continue to the next profile since a user profile is messed up
-                        if let devID = data["devID"] as? String {
-                            newProfile.devID = devID
+                if let body = jsonBody as? [String : Any] {
+                    //parse each user object
+                    for userProfile in body {
+                        //a request that has been made for this user
+                        let request = firebaseProfile()
+                        if let username = userProfile.value as? String {
+                            request.userName = username
                         }
                         else {
                             continue
                         }
-                        if let userName = data["userName"] as? String {
-                            newProfile.userName = userName
+                        if let hashnum = userProfile.key as? String {
+                            request.hashNum = Int(hashnum)!
                         }
                         else {
                             continue
                         }
-                        if let hashNum = data["hashNum"] as? String {
-                            let num = Int(hashNum)
-                            if num != nil {
-                                newProfile.hashNum = num!
-                            }
-                            else {
-                                continue
-                            }
-                        }
-                        else {
-                            continue
-                        }
-                        //check if nil and nothing has been added
-                        profiles.append(newProfile)
+                        DataHandler.addIncomingRequest(req: request)
                     }
                     
                 }
-                if !profiles.isEmpty {
-                    //sort array by how closer it is to the inputted weight integer
-                    profiles = profiles.sorted(by: {
-                        (left: firebaseProfile, right: firebaseProfile) -> Bool in
-                        return abs(weight-left.hashNum) < abs(weight-right.hashNum)
-                    })
+                else {
+                    //there are no requests for this user
                 }
-                
-            } catch let error {
-                print(error)
             }
-            
+            catch let error {
+                    print(error)
+            }
             DispatchQueue.main.async {
                 function(profiles)
             }
@@ -206,12 +188,12 @@ class firebaseController {
     }
     
     //send a request
-    func sendRequest(userName : String, hashNum: Int) {
-        let username = DataHandler.getCurrentUser()
+    func sendRequest(user: firebaseProfile) {
         
-        var request = URLRequest(url: URL(string : "https://alivesfu-30553.firebaseio.com/\(newUser.userName)/requests.json?auth=\(databaseKey)")!)
+        let username = DataHandler.getCurrentUser()
+        var request = URLRequest(url: URL(string : "https://alivesfu-30553.firebaseio.com/\(user.userName)/requests.json?auth=\(databaseKey)")!)
         request.httpMethod = requestType.PUT.rawValue //making a PUT request
-        let postString = "{\"\(username)\" : {\"userName\" : \"\(userName)\", \"hashNum\" : \"\(newUser.hashNum)\"}}"
+        let postString = "{\"from\" : \"\(username)\"}"
         request.httpBody = postString.data(using: .utf8)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error

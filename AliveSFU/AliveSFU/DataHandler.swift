@@ -862,4 +862,80 @@ class DataHandler {
             fatalError("Failed to fetch element! Error: \(error)")
         }
     }
+    
+    class func getIncomingRequests() -> [firebaseProfile] {
+        
+        var requests = [firebaseProfile]()
+        
+        let moc = AppDataController().managedObjectContext
+        let entityFetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "IncomingRequests")
+        do {
+            let fetchedResults = try moc.fetch(entityFetchReq) as! [NSManagedObject]
+            for result in fetchedResults {
+                let hash = result.value(forKey: "hashkey") as! Int
+                let name = result.value(forKey: "username") as! String
+                let newElem = firebaseProfile(devID: "", userName: name, hashNum: hash)
+                requests.append(newElem)
+            }
+            return requests
+        } catch {
+            fatalError("Failed to fetch array! Error: \(error)")
+        }
+    }
+    
+    class func addIncomingRequest(req: firebaseProfile) {
+        let moc = AppDataController().managedObjectContext
+        
+        let details = NSFetchRequest<NSFetchRequestResult>(entityName: "IncomingRequests")
+        details.predicate = NSPredicate(format: "username = %@", req.userName)
+        do {
+            let fetchedResults = try moc.fetch(details) as! [NSManagedObject]
+            if (fetchedResults.count == 0) {
+                let mo = NSEntityDescription.insertNewObject(forEntityName: "IncomingRequests", into: moc)
+                mo.setValue(req.userName, forKey: "username")
+                mo.setValue(req.hashNum, forKey: "hashkey")
+            }
+            try moc.save()
+        } catch let error as NSError {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+    }
+    
+    class func deleteIncomingRequest(username: String) {
+        
+        let moc = AppDataController().managedObjectContext
+        
+        let entityFetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "IncomingRequests")
+        
+        let predicate = NSPredicate(format: "username = %@",username)
+        entityFetchReq.predicate = predicate
+        
+        do {
+            //get exerciseArray element where exerciseName = name
+            var fetchedResult = try moc.fetch(entityFetchReq) as! [NSManagedObject]
+            moc.delete(fetchedResult[0])
+            
+            try moc.save()
+        }
+            
+        catch {
+            fatalError("Failed to fetch element! Error: \(error)")
+        }
+    }
+    
+    //Clear and refresh all the incoming requests
+    class func deleteAllIncomingRequests(username: String) {
+        
+        let moc = AppDataController().managedObjectContext
+        let entityFetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "IncomingRequests")
+        do {
+            let fetchedResults = try moc.fetch(entityFetchReq) as! [NSManagedObject]
+            for result in fetchedResults {
+                moc.delete(result)
+            }
+            try moc.save()
+        } catch {
+            fatalError("Failed to delete array! Error: \(error)")
+        }
+    }
 }
